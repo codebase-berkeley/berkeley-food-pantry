@@ -1,0 +1,53 @@
+.entireContent {
+    padding-left: 100px;
+    padding-top: 40px;
+    width: 90vw;
+    
+}
+.topContainer {
+    display: flex;
+    flex-direction: row;
+
+}
+.leftSide {
+    flex: 3;
+}
+.rightSide {
+    align-items: flex-end;
+}
+.topContainer h1 {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 50px;
+    color: #383838;
+    line-height: 10pt;
+}
+.topContainer p {
+    text-align: left;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.topContainer h3 {
+    font-size: 10px;
+
+}
+.topContainer button {
+    background-color: #264425;
+    color: #fff; 
+    border: 2px solid #264425;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.bottomContainer {
+    border-color: black;
+    border-width: 1px;
+    height: 500px;
+    border-style: solid;
+    display: flex;
+}
+
+
