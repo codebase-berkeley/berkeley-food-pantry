@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 .entireContent {
     padding-left: 100px;
     padding-top: 40px;
@@ -6,18 +8,23 @@
 }
 .topContainer {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: row
 }
 .leftSide {
+    display: flex;
     flex: 3;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .rightSide {
-    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .topContainer h1 {
     text-align: left;
-    padding-left: 20px;
+    padding-left: 15px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     color: #383838;
     line-height: 10pt;
@@ -25,29 +32,65 @@
 .topContainer p {
     text-align: left;
     font-size: 20px;
+    padding-top: 10px;
     padding-left: 20px;
 }
-.topContainer h3 {
+.h3{
     font-size: 10px;
-
 }
 .topContainer button {
     background-color: #264425;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: #fff; 
-    border: 2px solid #264425;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    font-size: 24px;
+    /* padding: 0.5em 1em; */
+    border-radius: 40px;
+    font-size: 18;
     font-weight: bold;
-    text-align: right;
+    /* text-align: space-between; */
+}
+.changeStock{
+    font-size: 16;
+    color: #6A7E69;
+    padding-bottom: 10px;
+}
+.changeStock:hover{
+    text-decoration: underline;
 }
 
 .bottomContainer {
     border-color: black;
     border-width: 1px;
-    height: 500px;
+    border-radius: 10px;
+    height:80vh;
     border-style: solid;
     display: flex;
+    padding: 2px;
 }
 
 
+.filterItemsControls {
+    background-color: lightblue;
+    /* width: 30vw; */
+    padding-right: 20px;
+    flex: 1;
+}
+
+.filterItemDisplay {
+    width: 300px;
+    overflow-x:scroll;
+    overflow-y:scroll;
+    /* width: 50vw; */
+    /* width: 60vw; */
+    background-color: hotpink;
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.foodPanel {
+    /* background-color: hotpink; */
+    width: 100px;
+}
