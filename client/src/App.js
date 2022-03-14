@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Food from './Food';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Food name="Apple" image={logo} in_stock={true} tags={["Fruit", "Gluten-Free"]} />
+
     </div>
   );
 }
