@@ -4,7 +4,7 @@ import {PanelGroup, Panel} from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
 import {Dropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import isbesPlusSign from './plusSign.svg';
+import isbesPlusSign from './images/plusSign.svg';
 
 
 function StockListingUser() {
@@ -22,8 +22,8 @@ function StockListingUser() {
                     <div className = "rightSide">
                         {/* <button> +   Add New Item </button> */}
                         <button type = "button" class = "btn">
-                            <text> + </text>
-                            <text> Add New Item </text>
+                            <img isbesPlusSign></img>
+                            <div className="addItem"> Add New Item </div>
                             </button>
                         <div className="changeStock"> Set all items to out of stock </div>
                         

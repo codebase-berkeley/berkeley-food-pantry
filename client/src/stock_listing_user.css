@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
 .entireContent {
     padding-left: 100px;
@@ -28,12 +29,14 @@
     font-size: 50px;
     color: #383838;
     line-height: 10pt;
+    padding-bottom: 1vh;
 }
 .topContainer p {
     text-align: left;
-    font-size: 20px;
+    font-size: 14;
     padding-top: 10px;
     padding-left: 20px;
+    font-family: 'Inter', sans-serif;
 }
 .h3{
     font-size: 10px;
@@ -50,6 +53,10 @@
     font-weight: bold;
     /* text-align: space-between; */
 }
+.addItem{
+    display: flex;
+
+}
 .changeStock{
     font-size: 16;
     color: #6A7E69;
@@ -60,7 +67,7 @@
 }
 
 .bottomContainer {
-    border-color: black;
+    border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
     height:80vh;
