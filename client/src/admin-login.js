@@ -1,20 +1,17 @@
 import adminLoginPic from './assets/admin-login-pic.png';
 import './admin-login.css';
+import admingooglesignin from './assets/googlesignin.png';
 
 export default function AdminLogin() {
    return(
-    <div>
+    <div className = 'componentContainer'>
         <img src={adminLoginPic} className = "adminPic" alt = "adminLogin"></img>
-
-        <div>
-            <h1>Login</h1>    
-            <p>Please sign in with an administrative account to access additional features.</p>
-        
+        <div className = 'loginTextContainer'>
+            <div><h1>Login</h1>    
+            <p>Please sign in with an administrative account to <br></br>access additional features.</p>
+            <img src={admingooglesignin} className = "google-sign-in" alt = "google-sign-in"></img></div>
         </div>
     </div>
-    
-
-    
-    
+        
    )
 }
