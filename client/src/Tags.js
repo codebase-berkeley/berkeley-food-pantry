@@ -1,13 +1,13 @@
 import React from 'react'
-import './Food.css'
+import './Tags.css'
 
 
-function Tags(names) {
-    const output = "";
-    for (let i = 0; i < names.length; i++) {
-        output += names[i];
-    }
-    
+function Tags(props) {
+    return (
+        <div className="foodComponentTag"> 
+            {props.name}
+        </div>
+    );
 }
 
 export default Tags

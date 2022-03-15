@@ -6,7 +6,7 @@ import apple from "./apple.png";
 function App() {
   return (
     <div>
-      <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit"]} />
+      <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} /> 
     </div>
   );
 }
