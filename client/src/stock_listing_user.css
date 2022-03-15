@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
 
 .entireContent {
     padding-left: 100px;
@@ -79,34 +79,42 @@
 }
 
 
-.filterItemsControls {
-    background-color: lightblue;
+.filterItemControls {
     display: flex;
-    width: 40vw;
-    padding-right: 20px;
+    width: 10vw;
     flex: 1;
+    flex-direction: column;
 }
 .filterReset{
     display: flex;
+    padding-top: 2vh;
     flex-direction: row;
     justify-content: center;
 }
-.bottomContainer h1{
+.filterItems{
     color: #4C4C4C;
-    font-size: 16;
+    font-size: 24;
     font-family: 'Montserrat', sans-serif;
+    padding-right: 2vw;
 }
-.bottomContainer h2{
-    font-size: 8;
+.resetFilters{
+    font-size: 16;
     color: #A71E47;
+    font-family: 'Inter', sans-serif;
+}
+.searchBox{
+    font-size: 20;
+    display: flex;
+    color: #4C4C4C;
+    justify-content: flex-start; 
+    padding-left: 1vw;
 }
 
 .filterItemDisplay {
-    width: 300px;
     overflow-x:scroll;
     overflow-y:scroll;
     /* width: 50vw; */
-    /* width: 60vw; */
+    width: 60vw;
     background-color: hotpink;
     padding-left: 2vw;
     display: flex;

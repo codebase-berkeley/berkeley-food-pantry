@@ -36,10 +36,12 @@ function StockListingUser() {
                     <div className = "filterItemControls">
                         {/* Needs to be flex: row side */}
                         <div className="filterReset">
-                            <h1>Filter Items</h1>
-                            <h2>Reset Filters</h2>
+                            <div className="filterItems">Filter Items</div>
+                            <div className="resetFilters">Reset Filters</div>
                         </div>
-                       
+                       <div className="searchBox">
+                           <bold>Search Items</bold>
+                        </div>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                                 Filter by Dietary Categories
