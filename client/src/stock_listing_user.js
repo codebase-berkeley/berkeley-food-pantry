@@ -1,4 +1,5 @@
 import React from "react";
+import Search from './searchBar.js';
 import './stock_listing_user.css';
 import {PanelGroup, Panel} from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
@@ -13,7 +14,6 @@ function StockListingUser() {
             <div className = "stockListingPage">
                 <div className = "topContainer"> 
                     <div className = "leftSide">
-                    {/* style ={{textAlign : 'left', color: 'blue'}} */}
                         <h1>Edit Today's Stock</h1>
                         <p>Manage today's stock listing.</p>
                         
@@ -22,8 +22,8 @@ function StockListingUser() {
                     <div className = "rightSide">
                         {/* <button> +   Add New Item </button> */}
                         <button type = "button" class = "btn">
-                            <img isbesPlusSign></img>
-                            <div className="addItem"> Add New Item </div>
+                            <img src = {isbesPlusSign}></img>
+                            <div className="addItem"> Add new item </div>
                             </button>
                         <div className="changeStock"> Set all items to out of stock </div>
                         
@@ -40,32 +40,70 @@ function StockListingUser() {
                             <div className="resetFilters">Reset Filters</div>
                         </div>
                        <div className="searchBox">
-                           <bold>Search Items</bold>
+                           <text>Search Items</text>
+                           <Search/>
                         </div>
-                        <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Filter by Dietary Categories
-                            </Dropdown.Toggle>
 
-                            <Dropdown.Menu>
-                                <Dropdown.Item>Another action</Dropdown.Item>
-                                <Dropdown.Item>Something else</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        <div className = "filterBy">
+                            <p id="filterControlLabel">Filter by Dietary Categories</p>
+                            <div className = "custom-dropdown">
+                            <Dropdown>
+                                <Dropdown.Toggle className = "custom-toggle" variant="success" id="dropdown-custom">
+                                    Select...
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu className = "custom-menu">
+                                    <Dropdown.Item>Dairy</Dropdown.Item>
+                                    <Dropdown.Item>Fruit</Dropdown.Item>
+                                    <Dropdown.Item>Gluten-free</Dropdown.Item>
+                                    <Dropdown.Item>Grains</Dropdown.Item>
+                                    <Dropdown.Item>Meat</Dropdown.Item>
+                                    <Dropdown.Item>Pescatarian</Dropdown.Item>
+                                    <Dropdown.Item>Seafood</Dropdown.Item>
+                                    <Dropdown.Item>Vegan</Dropdown.Item>
+                                    <Dropdown.Item>Vegetarian</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            </div>
+                        </div>
+
+                        <div className = "sortBy">
+                            <p id="filterControlLabel">Sort By...</p>
+                            <div className = "custom-dropdown">
+                            <Dropdown>
+                                <Dropdown.Toggle className = "custom-toggle" variant="success" id="dropdown-custom">
+                                    Alphabetical, A-Z
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu cclassName = "custom-menu">
+                                    <Dropdown.Item>Alphabetical, A-Z</Dropdown.Item>
+                                    <Dropdown.Item>Most Recently Added</Dropdown.Item>
+                                    <Dropdown.Item>Most Recently Updated</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            </div>
+                        </div>
                         
-                        <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                Sort By
-                            </Dropdown.Toggle>
+                        <h6>Show</h6>
+                        <div className = "firstRow">
+                            <button className = "allItemBtn"> Default </button>
+                            <h1>All Items</h1>
+                        </div>
+                        <div className = "secondRow">
+                            <button></button>
+                            <h1>In Stock Items Only</h1>
+                        </div>
+                        <div className = "thirdRow">
+                            <button></button>
+                            <h1>Not In Stock Items Only</h1>
+                        </div>
+                        {/* <ul>
+                            <li>All Items</li>
+                            <li>In Stock Items Only</li>
+                            <li>Not In Stock Items Only</li>
 
-                            <Dropdown.Menu>
-                                <Dropdown.Item>Another action</Dropdown.Item>
-                                <Dropdown.Item>Something else</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        </ul> */}
                         
-                        <h6>Only </h6>
-
 
                         {/* Show header
                             - 3 buttons (import package)

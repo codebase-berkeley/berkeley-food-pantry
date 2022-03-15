@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 .entireContent {
     padding-left: 100px;
@@ -26,6 +25,7 @@
 .topContainer h1 {
     text-align: left;
     padding-left: 15px;
+    font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     color: #383838;
@@ -48,14 +48,14 @@
     flex-direction: row;
     justify-content: space-between;
     color: #fff; 
-    /* padding: 0.5em 1em; */
     border-radius: 40px;
-    font-size: 18;
+    font-size: 18px;
     font-weight: bold;
-    /* text-align: space-between; */
+    align-items: center;
 }
 .addItem{
     display: flex;
+    padding-right: 1vw;
 
 }
 .changeStock{
@@ -78,6 +78,26 @@
     padding: 2px;
 }
 
+p#filterControlLabel {
+    color: #4C4C4C;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+.custom-dropdown .custom-toggle {
+    background-color: green;
+    text-decoration-color: #383838;  
+    width: 200px;
+}
+.custom-dropdown .custom-toggle:hover{
+    background-color: white;
+    text-decoration-color: black;
+}
+.custom-dropdown .custom-menu {
+    background-color: white;
+    width: 200px;
+}
+
 
 .filterItemControls {
     display: flex;
@@ -90,32 +110,54 @@
     padding-top: 2vh;
     flex-direction: row;
     justify-content: center;
+    padding-bottom: 2vh;
 }
 .filterItems{
     color: #4C4C4C;
-    font-size: 24;
+    font-size: 24px;
+    display: flex;
     font-family: 'Montserrat', sans-serif;
-    padding-right: 2vw;
+    padding-right: 3.5vw;
+    justify-content: start;
 }
 .resetFilters{
-    font-size: 16;
+    font-size: 16px;
     color: #A71E47;
+    align-items: center;
+    padding-top: 1vh;
     font-family: 'Inter', sans-serif;
 }
+.firstRow {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;
+}
+.firstRow h1 {
+    font-size: 10px; 
+}
+.secondRow h1 {
+    font-size: 10px;
+}
+.thirdRow h1 {
+    font-size: 10px;
+}
+
 .searchBox{
-    font-size: 20;
+    font-size: 16px;
     display: flex;
     color: #4C4C4C;
     justify-content: flex-start; 
     padding-left: 1vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .filterItemDisplay {
-    overflow-x:scroll;
-    overflow-y:scroll;
+    overflow:scroll;
+    /* overflow-y:scroll; */
     /* width: 50vw; */
     width: 60vw;
-    background-color: hotpink;
+    /* background-color: hotpink; */
     padding-left: 2vw;
     display: flex;
     flex-direction: column;
@@ -124,5 +166,5 @@
 
 .foodPanel {
     /* background-color: hotpink; */
-    width: 100px;
+    width: 400px;
 }
