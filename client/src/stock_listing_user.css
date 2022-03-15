@@ -60,6 +60,7 @@
 .changeStock{
     font-size: 16;
     color: #6A7E69;
+    font-family: 'Inter', sans-serif;
     padding-bottom: 10px;
 }
 .changeStock:hover{
