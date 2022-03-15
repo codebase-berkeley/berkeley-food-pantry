@@ -8,7 +8,7 @@ export default function AdminLogin() {
         <img src={adminLoginPic} className = "adminPic" alt = "adminLogin"></img>
         <div className = 'adminLoginTextContainer'>
             <div><h1>Login</h1>    
-            <p>Please sign in with an administrative account to <br></br>access additional features.</p>
+            <p>Please sign in with an administrative account to <br></br> access additional features.</p>
             <img src={admingooglesignin} className = "admin-google-sign-in" alt = "google-sign-in"></img></div>
         </div>
     </div>
