@@ -9,7 +9,6 @@ function App() {
       <AdminLogin/> 
     </div>
   )
-    
 }
 
 export default App;

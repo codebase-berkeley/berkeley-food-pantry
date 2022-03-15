@@ -1,12 +1,10 @@
-.adminPic {
+.admin-pic {
     display: flex;
     border-radius: 50%;
     margin-right: -200px;
-   
-
 }
 
-.adminLoginButton {
+.admin-login-button {
     border-radius: 25%;
     border-color: #383838;
     border-width: 5px;
@@ -15,7 +13,7 @@
     fill: #ffffff;
 }
 
-.adminComponentContainer {
+.admin-component-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,7 +21,7 @@
     width: 100vw;
 }
 
-.adminLoginTextContainer {
+.admin-login-text-container {
     color: #383838;
     display:flex;
     text-align: left;
@@ -32,12 +30,10 @@
     height: 100vh;
     font-size: 20px;
     font-family: Inter;
-    
 }
 
-.adminLoginTextContainer h1 {
-    font-family: 'Montserrat'; 
-
+.admin-login-text-container h1 {
+    font-family: 'Montserrat';
 }
 
 .admin-google-sign-in {
