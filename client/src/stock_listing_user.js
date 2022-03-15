@@ -35,8 +35,10 @@ function StockListingUser() {
                 <div className = "bottomContainer">
                     <div className = "filterItemControls">
                         {/* Needs to be flex: row side */}
-                        <h1>filter items</h1>
-                        <h2>Reset Filters</h2>
+                        <div className="filterReset">
+                            <h1>Filter Items</h1>
+                            <h2>Reset Filters</h2>
+                        </div>
                        
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .entireContent {
     padding-left: 100px;
@@ -80,9 +81,24 @@
 
 .filterItemsControls {
     background-color: lightblue;
-    /* width: 30vw; */
+    display: flex;
+    width: 40vw;
     padding-right: 20px;
     flex: 1;
+}
+.filterReset{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.bottomContainer h1{
+    color: #4C4C4C;
+    font-size: 16;
+    font-family: 'Montserrat', sans-serif;
+}
+.bottomContainer h2{
+    font-size: 8;
+    color: #A71E47;
 }
 
 .filterItemDisplay {
