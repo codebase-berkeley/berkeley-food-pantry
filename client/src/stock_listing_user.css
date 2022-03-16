@@ -160,30 +160,36 @@ p#filterControlLabel {
     display: flex; 
     flex-direction: row; 
     justify-content: flex-end;
+    padding-left: 1vw; 
+
 
 }
 .secondRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    padding-left: 1vw; 
+
 }
 .thirdRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    padding-left: 1vw; 
+
 }
 .firstRow h1 {
     padding-left: 1vw;
-    font-size: 10px; 
+    font-size: 0.75rem; 
 }
 .secondRow h1 {
     padding-left: 1vw;
-    font-size: 10px;
+    font-size: 0.75rem;
     
 }
 .thirdRow h1 {
     padding-left: 1vw;
-    font-size: 10px;
+    font-size: 0.75rem;
 }
 .firstRow .allItemBtn {
     display: block;
