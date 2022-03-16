@@ -75,7 +75,7 @@ function StockListingUser() {
                                     Alphabetical, A-Z
                                 </Dropdown.Toggle>
 
-                                <Dropdown.Menu cclassName = "custom-menu">
+                                <Dropdown.Menu className = "custom-menu">
                                     <Dropdown.Item>Alphabetical, A-Z</Dropdown.Item>
                                     <Dropdown.Item>Most Recently Added</Dropdown.Item>
                                     <Dropdown.Item>Most Recently Updated</Dropdown.Item>

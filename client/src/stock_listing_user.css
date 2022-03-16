@@ -83,13 +83,12 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    
 }
+
 .sort-by {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
 }
 
 p#filterControlLabel {
@@ -97,6 +96,9 @@ p#filterControlLabel {
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 16px;
+}
+.custom-dropdown {
+    padding-top: 1px;
 }
 .custom-dropdown .custom-toggle {
     background-color: white;
@@ -108,11 +110,18 @@ p#filterControlLabel {
     background-color: white;
     border-color: black;
     color: #C4C4C4;
+    width: 250px;
+}
+.custom-dropdown .custom-toggle:on-click{
+    background-color: white;
+    border-color: black;
+    color: #C4C4C4;
+    width: 250px;
 }
 /* need to add on-click behavior */
 .custom-dropdown .custom-menu {
     background-color: white;
-    width: 200px;
+    width: 250px;
 }
 
 
