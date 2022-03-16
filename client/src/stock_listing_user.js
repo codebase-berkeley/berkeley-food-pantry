@@ -85,9 +85,27 @@ function StockListingUser() {
                         </div>
                         
 
-                        
+                        {/* Radio button code - ended up just changing the code. nNo clude what it means tho :))) */}
                         <h6> Show </h6>
-                        <div className = "firstRow">
+                        <div className = "form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
+                            <label class="form-check-label" for="exampleRadios1">
+                                All Items
+                            </label>
+                        </div>
+                        <div className = "form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
+                            <label class="form-check-label" for="exampleRadios1">
+                                In Stocks Items
+                            </label>
+                        </div>
+                        <div className = "form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Not In Stock Items Only 
+                            </label>
+                        </div>
+                        {/* <div className = "firstRow">
                             <button className = "allItemBtn"></button>
                             <h1>All Items</h1>
                         </div>
@@ -98,7 +116,7 @@ function StockListingUser() {
                         <div className = "thirdRow">
                             <button className = "noStockBtn"></button>
                             <h1>Not In Stock Items Only</h1>
-                        </div>
+                        </div> */}
                         
                         
                     </div>
