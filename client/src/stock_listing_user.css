@@ -160,15 +160,56 @@ p#filterControlLabel {
     display: flex; 
     flex-direction: row; 
     justify-content: flex-end;
+
+}
+.secondRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.thirdRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 .firstRow h1 {
+    padding-left: 1vw;
     font-size: 10px; 
 }
 .secondRow h1 {
+    padding-left: 1vw;
     font-size: 10px;
+    
 }
 .thirdRow h1 {
+    padding-left: 1vw;
     font-size: 10px;
+}
+.firstRow .allItemBtn {
+    display: block;
+    background-color: white;
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.secondRow .stockBtn {
+    display: block;
+    background-color: white;
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+.thirdRow .noStockBtn {
+    display: block;
+    background-color: white;
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50%;
+    border: 1px solid black;
+
 }
 
 .searchBox{
