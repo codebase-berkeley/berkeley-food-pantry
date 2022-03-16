@@ -78,13 +78,18 @@
     padding: 2px;
 }
 
-.filterBy {
+.filter-by {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
 }
 .sort-by {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    
 }
 
 p#filterControlLabel {
@@ -97,7 +102,7 @@ p#filterControlLabel {
     background-color: white;
     border-color: black;
     color: #C4C4C4;
-    width: 200px;
+    width: 250px;
 }
 .custom-dropdown .custom-toggle:hover{
     background-color: white;
@@ -116,6 +121,9 @@ p#filterControlLabel {
     width: 10vw;
     flex: 1;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 1vw;
 }
 .filterReset{
     display: flex;
@@ -159,7 +167,6 @@ p#filterControlLabel {
     display: flex;
     color: #4C4C4C;
     justify-content: flex-start; 
-    padding-left: 1vw;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
 }
