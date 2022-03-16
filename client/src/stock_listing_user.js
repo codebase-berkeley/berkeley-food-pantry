@@ -84,7 +84,9 @@ function StockListingUser() {
                             </div>
                         </div>
                         
-                        <h6>Show</h6>
+
+                        
+                        <h6> Show </h6>
                         <div className = "firstRow">
                             <button className = "allItemBtn"></button>
                             <h1>All Items</h1>
@@ -97,17 +99,7 @@ function StockListingUser() {
                             <button className = "noStockBtn"></button>
                             <h1>Not In Stock Items Only</h1>
                         </div>
-                        {/* <ul>
-                            <li>All Items</li>
-                            <li>In Stock Items Only</li>
-                            <li>Not In Stock Items Only</li>
-
-                        </ul> */}
                         
-
-                        {/* Show header
-                            - 3 buttons (import package)
-                        */}
                         
                     </div>
                     <div className = "filterItemDisplay">
