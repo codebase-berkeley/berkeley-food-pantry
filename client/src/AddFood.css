@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .add-food-component-container {
     display: flex;
@@ -45,37 +47,80 @@
     height: 5vh;
     width: 5vw;
     margin-top: 45%;
-    margin-left: -50px;
+    margin-left: -5%;
 }
 
 .item-selections {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    background-color: red;
+    justify-content: column;
+    height: 80%;
+    width: 40%;
+    /* background-color: red; */
 }
 
 .upload-image {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    background-color: blue;
+    justify-content: column;
+    /* align-items: center; */
+    flex-direction: column;
+    height: 80%;
+    width: 40%;
+    padding-left: 10%;
+    /* background-color: blue; */
+    font-family: "Montserrat";
+    font-size: 150%;
 }
 
 .item-name-input {
     display: flex;
     font-family: "Montserrat";
-    
+    font-size: 2vh;
 }
 
 .input-box {
     display: flex;
-    border-radius: 50px 50px 50px 50px;
-    background-color: blue; 
+    
 }
 
+label, input{
+    display:flex;
+    flex-direction: column;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 2vh;
+    font-family: "Montserrat";
+    margin-top: 2%;
+    height: 32%;
+    width: 140%;
+    border-color: #588157;;
+  }
 
+.import-image-button {
+    display: flex;
+    height: 14%;
+    width: 50%;
+    margin-top: 3%;
+}
+
+.stock-select-list {
+    font-family: "Montserrat";
+    margin-top: -60%;
+    height: 10%;
+    width: 200%;
+    border-color: #588157;
+}
+
+.dietary-categories-select-list {
+    font-family: "Montserrat";
+    margin-top: 0%;
+    height: 10%;
+    width: 200%;
+    border-color: #588157;
+}
+
+.upload-image-text {
+    font-size: 2.5vh;
+}
+
+.stock-select-list label {
+   
+}
