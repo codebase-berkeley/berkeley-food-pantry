@@ -13,6 +13,7 @@ function Food(props) {
                     <div className = "foodName">
                         {props.name}
                     </div>
+                    <br></br>
                     <div className = "tagsFormat">
                         {props.tags.map((tag) => {
                             return (
@@ -21,8 +22,13 @@ function Food(props) {
                     </div>
                 </div>
                 <div className = "editIn">
-                    <img src={edit_item} class="editItem" alt="edit item" />
-                    <img src={in_stock} class="inStock" alt="in stock" />
+                    <img src={edit_item} class="editItem" alt="edit item"/>
+                    <div className = "inStock">
+                        In stock
+                        <input type="checkbox" />
+                         {/* <input type="checkbox" value="bubbles" checked="checked"/> */}
+
+                    </div>
                 </div>
             </div>
         </div>
