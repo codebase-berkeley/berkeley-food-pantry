@@ -44,11 +44,11 @@ function StockListingUser() {
                            <Search/>
                         </div>
 
-                        <div className = "filterBy">
+                        <div className = "filter-by">
                             <p id="filterControlLabel">Filter by Dietary Categories</p>
-                            <div className = "custom-dropdown">
+                            <div className = "custom-dropdown" id = "filter-dropdown">
                             <Dropdown>
-                                <Dropdown.Toggle className = "custom-toggle" variant="success" id="dropdown-custom">
+                                <Dropdown.Toggle className = "custom-toggle" variant="success">
                                     Select...
                                 </Dropdown.Toggle>
 
@@ -67,11 +67,11 @@ function StockListingUser() {
                             </div>
                         </div>
 
-                        <div className = "sortBy">
+                        <div className = "sort-by">
                             <p id="filterControlLabel">Sort By...</p>
                             <div className = "custom-dropdown">
                             <Dropdown>
-                                <Dropdown.Toggle className = "custom-toggle" variant="success" id="dropdown-custom">
+                                <Dropdown.Toggle className = "custom-toggle" variant="success" id = "sortby-dropdown">
                                     Alphabetical, A-Z
                                 </Dropdown.Toggle>
 
@@ -111,6 +111,7 @@ function StockListingUser() {
                         
                     </div>
                     <div className = "filterItemDisplay">
+                        {/* need to make this div scrollable */}
                         <Panel className = "foodPanel" shaded>fake food 1</Panel>
                         <Panel className = "foodPanel" shaded>fake food 2</Panel>
                         <Panel className = "foodPanel" shaded>fake food 3</Panel>

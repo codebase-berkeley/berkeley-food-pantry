@@ -78,21 +78,33 @@
     padding: 2px;
 }
 
+.filterBy {
+    display: flex;
+    flex-direction: column;
+}
+.sort-by {
+    display: flex;
+    flex-direction: column;
+}
+
 p#filterControlLabel {
     color: #4C4C4C;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 .custom-dropdown .custom-toggle {
-    background-color: green;
-    text-decoration-color: #383838;  
+    background-color: white;
+    border-color: black;
+    color: #C4C4C4;
     width: 200px;
 }
 .custom-dropdown .custom-toggle:hover{
     background-color: white;
-    text-decoration-color: black;
+    border-color: black;
+    color: #C4C4C4;
 }
+/* need to add on-click behavior */
 .custom-dropdown .custom-menu {
     background-color: white;
     width: 200px;
