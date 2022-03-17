@@ -223,12 +223,17 @@ p#filterControlLabel {
 }
 
 .searchBox{
+    text-align: left; 
     font-size: 16px;
-    display: flex;
+    /* display: flex; */
     color: #4C4C4C;
     justify-content: flex-start; 
     font-family: 'Inter', sans-serif;
     font-weight: 600;
+    
+}
+.searchBox.text {
+    margin-bottom: 10px;
 }
 
 .filterItemDisplay {

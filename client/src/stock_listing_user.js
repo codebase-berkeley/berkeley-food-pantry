@@ -1,5 +1,6 @@
 import React from "react";
 import Search from './searchBar.js';
+import './searchBar.css';
 import './stock_listing_user.css';
 import {PanelGroup, Panel} from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
@@ -40,8 +41,10 @@ function StockListingUser() {
                             <div className="resetFilters">Reset Filters</div>
                         </div>
                        <div className="searchBox">
+                           {/* <h1> Search items</h1> */}
                            <text>Search Items</text>
-                           <Search/>
+                           <Search placeholder = "Search..."/>
+                           
                         </div>
 
                         <div className = "filter-by">
