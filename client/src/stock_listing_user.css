@@ -247,3 +247,6 @@ p#filterControlLabel {
     /* background-color: hotpink; */
     width: 400px;
 }
+/* [type = "radio"]:checked+label:after {
+    background-color: grey;
+} */

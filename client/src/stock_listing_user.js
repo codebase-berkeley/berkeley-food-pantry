@@ -105,18 +105,7 @@ function StockListingUser() {
                                 Not In Stock Items Only 
                             </label>
                         </div>
-                        {/* <div className = "firstRow">
-                            <button className = "allItemBtn"></button>
-                            <h1>All Items</h1>
-                        </div>
-                        <div className = "secondRow">
-                            <button className = "stockBtn"> </button>
-                            <h1>In Stock Items Only</h1>
-                        </div>
-                        <div className = "thirdRow">
-                            <button className = "noStockBtn"></button>
-                            <h1>Not In Stock Items Only</h1>
-                        </div> */}
+                        
                         
                         
                     </div>
