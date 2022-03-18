@@ -7,8 +7,16 @@ import 'rsuite/dist/rsuite.min.css';
 import {Dropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
-let arr = ["Meat", "Beverage", "Vegetable"];
+
+const options = [
+    { value: 'chocolate', label: 'Meat' },
+    { value: 'strawberry', label: 'Veggies' },
+    { value: 'vanilla', label: 'Beverages' }
+  ]
+const animatedComponents = makeAnimated();
 
 function StockListingUser() {
     return (
@@ -87,6 +95,17 @@ function StockListingUser() {
                                 </Dropdown.Menu>
                             </Dropdown>
                             </div>
+                        </div>
+                        <div>
+                            <Select
+                                closeMenuOnSelect={false}
+                                components={animatedComponents}
+                                // defaultValue={[options[0], options[1]]}
+                                isMulti
+                                options={options}
+                            
+                            />
+                            
                         </div>
                         
 
