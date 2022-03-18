@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
 .foodComponentTag {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
     text-align: left;
     border-radius: 20px;
-    /* border-spacing: 10px; */
     width: 110px;
     height: 25px;
-
     background-Color:#5bcea2;
     color: white;
-    font-weight: 600;
-    /* padding-right: 30px; */
+    margin-right: 5px;
+    margin-top: 5px;
 }
-

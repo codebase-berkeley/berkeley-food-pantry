@@ -4,7 +4,7 @@
     font-family: "Inter";
     color: #4C4C4C; 
     font-weight:600;
-    font-size: 200%;
+    font-size: 25px;
 }
 
 .foodImage {
@@ -24,13 +24,30 @@
     border-radius: 10px;
 }
 
+.penFormat {
+    padding-right: 6%;
+}
+
+.editButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #588157;
+    width: 120px;
+    height: 32px;
+    background-color: white;
+}
+
 .editItem {
-    width: 100%;
-    height: 25%;
+    font: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    color: #588157;
 }
 
 .infoContainer {
-    /* background-color: red; */
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -41,9 +58,10 @@
 
 .inStock{
     font-family: "Inter";
+    font-size: 16px;
     color: #264425;
-    font-size: 140%;
-    padding-top: 20%;
+    padding-top: 13%;
+    width: 97px;
 }
 
 .nameTags {
@@ -70,5 +88,4 @@
     justify-content: flex-start;
     align-content: left;
     flex-wrap: wrap;
-    
 }
