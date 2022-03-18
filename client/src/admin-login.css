@@ -37,6 +37,17 @@
 }
 
 .admin-google-sign-in {
-    height: 10%;
-    width: 42.5%;
+    height: 90%;
+    width: 75%;
+}
+
+.google-sign-in-button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border: #264425 solid 1px;
+    margin-top: 7%;
 }
