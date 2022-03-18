@@ -103,7 +103,6 @@ label, input{
 
 .stock-select-list {
     font-family: "Montserrat";
-    margin-top: -60%;
     height: 10%;
     width: 200%;
     border-color: #588157;
@@ -119,8 +118,4 @@ label, input{
 
 .upload-image-text {
     font-size: 2.5vh;
-}
-
-.stock-select-list label {
-   
 }
