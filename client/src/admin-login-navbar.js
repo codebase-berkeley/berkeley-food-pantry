@@ -1,5 +1,5 @@
 import './navbar.css';
-import berkeleyfoodpantrylogo from './assets/berkeleyfoodpantrylogo.png';
+import berkeleyfoodpantrylogo from './assets/berkeley-food-pantry-logo.png';
 
 export default function NavbarComponent() {
    return(
