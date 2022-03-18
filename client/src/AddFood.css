@@ -16,7 +16,7 @@
     margin-left: 5%;
     height: 10vh;
     width: 100vw;
-    /* background-color: white; */
+    /* background-color: red; */
     font-family: "Montserrat";
 }
 
@@ -54,19 +54,19 @@
     display: flex;
     justify-content: column;
     height: 80%;
-    width: 40%;
-    /* background-color: red; */
+    width: 50%;
+    margin-left: 0%;
+    background-color: red;
+    
 }
 
 .upload-image {
     display: flex;
     justify-content: column;
-    /* align-items: center; */
     flex-direction: column;
     height: 80%;
     width: 40%;
     padding-left: 10%;
-    /* background-color: blue; */
     font-family: "Montserrat";
     font-size: 150%;
 }
@@ -79,7 +79,6 @@
 
 .input-box {
     display: flex;
-    
 }
 
 label, input{
@@ -91,14 +90,28 @@ label, input{
     margin-top: 2%;
     height: 32%;
     width: 140%;
-    border-color: #588157;;
+    border-color: #588157;
   }
 
 .import-image-button {
     display: flex;
-    height: 14%;
-    width: 50%;
-    margin-top: 3%;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border: #264425 solid 1px;
+    margin-top: 4%;
+    background-color: red;
+}
+
+.cloud-format {
+    height: 2.5vh;
+    padding-right: 5%;
+}
+.import-image {
+    height: vw;
+    height: 7vh;
 }
 
 .stock-select-list {
@@ -118,4 +131,17 @@ label, input{
 
 .upload-image-text {
     font-size: 2.5vh;
+    margin-left: -8%;
+}
+
+.upload-image-text-h1 {
+    font-size: 2vh;
+    color: #264425;
+}
+
+.right-side-container {
+    display: flex;
+    background-color: red;
+    height: 50vh;
+    width: 50vw;
 }

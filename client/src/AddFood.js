@@ -1,12 +1,13 @@
 import './AddFood.css';
 import saveitembutton from './assets/saveitembutton.png';
-import importimage from './assets/importimage.png';
+import importimagecloud from './assets/import-image-cloud.svg';
 
 export default function AddFood() {
     return(
         <div className = 'add-food-component-container'>
             <div className = 'add-food-component-header'>
-                <div><h1>Add Item</h1>
+                <div>
+                    <h1>Add Item</h1>
                     <p>Add a new item to the stock directory.</p>
                 </div>
             </div>
@@ -30,9 +31,11 @@ export default function AddFood() {
                             </select>
                     </form>
                     </div>
-                    <div className = 'upload-image'> 
-                        <div className = 'upload-image-text'>Upload image (Optional)</div>
-                            <img src ={importimage} className = "import-image-button" alt = "save item button"></img>      
+                    <div className = 'right-side-container'>
+                    <div className = 'import-image-button'> 
+                            <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
+                            <h1 className = 'upload-image-text-h1'>Import Image</h1>     
+                    </div>
                     </div>
                 </div>
             <div className = 'save-item-button-container'>
