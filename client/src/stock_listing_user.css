@@ -24,7 +24,7 @@
 }
 .topContainer h1 {
     text-align: left;
-    padding-left: 15px;
+    padding-left: 1vh;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 50px;
@@ -68,6 +68,12 @@
     text-decoration: underline;
 }
 
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 .bottomContainer {
     border-color: #B8B8B8;
     border-width: 1px;
@@ -79,20 +85,22 @@
 }
 
 .filter-by {
-    padding-top: 5vw;
+    /* background-color: red; */
+    /* padding-top: 5vw; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-bottom: 5vw;
+    padding-bottom: 2vh;
+    
 }
 
 .sort-by {
-    padding-top: 1vw;
+    /* background-color: lightgreen; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 5vw;
+    padding-bottom: 2vh;
 }
 
 p#filterControlLabel {
@@ -103,28 +111,40 @@ p#filterControlLabel {
 }
 .custom-dropdown {
     padding-top: 1px;
+    
 }
 .custom-dropdown .custom-toggle {
-    background-color: white;
-    border-color: black;
+    border-color: #ACB9AC;
     color: #C4C4C4;
-    width: 250px;
+    border: solid #ACB9AC;
+    background-color: white;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    height: 6vh;
+    width: 19vw;
+    font-weight: 400;
 }
 .custom-dropdown .custom-toggle:hover{
     background-color: white;
-    border-color: black;
+    border-color: #ACB9AC;
+    border: solid #ACB9AC;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    height: 6vh;
+    width: 19vw;
+    font-weight: 400;
     color: #C4C4C4;
-    width: 250px;
 }
 .custom-dropdown .custom-toggle:on-click{
     background-color: white;
-    border-color: black;
+    border-color: #ACB9AC;
     color: #C4C4C4;
     width: 250px;
 }
 /* need to add on-click behavior */
 .custom-dropdown .custom-menu {
     background-color: white;
+    border-color: #ACB9AC;
     width: 250px;
 }
 
@@ -223,6 +243,8 @@ p#filterControlLabel {
 }
 
 .searchBox{
+    padding-bottom: 2vh;
+    /* background-color: lightblue; */
     text-align: left; 
     font-size: 16px;
     /* display: flex; */
@@ -235,17 +257,23 @@ p#filterControlLabel {
 .searchBox.text {
     margin-bottom: 10px;
 }
+.showFilter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+}
 
 .filterItemDisplay {
-    overflow:scroll;
     /* overflow-y:scroll; */
     /* width: 50vw; */
     width: 60vw;
+    /* height: 70vh; */
     /* background-color: hotpink; */
     padding-left: 2vw;
-    display: flex;
-    flex-direction: column;
     align-items: left;
+    overflow-y: scroll;
+    /* background-color: red; */
 }
 
 .foodPanel {

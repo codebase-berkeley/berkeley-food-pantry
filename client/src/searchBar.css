@@ -1,27 +1,21 @@
 .searchInputs {
     margin-top: 1vw;
     display: flex;
+    border: 0px solid;
   }
   
   .search input {
-    background-color: white;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    line-height: 1.5;
+    border-color: #ACB9AC;
+    border: solid #ACB9AC;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    height: 6vh;
+    width: 19vw;
     font-weight: 400;
-    border-radius: 0.25rem;
-    padding: 0.375rem 0.75rem;
-    height: 38px;
-    width: 250px;
-    font-weight: 400;
-    
   }
-  
-   .searchIcon {
-    background-color: white;
-    display: grid;
-    place-items: center;
-    padding-right: 20vw;
-  } 
-  
-  
+  input::placeholder{
+    border-color: #ACB9AC;
+    background-image: url(./images/IsbeesSearchIcon.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+  }

@@ -8,6 +8,7 @@ import {Dropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
 
+let arr = ["Meat", "Beverage", "Vegetable"];
 
 function StockListingUser() {
     return (
@@ -40,6 +41,7 @@ function StockListingUser() {
                             <div className="filterItems">Filter Items</div>
                             <div className="resetFilters">Reset Filters</div>
                         </div>
+                        <div className="filters">
                        <div className="searchBox">
                            {/* <h1> Search items</h1> */}
                            <text>Search Items</text>
@@ -89,31 +91,31 @@ function StockListingUser() {
                         
 
                         {/* Radio button code - ended up just changing the code. nNo clude what it means tho :))) */}
-                        <h6> Show </h6>
-                        <div className = "form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
-                            <label class="form-check-label" for="exampleRadios1">
-                                All Items
-                            </label>
-                        </div>
-                        <div className = "form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
-                            <label class="form-check-label" for="exampleRadios1">
-                                In Stocks Items
-                            </label>
-                        </div>
-                        <div className = "form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Not In Stock Items Only 
-                            </label>
+                        <div className="showFilter">
+                            <h6> Show </h6>
+                            <div className = "form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    All Items
+                                </label>
+                            </div>
+                            <div className = "form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    In Stocks Items
+                                </label>
+                            </div>
+                            <div className = "form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Not In Stock Items Only 
+                                </label>
+                            </div>
                         </div>
                         
-                        
-                        
+                        </div>
                     </div>
                     <div className = "filterItemDisplay">
-                        {/* need to make this div scrollable */}
                         <Panel className = "foodPanel" shaded>fake food 1</Panel>
                         <Panel className = "foodPanel" shaded>fake food 2</Panel>
                         <Panel className = "foodPanel" shaded>fake food 3</Panel>

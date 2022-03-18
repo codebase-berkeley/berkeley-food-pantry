@@ -1,13 +1,13 @@
 import React from 'react';
-import SearchIcon from '@mui/icons-material/Search';
+import isbeesSearchBar from './images/IsbeesSearchIcon.svg';
 function searchBar({placeholder, data}) {
+  function hideIcon(self) {
+    self.style.backgroundImage = 'none';
+  }
   return (
     <div className = "search">
         <div className = "searchInputs">
-            <input type = "text" placeholder = {placeholder} />
-            <div className = "searchIcon"> 
-                <SearchIcon/>
-            </div>
+            <input type = "text" onchange = "hideIcon(this);" placeholder = {placeholder}/>
         </div>
         <div className = "dataResults">
 
