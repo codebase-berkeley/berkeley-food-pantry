@@ -17,6 +17,26 @@ const options = [
     { value: 'vanilla', label: 'Beverages' }
   ]
 const animatedComponents = makeAnimated();
+const customStyles = {
+    option: (provided, state) => ({ // menu dropdown
+      ...provided,
+    //   borderBottom: '1px dotted pink',
+    //   color: state.isSelected ? 'red' : 'blue',
+    //   padding: 20,
+    }),
+    control: (provided, state) => ({
+      // none of react-select's styles are passed to <Control />
+      ...provided,
+      width: '20vw',
+    }),
+    multiValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+   
+      return { ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px'
+    };
+    }
+  }
 
 function StockListingUser() {
     return (
@@ -83,7 +103,17 @@ function StockListingUser() {
                         <div className = "sort-by">
                             <p id="filterControlLabel">Sort By...</p>
                             <div className = "custom-dropdown">
-                            <Dropdown>
+                                <Select
+                                    styles = {customStyles}
+                                    closeMenuOnSelect={false}
+                                    components={animatedComponents}
+                                    // defaultValue={[options[0], options[1]]}
+                                    isMulti
+                                    options={options}
+                                
+                                />
+
+                            {/* <Dropdown>
                                 <Dropdown.Toggle className = "custom-toggle" variant="success" id = "sortby-dropdown">
                                     Alphabetical, A-Z
                                 </Dropdown.Toggle>
@@ -93,10 +123,10 @@ function StockListingUser() {
                                     <Dropdown.Item>Most Recently Added</Dropdown.Item>
                                     <Dropdown.Item>Most Recently Updated</Dropdown.Item>
                                 </Dropdown.Menu>
-                            </Dropdown>
+                            </Dropdown> */}
                             </div>
                         </div>
-                        <div>
+                        {/* <div className = "sort-by">
                             <Select
                                 closeMenuOnSelect={false}
                                 components={animatedComponents}
@@ -106,7 +136,7 @@ function StockListingUser() {
                             
                             />
                             
-                        </div>
+                        </div> */}
                         
 
                         {/* Radio button code - ended up just changing the code. nNo clude what it means tho :))) */}

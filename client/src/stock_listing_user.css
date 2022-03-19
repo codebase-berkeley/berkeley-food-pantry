@@ -111,8 +111,20 @@ p#filterControlLabel {
 }
 .custom-dropdown {
     padding-top: 1px;
-    
+    /* border-color: #ACB9AC;
+    color: #C4C4C4;
+    border: solid #ACB9AC;
+    background-color: white;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    height: 6vh;
+    width: 19vw;
+    font-weight: 400; */
+   
 }
+
+    
+
 .custom-dropdown .custom-toggle {
     border-color: #ACB9AC;
     color: #C4C4C4;
@@ -124,7 +136,9 @@ p#filterControlLabel {
     width: 19vw;
     font-weight: 400;
 }
-.custom-dropdown .custom-toggle:hover{
+
+
+/* .custom-dropdown .custom-toggle:hover{
     background-color: white;
     border-color: #ACB9AC;
     border: solid #ACB9AC;
@@ -140,13 +154,13 @@ p#filterControlLabel {
     border-color: #ACB9AC;
     color: #C4C4C4;
     width: 250px;
-}
+} */
 /* need to add on-click behavior */
-.custom-dropdown .custom-menu {
+/* .custom-dropdown .custom-menu {
     background-color: white;
     border-color: #ACB9AC;
     width: 250px;
-}
+} */
 
 
 .filterItemControls {
