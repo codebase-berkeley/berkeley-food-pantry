@@ -15,11 +15,20 @@ const options = [
     { value: 'chocolate', label: 'Meat' },
     { value: 'strawberry', label: 'Veggies' },
     { value: 'vanilla', label: 'Beverages' }
-  ]
+]
+
+const categories = [
+    { value: 'chocolate', label: 'Meat' },
+    { value: 'strawberry', label: 'Veggies' },
+    { value: 'vanilla', label: 'Beverages' }
+]
+
 const animatedComponents = makeAnimated();
 const customStyles = {
     option: (provided, state) => ({ // menu dropdown
       ...provided,
+      height: '6vh',
+
     //   borderBottom: '1px dotted pink',
     //   color: state.isSelected ? 'red' : 'blue',
     //   padding: 20,
@@ -27,6 +36,8 @@ const customStyles = {
     control: (provided, state) => ({
       // none of react-select's styles are passed to <Control />
       ...provided,
+      border: state ? '2px solid #ACB9AC' : '2px solid #ACB9AC',
+    //   height: '6vh',
       width: '20vw',
     }),
     multiValue: (provided, state) => {
@@ -80,7 +91,7 @@ function StockListingUser() {
                         <div className = "filter-by">
                             <p id="filterControlLabel">Filter by Dietary Categories</p>
                             <div className = "custom-dropdown" id = "filter-dropdown">
-                            <Dropdown>
+                            {/* <Dropdown>
                                 <Dropdown.Toggle className = "custom-toggle" variant="success">
                                     Select...
                                 </Dropdown.Toggle>
@@ -96,7 +107,20 @@ function StockListingUser() {
                                     <Dropdown.Item>Vegan</Dropdown.Item>
                                     <Dropdown.Item>Vegetarian</Dropdown.Item>
                                 </Dropdown.Menu>
-                            </Dropdown>
+                            </Dropdown> */}
+
+
+
+                            <Select 
+                                styles = {customStyles}
+                                closeMenuOnSelect = {false}
+                                components = {animatedComponents}
+                                isMulti
+                                options = {categories}
+                            
+                            
+                            
+                            />
                             </div>
                         </div>
 
