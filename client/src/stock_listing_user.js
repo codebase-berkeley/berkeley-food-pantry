@@ -36,7 +36,7 @@ const customStyles = {
     control: (provided, state) => ({
       // none of react-select's styles are passed to <Control />
       ...provided,
-      border: state ? '2px solid #ACB9AC' : '2px solid #ACB9AC',
+      border: state ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
     //   height: '6vh',
       width: '20vw',
     }),
