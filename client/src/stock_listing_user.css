@@ -25,17 +25,20 @@
 .topContainer h1 {
     text-align: left;
     padding-left: 1vh;
-    font-weight: bold;
+    font-weight: 800;
     font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
+    font-size: 3.125em 1vw;
     color: #383838;
     line-height: 10pt;
+    padding-top: 1vh;
     padding-bottom: 1vh;
 }
 .topContainer p {
     text-align: left;
     font-size: 14;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    text-align: left;
+    padding-top: 1vh;
     padding-left: 20px;
     font-family: 'Inter', sans-serif;
 }
@@ -52,6 +55,10 @@
     font-size: 18px;
     font-weight: bold;
     align-items: center;
+}
+.topContainer button:hover {
+    background-color: #ACB9AC;
+    color: #fff; 
 }
 .addItem{
     display: flex;
@@ -189,10 +196,12 @@ p#filterControlLabel {
 }
 .resetFilters{
     font-size: 16px;
+    background-color: #fff;
     color: #A71E47;
-    align-items: center;
+    align-items: right;
     padding-top: 1vh;
     font-family: 'Inter', sans-serif;
+    font-weight: lighter;
 }
 .firstRow {
     display: flex; 

@@ -7,7 +7,7 @@ import 'rsuite/dist/rsuite.min.css';
 import {Dropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
-import Select from 'react-select';
+import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 
 
@@ -49,6 +49,15 @@ const customStyles = {
     }
   }
 
+//   const customStyles_btn = {
+//       option: (provided, state) => ({
+//           ...provided, 
+//           border: "none",
+//           background-color: "white",
+//       })
+
+//   }
+
 function StockListingUser() {
     return (
         <div className= "entireContent">
@@ -78,7 +87,9 @@ function StockListingUser() {
                         {/* Needs to be flex: row side */}
                         <div className="filterReset">
                             <div className="filterItems">Filter Items</div>
-                            <div className="resetFilters">Reset Filters</div>
+                            {/* <div className="resetFilters">Reset Filters</div> */}
+                            {/* <input type = "reset" value = "Reset" styles = {customStyles_btn}></input> */}
+                            <button className = "resetFilters">Reset Filters</button>
                         </div>
                         <div className="filters">
                        <div className="searchBox">
