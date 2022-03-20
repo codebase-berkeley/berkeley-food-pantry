@@ -1,6 +1,7 @@
 .searchInputs {
     margin-top: 1vw;
     display: flex;
+    
     border: 0px solid;
   }
   
@@ -9,10 +10,14 @@
     border: solid #ACB9AC;
     border-radius: .5vw;
     padding-left: .5vw;
+    box-shadow: #ACB9AC;
     height: 6vh;
-    width: 19vw;
-    font-weight: 400;
+    width: 20vw;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
   }
+
   input::placeholder{
     border-color: #ACB9AC;
     background-image: url(./images/IsbeesSearchIcon.svg);

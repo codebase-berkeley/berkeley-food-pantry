@@ -10,11 +10,9 @@ function searchBar({placeholder, data}) {
             <input type = "text" onchange = "hideIcon(this);" placeholder = {placeholder}/>
         </div>
         <div className = "dataResults">
-
         </div>
-
     </div>
   )
 }
 
-export default searchBar
+export default searchBar;

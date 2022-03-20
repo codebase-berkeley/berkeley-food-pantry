@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
+import { borderColor } from "@mui/system";
 
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
@@ -17,28 +18,41 @@ const foodCategories = [
 ]
 
 const sortOptions = [
-    { value: 'chocolate', label: 'Meat' },
-    { value: 'strawberry', label: 'Veggies' },
-    { value: 'vanilla', label: 'Beverages' }
+    { value: 'alphabetical', label: 'Alphabetical, A-Z' },
+    { value: 'recently added', label: 'Most Recently Added' }
+    
+    
 ]
 
 const animatedComponents = makeAnimated();
 const customStyles = {
+    placeholder: (defaultStyles) => ({
+        ...defaultStyles,
+        color: '#C4C4C4',
+    }),
+
     option: (provided, state) => ({ // menu dropdown
       ...provided,
       height: '6vh',
-
     //   borderBottom: '1px dotted pink',
     //   color: state.isSelected ? 'red' : 'blue',
     //   padding: 20,
     }),
+
     control: (provided, state) => ({
       // none of react-select's styles are passed to <Control />
       ...provided,
-      border: state ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+    //   border: state ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
     //   height: '6vh',
       width: '20vw',
+      border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+        // This line disable the blue border
+        boxShadow: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+        '&:hover': {
+        border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC'
+        }
     }),
+
     multiValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1;
       const transition = 'opacity 300ms';
@@ -91,59 +105,58 @@ function StockListingUser() {
                             <button className = "resetFilters">Reset Filters</button>
                         </div>
                         <div className="filters">
-                       <div className="searchBox">
-                           {/* <h1> Search items</h1> */}
-                           <text>Search Items</text>
-                           <Search placeholder = "Search..."/>
-                           
-                        </div>
-
-                        <div className = "filter-by">
-                            <p id="filterControlLabel">Filter by Dietary Categories</p>
-                            <div id = "filter-dropdown">
-                            {/* <Dropdown>
-                                <Dropdown.Toggle className = "custom-toggle" variant="success">
-                                    Select...
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu className = "custom-menu">
-                                    <Dropdown.Item>Dairy</Dropdown.Item>
-                                    <Dropdown.Item>Fruit</Dropdown.Item>
-                                    <Dropdown.Item>Gluten-free</Dropdown.Item>
-                                    <Dropdown.Item>Grains</Dropdown.Item>
-                                    <Dropdown.Item>Meat</Dropdown.Item>
-                                    <Dropdown.Item>Pescatarian</Dropdown.Item>
-                                    <Dropdown.Item>Seafood</Dropdown.Item>
-                                    <Dropdown.Item>Vegan</Dropdown.Item>
-                                    <Dropdown.Item>Vegetarian</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown> */}
-
-
-
-                            <Select className = "custom-dropdown"
-                                styles = {customStyles}
-                                closeMenuOnSelect = {false}
-                                components = {animatedComponents}
-                                isMulti
-                                options = {foodCategories}
+                            <div className="searchBox">
+                            {/* <h1> Search items</h1> */}
+                            <text>Search Items</text>
+                            <Search placeholder = "Search..."/>
                             
-                            
-                            
-                            />
                             </div>
-                        </div>
+
+                            <div className = "filter-by">
+                                <p id="filterControlLabel">Filter by Dietary Categories</p>
+                                <div id = "filter-dropdown">
+                                {/* <Dropdown>
+                                    <Dropdown.Toggle className = "custom-toggle" variant="success">
+                                        Select...
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu className = "custom-menu">
+                                        <Dropdown.Item>Dairy</Dropdown.Item>
+                                        <Dropdown.Item>Fruit</Dropdown.Item>
+                                        <Dropdown.Item>Gluten-free</Dropdown.Item>
+                                        <Dropdown.Item>Grains</Dropdown.Item>
+                                        <Dropdown.Item>Meat</Dropdown.Item>
+                                        <Dropdown.Item>Pescatarian</Dropdown.Item>
+                                        <Dropdown.Item>Seafood</Dropdown.Item>
+                                        <Dropdown.Item>Vegan</Dropdown.Item>
+                                        <Dropdown.Item>Vegetarian</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown> */}
+
+
+
+                                <Select className = "custom-dropdown"
+                                    styles = {customStyles}
+                                    closeMenuOnSelect = {false}
+                                    components = {animatedComponents}
+                                    placeholder="Select..."
+                                    isMulti
+                                    options = {foodCategories}
+                                />
+                                </div>
+                            </div>
 
                         <div className = "sort-by">
                             <p id="filterControlLabel">Sort By...</p>
                             <div>
-                                <Select className = "custom-dropdowm"
+                                <Select className = "custom-dropdown"
                                     styles = {customStyles}
-                                    closeMenuOnSelect={false}
+                                    closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    // defaultValue={[options[0], options[1]]}
-                                    isMulti
+                                    placeholder="Alphabetical, A-Z"
                                     options={sortOptions}
+                                    defaultValue={sortOptions[0]}
+                                    
                                 
                                 />
 
@@ -177,20 +190,20 @@ function StockListingUser() {
                         <div className="showFilter">
                             <h6> Show </h6>
                             <div className = "form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
                                 <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                     All Items
                                 </label>
                             </div>
                             <div className = "form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
                                 <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                     In Stocks Items
                                 </label>
                             </div>
                             <div className = "form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked></input>
                                 <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                     Not In Stock Items Only 
                                 </label>
                             </div>

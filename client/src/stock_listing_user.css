@@ -267,18 +267,17 @@ p#filterControlLabel {
 
 .searchBox{
     padding-bottom: 2vh;
-    /* background-color: lightblue; */
+    width: 20vw;
     text-align: left; 
     font-size: 16px;
-    /* display: flex; */
     color: #4C4C4C;
     justify-content: flex-start; 
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    
 }
 .searchBox.text {
     margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
 }
 .showFilter {
     display: flex;
@@ -303,16 +302,21 @@ p#filterControlLabel {
     /* background-color: hotpink; */
     width: 400px;
 }
-/* [type = "radio"]:checked+label:after {
-    background-color: grey;
-} */
 
-/* .form-check-input[type=radio] {
-    border-radius: 50%; 
-   
-} */
-.form-check-input:checked {
-    background-color: white !important;
-    color: green !important;
-    border-color: white;
+.form-check-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+input[type="radio"] {
+    border: 1.5px solid #B8B8B8;
+}
+
+input[type="radio"]:checked {
+    border: 1.5px solid #B8B8B8;
+    box-shadow: inset 0 0 0 2px #264425;
+}
+
+.form-check-input:checked + label::after{
+  background-color: #264425;
 }
