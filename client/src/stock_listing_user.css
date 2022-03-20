@@ -306,3 +306,13 @@ p#filterControlLabel {
 /* [type = "radio"]:checked+label:after {
     background-color: grey;
 } */
+
+/* .form-check-input[type=radio] {
+    border-radius: 50%; 
+   
+} */
+.form-check-input:checked {
+    background-color: white !important;
+    color: green !important;
+    border-color: white;
+}
