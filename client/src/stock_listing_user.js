@@ -10,14 +10,13 @@ import isbesPlusSign from './images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 
-
-const options = [
+const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
     { value: 'strawberry', label: 'Veggies' },
     { value: 'vanilla', label: 'Beverages' }
 ]
 
-const categories = [
+const sortOptions = [
     { value: 'chocolate', label: 'Meat' },
     { value: 'strawberry', label: 'Veggies' },
     { value: 'vanilla', label: 'Beverages' }
@@ -101,7 +100,7 @@ function StockListingUser() {
 
                         <div className = "filter-by">
                             <p id="filterControlLabel">Filter by Dietary Categories</p>
-                            <div className = "custom-dropdown" id = "filter-dropdown">
+                            <div id = "filter-dropdown">
                             {/* <Dropdown>
                                 <Dropdown.Toggle className = "custom-toggle" variant="success">
                                     Select...
@@ -122,12 +121,12 @@ function StockListingUser() {
 
 
 
-                            <Select 
+                            <Select className = "custom-dropdown"
                                 styles = {customStyles}
                                 closeMenuOnSelect = {false}
                                 components = {animatedComponents}
                                 isMulti
-                                options = {categories}
+                                options = {foodCategories}
                             
                             
                             
@@ -137,14 +136,14 @@ function StockListingUser() {
 
                         <div className = "sort-by">
                             <p id="filterControlLabel">Sort By...</p>
-                            <div className = "custom-dropdown">
-                                <Select
+                            <div>
+                                <Select className = "custom-dropdowm"
                                     styles = {customStyles}
                                     closeMenuOnSelect={false}
                                     components={animatedComponents}
                                     // defaultValue={[options[0], options[1]]}
                                     isMulti
-                                    options={options}
+                                    options={sortOptions}
                                 
                                 />
 
