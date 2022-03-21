@@ -38,18 +38,24 @@ const customStyles = {
     //   color: state.isSelected ? 'red' : 'blue',
     //   padding: 20,
     }),
-
+    dropdownIndicator: base => ({
+        ...base,
+        color: "#ACB9AC" // Custom colour
+      }),
+    IndicatorSeparator:() => null,
     control: (provided, state) => ({
+        height: '6vh',
       // none of react-select's styles are passed to <Control />
       ...provided,
     //   border: state ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
     //   height: '6vh',
       width: '20vw',
-      border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+      borderRadius: '.5vw',
+      border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         // This line disable the blue border
-        boxShadow: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+        boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
-        border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC'
+        border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
         }
     }),
 
@@ -84,11 +90,11 @@ function StockListingUser() {
                     </div>
                     <div className = "rightSide">
                         {/* <button> +   Add New Item </button> */}
-                        <button type = "button" class = "btn">
+                        <button type = "button" class = "btn" className="addButton">
                             <img src = {isbesPlusSign}></img>
                             <div className="addItem"> Add new item </div>
                             </button>
-                        <div className="changeStock"> Set all items to out of stock </div>
+                        <button className="changeStock"> Set all items to out of stock </button>
                         
                     </div>
                 
@@ -188,7 +194,7 @@ function StockListingUser() {
 
                         {/* Radio button code - ended up just changing the code. nNo clude what it means tho :))) */}
                         <div className="showFilter">
-                            <h6> Show </h6>
+                            <div className="showText"> Show </div>
                             <div className = "form-check">
                                 <label class="form-check-label" for="exampleRadios1">
                                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
