@@ -24,7 +24,7 @@
 }
 .topContainer h1 {
     text-align: left;
-    padding-left: 1vh;
+    padding-left: 1vw;
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
     font-size: 3.125em 1vw;
@@ -39,7 +39,7 @@
     /* padding-top: 10px; */
     text-align: left;
     padding-top: 1vh;
-    padding-left: 20px;
+    padding-left: 1vw;
     font-family: 'Inter', sans-serif;
 }
 .h3{
@@ -204,7 +204,7 @@ p#filterControlLabel {
     align-items: right;
     padding-top: 1vh;
     font-family: 'Inter', sans-serif;
-    font-weight: medium;
+    font-weight: 450;
 }
 
 .resetFilters:hover {
