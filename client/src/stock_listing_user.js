@@ -34,13 +34,15 @@ const customStyles = {
     option: (provided, state) => ({ // menu dropdown
       ...provided,
       height: '6vh',
+      backgroundColor: state.isFocused ? "#E5E5E5" : null,
     //   borderBottom: '1px dotted pink',
     //   color: state.isSelected ? 'red' : 'blue',
     //   padding: 20,
     }),
+
     dropdownIndicator: base => ({
         ...base,
-        color: "#ACB9AC" // Custom colour
+        color: "#ACB9AC" // Custom colour 
       }),
     IndicatorSeparator:() => null,
     control: (provided, state) => ({
