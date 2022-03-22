@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
+
 .admin-pic {
     display: flex;
     border-radius: 50%;
     margin-right: -200px;
+    width: 30%;
 }
+
 
 .admin-login-button {
     border-radius: 25%;
@@ -15,11 +19,13 @@
 
 .admin-component-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: 85vh;
     width: 100vw;
 }
+
 
 .admin-login-text-container {
     color: #383838;
@@ -39,6 +45,7 @@
 .admin-google-sign-in {
     height: 90%;
     width: 75%;
+    border: 0px;
 }
 
 .google-sign-in-button-div {
@@ -50,4 +57,49 @@
     border-radius: 100px;
     border: #264425 solid 1px;
     margin-top: 7%;
+}
+
+@media screen and (orientation: portrait) {
+    .admin-component-container {
+        display: flex;
+        flex-direction: column;                                     
+    }
+
+    .admin-pic {
+        display: flex;
+        margin-right: 0%;
+        width: 75%;
+        margin-top: 40%;
+        margin-bottom: -20%;
+    }
+    
+    .h1 {
+        font-family: 'Montserrat', sans-serif;
+        justify-content: flex-start;
+        font: 28px;
+        font-weight: 900;
+    }
+
+    .admin-login-text-container {
+        width: 65%;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .google-sign-in-button-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 5.5vh;
+            
+        margin-top: 7%;
+    }
+
+    .admin-google-sign-in {
+        height: 90%;
+        width: 75%;
+        
+    }
+
 }

@@ -5,7 +5,7 @@ import NavbarComponent from './admin-login-navbar';
 function App() {
   return (
     <div className = "App" > 
-      <NavbarComponent/>
+      {/* <NavbarComponent/> */}
       <AdminLogin/> 
     </div>
   )
