@@ -1,0 +1,28 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #B8B8B8;  
+    width: 100%;
+    height: 7.5%;
+    position: sticky;
+}
+.logo {
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: auto;
+    height: auto;
+    max-height: 80%;
+    display: block;
+}
+.icon {
+    width: auto;
+    height: auto;
+    padding-right: 5%;
+}
+.dropdownbtn {
+    background: none;
+    border: none;
+    padding-right: 3%;
+}
