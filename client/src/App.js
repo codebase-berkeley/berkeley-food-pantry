@@ -9,7 +9,8 @@ function App() {
     <div className = "App" > 
       {/* <NavbarComponent/>
       <AdminLogin/>  */}
-      <Dropdown></Dropdown>
+      {/* <Dropdown></Dropdown> */}
+      <MobNav/>
     </div>
   )
 }

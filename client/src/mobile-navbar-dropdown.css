@@ -54,3 +54,7 @@
     height: 20%;
     justify-content: space-evenly;
 }
+button{
+    background-color: transparent;
+    padding-right: 3%;
+}

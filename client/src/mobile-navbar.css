@@ -21,8 +21,8 @@
     height: auto;
     padding-right: 5%;
 }
-.dropdownbtn {
-    background: none;
+button {
+    background: transparent;
     border: none;
     padding-right: 3%;
 }

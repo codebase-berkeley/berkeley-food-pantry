@@ -6,7 +6,7 @@ function MobNav() {
     return (
         <div className='navBar'>
             <img src = {bfpLogo} className = "logo"></img>
-            <button type='button' className='dropdownbtn'>
+            <button>
                 <img src = {dropdownIcon} className = "icon"></img>
             </button>
         </div>
