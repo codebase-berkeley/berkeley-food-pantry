@@ -1,12 +1,12 @@
 import './App.css';
 import AdminLogin from './admin-login';
 import NavbarComponent from './admin-login-navbar';
-import mobileAddItem from './mobile-add-item.js'
+import MobileAddItem from './mobile-add-item';
 
 function App() {
   return (
     <div className = "App" > 
-    <mobileAddItem/>
+      <MobileAddItem/>
     </div>
   )
 }
