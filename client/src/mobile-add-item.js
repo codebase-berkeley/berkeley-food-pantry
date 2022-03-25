@@ -1,7 +1,9 @@
 import './mobile-add-item.css';
-import React from 'react';
-import Select, { NonceProvider } from 'react-select';
+// import React from 'react';
+// import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
+import React, { Component } from 'react'
+import Select from 'react-select'
 
 const dietaryCategories = [
     { value: 'meat', label: 'Meat' },
