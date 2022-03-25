@@ -52,12 +52,12 @@
 
 .item-selections {
     display: flex;
-    justify-content: column;
+    flex-direction: column;
+    /* justify-content: column; */
+    align-items: center;
     height: 80%;
     width: 50%;
-    margin-left: 0%;
-    background-color: red;
-    
+    /* background-color: red;  */
 }
 
 .upload-image {
@@ -71,15 +71,52 @@
     font-size: 150%;
 }
 
-.item-name-input {
+.stock-dropdown {
+    /* background-color: lightblue; */
     display: flex;
-    font-family: "Montserrat";
-    font-size: 2vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 2vh;
+    width: 30vw;
 }
 
-.input-box {
+.categories-dropdown {
+    /* background-color: lavender; */
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 2vh;
+    width: 30vw;
 }
+
+p#filterControlLabel {
+    color: #4C4C4C;
+    font-family: 'Inter', sans-serif;
+    /* font-weight: bold; */
+    font-size: 18px;
+}
+
+.item-name-input {
+    /* background-color: green; */
+    display: flex;
+    padding-bottom: 2vh;
+    width: 30vw;
+    text-align: left; 
+    color: #4C4C4C;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    padding-bottom: 2vh;
+    width: 30vw;
+}
+
+.item-name-textbox {
+    width: 30vw;
+    height: 5vh;
+}
+
+/* .input-box {
+    display: flex;
+} */
 
 label, input{
     display:flex;
@@ -141,26 +178,7 @@ label, input{
 
 .right-side-container {
     display: flex;
-    background-color: red;
+    background-color: pink;
     height: 50vh;
     width: 50vw;
-}
-
-.filter-by {
-    /* background-color: red; */
-    /* padding-top: 5vw; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-bottom: 2vh;
-    
-}
-
-.sort-by {
-    /* background-color: lightgreen; */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 2vh;
 }

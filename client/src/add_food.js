@@ -1,4 +1,4 @@
-import './AddFood.css';
+import './add_food.css';
 import saveitembutton from './assets/saveitembutton.png';
 import importimagecloud from './assets/import-image-cloud.svg';
 
@@ -40,7 +40,7 @@ const customStyles = {
     control: (provided, state) => ({
         height: '6vh',
         ...provided,
-        width: '20vw',
+        width: '30vw',
         borderRadius: '.5vw',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
@@ -70,52 +70,53 @@ export default function AddFood() {
             </div>
                 <div className = 'main-add-food-component-container'>
                     <div className = 'item-selections'> 
-                    
+                        <div className = "item-name">
+                            <form>
+                                <label className = "item-name-input">
+                                    Item Name 
+                                    <input className = "item-name-textbox" type="text" name="name" />
+                                </label>
+                                {/* <label for="stock-select-list">Set Stock Availability</label>
+                                    <select className="stock-select-list" id="selectList"> 
+                                       <option value="option 1">In Stock Today</option>
+                                       <option value="option 2">Not in Stock</option>
+                                    </select>
+                                <label for="dietary-categories-select-list">Select Dietary Categories (Optional)</label>
+                                    <select className="dietary-categories-select-list" id="selectList">
+                                        <option value="option 1">Vegetarian</option>
+                                        <option value="option 2">Vegan</option>
+                                        <option value="option 3">None</option>
+                                    </select> */}
+                            </form>
+                        </div>
 
-                    <form>
-                        <label className = "item-name-input">
-                            Item Name 
-                            <input type="text" name="name" />
-                         </label>
-                         {/* <label for="stock-select-list">Set Stock Availability</label>
-                            <select className="stock-select-list" id="selectList"> 
-                                <option value="option 1">In Stock Today</option>
-                                <option value="option 2">Not in Stock</option>
-                            </select>
-                        <label for="dietary-categories-select-list">Select Dietary Categories (Optional)</label>
-                            <select className="dietary-categories-select-list" id="selectList">
-                                <option value="option 1">Vegetarian</option>
-                                <option value="option 2">Vegan</option>
-                                <option value="option 3">None</option>
-                            </select> */}
-                    </form>
+                        <div className="stock-dropdown">
+                            <p id="filterControlLabel">Set Stock Availability</p>
+                            <div id="filter-dropdown">
+                                <Select className="custom-dropdown"
+                                    styles={customStyles}
+                                    closeMenuOnSelect={false}
+                                    components={animatedComponents}
+                                    placeholder="Select..."
+                                    options={todayStock}
+                                />
+                            </div>
+                        </div>
 
-                    <div className="stock-dropdown">
-                        <p id="filterControlLabel">Set Stock Availability</p>
-                        <div id="filter-dropdown">
-                            <Select className="custom-dropdown"
-                                styles={customStyles}
-                                closeMenuOnSelect={false}
-                                components={animatedComponents}
-                                placeholder="Select..."
-                                options={todayStock}
-                            />
+                        <div className="categories-dropdown">
+                            <p id="filterControlLabel">Select Dietary Categories (Optional)</p>
+                            <div>
+                                <Select className="custom-dropdown"
+                                    styles={customStyles}
+                                    closeMenuOnSelect={true}
+                                    components={animatedComponents}
+                                    isMulti
+                                    options={dietaryCategories}
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    <div className="categories-dropdown">
-                        <p id="filterControlLabel">Select Dietary Categories (Optional)</p>
-                        <div>
-                            <Select className="custom-dropdown"
-                                styles={customStyles}
-                                closeMenuOnSelect={true}
-                                components={animatedComponents}
-                                isMulti
-                                options={dietaryCategories}
-                            />
-                        </div>
-                    </div>
-                    </div>
                     <div className = 'right-side-container'>
                     <div className = 'import-image-button'> 
                             <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
