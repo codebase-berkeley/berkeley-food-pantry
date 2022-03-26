@@ -116,11 +116,13 @@ export default function AddFood() {
                             </div>
                         </div>
                     </div>
-
+ 
                     <div className = 'right-side-container'>
-                    <div className = 'import-image-button'> 
+                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+                      
+                        <div className = 'import-image-button'> 
                             <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
-                            <h1 className = 'upload-image-text-h1'>Import Image</h1>     
+                            <h1 className = 'upload-image-text-h1'>Change Image</h1>     
                     </div>
                     </div>
                 </div>

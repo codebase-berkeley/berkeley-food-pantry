@@ -138,8 +138,9 @@ label, input{
     height: 5.5vh;
     border-radius: 100px;
     border: #264425 solid 1px;
-    margin-top: 4%;
-    background-color: red;
+    margin-top: 7.5%;
+    margin-left: -10%;
+    background-color: #D6DECD;
 }
 
 .cloud-format {
@@ -166,19 +167,39 @@ label, input{
     border-color: #588157;
 }
 
-.upload-image-text {
-    font-size: 2.5vh;
-    margin-left: -8%;
-}
-
 .upload-image-text-h1 {
     font-size: 2vh;
     color: #264425;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .right-side-container {
     display: flex;
-    background-color: pink;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: pink; */
     height: 50vh;
     width: 50vw;
+    /* margin-left: -5%; */
+}
+
+.upload-image-header {
+    margin-top: 2.5%;
+    font-weight: 450;
+    /* background-color: red; */
+    height: 5%;
+    font: 'inter';
+    font-size: 2vh;
+    margin-left: -30%;
+    
+    
+}
+
+.optional-text {
+    color:#B8B8B8;
+    margin-top: 2.5%;  
+    font-weight: 300; 
+    
 }
