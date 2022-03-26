@@ -1,10 +1,9 @@
 import './App.css';
-import AddFood from './AddFood';
 
 function App() {
   return (
     <div>
-    <AddFood/>
+    hello world
     </div>
     
   );
