@@ -3,13 +3,13 @@
 
 .mob-add-item-component-container {
     display: flex;
+    flex-direction: column;
 }
-
 
 .addItem {
     font-family: "Montserrat";
     color: #383838;
-    font-weight: 600;
+    font-weight: 600 ;
     font-size: 24px;
   }
 
@@ -24,5 +24,36 @@
       font-weight: 600;
       color: #4C4C4C;
       font-size: 18px; 
+      margin-left: 5%;
   }
 
+  .save-item-button{
+    margin-top: 79%;
+  }
+
+  .addItemAndDesc{
+    margin-left: 5%;
+    margin-top: 5%;  
+  }
+
+  .custom-dropdown {
+    padding-top: 2%;
+  }
+
+  .import-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border: #264425 solid 1px;
+    margin-top: 4%;
+    background-color: red;
+}
+
+.upload-image-text-h1 {
+  font-family: "Inter";
+  font-size: 18px;
+  color: #264425;
+}

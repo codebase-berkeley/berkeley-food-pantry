@@ -1,9 +1,10 @@
 import './mobile-add-item.css';
+import saveitembutton from './assets/saveitembutton.svg';
 // import React from 'react';
-// import Select, { NonceProvider } from 'react-select';
+import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { Component } from 'react'
-import Select from 'react-select'
+// import Select from 'react-select'
 
 const dietaryCategories = [
     { value: 'meat', label: 'Meat' },
@@ -63,38 +64,64 @@ const animatedComponents = makeAnimated();
 export default function MobileAddItem() {
     return (
         <div className = "mob-add-item-component-container">
-            <div className = "addItem">
-                Add Item
+            <div className = "addItemAndDesc">
+                <div className = "addItem">
+                    Add Item
+                </div>
+                <div className = "addItemDesc">
+                    Add a new item to the stock directory.
+                </div> 
             </div>
-            <div className = "addItemDesc">
-                Add a new item to the stock directory.
-            </div>
+            <br></br>
             <div className = "boxHeaders">
                 Item Name
-            </div>
-            <div className = "boxHeaders">
-                Set Stock Availability
-            </div>
-            <div className = "boxHeaders">
-                Select Dietary Categories (Optional)
-            </div>
-            <div className = "boxHeaders">
-                Upload Image (Optional)
-            </div>
-
-
-
-
-            <div> 
-            <Select className="custom-dropdown"
+                <Select className="custom-dropdown"
                 styles={customStyles}
                 closeMenuOnSelect={true}
                 components={animatedComponents}
                 placeholder="In stock today"
                 options={stockStatus}
                 defaultValue={stockStatus[0]}
-            />
+                />
             </div>
+            <br></br>
+            <br></br>
+            <div className = "boxHeaders">
+                Set Stock Availability
+                <Select className="custom-dropdown"
+                styles={customStyles}
+                closeMenuOnSelect={true}
+                components={animatedComponents}
+                placeholder="In stock today"
+                options={stockStatus}
+                defaultValue={stockStatus[1]}
+                />
+            </div>
+            <br></br>
+            <br></br>
+            <div className = "boxHeaders">
+                Select Dietary Categories (Optional)
+                <Select className="custom-dropdown"
+                styles={customStyles}
+                closeMenuOnSelect={true}
+                components={animatedComponents}
+                placeholder="Select..."
+                options={dietaryCategories}
+                defaultValue={"Select..."}
+                />
+            </div>
+            <br></br>
+            <br></br>
+            <div className = "boxHeaders">
+                Upload Image (Optional)
+            </div>
+            <div>
+                <img src ={saveitembutton} className = "save-item-button" alt = "save item button"></img>
+            </div>
+            {/* <div className = 'import-image-button'> 
+                <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
+                <h1 className = 'upload-image-text-h1'>Import Image</h1>     
+            </div> */}
         </div>
     )
-}
+}   
