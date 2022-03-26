@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import StockListingUser from './stock_listing_user.js'
+import StockListingUser from './stock_listing_admin.js'
 
 function App() {
   return (
