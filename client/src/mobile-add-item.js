@@ -1,10 +1,12 @@
 import './mobile-add-item.css';
 import saveitembutton from './assets/saveitembutton.svg';
-// import React from 'react';
-import Select, { NonceProvider } from 'react-select';
+// import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { Component } from 'react'
-// import Select from 'react-select'
+// import chroma from 'chroma-js';
+// import { ColourOption, colourOptions } from '../data';
+import Select, { StylesConfig } from 'react-select';
+import { red } from 'react-color/lib/helpers/color';
 
 const dietaryCategories = [
     { value: 'meat', label: 'Meat' },
@@ -14,10 +16,11 @@ const dietaryCategories = [
 ]
 
 const stockStatus = [
-    {value: 'out of stock', label: 'Out of stock today'},
-    { value: 'in stock', label: 'In stock today'}
+    {value: 'out of stock', label: 'Out of stock today', color: "#A71E34"},
+    { value: 'in stock', label: 'In stock today', color: "#588157"}
 ]
- 
+
+
 const customStyles = {
     placeholder: (defaultStyles) => ({
         ...defaultStyles,
@@ -35,17 +38,17 @@ const customStyles = {
         color: "#ACB9AC"
     }),
 
-    IndicatorSeparator: () => null,
+    indicatorSeparator: () => null,
 
     control: (provided, state) => ({
-        height: '6vh',
+        height: '5vh',
         ...provided,
-        width: '20vw',
-        borderRadius: '.5vw',
-        border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
-        boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
+        width: '80%',
+        borderRadius: '3vw',
+        border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+        boxShadow: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
         '&:hover': {
-            border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
+            border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC'
         }
     }),
 
@@ -54,7 +57,7 @@ const customStyles = {
         const transition = 'opacity 300ms';
 
         return {
-            ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px'
+            ...provided, opacity, transition, borderRadius: '20%', paddingLeft: '1%', paddingRight: '1%'
         };
     }
 }
@@ -81,6 +84,8 @@ export default function MobileAddItem() {
                 components={animatedComponents}
                 placeholder="In stock today"
                 options={stockStatus}
+                singleValue={true}
+                isMulti={false}
                 defaultValue={stockStatus[0]}
                 />
             </div>
@@ -95,6 +100,7 @@ export default function MobileAddItem() {
                 placeholder="In stock today"
                 options={stockStatus}
                 defaultValue={stockStatus[1]}
+                isSearchable={false}
                 />
             </div>
             <br></br>
@@ -107,6 +113,8 @@ export default function MobileAddItem() {
                 components={animatedComponents}
                 placeholder="Select..."
                 options={dietaryCategories}
+                isMulti={true}
+                isSearchable={true}
                 defaultValue={"Select..."}
                 />
             </div>

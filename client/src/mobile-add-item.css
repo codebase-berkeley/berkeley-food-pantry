@@ -9,7 +9,7 @@
 .addItem {
     font-family: "Montserrat";
     color: #383838;
-    font-weight: 600 ;
+    font-weight: 800;
     font-size: 24px;
   }
 
@@ -33,7 +33,7 @@
 
   .addItemAndDesc{
     margin-left: 5%;
-    margin-top: 5%;  
+    margin-top: 5%;
   }
 
   .custom-dropdown {
