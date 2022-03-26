@@ -55,8 +55,6 @@ function GoogleOAuth() {
                     )}
             </div>
 
-      
-                
             {/* <GoogleLogin
                 clientId="856494336809-g00hpps6u34k4225k38flk9ftgmenqps.apps.googleusercontent.com"
                 buttonText="Sign in with Google"
@@ -66,8 +64,7 @@ function GoogleOAuth() {
 
             ></GoogleLogin> */}
         </div>
-            
-            
+               
     )
 }
 export default GoogleOAuth;
