@@ -193,13 +193,11 @@ label, input{
     font: 'inter';
     font-size: 2vh;
     margin-left: -30%;
-    
-    
 }
 
 .optional-text {
     color:#B8B8B8;
     margin-top: 2.5%;  
     font-weight: 300; 
-    
+
 }
