@@ -1,0 +1,124 @@
+.intro-text-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    height: 10vh;
+    width: 100vw;
+    margin-top: 5%;
+    /* background-color: red; */
+
+}
+
+.intro-text {
+    /* display: flex;
+    align-items: center; */
+    /* background-color: blue; */
+    margin-left: 5.5%;
+    font-family: 'Montserrat';
+    font-size: 2.5vh;
+    /* background-color: yellow; */
+}
+
+.intro-text-pt2 {
+    font-weight: 100;
+    margin-left: 4%;
+    /* background-color: blue; */
+}
+
+.main-appointment-scheduler-container {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 60vh;
+    width: 90vw;
+    margin-top: 1%;
+    margin-left: 5%;
+    /* background-color: blue; */
+    border: 1px solid #C4C4C4;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.main-appointment-scheduler-left {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 60vh;
+    width: 45vw;
+    /* background-color: blue; */
+    border: 1px solid #C4C4C4;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.main-appointment-scheduler-right {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 60vh;
+    width: 45vw;
+    /* background-color: red; */
+    border: 1px solid #C4C4C4;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.step-1-heading {
+   font-size: 2.5vh;
+   margin-left: 4%;
+}
+
+.step-2-heading {
+    font-size: 2.5vh;
+    margin-left: 4%;
+ }
+
+ .button-container {
+     display: flex;
+     /* background-color: red; */
+     margin-top: 1%;
+     height: 16vh;
+     justify-content: end;
+     margin-right: 5%;
+ }
+
+ .clear-all-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 5.5vh;
+    border-radius: 20px;
+    border: #588157 solid 2px;
+    font-size: 1.5vh;
+    background-color: white;
+}
+
+.clear-all {
+    font-size: 2.2vh;
+    color: #588157;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    justify-content: center;
+    width: 10vw;
+    height: 5.5vh;
+    border-radius: 20px;
+    border: #588157 solid 1px;
+    background-color: #264425;
+    font-size: 1.5vh;
+}
+
+.submit {
+    font-size: 2.2vh;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}

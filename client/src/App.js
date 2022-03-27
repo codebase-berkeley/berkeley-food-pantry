@@ -1,9 +1,10 @@
 import './App.css';
+import AppointmentScheduler from './appointment_scheduler';
 
 function App() {
   return (
     <div>
-    hello world
+    <AppointmentScheduler/>
     </div>
     
   );
