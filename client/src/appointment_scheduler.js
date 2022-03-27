@@ -10,7 +10,7 @@ export default function AppointmentScheduler() {
             </div>
             <div className = 'main-appointment-scheduler-container'>
                 <div className = 'main-appointment-scheduler-left'>
-                    <h1 className = 'step-1-heading'>Step 1: Choose your apppintment time.</h1>
+                    <h1 className = 'step-1-heading'>Step 1: Choose your appointment time.</h1>
                 </div>
                 <div className = 'main-appointment-scheduler-right'>
                     <h1 className = 'step-2-heading'>Step 2: Fill in your information.</h1>
