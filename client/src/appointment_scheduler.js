@@ -79,11 +79,7 @@ export default function AppointmentScheduler() {
                     <h1 className = 'step-heading'>Step 1: Choose your appointment time.</h1>
                     
                     <div className="filters">
-                            {/* <div className="searchBox">
-                                <text>Search Items</text>
-                                <Search placeholder="Search..." />
-                            </div> */}
-
+                            
                         <div className="appt-sched-dropdown">
                             <p id="input-field-label">Pick a date for your appointment:</p>
                             <div id="filter-dropdown">
@@ -140,8 +136,45 @@ export default function AppointmentScheduler() {
                 </div>
                 <div className = 'main-appointment-scheduler-right'>
                     <h1 className = 'step-heading'>Step 2: Fill in your information.</h1>
+                    
+                   
+                    <div className = "searchInputs">
+                        
+                        
+                            <div className="input-name">
+                                
+                                <div className="text-field">
+                                    <p id="input-field-label">First name</p>
+                                    <input className="name-box" type="text" placeholder = "Jane" name="name" />
+                                </div>
+
+                                <div className="text-field">
+                                    <p id="input-field-label">Last name</p>
+                                    <input className="name-box" type="text" placeholder = "Doe" name="name" />
+                                </div>
+                            </div>
 
 
+                            <div className="text-field">
+                                <p id="input-field-label">Email</p>
+                                <input className="contact-box" type="text" placeholder = "janedoe@example.com" name="name" />
+                            </div>
+
+                            <div className="text-field">
+                                <p id="input-field-label">Phone number</p>
+                                <input className="contact-box" type="text" placeholder = "XXX-XXX-XXXX" name="name" />
+                            </div>
+
+                            <div className="checklist">
+                                <p id="input-field-label">Please select your dietary preferences.</p>
+                            </div>
+
+                            <div className="text-field">
+                                <p id="input-field-label">Is there anything else we should know?</p>
+                                <input className="contact-box" type="text" name="name" />
+                            </div>
+                    </div>
+                        
                 </div>   
             </div>
             <div className = 'button-container'>

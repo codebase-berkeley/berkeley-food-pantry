@@ -184,3 +184,42 @@ p#input-field-label {
     padding-top: 1px;
     border-color: #ACB9AC;
 }
+
+.searchInputs {
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    border: 0px solid;
+}
+
+.input-name {
+    display: flex;
+    flex-direction: row;
+}
+  
+.searchInputs input {
+border-color: #ACB9AC;
+border: solid #ACB9AC;
+border-radius: .5vw;
+padding-left: .5vw;
+box-shadow: #ACB9AC;
+height: 5vh;
+/* width: 20vw; */
+font-family: 'Inter', sans-serif;
+font-size: 16px;
+font-weight: 300;
+}
+
+input::placeholder{
+border-color: #ACB9AC;
+background-repeat: no-repeat;
+background-position: 97%;
+}
+
+.name-box {
+    width: 10vw;
+}
+
+.contact-box {
+    width: 33vw;
+}
