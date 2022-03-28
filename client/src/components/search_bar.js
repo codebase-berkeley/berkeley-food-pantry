@@ -1,6 +1,7 @@
 import React from 'react';
 import isbeesSearchBar from './../images/IsbeesSearchIcon.svg';
 function searchBar({placeholder, data}) {
+  
   function hideIcon(self) {
     self.style.backgroundImage = 'none';
   }
