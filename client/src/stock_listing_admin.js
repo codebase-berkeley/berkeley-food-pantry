@@ -1,6 +1,6 @@
 import React from "react";
-import Search from './searchBar.js';
-import './searchBar.css';
+import Search from './components/search_bar.js';
+import './components/search_bar.css';
 import './stock_listing_admin.css';
 import { PanelGroup, Panel } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
