@@ -7,6 +7,7 @@ import React, { Component } from 'react'
 // import { ColourOption, colourOptions } from '../data';
 import Select, { StylesConfig } from 'react-select';
 import { red } from 'react-color/lib/helpers/color';
+import importimagecloud from './assets/import-image-cloud.svg';
 
 const dietaryCategories = [
     { value: 'meat', label: 'Meat' },
@@ -78,16 +79,7 @@ export default function MobileAddItem() {
             <br></br>
             <div className = "boxHeaders">
                 Item Name
-                <Select className="custom-dropdown"
-                styles={customStyles}
-                closeMenuOnSelect={true}
-                components={animatedComponents}
-                placeholder="In stock today"
-                options={stockStatus}
-                singleValue={true}
-                isMulti={false}
-                defaultValue={stockStatus[0]}
-                />
+                <input type="text" name="name" />
             </div>
             <br></br>
             <br></br>
@@ -122,14 +114,17 @@ export default function MobileAddItem() {
             <br></br>
             <div className = "boxHeaders">
                 Upload Image (Optional)
+                <div className = 'center-import-image-button'>
+                    <div className = 'import-image-button'> 
+                        <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
+                        <h1 className = 'upload-image-text-h1'>Import Image</h1>     
+                    </div>
+                </div>  
             </div>
             <div>
                 <img src ={saveitembutton} className = "save-item-button" alt = "save item button"></img>
             </div>
-            {/* <div className = 'import-image-button'> 
-                <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
-                <h1 className = 'upload-image-text-h1'>Import Image</h1>     
-            </div> */}
+            
         </div>
     )
 }   

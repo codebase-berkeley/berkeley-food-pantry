@@ -49,11 +49,22 @@
     border-radius: 100px;
     border: #264425 solid 1px;
     margin-top: 4%;
-    background-color: red;
+    width: 60%;
+    
 }
 
 .upload-image-text-h1 {
   font-family: "Inter";
   font-size: 18px;
   color: #264425;
+}
+
+.cloud-format {
+  padding-right: 5%;
+  width: 10%;
+}
+
+.center-import-image-button {
+  display: flex;
+  justify-content: center ;
 }
