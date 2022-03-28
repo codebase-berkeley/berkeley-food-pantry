@@ -122,7 +122,6 @@ function StockListingUser() {
                             </div>
 
                             <div className="showFilter">
-                                <div className="showText"> Show </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
                                         <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
