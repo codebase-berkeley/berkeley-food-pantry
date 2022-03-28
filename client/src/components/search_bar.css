@@ -1,7 +1,6 @@
 .searchInputs {
     margin-top: 1vw;
     display: flex;
-    
     border: 0px solid;
   }
   
@@ -20,7 +19,8 @@
 
   input::placeholder{
     border-color: #ACB9AC;
-    background-image: url(./images/IsbeesSearchIcon.svg);
+    background-image: url(./../images/IsbeesSearchIcon.svg);
     background-repeat: no-repeat;
     background-position: 97%;
   }
+  

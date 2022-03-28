@@ -5,7 +5,6 @@
     padding-left: 100px;
     padding-top: 40px;
     width: 90vw;
-    
 }
 .topContainer {
     display: flex;
@@ -36,7 +35,6 @@
 .topContainer p {
     text-align: left;
     font-size: 14;
-    /* padding-top: 10px; */
     text-align: left;
     padding-top: 1vh;
     padding-left: 1vw;
@@ -94,8 +92,6 @@
 }
 
 .filter-by {
-    /* background-color: red; */
-    /* padding-top: 5vw; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -105,7 +101,6 @@
 }
 
 .sort-by {
-    /* background-color: lightgreen; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -211,7 +206,6 @@ p#filterControlLabel {
     width: 1vw;
     border-radius: 50%;
     border: 1px solid black;
-
 }
 .thirdRow .noStockBtn {
     display: block;
@@ -220,7 +214,6 @@ p#filterControlLabel {
     width: 1vw;
     border-radius: 50%;
     border: 1px solid black;
-
 }
 
 .searchBox{
@@ -281,5 +274,4 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
-    /* background-color: "transparent"; */
 }

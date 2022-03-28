@@ -1,15 +1,12 @@
 import React from "react";
-import Search from './searchBar.js';
-import './searchBar.css';
-import './stock_listing_user.css';
+import Search from './components/search_bar.js';
 import { PanelGroup, Panel } from 'rsuite';
+import './components/search_bar.css';
+import './stock_listing_user.css';
 import 'rsuite/dist/rsuite.min.css';
-import { Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import isbesPlusSign from './images/plusSign.svg';
-import Select, { NonceProvider } from 'react-select';
+import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { borderColor } from "@mui/system";
 
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
@@ -77,14 +74,6 @@ function StockListingUser() {
                         <h1>Check out what we have in stock today.</h1>
                         <p>Last updated: March 25, 7:47am.<br></br>
                         Stock availability varies day by day. If something you’re looking for is out of stock, it might be available on another day.</p>
-                    </div>
-
-                    <div className="rightSide">
-                        {/* <button type="button" class="btn" className="addButton">
-                            <img src={isbesPlusSign}></img>
-                            <div className="addItem"> Add new item </div>
-                        </button>
-                        <button className="changeStock"> Set all items to out of stock </button> */}
                     </div>
 
                 </div>
