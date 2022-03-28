@@ -42,3 +42,10 @@
     display: block;
 }
 
+
+@media screen and (orientation: portrait) {
+    .navbarContainer {
+        display: none;
+    }
+    
+}
