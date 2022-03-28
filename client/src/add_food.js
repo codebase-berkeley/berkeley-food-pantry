@@ -1,11 +1,9 @@
 import './add_food.css';
 import saveitembutton from './assets/saveitembutton.png';
-import importimagecloud from './assets/import-image-cloud.svg';
-
-import React from "react";
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
-// import { borderColor } from "@mui/system";
+import React, { useState } from 'react';
+import UploadImageButton from './upload_image_button.js';
 
 const todayStock = [
     { value: 'in stock', label: 'In stock today' },
@@ -76,17 +74,6 @@ export default function AddFood() {
                                     Item Name 
                                     <input className = "item-name-textbox" type="text" name="name" />
                                 </label>
-                                {/* <label for="stock-select-list">Set Stock Availability</label>
-                                    <select className="stock-select-list" id="selectList"> 
-                                       <option value="option 1">In Stock Today</option>
-                                       <option value="option 2">Not in Stock</option>
-                                    </select>
-                                <label for="dietary-categories-select-list">Select Dietary Categories (Optional)</label>
-                                    <select className="dietary-categories-select-list" id="selectList">
-                                        <option value="option 1">Vegetarian</option>
-                                        <option value="option 2">Vegan</option>
-                                        <option value="option 3">None</option>
-                                    </select> */}
                             </form>
                         </div>
 
@@ -119,11 +106,7 @@ export default function AddFood() {
  
                     <div className = 'right-side-container'>
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                      
-                        <div className = 'import-image-button'> 
-                            <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
-                            <h1 className = 'upload-image-text-h1'>Change Image</h1>     
-                    </div>
+                        <UploadImageButton/>
                     </div>
                 </div>
             <div className = 'save-item-button-container'>

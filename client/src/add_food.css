@@ -3,11 +3,8 @@
 
 .add-food-component-container {
     display: flex;
-    /* justify-content: left;
-    align-items: center; */
     height: 100vh;
     width: 100vw;
-    /* background-color: red; */
 }
     
 .add-food-component-header {
@@ -16,7 +13,6 @@
     margin-left: 5%;
     height: 10vh;
     width: 100vw;
-    /* background-color: red; */
     font-family: "Montserrat";
 }
 
@@ -36,7 +32,6 @@
     width: 90vw;
     margin-top: 10%;
     margin-left: -100%;
-    /* background-color: blue; */
     border: 1px solid rgb(173, 167, 167);
     border-radius: 10px 10px 10px 10px;
 }
@@ -53,11 +48,9 @@
 .item-selections {
     display: flex;
     flex-direction: column;
-    /* justify-content: column; */
     align-items: center;
     height: 80%;
     width: 50%;
-    /* background-color: red;  */
 }
 
 .upload-image {
@@ -72,7 +65,6 @@
 }
 
 .stock-dropdown {
-    /* background-color: lightblue; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -81,7 +73,6 @@
 }
 
 .categories-dropdown {
-    /* background-color: lavender; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -92,12 +83,10 @@
 p#filterControlLabel {
     color: #4C4C4C;
     font-family: 'Inter', sans-serif;
-    /* font-weight: bold; */
     font-size: 18px;
 }
 
 .item-name-input {
-    /* background-color: green; */
     display: flex;
     padding-bottom: 2vh;
     width: 30vw;
@@ -114,11 +103,7 @@ p#filterControlLabel {
     height: 5vh;
 }
 
-/* .input-box {
-    display: flex;
-} */
-
-label, input{
+label, input {
     display:flex;
     flex-direction: column;
     border-radius: 4px 4px 4px 4px;
@@ -130,6 +115,19 @@ label, input{
     border-color: #588157;
   }
 
+.change-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border: #264425 solid 1px;
+    margin-top: 8%;
+    margin-left: -10%;
+    background-color: #D6DECD;
+}
+
 .import-image-button {
     display: flex;
     align-items: center;
@@ -138,8 +136,12 @@ label, input{
     height: 5.5vh;
     border-radius: 100px;
     border: #264425 solid 1px;
-    margin-top: 7.5%;
+    margin-top: 8%;
     margin-left: -10%;
+    background-color: white;
+}
+
+.import-image-button:hover {
     background-color: #D6DECD;
 }
 
@@ -147,6 +149,7 @@ label, input{
     height: 2.5vh;
     padding-right: 5%;
 }
+
 .import-image {
     height: vw;
     height: 7vh;
@@ -177,29 +180,22 @@ label, input{
 
 .right-side-container {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    /* background-color: pink; */
     height: 50vh;
     width: 50vw;
-    /* margin-left: -5%; */
 }
 
 .upload-image-header {
     margin-top: 2.5%;
     font-weight: 450;
-    /* background-color: red; */
     height: 5%;
     font: 'inter';
     font-size: 2vh;
     margin-left: -30%;
-    
-    
 }
 
 .optional-text {
     color:#B8B8B8;
     margin-top: 2.5%;  
     font-weight: 300; 
-    
 }
