@@ -114,10 +114,10 @@ export default function AppointmentScheduler() {
                                 />
                             </div>
                         </div>
-                        <h1 className='pickup-item-heading'>Which of the available items would you like to pick up?</h1>
+                        <p id='input-field-label'>Which of the available items would you like to pick up?</p>
                         <div className = "left-checklist-container">
                         <div className="pickup-items">
-                            <p id="input-field-label">Vegetables & Fruit</p>
+                            <p id="item-checklist-label">Vegetables & Fruit</p>
                             <div className="pickup-items-selection">
                                 
                                 <div className="form-check">
@@ -154,7 +154,7 @@ export default function AppointmentScheduler() {
                             </div>
                         </div>
                         <div className="pickup-items">
-                            <p id="input-field-label">Meat</p>
+                            <p id="item-checklist-label">Meat</p>
                             <div className="pickup-items-selection">
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
@@ -189,7 +189,7 @@ export default function AppointmentScheduler() {
                             </div>
                         </div>
                         <div className="pickup-items">
-                            <p id="input-field-label">Non-Perishables</p>
+                            <p id="item-checklist-label">Non-Perishables</p>
                             <div className="pickup-items-selection">
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">

@@ -142,6 +142,8 @@
     flex-direction: column;
     width: 100%;
     align-items: flex-start;
+    height: 70vh;
+    overflow-y: scroll;
 }
 
 .appt-sched-dropdown {
@@ -159,6 +161,15 @@ p#input-field-label {
     font-size: 14px;
     
 }
+
+p#item-checklist-label {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    
+}
+
 .form-check-input {
     margin-bottom: 2.5%;
 }
@@ -166,6 +177,7 @@ p#input-field-label {
 .form-check-input-items {
     margin-bottom: 15%;
 }
+
 .custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
@@ -252,9 +264,4 @@ input::placeholder{
     box-shadow: #ACB9AC;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-.pickup-item-heading {
-    font-weight: bold;
-    font-size: 1.75vh;
 }
