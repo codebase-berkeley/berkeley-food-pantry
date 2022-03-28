@@ -97,18 +97,20 @@
     justify-content: center;
     width: 10vw;
     height: 5.5vh;
+    font-size: 2.25vh;
     border-radius: 20px;
-    border: #588157 solid 2px;
-    font-size: 1.5vh;
+    border: #588157 solid 1px;
+    color: #588157;
+    font-family: 'Montserrat';
     background-color: white;
 }
 
-.clear-all {
-    font-size: 2.2vh;
-    color: #588157;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.clear-all-button:hover {
+    background-color: rgb(240, 230, 230);
+  }
+
+.submit-button:hover {
+    background-color: #69ac67;
 }
 
 .submit-button {
@@ -119,14 +121,16 @@
     width: 10vw;
     height: 5.5vh;
     border-radius: 20px;
-    border: #588157 solid 1px;
+    /* border: #588157 solid 1px; */
     background-color: #264425;
-    font-size: 1.5vh;
+    color: white;
+    font-size: 2.25vh;
+    font-family: 'Montserrat';
 }
 
 .submit {
     font-size: 2.2vh;
-    color: white;
+    color: #264425;
     display: flex;
     font-weight: bold;
     align-items: center;
@@ -209,17 +213,6 @@ input::placeholder{
     border-radius: .5vw;
     padding-left: .5vw;
     box-shadow: #ACB9AC;
-}
-
-.contact-box-additional-info {
-    height: 20vh;
-    width: 33vw;
-    border-color: #ACB9AC;
-    border: solid #ACB9AC 2px;
-    border-radius: .5vw;
-    padding-left: .5vw;
-    box-shadow: #ACB9AC;
-    justify-content: center;
 }
 
 .pickup-items {

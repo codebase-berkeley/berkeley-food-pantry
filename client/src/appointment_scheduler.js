@@ -9,6 +9,8 @@ import React from "react";
 // import isbesPlusSign from './images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
+let inputs;
+let input;
 // import { borderColor } from "@mui/system";
 
 const dates = [
@@ -67,6 +69,16 @@ const customStyles = {
 }
 
 export default function AppointmentScheduler() {
+    
+    function newFunction() {
+        document.getElementById('input-field-label').reset();
+            }
+    
+
+    function submitForm() {
+        console.log("something"); 
+    }
+    
     return (
         <div>
             <div className = 'intro-text-container'>
@@ -107,7 +119,9 @@ export default function AppointmentScheduler() {
                         <div className="pickup-items">
                             <p id="input-field-label">Vegetables & Fruit</p>
                             <div className="pickup-items-selection">
+                                
                                 <div className="form-check">
+                                
                                     <label class="form-check-label" for="exampleRadios1">
                                         <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         Kale
@@ -216,10 +230,12 @@ export default function AppointmentScheduler() {
                     <h1 className = 'step-heading-2'>Step 2: Fill in your information.</h1>
                     <div className = "search-inputs">
                             <div className="input-name">
+                            
                                 <div className="text-field">
                                     <p id="input-field-label">First name</p>
                                     <input className="name-box" type="text" placeholder = "Jane" name="name" />
                                 </div>
+                                
                                 <div className="text-field">
                                     <p id="input-field-label">Last name</p>
                                     <input className="name-box" type="text" placeholder = "Doe" name="name" />
@@ -233,7 +249,9 @@ export default function AppointmentScheduler() {
                                 <p id="input-field-label">Phone number</p>
                                 <input className="contact-box" type="text" placeholder = "XXX-XXX-XXXX" name="name" />
                             </div>
+                          
                     </div>
+                    
                     <div className="pick-up-items">
                             <p id="input-field-label">Please select your dietary preferences.</p>
                             <div className="pickup-items-selection">
@@ -283,10 +301,16 @@ export default function AppointmentScheduler() {
             </div>
             <div className = 'button-container'>
                 <div className = 'clear-all-button'> 
-                    <h1 className = 'clear-all'>Clear all</h1>     
+                    {/* <h1 className = 'clear-all'>Clear all</h1>      */}
+                    <input onClick={newFunction} className = "clear-all-button" type="button" value="Clear all"></input>
+                    {/* <button className = "clear-all-button" type="button">Clear all</button> */}
+
+            
                 </div>
                 <div className = 'submit-button'> 
-                    <h1 className = 'submit'>Submit</h1>     
+                    {/* <h1 className = 'submit'>Submit</h1>   */}
+                    <input className = "submit-button" type="button" onClick= {submitForm} value="Submit"></input>
+                   
                 </div>
             </div>
         </div>
