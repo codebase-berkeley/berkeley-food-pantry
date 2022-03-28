@@ -1,6 +1,6 @@
 import adminLoginPic from './assets/carrots.svg';
 import './admin-login.css';
-import admingooglesignin from './assets/googlePic.svg';
+import admingooglesignin from './assets/googlePic.png';
 
 export default function AdminLogin() {
    return(
