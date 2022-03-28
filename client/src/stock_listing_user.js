@@ -11,7 +11,9 @@ import makeAnimated from 'react-select/animated';
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
     { value: 'strawberry', label: 'Veggies' },
-    { value: 'vanilla', label: 'Beverages' }
+    { value: 'vanilla', label: 'Beverages' },
+    { value: 'fish', label: 'Seafood'},
+    { value: 'fruit', label: 'Fruit'}
 ]
 
 const sortOptions = [
@@ -43,10 +45,10 @@ const customStyles = {
         ...provided,
         width: '20vw',
         borderRadius: '.5vw',
-        textOverflow: "hidden",
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        flexWrap: 'nowrap',
+        // textOverflow: "hidden",
+        // whiteSpace: "nowrap",
+        // overflow: "hidden",
+        // flexWrap: 'nowrap',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
@@ -68,7 +70,6 @@ const customStyles = {
         };
     },
 }
-
 
 function StockListingUser() {
     return (
