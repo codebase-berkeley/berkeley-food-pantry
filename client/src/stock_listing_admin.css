@@ -5,23 +5,26 @@
     padding-left: 100px;
     padding-top: 40px;
     width: 90vw;
-
 }
+
 .topContainer {
     display: flex;
     flex-direction: row
 }
+
 .leftSide {
     display: flex;
     flex: 3;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .rightSide {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .topContainer h1 {
     text-align: left;
     padding-left: 1vw;
@@ -33,6 +36,7 @@
     padding-top: 1vh;
     padding-bottom: 1vh;
 }
+
 .topContainer p {
     text-align: left;
     font-size: 14;
@@ -41,9 +45,11 @@
     padding-left: 1vw;
     font-family: 'Inter', sans-serif;
 }
+
 .h3{
     font-size: 10px;
 }
+
 .addButton {
     background-color: #264425;
     display: flex;
@@ -56,15 +62,17 @@
     font-weight: bold;
     align-items: center;
 }
+
 .addButton:hover {
     background-color: #ACB9AC;
     color: #fff; 
 }
+
 .addItem{
     display: flex;
     padding-right: 1vw;
-
 }
+
 .changeStock{
     font-size: 16;
     background-color: white;
@@ -72,6 +80,7 @@
     font-family: 'Inter', sans-serif;
     padding-bottom: 10px;
 }
+
 .changeStock:hover{
     text-decoration: underline;
 }
@@ -81,7 +90,9 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    overflow-y: scroll;
 }
+
 .bottomContainer {
     border-color: #B8B8B8;
     border-width: 1px;
@@ -98,7 +109,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-bottom: 2vh;
-    
 }
 
 .sort-by {
@@ -114,6 +124,7 @@ p#filterControlLabel {
     font-weight: bold;
     font-size: 16px;
 }
+
 .custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
@@ -128,6 +139,7 @@ p#filterControlLabel {
     align-items: flex-start;
     padding-left: 1vw;
 }
+
 .filterReset{
     display: flex;
     padding-top: 2vh;
@@ -135,6 +147,7 @@ p#filterControlLabel {
     justify-content: center;
     padding-bottom: 2vh;
 }
+
 .filterItems{
     color: #4C4C4C;
     font-size: 24px;
@@ -144,6 +157,7 @@ p#filterControlLabel {
     padding-right: 3.5vw;
     justify-content: start;
 }
+
 .resetFilters{
     font-size: 16px;
     background-color: #fff;
@@ -157,41 +171,43 @@ p#filterControlLabel {
 .resetFilters:hover {
     text-decoration: underline;
 }
+
 .firstRow {
     display: flex; 
     flex-direction: row; 
     justify-content: flex-end;
     padding-left: 1vw; 
-
-
 }
+
 .secondRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-left: 1vw; 
-
 }
+
 .thirdRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-left: 1vw; 
-
 }
+
 .firstRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem; 
 }
+
 .secondRow h1 {
     padding-left: 1vw;
-    font-size: 0.75rem;
-    
+    font-size: 0.75rem;   
 }
+
 .thirdRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem;
 }
+
 .firstRow .allItemBtn {
     display: block;
     background-color: white;
@@ -200,6 +216,7 @@ p#filterControlLabel {
     border-radius: 50%;
     border: 1px solid black;
 }
+
 .secondRow .stockBtn {
     display: block;
     background-color: white;
@@ -207,8 +224,8 @@ p#filterControlLabel {
     width: 1vw;
     border-radius: 50%;
     border: 1px solid black;
-
 }
+
 .thirdRow .noStockBtn {
     display: block;
     background-color: white;
@@ -216,7 +233,6 @@ p#filterControlLabel {
     width: 1vw;
     border-radius: 50%;
     border: 1px solid black;
-
 }
 
 .searchBox{
@@ -229,16 +245,19 @@ p#filterControlLabel {
     font-size: 16px;
     padding-bottom: 2vh;
 }
+
 .searchBox.text {
     padding-bottom: 1vh;
     font-size: 16px;
 }
+
 .showFilter {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
 }
+
 .showText {
     color: #4C4C4C;
     font-family: 'Inter', sans-serif;
@@ -265,7 +284,6 @@ p#filterControlLabel {
 
 input[type="radio"] {
     border: 1.5px solid #B8B8B8;
-    
 }
 
 input[type="radio"]:checked {

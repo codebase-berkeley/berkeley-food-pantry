@@ -8,7 +8,7 @@ import { Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
-import makeAnimated from 'react-select/animated';
+import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
 
 const foodCategories = [
@@ -32,7 +32,7 @@ const customStyles = {
     option: (provided, state) => ({
         ...provided,
         height: '6vh',
-        backgroundColor: state.isFocused ? "#E5E5E5" : null,
+        backgroundColor: state.isFocused ? "#E5E5E5" : null
     }),
 
     dropdownIndicator: base => ({
@@ -43,15 +43,18 @@ const customStyles = {
     IndicatorSeparator: () => null,
 
     control: (provided, state) => ({
-        height: '6vh',
         ...provided,
         width: '20vw',
         borderRadius: '.5vw',
+        textOverflow: "hidden",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        flexWrap: 'nowrap',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
             border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
-        }
+        },
     }),
 
     multiValue: (provided, state) => {
@@ -59,9 +62,15 @@ const customStyles = {
         const transition = 'opacity 300ms';
 
         return {
-            ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px'
+            ...provided, 
+            opacity, 
+            transition, 
+            borderRadius: '20px', 
+            paddingLeft: '5px', 
+            paddingRight: '5px',
         };
-    }
+    },
+
 }
 
 
