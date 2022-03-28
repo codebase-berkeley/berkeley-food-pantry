@@ -1,10 +1,9 @@
 import React from "react";
 import Search from './components/search_bar.js';
-import './components/search_bar.css';
-import './stock_listing_admin.css';
 import { PanelGroup, Panel } from 'rsuite';
+import './components/search_bar.css';
+import './stock_listing_user.css';
 import 'rsuite/dist/rsuite.min.css';
-import { Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
@@ -77,9 +76,7 @@ const customStyles = {
             paddingRight: '5px',
         };
     },
-
 }
-
 
 function StockListingUser() {
     return (
@@ -90,16 +87,9 @@ function StockListingUser() {
                 <div className="topContainer">
 
                     <div className="leftSide">
-                        <h1>Edit Today's Stock</h1>
-                        <p>Manage today's stock listing.</p>
-                    </div>
-
-                    <div className="rightSide">
-                        <button type="button" class="btn" className="addButton">
-                            <img src={isbesPlusSign}></img>
-                            <div className="addItem"> Add new item </div>
-                        </button>
-                        <button className="changeStock"> Set all items to out of stock </button>
+                        <h1>Check out what we have in stock today.</h1>
+                        <p>Last updated: March 25, 7:47am.<br></br>
+                        Stock availability varies day by day. If something you’re looking for is out of stock, it might be available on another day.</p>
                     </div>
 
                 </div>
@@ -148,25 +138,10 @@ function StockListingUser() {
                             </div>
 
                             <div className="showFilter">
-                                <div className="showText"> Show </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
-                                        All Items
-                                    </label>
-                                </div>
-
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
-                                        In Stocks Items
-                                    </label>
-                                </div>
-                                
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
-                                        Not In Stock Items Only
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        Only show items in stock today.
                                     </label>
                                 </div>
                             </div>
