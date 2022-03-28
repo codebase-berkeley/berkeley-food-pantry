@@ -1,6 +1,8 @@
 import {useState} from 'react';
+import React, { createContext, useContext } from "react";
 import './google-oauth.css';
 import GoogleLogin from 'react-google-login';
+
 function GoogleOAuth() {
     const [loginData, setLoginData] = useState (
         localStorage.getItem('loginData')
@@ -55,14 +57,6 @@ function GoogleOAuth() {
                     )}
             </div>
 
-            {/* <GoogleLogin
-                clientId="856494336809-g00hpps6u34k4225k38flk9ftgmenqps.apps.googleusercontent.com"
-                buttonText="Sign in with Google"
-                onSuccess={handleLogin}
-                onFailure={handleFailure}
-                cookiePolicy={'single_host_origin'}
-
-            ></GoogleLogin> */}
         </div>
                
     )

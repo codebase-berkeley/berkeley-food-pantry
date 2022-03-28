@@ -1,6 +1,11 @@
+
+
 const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
+
+// const MyContext = React.createContext(false);
+// const adminEmails = ['ysharma@berkeley.edu', 'mawil0721@berkeley.edu'];
 
 const { OAuth2Client } = require('google-auth-library');
 const { useImperativeHandle } = require('react');
@@ -30,6 +35,7 @@ app.post('/api/google-login', async (req, res) => {
 
     const { name, email, picture } = ticket.getPayload();
     upsert(users, { name, email, picture });
+    // if (adminEmails.includes(email)) MyContext = true;
 
     res.status(201);
     res.json( { name, email, picture });
@@ -44,4 +50,3 @@ app.get('*', (req, res) =>
 app.listen(process.env.PORT || 5000, () => {
     console.log(`Server is ready at http://localhost:${process.env.PORT || 5000}`);
 });
-

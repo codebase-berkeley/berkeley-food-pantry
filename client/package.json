@@ -1,6 +1,5 @@
 {
   "name": "berkeley-food-pantry",
-
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +10,7 @@
     "express": "^4.17.3",
     "google-auth-library": "^7.14.1",
     "react": "^17.0.2",
+    "react-context": "^0.0.3",
     "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2",
     "react-scripts": "5.0.0",
