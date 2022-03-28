@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 
 .entireContent {
-    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 40px;
+    margin-left: 5vw;
     width: 90vw;
 }
 
 .topContainer {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
 }
 
 .leftSide {
@@ -28,9 +31,9 @@
 .topContainer h1 {
     text-align: left;
     padding-left: 1vw;
-    font-weight: 800;
+    font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.125em 1vw;
+    font-size: 36px;
     color: #383838;
     line-height: 10pt;
     padding-top: 1vh;
@@ -79,6 +82,7 @@
     color: #6A7E69;
     font-family: 'Inter', sans-serif;
     padding-bottom: 10px;
+    width: 275px;
 }
 
 .changeStock:hover{
@@ -97,10 +101,10 @@
     border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
-    height:80vh;
+    height:75vh;
     border-style: solid;
     display: flex;
-    padding: 2px;
+    width: 80vw;
 }
 
 .filter-by {
@@ -132,20 +136,22 @@ p#filterControlLabel {
 
 .filterItemControls {
     display: flex;
-    width: 10vw;
+    width: 25vw;
+    height: 100%;
     flex: 1;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 1vw;
+    align-items: center;
+    padding: 0 1vw 0 1vw;
 }
 
 .filterReset{
     display: flex;
     padding-top: 2vh;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 2vh;
+    width: 20vw;
 }
 
 .filterItems{
@@ -267,10 +273,11 @@ p#filterControlLabel {
 }
 
 .filterItemDisplay {
-    width: 60vw;
-    padding-left: 2vw;
+    width: 55vw;
+    padding: 10px;
     align-items: left;
     overflow-y: scroll;
+    border-left: 1px solid #B8B8B8;
 }
 
 .foodPanel {

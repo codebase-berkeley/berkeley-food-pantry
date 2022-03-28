@@ -10,11 +10,18 @@ import isbesPlusSign from './images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
+import Food from './Food';
+import apple from "./apple.png";
 
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
     { value: 'strawberry', label: 'Veggies' },
-    { value: 'vanilla', label: 'Beverages' }
+    { value: 'beverages', label: 'Beverages' },
+    { value: 'pescatarian', label: 'Pescatarian' },
+    { value: 'fruit', label: 'Fruit' },
+    { value: 'dairy', label: 'Dairy' },
+    { value: 'seafood', label: 'Seafood' },
+    { value: 'pet food', label: 'Pet food' }
 ]
 
 const sortOptions = [
@@ -167,18 +174,12 @@ function StockListingUser() {
                         </div>
                     </div>
                     <div className="filterItemDisplay">
-                        <Panel className="foodPanel" shaded>fake food 1</Panel>
-                        <Panel className="foodPanel" shaded>fake food 2</Panel>
-                        <Panel className="foodPanel" shaded>fake food 3</Panel>
-                        <Panel className="foodPanel" shaded>fake food 4</Panel>
-                        <Panel className="foodPanel" shaded>fake food 1</Panel>
-                        <Panel className="foodPanel" shaded>fake food 2</Panel>
-                        <Panel className="foodPanel" shaded>fake food 3</Panel>
-                        <Panel className="foodPanel" shaded>fake food 4</Panel>
-                        <Panel className="foodPanel" shaded>fake food 1</Panel>
-                        <Panel className="foodPanel" shaded>fake food 2</Panel>
-                        <Panel className="foodPanel" shaded>fake food 3</Panel>
-                        <Panel className="foodPanel" shaded>fake food 4</Panel>
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     </div>
                 </div>
             </div>

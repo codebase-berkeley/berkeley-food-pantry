@@ -58,7 +58,7 @@ button{
     padding-right: 3%;
 }
 .navBar {
-    display: flex;
+    display: none;
     justify-content: space-between;
     flex-direction: row;
     border-bottom: 1px solid #B8B8B8;  
@@ -84,4 +84,11 @@ button {
     background: transparent;
     border: none;
     padding-right: 3%;
+}
+
+@media screen and (orientation: portrait) {
+    .navBar {
+        display: flex;
+    }
+    
 }
