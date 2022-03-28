@@ -1,6 +1,6 @@
 import './appointment_scheduler.css'
 import React from "react";
-import 'rsuite/dist/rsuite.min.css';
+// import 'rsuite/dist/rsuite.min.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 let inputs;
@@ -28,7 +28,8 @@ const customStyles = {
     option: (provided, state) => ({
         ...provided,
         height: '6vh',
-        backgroundColor: state.isFocused ? "#E5E5E5" : null,
+        backgroundColor: state.isFocused ? "#E5E5E5" : 'white',
+        color: state.isFocused ? '#464646' : '#464646'
     }),
 
     dropdownIndicator: base => ({
