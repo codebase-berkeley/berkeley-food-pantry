@@ -71,13 +71,6 @@
         width: 65%;
         padding: 15%;
     }
-    
-    .h1 {
-        font-family: 'Montserrat', sans-serif;
-        justify-content: flex-start;
-        font: 28px;
-        font-weight: 900;
-    }
 
     .admin-login-text-container {
         width: 65%;
