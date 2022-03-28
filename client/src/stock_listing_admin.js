@@ -1,8 +1,7 @@
 import React from "react";
 import Search from './components/search_bar.js';
-import { PanelGroup, Panel } from 'rsuite';
 import './components/search_bar.css';
-import './stock_listing_user.css';
+import './stock_listing_admin.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './images/plusSign.svg';
@@ -78,7 +77,115 @@ const customStyles = {
     },
 }
 
-function StockListingUser() {
+
+
+export function StockListingAdmin() {
+    return (
+        <div className="entireContent">
+
+            <div className="stockListingPage">
+
+                <div className="topContainer">
+
+                    <div className="leftSide">
+                        <h1>Edit Today's Stock</h1>
+                        <p>Manage today's stock listing.</p>
+                    </div>
+
+                    <div className="rightSide">
+                        <button type="button" class="btn" className="addButton">
+                            <img src={isbesPlusSign}></img>
+                            <div className="addItem"> Add new item </div>
+                        </button>
+                        <button className="changeStock"> Set all items to out of stock </button>
+                    </div>
+
+                </div>
+
+                <div className="bottomContainer">
+
+                    <div className="filterItemControls">
+
+                        <div className="filterReset">
+                            <div className="filterItems">Filter Items</div>
+                            <button className="resetFilters">Reset Filters</button>
+                        </div>
+
+                        <div className="filters">
+                            <div className="searchBox">
+                                <text>Search Items</text>
+                                <Search placeholder="Search..." />
+                            </div>
+
+                            <div className="filter-by">
+                                <p id="filterControlLabel">Filter by Dietary Categories</p>
+                                <div id="filter-dropdown">
+                                    <Select className="custom-dropdown"
+                                        styles={customStyles}
+                                        closeMenuOnSelect={false}
+                                        components={animatedComponents}
+                                        placeholder="Select..."
+                                        isMulti
+                                        options={foodCategories}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="sort-by">
+                                <p id="filterControlLabel">Sort By...</p>
+                                <div>
+                                    <Select className="custom-dropdown"
+                                        styles={customStyles}
+                                        closeMenuOnSelect={true}
+                                        components={animatedComponents}
+                                        placeholder="Alphabetical, A-Z"
+                                        options={sortOptions}
+                                        defaultValue={sortOptions[0]}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="showFilter">
+                                <div className="showText"> Show </div>
+                                <div className="form-check">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        All items
+                                    </label>
+                                </div>
+
+                                <div className="form-check">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        In stock items only
+                                    </label>
+                                </div>
+                                
+                                <div className="form-check">
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        Not in stock items only
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="filterItemDisplay">
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export function StockListingUser() {
     return (
         <div className="entireContent">
 
@@ -160,5 +267,5 @@ function StockListingUser() {
             </div>
         </div>
     )
-}
-export default StockListingUser;
+
+    }

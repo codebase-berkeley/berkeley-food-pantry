@@ -4,7 +4,7 @@ import apple from "./apple.png";
 import AdminLogin from './admin-login';
 import DesktopNavbar from './admin-login-navbar';
 import MobileNavbar from './mobile-navbar';
-import StockListingUser from './stock_listing_admin.js'
+import { StockListingUser, StockListingAdmin } from './stock_listing_admin.js'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <MobileNavbar/>
       <DesktopNavbar/>
       
-      <StockListingUser></StockListingUser>
+      <StockListingAdmin/>
     </div>
   )
 }

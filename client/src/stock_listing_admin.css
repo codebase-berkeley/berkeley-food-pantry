@@ -101,7 +101,7 @@
     border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
-    height:75vh;
+    height:70vh;
     border-style: solid;
     display: flex;
     width: 80vw;
@@ -290,18 +290,18 @@ p#filterControlLabel {
     font-size: 15px;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"], input[type="radio"] {
     border: 1.5px solid #B8B8B8;
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"]:checked, input[type="radio"]:checked {
     border: 1.5px solid #B8B8B8;
     background-color: solid #264425;
     box-shadow: "transparent";
     box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #264425;
 }
 
-input[type="checkbox"]:hover {
+input[type="checkbox"]:hover, input[type="radio"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
 }
