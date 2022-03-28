@@ -5,6 +5,10 @@ import edit_item from './edit_item.png'
 import pen from './pen.svg'
 
 function Food(props) {
+    function editItem () {
+        console.log("it works");
+    }
+
     return(
         <div className = "componentContainer">
             <img src={props.image} class="foodImage" alt={props.name}/>
@@ -22,7 +26,7 @@ function Food(props) {
                 </div>
                 <div className = "editIn">
                     <div>
-                        <button className="editButton">
+                        <button className="editButton" onClick={editItem}>
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="editItem">
                                 Edit Item
