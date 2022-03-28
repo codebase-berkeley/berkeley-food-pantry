@@ -1,17 +1,10 @@
 import './appointment_scheduler.css'
 import React from "react";
-// import Search from './searchBar.js';
-// import './searchBar.css';
-// import { PanelGroup, Panel } from 'rsuite';
-// import 'rsuite/dist/rsuite.min.css';
-// import { Dropdown } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import isbesPlusSign from './images/plusSign.svg';
+import 'rsuite/dist/rsuite.min.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 let inputs;
 let input;
-// import { borderColor } from "@mui/system";
 
 const dates = [
     { value: '03/30', label: 'Wednesday, March 30th' },
@@ -51,10 +44,10 @@ const customStyles = {
         width: '33vw',
         borderRadius: '.5vw',
         
-        border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
-        boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
+        border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
+        boxShadow: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
         '&:hover': {
-            border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
+            border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC'
         }
     }),
 

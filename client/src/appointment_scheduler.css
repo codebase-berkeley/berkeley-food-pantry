@@ -43,7 +43,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-left: 2vw;
-    border: 2px solid #C4C4C4;
+    border: 1px solid #C4C4C4;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     overflow-x: hidden;
@@ -59,7 +59,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-left: 2vw;
-    border: 2px solid #C4C4C4;
+    border: 1px solid #C4C4C4;
     border-left: 0px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -197,7 +197,7 @@ p#item-checklist-label {
   
 .search-inputs input {
     border-color: #ACB9AC;
-    border: solid #ACB9AC 2px;
+    border: solid #ACB9AC 1px;
     border-radius: .5vw;
     padding-left: .5vw;
     box-shadow: #ACB9AC;
@@ -221,7 +221,7 @@ input::placeholder{
     height: 20vh;
     width: 33vw;
     border-color: #ACB9AC;
-    border: solid #ACB9AC 2px;
+    border: solid #ACB9AC 1px;
     border-radius: .5vw;
     padding-left: .5vw;
     box-shadow: #ACB9AC;
@@ -258,7 +258,7 @@ input::placeholder{
     justify-content: space-evenly;
     height: 35vh;
     width: 40vw;
-    border: solid #ACB9AC 2px;
+    border: solid #ACB9AC 1px;
     border-radius: .5vw;
     padding-left: .5vw;
     box-shadow: #ACB9AC;
