@@ -33,7 +33,7 @@ const customStyles = {
         color: "#ACB9AC"
     }),
 
-    IndicatorSeparator: () => null,
+    indicatorSeparator: () => null,
 
     control: (provided, state) => ({
         height: '6vh',

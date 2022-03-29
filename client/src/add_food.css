@@ -255,9 +255,17 @@ label, input {
         flex-direction: column;
     }
     .import-image-button {
-        width: 90%;
+        width: 105%;
     }
     .upload-image-header {
         padding-bottom: 10%;
+    }
+    .change-image-button { 
+        width: 100%;
+    }
+    .save-item-button-container {
+        width: 52%;
+        margin-top: 10%;
+        margin-left: 20%;
     }
 }
