@@ -65,41 +65,26 @@ export default function AppointmentScheduler() {
     const[inputText, clearInputFields] = useState('')
     const[checkBoxInput, clearCheckBox] = useState(true)
     const[dropDownSelection, clearDropDown] = useState(0)
+    const [selectedDate, setSelectedDate] = useState([]);
+    const [selectedTime, setSeletedTime] = useState([]);
     
     function clearInputFieldsHelper() {
-        clearInputFields(document.getElementById('input-values-1').value = "");
-        clearInputFields(document.getElementById('input-values-2').value = "");
-        clearInputFields(document.getElementById('input-values-3').value = "");
-        clearInputFields(document.getElementById('input-values-4').value = "");
-        clearInputFields(document.getElementById('input-values-5').value = "");
-        clearCheckBox(document.getElementById("checkbox-1").checked = false);
-        clearCheckBox(document.getElementById("checkbox-2").checked = false);
-        clearCheckBox(document.getElementById("checkbox-3").checked = false);
-        clearCheckBox(document.getElementById("checkbox-4").checked = false);
-        clearCheckBox(document.getElementById("checkbox-5").checked = false);
-        clearCheckBox(document.getElementById("checkbox-6").checked = false);
-        clearCheckBox(document.getElementById("checkbox-7").checked = false);
-        clearCheckBox(document.getElementById("checkbox-8").checked = false);
-        clearCheckBox(document.getElementById("checkbox-9").checked = false);
-        clearCheckBox(document.getElementById("checkbox-10").checked = false);
-        clearCheckBox(document.getElementById("checkbox-11").checked = false);
-        clearCheckBox(document.getElementById("checkbox-12").checked = false);
-        clearCheckBox(document.getElementById("checkbox-13").checked = false);
-        clearCheckBox(document.getElementById("checkbox-14").checked = false);
-        clearCheckBox(document.getElementById("checkbox-15").checked = false);
-        clearCheckBox(document.getElementById("checkbox-16").checked = false);
-        clearCheckBox(document.getElementById("checkbox-17").checked = false);
-        clearCheckBox(document.getElementById("checkbox-18").checked = false);
-        clearCheckBox(document.getElementById("checkbox-19").checked = false);
-        clearCheckBox(document.getElementById("checkbox-20").checked = false);
-        clearCheckBox(document.getElementById("checkbox-21").checked = false);
+        for (var i = 1; i <= 4; i++) {
+            var checkString = "input-values-" + i;
+            if (document.getElementById(checkString).value != "") {
+                document.getElementById(checkString).value = "";
+            } 
+        }
+
+        for (var i = 1; i <= 21; i++) {
+            var checkBox = "checkbox-" + i;
+            if (document.getElementById(checkBox).checked = true) {
+                document.getElementById(checkBox).checked = false;
+            }
+        }
+
         clearDropDown((document.getElementById("rat")).selectedIndex = 0);
              }
-    
-    // function Reset() {
-    //     var dropDown = document.getElementById("rat");
-    //     dropDown.selectedIndex = 'sumting';
-    // }
 
     function submitForm() {
         console.log("contact information:")
