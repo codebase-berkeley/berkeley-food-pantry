@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "eslint": "^8.10.0",
-    "prettier": "^2.5.1"
+    "global": "^4.4.0",
+    "prettier": "^2.5.1",
+    "yarn": "^1.22.17"
   }
 }
