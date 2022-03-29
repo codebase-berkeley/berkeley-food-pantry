@@ -220,7 +220,7 @@ label, input {
         border: none;
         justify-content: center;
         align-items: center;
-        height: auto;
+        height: 70%;
         width: auto;
         margin-top: 10%;
         margin-left: 0%;
@@ -236,10 +236,28 @@ label, input {
     }
     .stock-dropdown {
         display: flex;
-        width: 100%;
         align-items: center;
+        text-align: left;
     }
     .categories-dropdown {
         align-items: center;
+    }
+    .item-name-textbox {
+        width: 80vw;
+        border-radius: 2vw;
+        height: 5vh;
+    }
+    .item-name-input {
+        width: 0%;
+    }
+    .right-side-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .import-image-button {
+        width: 90%;
+    }
+    .upload-image-header {
+        padding-bottom: 10%;
     }
 }
