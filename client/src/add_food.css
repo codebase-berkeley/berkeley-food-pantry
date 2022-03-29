@@ -222,7 +222,7 @@ label, input {
         align-items: center;
         height: 70%;
         width: auto;
-        margin-top: 10%;
+        margin-top: 6%;
         margin-left: 0%;
         border-radius: 10px 10px 10px 10px;
     }
@@ -233,6 +233,11 @@ label, input {
         height: 10vh;
         width: 100vw;
         font-family: "Montserrat";
+    }
+
+    .add-food-component-header h1 {
+        margin-bottom: -3%;
+        font-weight: 600;
     }
     .stock-dropdown {
         display: flex;
@@ -268,4 +273,5 @@ label, input {
         margin-top: 10%;
         margin-left: 20%;
     }
+
 }
