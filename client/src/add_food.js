@@ -45,6 +45,11 @@ const customStyles = {
         '&:hover': {
             border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
         }
+        container
+        // "@media only screen and (max-width: 1200px)": {
+        //     ...provided["@media only screen and (max-width: 1200px)"],
+        //     marginRight: "1.5rem",
+        // }
     }),
 
     multiValue: (provided, state) => {
