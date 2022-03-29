@@ -339,7 +339,7 @@ export default function AppointmentScheduler() {
                         </div>
                         <div className="text-field">
                                 <p id="input-field-label">Is there anything else we should know?</p>
-                                <input className="contact-box" type="text" name="name" id = 'input-values-5'/>
+                                <textarea className="contact-box" type="text" name="name" id = 'input-values-5'/>
                             </div>
                 </div>   
             </div>
