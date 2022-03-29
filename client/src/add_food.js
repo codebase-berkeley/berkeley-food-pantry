@@ -76,13 +76,13 @@ export default function AddFood() {
                             <form>
                                 <label className = "item-name-input">
                                     Item Name 
+                                    </label>
                                     <input className = "item-name-textbox" type="text" name="name" />
-                                </label>
                             </form>
                         </div>
 
                         <div className="stock-dropdown">
-                            <p id="filterControlLabel">Set Stock Availability</p>
+                            <label className = "item-name-input">Set Stock Availability</label>
                             <div id="filter-dropdown">
                                 <Select className="custom-dropdown"
                                     menuPlacement='auto'
@@ -97,7 +97,7 @@ export default function AddFood() {
                         </div>
 
                         <div className="categories-dropdown">
-                            <p id="filterControlLabel">Select Dietary Categories (Optional)</p>
+                            <label className = "item-name-input">Select Dietary Categories (Optional)</label>
                             <div>
                                 <Select className="custom-dropdown"
                                     styles={customStyles}

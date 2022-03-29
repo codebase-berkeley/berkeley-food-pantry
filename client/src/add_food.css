@@ -220,7 +220,7 @@ label, input {
         border: none;
         justify-content: center;
         align-items: center;
-        height: 70%;
+        height: 60%;
         width: auto;
         margin-top: 6%;
         margin-left: 0%;
@@ -231,8 +231,9 @@ label, input {
         margin-left: 9%;
         display: flex;
         height: 10vh;
-        width: 100vw;
+        width: 80vw;
         font-family: "Montserrat";
+        overflow-x: none;
     }
 
     .add-food-component-header h1 {
@@ -253,7 +254,9 @@ label, input {
         height: 5vh;
     }
     .item-name-input {
-        width: 0%;
+        width: 80vw;
+        font-weight: 600;
+        padding-top: 2vh;
     }
     .right-side-container {
         display: flex;
