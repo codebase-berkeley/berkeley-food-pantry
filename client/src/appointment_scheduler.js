@@ -66,7 +66,7 @@ export default function AppointmentScheduler() {
     const[checkBoxInput, clearCheckBox] = useState(true)
     const[dropDownSelection, clearDropDown] = useState(0)
     const [selectedDate, setSelectedDate] = useState([]);
-    const [selectedTime, setSeletedTime] = useState([]);
+    const [selectedTime, setSelectedTime] = useState([]);
     
     function clearInputFieldsHelper() {
         for (var i = 1; i <= 4; i++) {
@@ -83,9 +83,9 @@ export default function AppointmentScheduler() {
             }
         }
 
-        clearDropDown((document.getElementById("rat")).selectedIndex = 0);
-             }
-
+        setSelectedDate([]); 
+        setSelectedTime([]);
+    }
     function submitForm() {
         console.log("contact information:")
         for (var i = 1; i <= 4; i++) {
@@ -136,6 +136,8 @@ export default function AppointmentScheduler() {
                                     components={animatedComponents}
                                     placeholder="Select date..."
                                     options={dates}
+                                    onChange={setSelectedDate}
+                                    value={selectedDate}
                                 />
                             </div>
                         </div>
@@ -148,6 +150,8 @@ export default function AppointmentScheduler() {
                                     components={animatedComponents}
                                     placeholder="Select time..."
                                     options={times}
+                                    onChange={setSelectedTime}
+                                    value={selectedTime}
                                 />
                             </div>
                         </div>
