@@ -36,7 +36,7 @@
     height: auto;
 }
 
-.dropDownText {
+.dropDownText, .dropDownText:visited {
     display: flex;
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
@@ -46,7 +46,9 @@
     border-bottom: 1px solid #ACB9AC;
     padding: 6%;
     padding-left: 9%;
+    text-decoration: none;
 }
+
 .dropDownLinks{
     display: flex;
     flex-direction: column;

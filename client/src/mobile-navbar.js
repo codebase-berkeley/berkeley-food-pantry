@@ -4,6 +4,7 @@ import xButton from './assets/isbees-x-symbol.svg';
 import groceries from './assets/navBarImage.png';
 import React, { useState } from 'react';
 import dropdownIcon from './assets/dropdown-icon.svg'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function Navbar() {
     const [dropdown, setDropdown] = useState(0);
@@ -25,10 +26,14 @@ function Navbar() {
                 <div className ='imageAndDropDowns'>
                     <img src = {groceries} className = "dropDownLogo"></img>
                     <div className='dropDownLinks'>
-                        <a href="https://www.berkeleyfoodpantry.org/aboutus" className='dropDownText'>About the Pantry</a>
-                        <a href="google.com" className='dropDownText'>Edit Today's Stock</a>
+                        <a href="https://www.berkeleyfoodpantry.org/aboutus" 
+                        target="_blank" rel="noopener noreferrer" className='dropDownText' onClick = {setFalse}>About the Pantry</a>
+                        <Link to = "/stockListingAdmin" onClick={setFalse} className = 'dropDownText'> Edit Today's Stock </Link>
                         <a href="google.com" className='dropDownText'>View Appointments</a>
-                        <a href="google.com" className='dropDownText'>Logout</a>
+                        <Link to = "/adminLogin" onClick={setFalse} className = 'dropDownText'> Login </Link>
+                        {/* <a href="google.com" className='dropDownText'>Edit Today's Stock</a>
+                        <a href="google.com" className='dropDownText'>View Appointments</a>
+                        <a href="google.com" className='dropDownText'>Logout</a> */}
                     </div>
                 </div>
             </div>

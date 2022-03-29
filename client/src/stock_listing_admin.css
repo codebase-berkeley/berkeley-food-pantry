@@ -161,7 +161,6 @@ p#filterControlLabel {
     display: flex;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
-    padding-right: 3.5vw;
     justify-content: start;
 }
 
