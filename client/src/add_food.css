@@ -38,11 +38,18 @@
 
 .save-item-button-container {
     display: flex;
-    justify-content: right;
-    height: 5vh;
-    width: 5vw;
-    margin-top: 45%;
-    margin-left: -5%;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5.5vh;
+    margin-top: 43%;
+    margin-left: -17%;
+    border-radius: 40px;
+    color: white;
+    background-color: #264425;
+    font-size: 2.25vh;
+    font-weight: 800;
+    font-family: 'Montserrat';
 }
 
 .item-selections {

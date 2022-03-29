@@ -45,7 +45,7 @@ const customStyles = {
         '&:hover': {
             border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
         }
-        container
+        // container
         // "@media only screen and (max-width: 1200px)": {
         //     ...provided["@media only screen and (max-width: 1200px)"],
         //     marginRight: "1.5rem",
@@ -114,9 +114,9 @@ export default function AddFood() {
                         <UploadImageButton/>
                     </div>
                 </div>
-            <div className = 'save-item-button-container'>
-                <img src ={saveitembutton} className = "save-item-button" alt = "save item button"></img>
-            </div>
+            
+                <input className = "save-item-button-container" type="button" value="Save Item"></input>
+        
         </div>
     )
 }
