@@ -67,7 +67,7 @@ export default function AppointmentScheduler() {
     const[dropDownSelection, clearDropDown] = useState(0)
     
     function clearInputFieldsHelper() {
-        clearInputFields(document.getElementById('input-values').value = "");
+        clearInputFields(document.getElementById('input-values-1').value = "");
         clearInputFields(document.getElementById('input-values-2').value = "");
         clearInputFields(document.getElementById('input-values-3').value = "");
         clearInputFields(document.getElementById('input-values-4').value = "");
@@ -102,8 +102,33 @@ export default function AppointmentScheduler() {
     // }
 
     function submitForm() {
-        console.log("something"); 
-    }
+        console.log("contact information:")
+        for (var i = 1; i <= 4; i++) {
+            var checkString = "input-values-" + i;
+            if (document.getElementById(checkString).value != "") {
+                console.log(document.getElementById(checkString).value);
+            }
+        }
+        
+        console.log("items to pick up:")
+        for (var i = 1; i <= 15; i++) {
+            var checkString = "checkbox-" + i;
+            if (document.getElementById(checkString).checked == true) {
+                console.log(document.getElementById(checkString).value);
+            }
+        }
+
+        console.log("dietary preferences:")
+        for (var i = 16; i <= 21; i++) {
+            var checkString = "checkbox-" + i;
+            if (document.getElementById(checkString).checked == true) {
+                console.log(document.getElementById(checkString).value);
+            }
+        }
+
+        console.log("additional information:")
+        console.log(document.getElementById('input-values-5').value);
+    }   
     
     return (
         <div>
@@ -150,31 +175,31 @@ export default function AppointmentScheduler() {
                                 <div className="form-check">
                                 
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-1" value="option1" ></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-1" value="kale" ></input>
                                         Kale
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-2" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-2" value="tomatoes" unchecked></input>
                                         Tomatoes
                                     </label>
                                 </div> 
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-3" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-3" value="apples" unchecked></input>
                                         Apples
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-4" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-4" value="dragon fruit" unchecked></input>
                                         Dragon Fruit
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-5" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-5" value="carrot" unchecked></input>
                                         Carrot
                                     </label>
                                 </div>
@@ -185,31 +210,31 @@ export default function AppointmentScheduler() {
                             <div className="pickup-items-selection">
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-6" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-6" value="tuna" unchecked></input>
                                         Tuna
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-7" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-7" value="salmon" unchecked></input>
                                         Salmon
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-8" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-8" value="ground beef" unchecked></input>
                                         Ground Beef
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-9" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-9" value="bacon" unchecked></input>
                                         Bacon
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-10" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-10" value="other meat?" unchecked></input>
                                         Other meat?
                                     </label>
                                 </div>
@@ -220,31 +245,31 @@ export default function AppointmentScheduler() {
                             <div className="pickup-items-selection">
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-11" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-11" value="canned fruit" unchecked></input>
                                         Canned Fruit
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-12" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-12" value="cannced corn" unchecked></input>
                                         Canned Corn
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-13" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-13" value="pasta" unchecked></input>
                                         Pasta
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-14" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-14" value="instant jello" unchecked></input>
                                         Instant Jello
                                     </label>
                                 </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-15" value="option1" unchecked></input>
+                                        <input class="form-check-input-items" type="checkbox" name="exampleRadios" id="checkbox-15" value="canned vegetables" unchecked></input>
                                         Canned Vegetables
                                     </label>
                                 </div>  
@@ -263,7 +288,7 @@ export default function AppointmentScheduler() {
                                     
                                     <p id="input-field-label">First name</p>
                                     <div id = 'mainContainer'>
-                                    <input className="name-box" type="text" placeholder = "Jane" name="name" id = "input-values" />
+                                    <input className="name-box" type="text" placeholder = "Jane" name="name" id = "input-values-1" />
                                     </div>
                                 </div>
                                 
@@ -286,38 +311,38 @@ export default function AppointmentScheduler() {
                             <p id="input-field-label">Please select your dietary preferences.</p>
                             <div className="pickup-items-selection">
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-16" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-16" value="vegetarian" unchecked></input>
                                         &nbsp;&nbsp;Vegetarian
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-17" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-17" value="vegan" unchecked></input>
                                         &nbsp;&nbsp;Vegan
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-18" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-18" value="gluten free" unchecked></input>
                                         &nbsp;&nbsp;Gluten Free
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-19" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-19" value="pescetarian" unchecked></input>
                                         &nbsp;&nbsp;Pescetarian
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-20" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-20" value="include cat food" unchecked></input>
                                         &nbsp;&nbsp;Include cat food
                                     </label>
                                 </div>
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-21" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-21" value="include dog food" unchecked></input>
                                         &nbsp;&nbsp;Include dog food
                                     </label>
                                 </div>
