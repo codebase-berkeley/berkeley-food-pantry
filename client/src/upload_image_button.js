@@ -1,4 +1,3 @@
-
 import importimagecloud from './assets/import-image-cloud.svg';
 import './add_food.css';
 import saveitembutton from './assets/saveitembutton.png';

@@ -101,6 +101,8 @@ p#filterControlLabel {
 .item-name-textbox {
     width: 30vw;
     height: 5vh;
+    border-radius: .5vw;
+    border: solid #ACB9AC;
 }
 
 label, input {
@@ -198,4 +200,31 @@ label, input {
     color:#B8B8B8;
     margin-top: 2.5%;  
     font-weight: 300; 
+
+}
+
+@media screen and (orientation: portrait) {
+    .add-food-component-container {
+        flex-direction: column;
+    }
+    .main-add-food-component-container {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        justify-content: center;
+        align-items: flex-start;
+        height: auto;
+        width: auto;
+        margin-top: 10%;
+        margin-left: 0%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .add-food-component-header {
+        align-items: flex-start;
+        margin-left: 9%;
+        display: flex;
+        height: 10vh;
+        width: 100vw;
+        font-family: "Montserrat";
+    }
 }
