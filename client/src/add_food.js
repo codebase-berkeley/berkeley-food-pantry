@@ -44,12 +44,11 @@ const customStyles = {
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
             border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
+        },
+        "@media screen and (orientation: portrait)": {
+            width: '80vw', 
+            borderRadius: '2vw'
         }
-        // container
-        // "@media only screen and (max-width: 1200px)": {
-        //     ...provided["@media only screen and (max-width: 1200px)"],
-        //     marginRight: "1.5rem",
-        // }
     }),
 
     multiValue: (provided, state) => {
@@ -86,6 +85,8 @@ export default function AddFood() {
                             <p id="filterControlLabel">Set Stock Availability</p>
                             <div id="filter-dropdown">
                                 <Select className="custom-dropdown"
+                                    menuPlacement='auto'
+                                    menuPosition='fixed'
                                     styles={customStyles}
                                     closeMenuOnSelect={false}
                                     components={animatedComponents}

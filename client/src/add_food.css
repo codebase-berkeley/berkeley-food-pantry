@@ -219,7 +219,7 @@ label, input {
         flex-direction: column;
         border: none;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         height: auto;
         width: auto;
         margin-top: 10%;
@@ -233,5 +233,13 @@ label, input {
         height: 10vh;
         width: 100vw;
         font-family: "Montserrat";
+    }
+    .stock-dropdown {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+    .categories-dropdown {
+        align-items: center;
     }
 }
