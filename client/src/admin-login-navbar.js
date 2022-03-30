@@ -6,11 +6,11 @@ export default function NavbarComponent() {
    return(
       <div className= "navbarContainer">
          <img src={berkeleyfoodpantrylogo} className = "navbarLogo" alt = "navbar logo"></img>
-            <ul className = "navbarStyle">
-               <li><a href="https://www.berkeleyfoodpantry.org/aboutus" target="_blank">About the Pantry</a></li> 
-                  <Link to="/stockListingAdmin" className = "" >Edit Today's Stock</Link>
-                  <Link to="/" className = "">View Appointments</Link>
-                  <Link to="/adminLogin" className = "">Log in</Link>
+            <ul className = "navbar-container"> 
+                  <Link to="https://www.berkeleyfoodpantry.org/aboutus" className = "headerTags" >About the Pantry</Link>
+                  <Link to="/stockListingAdmin" className = "headerTags" >Edit Today's Stock</Link>
+                  <Link to="/" className = "headerTags">View Appointments</Link>
+                  <Link to="/adminLogin" className = "headerTags">Login</Link>
             </ul>
       </div>
    )
