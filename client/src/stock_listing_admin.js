@@ -43,7 +43,8 @@ const customStyles = {
     option: (provided, state) => ({
         ...provided,
         height: '6vh',
-        backgroundColor: state.isFocused ? "#E5E5E5" : null
+        backgroundColor: state.isFocused ? "#E5E5E5" : null,
+        color: "#000000"
     }),
 
     dropdownIndicator: base => ({
