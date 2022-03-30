@@ -69,7 +69,7 @@ export default function AppointmentScheduler() {
     const [selectedTime, setSelectedTime] = useState([]);
     
     function clearInputFieldsHelper() {
-        for (var i = 1; i <= 4; i++) {
+        for (var i = 1; i <= 5; i++) {
             var checkString = "input-values-" + i;
             if (document.getElementById(checkString).value != "") {
                 document.getElementById(checkString).value = "";
