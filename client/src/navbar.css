@@ -43,11 +43,17 @@
     font-family: "Montserrat";
     font-size: 18px;
     color: #464646;
-    text-decoration: none;
     margin-right: 7%;
-    
-    
+    background-color: transparent;   
+    text-decoration: none; 
 }
+
+.headerTags :hover {
+    display: none;
+    text-decoration: none;
+    color: black;
+    pointer-events: none;
+} 
 
 .navbar-container {
     display: flex;
@@ -57,7 +63,6 @@
     align-items: center;
     /* background-color: red; */
 }
-
 
 @media screen and (orientation: portrait) {
     .navbarContainer {

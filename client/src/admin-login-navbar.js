@@ -7,10 +7,10 @@ export default function NavbarComponent() {
       <div className= "navbarContainer">
          <img src={berkeleyfoodpantrylogo} className = "navbarLogo" alt = "navbar logo"></img>
             <ul className = "navbar-container"> 
-                  <Link to="https://www.berkeleyfoodpantry.org/aboutus" className = "headerTags" >About the Pantry</Link>
-                  <Link to="/stockListingAdmin" className = "headerTags" >Edit Today's Stock</Link>
-                  <Link to="/" className = "headerTags">View Appointments</Link>
-                  <Link to="/adminLogin" className = "headerTags">Login</Link>
+                  <Link to="https://www.berkeleyfoodpantry.org/aboutus" className = "headerTags" style={{ textDecoration: 'none'}} >About the Pantry</Link>
+                  <Link to="/stockListingAdmin" className = "headerTags" style={{ textDecoration: 'none' }} >Edit Today's Stock</Link>
+                  <Link to="/" className = "headerTags" style={{ textDecoration: 'none' }}>View Appointments</Link>
+                  <Link to="/adminLogin" className = "headerTags" style={{ textDecoration: 'none' }}>Login</Link>
             </ul>
       </div>
    )
