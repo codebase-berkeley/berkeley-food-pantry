@@ -10,6 +10,12 @@ import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
 import Food from './Food';
 import apple from "./apple.png";
+import banana from "./banana.png";
+import cocunut from "./cocunut.png";
+import meat from "./meat.png";
+import donut from './donut.png';
+import brocolli from './brocolli.png';
+import cannedBeans from './cannedBeans.png';
 
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
@@ -173,11 +179,11 @@ export function StockListingAdmin() {
                     </div>
                     <div className="filterItemDisplay">
                     <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Cocunut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Brocolli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     </div>
                 </div>
             </div>
