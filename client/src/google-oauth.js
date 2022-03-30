@@ -32,7 +32,6 @@ function GoogleOAuth() {
         setLoginData(null);
     };
 
-
     return (
         <div>
             <h1>React Google Login</h1>
@@ -61,4 +60,5 @@ function GoogleOAuth() {
                
     )
 }
+
 export default GoogleOAuth;

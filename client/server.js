@@ -1,10 +1,9 @@
 
-
 const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 
-// const MyContext = React.createContext(false);
+// const isAdmin = React.createContext(false);
 // const adminEmails = ['ysharma@berkeley.edu', 'mawil0721@berkeley.edu'];
 
 const { OAuth2Client } = require('google-auth-library');
@@ -30,12 +29,11 @@ app.post('/api/google-login', async (req, res) => {
     const ticket = await client.verifyIdToken({
         idToken: token,
         audience: process.env.REACT_APP_GOOGLE_CLIENT_ID, 
-
     });
 
     const { name, email, picture } = ticket.getPayload();
     upsert(users, { name, email, picture });
-    // if (adminEmails.includes(email)) MyContext = true;
+    // if (adminEmails.includes(email)) isAdmin = true;
 
     res.status(201);
     res.json( { name, email, picture });
