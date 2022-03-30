@@ -4,7 +4,7 @@ import './components/search_bar.css';
 import './stock_listing_admin.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import isbesPlusSign from './images/plusSign.svg';
+import isbesPlusSign from './Images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
