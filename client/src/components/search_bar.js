@@ -1,5 +1,5 @@
 import React from 'react';
-import isbeesSearchBar from './../Images/IsbeesSearchIcon.svg';
+import isbeesSearchBar from './../images/IsbeesSearchIcon.svg';
 function searchBar({placeholder, data}) {
   
   function hideIcon(self) {
