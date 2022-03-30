@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.intro-text-container {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    width: 100vw;
+    margin-top: 2%;
+    margin-bottom: -.5%;
+}
+
+.intro-text {
+    margin-left: 5.5%;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 500;
+    color: #264425;
+}
+
+.intro-text-pt2 {
+    font-weight: 300;
+    margin-left: 4%;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #262626;
+}
+
+.main-appointment-scheduler-container {
+    display: flex;
+    height: 70vh;
+    width: 90vw;
+    margin-top: 0%;
+    margin-left: 5%;
+}
+
+.main-appointment-scheduler-left {
+    display: flex;
+    height: 75vh;
+    width: 45vw;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 2vw;
+    border: 1px solid #C4C4C4;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main-appointment-scheduler-right {
+    display: flex;
+    height: 75vh;
+    width: 45vw;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 2vw;
+    border: 1px solid #C4C4C4;
+    border-left: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.step-heading {
+   font-size: 2.5vh;
+   font-family: 'Montserrat', sans-serif;
+   font-weight:700;
+   color: #264425;
+   margin-bottom: 1%;
+}
+
+.step-heading-2 {
+    font-size: 2.5vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    color: #264425;
+    margin-bottom: 1%;
+}
+
+ .button-container {
+     display: flex;
+     margin-top: 4%;
+     height: 10vh;
+     justify-content: end;
+     margin-right: 5%;
+ }
+
+ .clear-all-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 5.5vh;
+    font-size: 2.25vh;
+    border-radius: 20px;
+    border: #588157 solid 1px;
+    color: #588157;
+    font-family: 'Montserrat';
+    background-color: white;
+}
+
+.clear-all-button:hover {
+    background-color: rgb(240, 230, 230);
+  }
+
+.submit-button:hover {
+    background-color: #69ac67;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    justify-content: center;
+    width: 10vw;
+    height: 5.5vh;
+    border-radius: 20px;
+    /* border: #588157 solid 1px; */
+    background-color: #264425;
+    color: white;
+    font-size: 2.25vh;
+    font-family: 'Montserrat';
+}
+
+.submit {
+    font-size: 2.2vh;
+    color: #264425;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.appt-sched-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 2vh;
+}
+
+p#input-field-label {
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+
+p#item-checklist-label {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    
+}
+
+.form-check-input {
+    margin-bottom: 2.5%;
+}
+
+.form-check-input-items {
+    margin-bottom: 15%;
+}
+
+.custom-dropdown {
+    padding-top: 1px;
+    border-color: #ACB9AC;
+}
+
+.searchInputs {
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    border: 0px solid;
+}
+
+.input-name {
+    display: flex;
+    flex-direction: row;
+}
+  
+.search-inputs input {
+    border-color: #ACB9AC;
+    border: solid #ACB9AC 1px;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    box-shadow: #ACB9AC;
+    height: 5vh;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+input::placeholder{
+    border-color: #ACB9AC;
+    background-repeat: no-repeat;
+    background-position: 97%;
+}
+
+.name-box {
+    width: 10vw;
+}
+
+.contact-box {
+    height: 20vh;
+    width: 33vw;
+    border-color: #ACB9AC;
+    border: solid #ACB9AC 1px;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    box-shadow: #ACB9AC;
+    text-align: top;
+}
+
+.pickup-items {
+    font-family: 'Inter';
+    margin-right: 7%;
+}
+
+.dietary-preferences {
+    font-family: "Inter";
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    height: 32vh;
+    width: 40vw;
+}
+
+.pick-up-items {
+    font-family: "Inter";
+    height: 32vh;
+    width: 40vw;
+}
+
+.text-field {
+    margin-bottom: 3%;
+    margin-right: 5%;
+}
+
+.left-checklist-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 35vh;
+    width: 40vw;
+    border: solid #ACB9AC 1px;
+    border-radius: .5vw;
+    padding-left: .5vw;
+    box-shadow: #ACB9AC;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
