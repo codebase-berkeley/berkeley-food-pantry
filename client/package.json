@@ -19,13 +19,10 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-select": "^5.2.2",
-<<<<<<< HEAD
     "rsuite": "^5.6.4",
     "web-vitals": "^2.1.0",
-    "yarn": "^1.22.17"
-=======
+    "yarn": "^1.22.17",
     "web-vitals": "^2.1.0"
->>>>>>> appointment-scheduler
   },
   "scripts": {
     "start": "react-scripts start",
