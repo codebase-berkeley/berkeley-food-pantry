@@ -28,7 +28,7 @@
 
 .main-appointment-scheduler-container {
     display: flex;
-    height: 70vh;
+    height: 65vh;
     width: 90vw;
     margin-top: 0%;
     margin-left: 5%;
@@ -36,7 +36,7 @@
 
 .main-appointment-scheduler-left {
     display: flex;
-    height: 75vh;
+    height: 65vh;
     width: 45vw;
     flex: 1;
     flex-direction: column;
@@ -52,7 +52,7 @@
 
 .main-appointment-scheduler-right {
     display: flex;
-    height: 75vh;
+    height: 65vh;
     width: 45vw;
     flex: 1;
     flex-direction: column;
@@ -73,6 +73,7 @@
    font-weight:700;
    color: #264425;
    margin-bottom: 1%;
+   margin-top: 20px;
 }
 
 .step-heading-2 {
@@ -81,11 +82,12 @@
     font-weight:700;
     color: #264425;
     margin-bottom: 1%;
+    margin-top: 20px;
 }
 
  .button-container {
      display: flex;
-     margin-top: 4%;
+     margin-top: 2%;
      height: 10vh;
      justify-content: end;
      margin-right: 5%;
@@ -137,7 +139,7 @@
     justify-content: center;
 }
 
-.filters {
+.scheduler-filters {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -265,4 +267,5 @@ input::placeholder{
     box-shadow: #ACB9AC;
     overflow-x: hidden;
     overflow-y: auto;
+    margin-bottom: 10px;
 }

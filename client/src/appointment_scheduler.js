@@ -125,7 +125,7 @@ export default function AppointmentScheduler() {
             <div className = 'main-appointment-scheduler-container'>
                 <div className = 'main-appointment-scheduler-left'>
                     <h1 className = 'step-heading'>Step 1: Choose your appointment time.</h1>                 
-                    <div className="filters">               
+                    <div className="scheduler-filters">               
                         <div className="appt-sched-dropdown">
                             <p id="input-field-label">Pick a date for your appointment:</p>
                             <div id="filter-dropdown">
