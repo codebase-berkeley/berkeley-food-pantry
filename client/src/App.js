@@ -1,11 +1,11 @@
 import './App.css';
-import AdminLogin from './admin-login';
-import NavbarComponent from './admin-login-navbar';
-import MobileNavbar from './mobile-navbar';
-import AddFood from './add_food';
-import { StockListingUser, StockListingAdmin } from './stock_listing_admin.js'
+import AdminLogin from './pages/AdminLogin.js';
+import NavbarComponent from './pages/AdminLoginNavbar';
+import MobileNavbar from './pages/MobNavbar';
+import AddFood from './pages/AddFood.js';
+import { StockListingUser, StockListingAdmin } from './pages/StockListingAdmin.js'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import AppointmentScheduler from './appointment_scheduler';
+import AppointmentScheduler from './pages/AppointmentScheduler';
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User
 
