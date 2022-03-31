@@ -14,9 +14,11 @@ export default function UploadImageButton() {
     
     if (buttonType == false) {
         return(
+            <div className = "save-item-button-container-final">
             <div className = 'import-image-button' role="button" onClick= {setButtonHelper}> 
                     <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
                     <h1 className = 'upload-image-text-h1'>Import Image</h1>
+            </div>
             </div>
         )
     } else if (buttonType == true) {

@@ -9,11 +9,23 @@
     
 .add-food-component-header {
     display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
     margin-top: 3%;
-    margin-left: 5%;
+    /* margin-left: 5%; */ 
     height: 10vh;
     width: 100vw;
     font-family: "Montserrat";
+    background-color: red;
+}
+
+.add-food-component-header h1 {
+    margin-left: 8vw;
+}
+
+.add-food-component-header p {
+    margin-left: 8vw;
 }
 
 .add-food-component-header p {
@@ -24,19 +36,46 @@
     font-family: "Montserrat";
 }
 
-.main-add-food-component-container {
+.main-add-food-component-container{
+    display: flex;
+    border: 1px solid rgb(173, 167, 167);
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 5vh;
+    height: 65vh;
+    width: 90vw;
+    margin-left: 5vw;
+    /* background-color: blue;     */
+}
+
+.main-add-food-component-container-left {
+    display: flex;
+    align-items: center;
+    /* background-color: blue; */
+    height: 60vh;
+    width: 45vw;
+    flex-direction: column;
+}
+.main-add-food-component-container-right {
+    display: flex;
+    /* background-color: red; */
+    height: 60vh;
+    width: 45vw;
+    
+} 
+.add-food-main-component-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60vh;
     width: 90vw;
     margin-top: 10%;
-    margin-left: -100%;
+    /* margin-left: -100%; */
     border: 1px solid rgb(173, 167, 167);
     border-radius: 10px 10px 10px 10px;
+    background-color: blue;
 }
 
-.save-item-button-container {
+.add-food-save-item-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,12 +91,20 @@
     font-family: 'Montserrat';
 }
 
-.item-selections {
+/* .add-food-save-item-button-container {
+    display: flex;
+    background-color: red;
+    width: 18vw;
+    height: 10vh;
+} */
+
+.add-food-item-selections {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80%;
-    width: 50%;
+    height: 30%;
+    width: 100%;
+    /* background-color: yellow; */
 }
 
 .upload-image {
@@ -71,12 +118,15 @@
     font-size: 150%;
 }
 
-.stock-dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.stock-dropdown { 
     padding-bottom: 2vh;
     width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+    /* background-color: green; */
 }
 
 .categories-dropdown {
@@ -95,7 +145,7 @@ p#filterControlLabel {
 
 .item-name-input {
     display: flex;
-    padding-bottom: 2vh;
+    margin-top: 10%;
     width: 30vw;
     text-align: left; 
     color: #4C4C4C;
@@ -171,6 +221,14 @@ label, input {
     border-color: #588157;
 }
 
+.save-item-button-container-final {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    height: 10vh;
+    width: 100%;
+}
+
 .dietary-categories-select-list {
     font-family: "Montserrat";
     margin-top: 0%;
@@ -200,7 +258,7 @@ label, input {
     height: 5%;
     font: 'inter';
     font-size: 2vh;
-    margin-left: -30%;
+    
 }
 
 .optional-text {
@@ -225,6 +283,7 @@ label, input {
         margin-top: 6%;
         margin-left: 0%;
         border-radius: 10px 10px 10px 10px;
+    
     }
     .add-food-component-header {
         align-items: flex-start;
@@ -266,15 +325,15 @@ label, input {
         width: 105%;
     }
     .upload-image-header {
-        padding-bottom: 10%;
+        /* padding-bottom: 10%; */
     }
     .change-image-button { 
         width: 100%;
     }
     .save-item-button-container {
-        width: 52%;
-        margin-top: 5%;
-        margin-left: 20%;
+        display: flex;
+        width: ;
+        background-color: red;
     }
 
 }
