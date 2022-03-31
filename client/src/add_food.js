@@ -88,7 +88,7 @@ export default function AddFood() {
                                     menuPlacement='auto'
                                     menuPosition='fixed'
                                     styles={customStyles}
-                                    closeMenuOnSelect={false}
+                                    closeMenuOnSelect={true}
                                     components={animatedComponents}
                                     placeholder="Select..."
                                     options={todayStock}
