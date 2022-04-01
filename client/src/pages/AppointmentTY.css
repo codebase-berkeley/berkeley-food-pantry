@@ -25,7 +25,6 @@
     width: 100vw;
 }
 
-
 .information-display {
     background-color: pink;
     color: #383838;
@@ -37,7 +36,7 @@
     height: 100vh;
 }
 
-h1 {
+.confirmation-text h1 {
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 36px;
@@ -45,7 +44,22 @@ h1 {
 
 p#description-text {
     font-family: 'Inter';
+    color: #4C4C4C;
     font-size: 18px;
+}
+
+p#time-text {
+    font-family: 'Inter';
+    color: #4C4C4C;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+a#weblink {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: bold;
+    color: #4C4C4C;
 }
 
 .information-display .new-appt-button {
@@ -70,7 +84,7 @@ p#description-text {
     margin-top: 7%;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait) { 
     .admin-component-container {
         display: flex;
         flex-direction: column; 
