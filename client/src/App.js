@@ -12,8 +12,8 @@ import AppointmentScheduler from './appointment_scheduler';
 function App() {
   return (
     <div className = "App">
-  
-      {/* <Router>
+
+      <Router>
       <MobileNavbar/>
       <NavbarComponent/>
 
@@ -27,7 +27,7 @@ function App() {
           <Route path="addFood" element={<AddFood/>}/>
 
         </Routes>
-      </Router>       */}
+      </Router>       
       <AddFood/>
     </div>
   )

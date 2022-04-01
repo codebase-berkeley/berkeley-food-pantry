@@ -63,7 +63,7 @@ const customStyles = {
 
 export default function AddFood() {
     return(
-        <div>
+        <div className = "main-container">
         <div className = "add-food-component-header">
             <h1>Add Item</h1>
             <p className = "">Add a new item to the stock directory.</p>
@@ -108,103 +108,15 @@ export default function AddFood() {
                         </div>
                     </div>   
                 <div className = "main-add-food-component-container-right">
-                    <div className = "save-item-button-container-final">
-                    <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                        <UploadImageButton/>
+                    <div className = "upload-image-container">
+                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+                            <UploadImageButton/>
+                    </div>
                 </div>
-                </div>
-                
-                
             </div>
             <div className = "save-item-button-container-final">
                     <input className = "add-food-save-item-button" type="button" value="Save Item"></input>
                 </div>
-
-                       
-
-                        
-            {/* </div>
-           
-            
-                        <div className="categories-dropdown">
-                            <label className = "item-name-input">Select Dietary Categories (Optional)</label>
-                            <div>
-                                <Select className="custom-dropdown"
-                                    styles={customStyles}
-                                    closeMenuOnSelect={true}
-                                    components={animatedComponents}
-                                    isMulti
-                                    options={dietaryCategories}
-                                />
-                            </div>
-                        </div> */}
-   
- 
-                     {/* <div className = 'right-side-container'>
-                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                        <UploadImageButton/>
-                    </div>
-        </div> */}
-    
-        
-        
-        {/* // <div className = 'add-food-component-container'>
-        //     <div className = 'add-food-component-header'>
-        //         <div>
-        //             <h1>Add Item</h1>
-        //             <p>Add a new item to the stock directory.</p>
-        //         </div>
-        //     </div>
-        //         <div className = 'add-food-main-component-container'>
-        //             <div className = 'add-food-item-selections'> 
-        //                 <div className = "item-name">
-        //                     <form>
-        //                         <label className = "item-name-input">
-        //                             Item Name 
-        //                             </label>
-        //                             <input className = "item-name-textbox" type="text" name="name" />
-        //                     </form>
-        //                 </div>
-
-        //                 <div className="stock-dropdown">
-        //                     <label className = "item-name-input">Set Stock Availability</label>
-        //                     <div id="filter-dropdown">
-        //                         <Select className="custom-dropdown" */}
-        {/* //                             menuPlacement='auto'
-        //                             menuPosition='fixed'
-        //                             styles={customStyles}
-        //                             closeMenuOnSelect={false}
-        //                             components={animatedComponents}
-        //                             placeholder="Select..."
-        //                             options={todayStock}
-        //                         />
-        //                     </div>
-        //                 </div> */}
-
-        {/* //                 <div className="categories-dropdown">
-        //                     <label className = "item-name-input">Select Dietary Categories (Optional)</label>
-        //                     <div> */}
-        {/* //                         <Select className="custom-dropdown"
-        //                             styles={customStyles}
-        //                             closeMenuOnSelect={true}
-        //                             components={animatedComponents}
-        //                             isMulti
-        //                             options={dietaryCategories} */}
-        {/* //                         />
-        //                     </div>
-        //                 </div> */}
-        {/* //             </div>
- 
-        //             <div className = 'right-side-container'>
-        //                 <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-        //                 <UploadImageButton/>
-        //             </div>
-        //         </div> */}
-        {/* //     <div className = "save-item-button-container">
-        //         <input className = "add-food-save-item-button" type="button" value="Save Item"></input>
-        //         </div>
-        // </div> */}
         </div>
-        
     )
 }
