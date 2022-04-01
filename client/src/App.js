@@ -1,13 +1,13 @@
 import './App.css';
-import AdminLogin from './pages/AdminLogin.js';
-import NavbarComponent from './pages/AdminLoginNavbar';
+import AppointmentTY from './pages/AppointmentTY.js';
+import AdminLoginNavbar from './pages/AdminLoginNavbar';
 import MobileNavbar from './pages/MobNavbar';
 import AddFood from './pages/AddFood.js';
 import { StockListingUser, StockListingAdmin } from './pages/StockListingAdmin.js'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AppointmentScheduler from './pages/AppointmentScheduler';
 
-// PAGES : Stock Listing Admin, Admin Login, Stock Listing User
+// PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 
 function App() {
   return (
@@ -15,12 +15,12 @@ function App() {
   
       <Router>
       <MobileNavbar/>
-      <NavbarComponent/>
+      <AdminLoginNavbar/>
 
         <Routes>
           <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
       
-          <Route path = "/adminLogin" element={<AdminLogin/>}/>
+          <Route path = "/adminLogin" element={<AppointmentTY/>}/>
         
           <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
