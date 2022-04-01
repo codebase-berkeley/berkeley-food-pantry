@@ -64,20 +64,18 @@ const customStyles = {
 
 export default function AddFood() {
     return(
-        <div className = 'add-food-component-container'>
-            <div className = 'add-food-component-header'>
-                <div>
-                    <h1>Add Item</h1>
-                    <p>Add a new item to the stock directory.</p>
-                </div>
-            </div>
-                <div className = 'main-add-food-component-container'>
-                    <div className = 'item-selections'> 
-                        <div className = "item-name">
-                            <form>
-                                <label className = "item-name-input">
-                                    Item Name 
-                                    <input className = "item-name-textbox" type="text" name="name" />
+        <div className = "main-container">
+        <div className = "add-food-component-header">
+            <h1>Add Item</h1>
+            <p className = "">Add a new item to the stock directory.</p>
+        </div>
+        <div className = "main-add-food-component-container">
+            <div className = "main-add-food-component-container-left">
+                <div className = 'add-food-item-selections'> 
+                    <div className = "item-name">
+                        <form>
+                            <label className = "item-name-input">
+                                Item Name 
                                 </label>
                             </form>
                         </div>
@@ -94,29 +92,18 @@ export default function AddFood() {
                                 />
                             </div>
                         </div>
-
-                        <div className="categories-dropdown">
-                            <p id="filterControlLabel">Select Dietary Categories (Optional)</p>
-                            <div>
-                                <Select className="custom-dropdown"
-                                    styles={customStyles}
-                                    closeMenuOnSelect={true}
-                                    components={animatedComponents}
-                                    isMulti
-                                    options={dietaryCategories}
-                                />
-                            </div>
-                        </div>
-                    </div>
- 
-                    <div className = 'right-side-container'>
+                    </div>   
+                <div className = "main-add-food-component-container-right">
+                    <div className = "upload-image-container">
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                        <UploadImageButton/>
+                            <UploadImageButton/>
                     </div>
                 </div>
-            
-                <input className = "save-item-button-container" type="button" value="Save Item"></input>
-        
+            </div>
+            <div className = "save-item-button-container-final">
+                    <input className = "add-food-save-item-button" type="button" value="Save Item"></input>
+                </div>
+        </div>
         </div>
     )
 }

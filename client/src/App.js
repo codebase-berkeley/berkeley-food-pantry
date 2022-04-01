@@ -3,8 +3,9 @@ import AddFood from './add_food.js';
 
 function App() {
   return (
-    <div>
-    <AddFood/>
+
+    <div className = "App">     
+      <AddFood/>
     </div>
     
   );
