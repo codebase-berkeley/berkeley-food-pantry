@@ -20,10 +20,10 @@ export default function AppointmentTY(props) {
                 
                 </div>
 
-                <div className = 'button-container'>
-                    <form>
-                        <input className="appt-button" type="button" value="Save Item"></input>
-                    </form>
+                <div className = 'appt-button-container'>
+                    
+                    <input className="appt-button" type="button" value="Save Item"></input>
+                    
                 </div>
 
             </div>
