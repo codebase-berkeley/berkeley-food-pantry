@@ -7,16 +7,24 @@
     align-items: center;
 }
 
-.admin-login-button {
-    border-radius: 25%;
-    border-color: #383838;
-    border-width: 5px;
-    width: 100px;
-    height: 50px;
-    fill: #ffffff;
+.button-container {
+    background-color: blue;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+.appt-button {
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border-color: blue;
 }
 
-.admin-component-container {
+.full-page {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -73,16 +81,7 @@ a#weblink {
     border: none;
 }
 
-.google-sign-in-button-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 17vw;
-    height: 5.5vh;
-    border-radius: 100px;
-    border: #264425 solid 1px;
-    margin-top: 7%;
-}
+
 
 @media screen and (orientation: portrait) { 
     .admin-component-container {

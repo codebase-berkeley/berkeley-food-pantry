@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AppointmentScheduler from './pages/AppointmentScheduler';
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
+// change admin login route before submitting pr
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
       
-          <Route path = "/adminLogin" element={<AppointmentTY/>}/>
+          <Route path = "/adminLogin" element={<AppointmentTY/>}/> 
         
           <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
