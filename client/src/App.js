@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import StockListingUser from './stock_listing_user.js'
+import { StockListingUser, StockListingAdmin } from './StockListingAdminMain.js'
 
 function App() {
   return (
     <div className="App">
-      <StockListingUser></StockListingUser>
+      <StockListingAdmin/>
+      <StockListingUser/>
     </div>
   );
 }
