@@ -16,6 +16,8 @@ import meat from "./../images/meat.png";
 import donut from './../images/donut.png';
 import brocolli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
@@ -103,6 +105,11 @@ export function StockListingAdmin() {
                         <button type="button" class="btn" className="addButton">
                             <img src={isbesPlusSign}></img>
                             <div className="addItem"> Add new item </div>
+
+                        {/* <Routes>
+                            <Route path="./AddFood" element={<AddFood/>}/>
+                        </Routes> */}
+
                         </button>
                         <button className="changeStock"> Set all items to out of stock </button>
                     </div>
