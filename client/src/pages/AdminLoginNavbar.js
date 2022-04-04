@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './Navbar.css';
-import berkeleyfoodpantrylogo from './../Images/berkeley-food-pantry-logo.png';
+import berkeleyfoodpantrylogo from './../images/berkeley-food-pantry-logo.png';
 
 export default function AdminLoginNavbar() {
    return(

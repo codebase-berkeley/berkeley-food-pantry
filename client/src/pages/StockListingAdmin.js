@@ -1,22 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import Search from './../components/SearchBar.js';
 import './../components/SearchBar.css';
 import './StockListingAdmin.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import isbesPlusSign from './../Images/plusSign.svg';
+import isbesPlusSign from './../images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
 import Food from './../components/Food.js';
-import apple from "./../Images/apple.png";
-import banana from "./../Images/banana.png";
-import cocunut from "./../Images/cocunut.png";
-import meat from "./../Images/meat.png";
-import donut from './../Images/donut.png';
-import brocolli from './../Images/brocolli.png';
-import cannedBeans from './../Images/cannedBeans.png';
+import apple from "./../images/apple.png";
+import banana from "./../images/banana.png";
+import coconut from "./../images/cocunut.png";
+import meat from "./../images/meat.png";
+import donut from './../images/donut.png';
+import broccoli from './../images/brocolli.png';
+import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 
 const foodCategories = [
@@ -88,11 +89,75 @@ const customStyles = {
     },
 }
 
-const foodInStock = [ "Donut", "Apple", "Banana", "Coconut", "Broccoli", "Canned Beans"]
+const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Vegan",, "Brown"] }, 
+{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
+{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Broccoli', image: broccoli, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
+
+];
+
+
 
 
 export function StockListingAdmin() {
+    const [selectedSort, setSelectedSort] = useState();
+    const [searchInput, setSearchInput] = useState("");
+
+
+    function sortAZ(a, b) {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
     
+        // names must be equal
+        return 0;
+
+    }
+
+    function tagMatchFunction() {
+        return true;
+
+    }
+
+    function mostRecent() {
+        return;
+
+    }
+
+    function stockFilterFunction() {
+        return true;
+    }
+
+
+    function getSort() {
+        console.log('entered getSort')
+        console.log(selectedSort)
+        if (selectedSort == null) {
+            return;
+        } else if (selectedSort.value == "recently added") {
+            return mostRecent;
+        } else if (selectedSort.value == "alphabetical") {
+            return sortAZ;
+        }
+    }
+
+    function searchFunction(foodObject) {
+        console.log('calling searchFunction')
+        console.log(searchInput)
+        if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+
     return (
         <div className="entireContent">
 
@@ -132,7 +197,7 @@ export function StockListingAdmin() {
                         <div className="filters">
                             <div className="searchBox">
                                 <text>Search Items</text>
-                                <Search placeholder="Search..." />
+                                <Search placeholder="Search..." searchInput={searchInput} setSearchInput={setSearchInput}/>
                             </div>
 
                             <div className="filter-by">
@@ -159,6 +224,8 @@ export function StockListingAdmin() {
                                         placeholder="Alphabetical, A-Z"
                                         options={sortOptions}
                                         defaultValue={sortOptions[0]}
+                                        value={selectedSort}
+                                        onChange={setSelectedSort}
                                     />
                                 </div>
                             </div>
@@ -190,12 +257,9 @@ export function StockListingAdmin() {
                         </div>
                     </div>
                     <div className="filterItemDisplay">
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red" ]} />
-                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow" ]} />
-                    <Food name="Coconut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown" ]} />
-                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown" ]} />
-                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Green" ]} />
-                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red" ]} />
+                        {food.filter(searchFunction).filter(tagMatchFunction).filter(stockFilterFunction).sort(getSort()).map(foodItem => (<Food name={foodItem.name} image={foodItem.image} in_stock={foodItem.instock} tags={foodItem.tags} />))}
+
+                    {/* food.filter(matchesTags) */}
                     </div>
                 </div>
             </div>
@@ -204,6 +268,41 @@ export function StockListingAdmin() {
 }
 
 export function StockListingUser() {
+    const [selectedSort, setSelectedSort] = useState();
+
+
+    function sortAZ(a, b) {
+        console.log('entered sortAZ')
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+    
+        // names must be equal
+        return 0;
+
+    }
+
+    function mostRecent() {
+        return;
+
+    }
+
+
+    function getSort() {
+        
+        if (selectedSort == null) {
+            return;
+        } else if (selectedSort == "recently added") {
+            return mostRecent;
+        } else if (selectedSort == "alphabetical") {
+            return sortAZ;
+        }
+    }
     return (
         <div className="entireContent">
 
@@ -276,9 +375,9 @@ export function StockListingUser() {
                     <div className="filterItemDisplay">
                     <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Coconut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Coconut" image={coconut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Broccoli" image={broccoli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     </div>
                 </div>
