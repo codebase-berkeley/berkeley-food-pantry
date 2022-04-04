@@ -1,8 +1,8 @@
 import React from 'react'
 import './Food.css'
 import Tags from './Tags.js'
-import edit_item from './../images/edit_item.png'
-import pen from './../images/pen.svg'
+import edit_item from './../Images/edit_item.png'
+import pen from './../Images/pen.svg'
 
 function Food(props) {
     function editItem () {

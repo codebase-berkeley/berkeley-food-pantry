@@ -1,6 +1,6 @@
-import importimagecloud from './../images/import-image-cloud.svg';
+import importimagecloud from './../Images/import-image-cloud.svg';
 import './../pages/AddFood.css';
-import saveitembutton from './../images/saveitembutton.png';
+import saveitembutton from './../Images/saveitembutton.png';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
