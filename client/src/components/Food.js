@@ -3,44 +3,72 @@ import './Food.css'
 import Tags from './Tags.js'
 import edit_item from './../images/edit_item.png'
 import pen from './../images/pen.svg'
+import checkmark from './../images/check.svg'
+import xmark from './../images/check.svg'
 
 function Food(props) {
     function editItem () {
         console.log("it works");
     }
 
-    return(
-        <div className = "componentContainer">
-            <img src={props.image} class="foodImage" alt={props.name}/>
-            <div className = "infoContainer">
-                <div className = "nameTags">
-                    <div className = "foodName">
-                        {props.name}
+    if ((props.admin) == false) {
+        return(
+            <div className = "componentContainer">
+                <img src={props.image} class="foodImage" alt={props.name}/>
+                <div className = "infoContainer">
+                    <div className = "nameTags">
+                        <div className = "foodName">
+                            {props.name}
+                        </div>
+                        <div className = "tagsFormat">
+                            {props.tags.map((tag) => {
+                                return (
+                                <Tags name={tag} />
+                            );})}
+                        </div>
                     </div>
-                    <div className = "tagsFormat">
-                        {props.tags.map((tag) => {
-                            return (
-                            <Tags name={tag} />
-                        );})}
-                    </div>
-                </div>
-                <div className = "editIn">
-                    <div>
-                        <button className="editButton" onClick={editItem}>
-                            <img src={pen} className="penFormat" alt="pen"/>
-                            <div className="editItem">
-                                Edit Item
+                    <div className = "editIn">
+                        <div>
+                            <div className="editButton">
+                                <img src={pen} className="penFormat" alt="pen"/>
+                                <div className="editItem">
+                                    Edit Item
+                                </div>
                             </div>
-                        </button>
-                    </div>
-                    <div style={{paddingLeft: "6%"}} className ="inStock">
-                        <span style={{paddingRight: "11%"}}>In Stock</span>
-                        <input type="checkbox"/>
+                        </div>
+                        <div style={{paddingLeft: "6%"}} className ="inStock">
+                            <span style={{paddingRight: "11%"}}>In Stock Today</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    );   
+            </div>                
+        );   
+    } else {
+       return(
+            <div className = "componentContainer">
+                <img src={props.image} class="foodImage" alt={props.name}/>
+                <div className = "infoContainer">
+                    <div className = "nameTags">
+                        <div className = "foodName">
+                            {props.name}
+                        </div>
+                        <div className = "tagsFormat">
+                            {props.tags.map((tag) => {
+                                return (
+                                <Tags name={tag} />
+                            );})}
+                        </div>
+                    </div>
+                    <div className = "editIn">
+                            <img src={checkmark} className="stockImage" alt="checkmark"/>
+                        <div style={{paddingLeft: "6%"}} className ="inStock">
+                            <span style={{paddingRight: "11%"}}>In Stock Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+        );
+    }
 }
 
 export default Food

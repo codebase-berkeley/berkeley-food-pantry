@@ -39,8 +39,16 @@
     width: 120px;
     height: 32px;
     background-color: white;
-    border-width: 1px;
-    
+    border-width: 1px; 
+}
+
+.stockImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: white;
 }
 
 .editItem {
