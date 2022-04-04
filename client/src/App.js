@@ -24,11 +24,11 @@ function App() {
         
           <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
-          <Route path="addFood" element={<AddFood/>}/>
+          <Route path="/addFood" element={<AddFood/>}/>
 
         </Routes>
       </Router>       
-      <AddFood/>
+
     </div>
   )
 }
