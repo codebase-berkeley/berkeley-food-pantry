@@ -6,6 +6,7 @@ import AddFood from './pages/AddFood.js';
 import { StockListingUser, StockListingAdmin } from './pages/StockListingAdmin.js'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AppointmentScheduler from './pages/AppointmentScheduler';
+import AdminLogin from './pages/AdminLogin.js';
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
@@ -21,7 +22,9 @@ function App() {
         <Routes>
           <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
       
-          <Route path = "/adminLogin" element={<AppointmentTY/>}/> 
+          <Route path = "/adminLogin" element={<AdminLogin/>}/>
+
+          <Route path="/thankyou" element={<AppointmentTY/>}/> 
         
           <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 

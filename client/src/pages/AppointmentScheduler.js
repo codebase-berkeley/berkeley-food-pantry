@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 // import 'rsuite/dist/rsuite.min.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
+import AppointmentTY from './AppointmentTY';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const dates = [
     { value: 0, label: 'Select date...' },
@@ -67,6 +69,7 @@ export default function AppointmentScheduler() {
     const[dropDownSelection, clearDropDown] = useState(0)
     const [selectedDate, setSelectedDate] = useState([]);
     const [selectedTime, setSelectedTime] = useState([]);
+    const [formSubmitted, setFormSubmitted] = useState(false);
     
     function clearInputFieldsHelper() {
         for (var i = 1; i <= 5; i++) {
@@ -86,7 +89,10 @@ export default function AppointmentScheduler() {
         setSelectedDate([]); 
         setSelectedTime([]);
     }
+
     function submitForm() {
+        setFormSubmitted(true);
+
         console.log("contact information:")
         for (var i = 1; i <= 4; i++) {
             var checkString = "input-values-" + i;
@@ -113,7 +119,15 @@ export default function AppointmentScheduler() {
 
         console.log("additional information:")
         console.log(document.getElementById('input-values-5').value);
+
+       
+        // <Routes>
+        //   <Route path="/appointmentThankYou" element={<AppointmentTY date={selectedDate.label} time={selectedTime.label}/>}/>
+        // </Routes>
+        
     }   
+    
+    // if (!formSubmitted) {
     
     return (
         <div>
@@ -352,11 +366,18 @@ export default function AppointmentScheduler() {
             
                 </div>
                 <div className = 'submit-button'> 
-                    {/* <h1 className = 'submit'>Submit</h1>   */}
-                    <input className = "submit-button" type="button" onClick= {submitForm} value="Submit"></input>
-                   
+                    <Link to="/thankyou" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
+
+                    {/* <input className = "submit-button" type="button" onClick= {submitForm} value="Submit"></input> */}
                 </div>
             </div>
         </div>
     )
-}
+
+} 
+// else {
+//     return (
+//         <AppointmentTY date={selectedDate.label} time={selectedTime.label}/>
+//     )
+// }
+// }

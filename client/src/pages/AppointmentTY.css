@@ -8,7 +8,7 @@
 }
 
 .appt-button-container {
-    background-color: orange;
+    /* background-color: orange; */
     display: flex;
     width: 100%;
     align-items: center;
@@ -16,14 +16,28 @@
 }
 
 .appt-button {
+    display: flex;
     background-color: white;
     align-items: center;
     justify-content: center;
-    width: 17vw;
+    width: 20vw;
     /* width: 100%; */
     height: 5.5vh;
     border-radius: 100px;
     border: #264425 solid 1px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #264425;
+    list-style-type: none;
+    font-family: Montserrat;
+    font-size: 15px;
+    
+}
+
+.appt-button:hover {
+    font-family: Montserrat;
+    color: #264425;
+    text-decoration: none;
 }
 
 .full-page {
@@ -36,7 +50,7 @@
 }
 
 .information-display {
-    background-color: pink;
+    /* background-color: pink; */
     color: #383838;
     display:flex;
     flex-direction: column;
