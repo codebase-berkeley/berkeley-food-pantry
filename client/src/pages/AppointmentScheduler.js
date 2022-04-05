@@ -1,8 +1,9 @@
 import './AppointmentScheduler.css'
 import React, { useState } from 'react';
-// import 'rsuite/dist/rsuite.min.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
+import AppointmentTY from './AppointmentTY';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const dates = [
     { value: 0, label: 'Select date...' },
@@ -86,7 +87,9 @@ export default function AppointmentScheduler() {
         setSelectedDate([]); 
         setSelectedTime([]);
     }
+
     function submitForm() {
+
         console.log("contact information:")
         for (var i = 1; i <= 4; i++) {
             var checkString = "input-values-" + i;
@@ -112,9 +115,9 @@ export default function AppointmentScheduler() {
         }
 
         console.log("additional information:")
-        console.log(document.getElementById('input-values-5').value);
+        console.log(document.getElementById('input-values-5').value); 
     }   
-    
+        
     return (
         <div>
             <div className = 'intro-text-container'>
@@ -345,18 +348,13 @@ export default function AppointmentScheduler() {
             </div>
             <div className = 'button-container'>
                 <div className = 'clear-all-button'> 
-                    {/* <h1 className = 'clear-all'>Clear all</h1>      */}
                     <input onClick={clearInputFieldsHelper} className = "clear-all-button" type="button" id ="btClear" value="Clear all"></input>
-                    {/* <button className = "clear-all-button" type="button">Clear all</button> */}
-
-            
                 </div>
                 <div className = 'submit-button'> 
-                    {/* <h1 className = 'submit'>Submit</h1>   */}
-                    <input className = "submit-button" type="button" onClick= {submitForm} value="Submit"></input>
-                   
+                    <Link to="/thankyou" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
                 </div>
             </div>
         </div>
     )
-}
+
+} 
