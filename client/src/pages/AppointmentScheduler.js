@@ -1,6 +1,5 @@
 import './AppointmentScheduler.css'
 import React, { useState } from 'react';
-// import 'rsuite/dist/rsuite.min.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import AppointmentTY from './AppointmentTY';
@@ -69,7 +68,6 @@ export default function AppointmentScheduler() {
     const[dropDownSelection, clearDropDown] = useState(0)
     const [selectedDate, setSelectedDate] = useState([]);
     const [selectedTime, setSelectedTime] = useState([]);
-    const [formSubmitted, setFormSubmitted] = useState(false);
     
     function clearInputFieldsHelper() {
         for (var i = 1; i <= 5; i++) {
@@ -91,7 +89,6 @@ export default function AppointmentScheduler() {
     }
 
     function submitForm() {
-        setFormSubmitted(true);
 
         console.log("contact information:")
         for (var i = 1; i <= 4; i++) {
@@ -118,17 +115,9 @@ export default function AppointmentScheduler() {
         }
 
         console.log("additional information:")
-        console.log(document.getElementById('input-values-5').value);
-
-       
-        // <Routes>
-        //   <Route path="/appointmentThankYou" element={<AppointmentTY date={selectedDate.label} time={selectedTime.label}/>}/>
-        // </Routes>
-        
+        console.log(document.getElementById('input-values-5').value); 
     }   
-    
-    // if (!formSubmitted) {
-    
+        
     return (
         <div>
             <div className = 'intro-text-container'>
@@ -359,25 +348,13 @@ export default function AppointmentScheduler() {
             </div>
             <div className = 'button-container'>
                 <div className = 'clear-all-button'> 
-                    {/* <h1 className = 'clear-all'>Clear all</h1>      */}
                     <input onClick={clearInputFieldsHelper} className = "clear-all-button" type="button" id ="btClear" value="Clear all"></input>
-                    {/* <button className = "clear-all-button" type="button">Clear all</button> */}
-
-            
                 </div>
                 <div className = 'submit-button'> 
                     <Link to="/thankyou" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
-
-                    {/* <input className = "submit-button" type="button" onClick= {submitForm} value="Submit"></input> */}
                 </div>
             </div>
         </div>
     )
 
 } 
-// else {
-//     return (
-//         <AppointmentTY date={selectedDate.label} time={selectedTime.label}/>
-//     )
-// }
-// }

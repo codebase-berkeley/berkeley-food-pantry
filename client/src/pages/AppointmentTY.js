@@ -8,19 +8,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ContactsOutlined } from '@mui/icons-material';
 
 export default function AppointmentTY(props) {
-    // function newAppt() {
-    //     <Routes>
-    //         <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
-    //     </Routes>
-    // }
-    // const dateSelected = state[date]
-    // const timeSelected = state[time]
     const location = useLocation();
-    console.log("HELLO: ",  location);
-    console.log(location.state)
     const dateSelected = location.state?.date;
     const timeSelected = location.state?.time;
-    console.log(dateSelected);
 
    return(
     <div className = 'full-page'>
@@ -30,6 +20,7 @@ export default function AppointmentTY(props) {
                 <div className = 'confirmation-text'>
                     
                     <h1>Thank you!</h1>   
+
                     <p id="description-text">Thank you so much for scheduling an appointment with us; we look forward to seeing you!</p>
                     <p id="description-text">Your appointment is scheduled for</p>
                     <p id="time-text">{dateSelected} at {timeSelected}</p>
