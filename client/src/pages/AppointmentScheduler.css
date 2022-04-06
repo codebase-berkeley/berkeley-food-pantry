@@ -32,6 +32,7 @@
     width: 90vw;
     margin-top: 0%;
     margin-left: 5%;
+    /* background-color: red; */
 }
 
 .main-appointment-scheduler-left {
@@ -149,6 +150,10 @@
     overflow-y: scroll;
 }
 
+.filter-dropdown {
+    width: 100%;
+}
+
 .appt-sched-dropdown {
     display: flex;
     flex-direction: column;
@@ -169,7 +174,7 @@ p#item-checklist-label {
     color: #000000;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 2vh;
     
 }
 
@@ -178,13 +183,19 @@ p#item-checklist-label {
 }
 
 .form-check-input-items {
-    margin-bottom: 15%;
+    margin-bottom: 3%;
+}
 
+.form-check-input-items {
+    margin-bottom: 8%; 
+    border: #000000;
 }
 
 .custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
+    width: 100%
+    
 }
 
 .searchInputs {
@@ -241,7 +252,7 @@ input::placeholder{
     font-family: "Inter";
     display: flex;
     flex-direction: column;
-    background-color: red;
+    /* background-color: red; */
     height: 32vh;
     width: 40vw;
 }
@@ -270,4 +281,131 @@ input::placeholder{
     overflow-x: hidden;
     overflow-y: auto;
     margin-bottom: 10px;
+}
+
+.additional-information-text-field {
+    /* margin-bottom: 3%;
+    margin-right: 5%; */
+    margin-top: 10vh;
+}
+
+@media screen and (orientation: portrait) {
+    .intro-text {
+        font-weight: bold;
+    }
+    
+    .main-appointment-scheduler-container {
+        display: flex;
+        flex-direction: column;
+        height: 150vh;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+    .main-appointment-scheduler-left {
+        /* display: flex;
+        flex-direction: column; */
+        /* background-color: blue; */
+        width: 100%;
+        height: 150%;
+        overflow-y: auto;
+        border: white;
+    }
+    .main-appointment-scheduler-right {
+        width: 100%;
+        height: 100vh;
+        border: white;
+        overflow-y: auto;
+    }
+
+    .custom-dropdown-1 {
+        width: 100vw;
+        /* background-color: red; */
+    }
+
+    .step-heading {
+        font-size: 2vh;
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .left-checklist-container {
+        width: 100%;
+        display: flex;
+        
+        flex-direction: column;
+        justify-content: start;
+        /* align-items: center; */
+        height: 50%;
+        overflow-y: auto;
+        border-radius: 10px;
+        background-color: red;
+    }
+
+    .appt-sched-dropdown {
+        /* background-color: red; */
+        width: 100%;
+    }
+
+    .input-name {
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+    .name-box {
+        width: 80vw;
+    }
+
+    .contact-box {
+        width: 80vw;
+        height: 10vh;
+    }
+
+    .form-check {
+        margin-bottom: 2%;
+    }
+
+    .additional-information-text-field {
+        margin-top: 2vh;
+    }
+
+    .clear-all-button {
+        display: none;
+        align-items: center;
+        margin-left: 1%;
+        justify-content: center;
+        width: 10vw;
+        height: 5.5vh;
+        border-radius: 20px;
+        border: #588157 solid 1px;
+        background-color: white;
+        color: #588157;
+        font-size: 2.25vh;
+        font-family: 'Montserrat';
+    }
+
+    .button-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .submit-button {
+        font-weight: bold;
+        width: 30vw;
+    }
+
+    p#item-checklist-label {
+        margin-top: 2vh;
+        margin-bottom: .5vh;
+        margin-left: 3vw;
+        font-size: 1.5vh;
+        
+    }
+
+    .pickup-items-selection {
+        margin-left: 3vw;
+    }
+
+    
 }
