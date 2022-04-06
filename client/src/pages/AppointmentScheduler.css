@@ -197,7 +197,7 @@ p#item-checklist-label {
 .custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
-    width: 100%
+    width: 20vw !important;
 }
 
 .searchInputs {
@@ -239,7 +239,7 @@ input::placeholder{
     width: 33vw;
     border-color: #ACB9AC;
     border: solid #ACB9AC 1px;
-    border-radius: .5vw;
+    border-radius: 10px;
     padding-left: .5vw;
     box-shadow: #ACB9AC;
     text-align: top;
@@ -302,18 +302,16 @@ input::placeholder{
         height: 150vh;
         justify-content: center;
         align-items: center;
-        /* background-color: red; */
     }
+
     .main-appointment-scheduler-left {
-        /* display: flex;
-        flex-direction: column; */
-        background-color: blue;
         width: 100%;
         height: 150%;
         overflow-y: auto;
         overflow-x: initial;
         border: white;
     }
+
     .main-appointment-scheduler-right {
         width: 100%;
         height: 100vh;
@@ -323,9 +321,8 @@ input::placeholder{
     }
 
     .custom-dropdown-1 {
-        width: 100vw;
-        
-        /* background-color: red; */
+        width: 70% !important;
+        border-radius: 10px;
     }
 
     .step-heading {
@@ -337,25 +334,20 @@ input::placeholder{
     .left-checklist-container {
         width: 100%;
         display: flex;
-        
         flex-direction: column;
         justify-content: start;
-        /* align-items: center; */
         height: 50%;
         overflow-y: auto;
         border-radius: 10px;
-        background-color: red;
     }
 
     .appt-sched-dropdown {
-        /* background-color: red; */
         width: 100%;
     }
 
     .input-name {
         display: flex;
         flex-direction: column;
-       
     }
 
     .name-box {
@@ -365,6 +357,7 @@ input::placeholder{
     .contact-box {
         width: 80vw;
         height: 10vh;
+        border-radius: 10px;
     }
 
     .form-check {

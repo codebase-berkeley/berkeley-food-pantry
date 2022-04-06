@@ -42,7 +42,7 @@ const customStyles = {
         height: '6vh',
         ...provided,
         width: '33vw',
-        borderRadius: '.5vw',
+        borderRadius: '10px',
         
         border: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
         boxShadow: state.isFocused ? '1px solid #ACB9AC' : '1px solid #ACB9AC',
@@ -128,9 +128,8 @@ export default function AppointmentScheduler() {
                     <div className="scheduler-filters">               
                         <div className="appt-sched-dropdown">
                             <p id="input-field-label">Pick a date for your appointment:</p>
-                            <div id="filter-dropdown">
+                            <div className="filter-dropdown">
                                 <Select className="custom-dropdown-1" 
-                                    id = "rat"
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
@@ -143,7 +142,7 @@ export default function AppointmentScheduler() {
                         </div>
                         <div className="appt-sched-dropdown">
                             <p id="input-field-label">Pick a time for your appointment:</p>
-                            <div id="filter-dropdown">
+                            <div className="filter-dropdown">
                                 <Select className="custom-dropdown"
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
