@@ -1,6 +1,5 @@
 import './AppointmentScheduler.css'
 import React, { useState } from 'react';
-// import 'rsuite/dist/rsuite.min.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 
