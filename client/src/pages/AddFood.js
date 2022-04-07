@@ -5,6 +5,8 @@ import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 
+
+
 const todayStock = [
     { value: 'in stock', label: 'In stock today' },
     { value: 'out of stock', label: 'Out of stock today' }
@@ -62,6 +64,16 @@ const customStyles = {
 }
 
 export default function AddFood() {
+
+    const [edit, setEdit] = useState(true);
+
+    function editDisplay() {}
+    if (edit) {
+        
+    }
+
+    }
+
     return(
         <div className = 'add-food-component-container'>
             <div className = 'add-food-component-header'>
