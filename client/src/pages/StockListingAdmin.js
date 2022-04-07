@@ -122,6 +122,9 @@ export function StockListingAdmin() {
     }
 
     function tagMatchFunction() {
+        // use food array and scan through the tags
+        // if the tags match our food tags then we display 
+        // else dont display 
         return true;
 
     }
