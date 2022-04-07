@@ -3,6 +3,7 @@ import './Navbar.css';
 import berkeleyfoodpantrylogo from './../images/berkeley-food-pantry-logo.png';
 
 export default function AdminLoginNavbar() {
+   
    return(
       <div className= "navbarContainer">
          <img src={berkeleyfoodpantrylogo} className = "navbarLogo" alt = "navbar logo"></img>

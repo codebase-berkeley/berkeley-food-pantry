@@ -8,6 +8,27 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function MobNavbar() {
     const [dropdown, setDropdown] = useState(0);
+
+    const [admin, setAdmin] = useState(false);
+
+    function setDisplay() {
+        if (admin) {
+            return(
+               <ul className = "navbar-container">
+               <Link to="/stockListingAdmin" className = "headerTags" style={{ textDecoration: 'none' }} >Edit Today's Stock</Link>
+               <Link to="/appointmentScheduler" className = "headerTags" style={{ textDecoration: 'none' }}>View Appointments</Link>
+               </ul>
+            )
+        }
+
+        return(
+         <ul className = "navbar-container">
+         <Link to="/stockListingAdmin" className = "headerTags" style={{ textDecoration: 'none' }} >View Today's Stock</Link>
+         <Link to="/appointmentScheduler" className = "headerTags" style={{ textDecoration: 'none' }}>Schedule Appointment</Link>
+         </ul>
+        )
+    }
+
     function setTrue() {
         setDropdown(true)
     }
@@ -28,8 +49,9 @@ function MobNavbar() {
                     <div className='dropDownLinks'>
                         <a href="https://www.berkeleyfoodpantry.org/aboutus" 
                         target="_blank" rel="noopener noreferrer" className='dropDownText' onClick = {setFalse}>About the Pantry</a>
-                        <Link to = "/stockListingAdmin" onClick={setFalse} className = 'dropDownText'> Edit Today's Stock </Link>
-                        <a href="google.com" className='dropDownText'>View Appointments</a>
+                        {/* <Link to = "/stockListingAdmin" onClick={setFalse} className = 'dropDownText'> Edit Today's Stock </Link>
+                        <a href="google.com" className='dropDownText'>View Appointments</a> */}
+                        {setDisplay()}
                         <Link to = "/adminLogin" onClick={setFalse} className = 'dropDownText'> Login </Link>
                         {/* <a href="google.com" className='dropDownText'>Edit Today's Stock</a>
                         <a href="google.com" className='dropDownText'>View Appointments</a>
