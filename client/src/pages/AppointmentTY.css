@@ -61,6 +61,7 @@
 .confirmation-text {
     display: flex;
     flex-direction: column;
+    margin-top: 10vh;
 }
 
 .confirmation-text h1 {
@@ -91,23 +92,62 @@ a#weblink {
 }
 
 @media screen and (orientation: portrait) { 
-    .admin-component-container {
+    .full-page {
+        background-color: lavenderblush;
         display: flex;
-        flex-direction: column; 
-        justify-content: center;                               
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        height: 80vh;
+        width: 100vw;
+        margin-top: -5vh;
     }
 
-    .admin-pic {
+    .circle-pic {
         display: flex;
-        margin-right: 0%;
-        width: 100%;
-        padding: 15%;
+        border-radius: 50%;
+        align-items: center;
+        height: 30vh;
+        margin-top: 2px;
     }
 
+    .confirmation-text {
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        width: 70vw;
+        margin-top: 20vh;
+    }
+    
     .information-display {
         width: 65%;
         height: 20%;
         font-size: 14px;
         font-family: 'Inter', sans-serif;
     }
+
+    .appt-button {
+        display: flex;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        width: 52.5vw;
+        height: 5.5vh;
+        border-radius: 100px;
+        border: #264425 solid 1px;
+        text-decoration: none;
+        font-weight: 600;
+        color: #264425;
+        list-style-type: none;
+        font-family: Montserrat;
+        font-size: 15px;
+        margin-bottom: 5vh; 
+    }
+
+    .appt-button-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }   
 }
