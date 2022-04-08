@@ -39,6 +39,7 @@
     width: 45vw;
     flex-direction: column;
 }
+
 .main-add-food-component-container-right {
     display: flex;
     height: 100%;
