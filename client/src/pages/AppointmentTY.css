@@ -93,7 +93,6 @@ a#weblink {
 
 @media screen and (orientation: portrait) { 
     .full-page {
-        background-color: lavenderblush;
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-around;
