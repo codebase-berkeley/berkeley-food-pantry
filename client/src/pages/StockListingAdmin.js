@@ -38,6 +38,11 @@ const sortOptions = [
     { value: 'recently added', label: 'Most Recently Added' }
 ]
 
+const showOptions = [
+    { value: 'all items', label: 'All items'},
+    { value: 'in stock items', label: 'In stock items only'},
+    { value: 'not in stock items', label: 'Not in stock items only'}
+]
 
 
 const animatedComponents = makeAnimated();
@@ -106,6 +111,7 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 export function StockListingAdmin() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
+    const [selectedShow, setSelectedShow] = useState(0);
 
     const [searchInput, setSearchInput] = useState("");
 
@@ -126,7 +132,7 @@ export function StockListingAdmin() {
     }
 
     function tagMatchFunction(foodObject) {
-        console.log(selectedTags);
+        
         for (const tag of selectedTags.map(tagObject => tagObject.label)) {
 
             if (!foodObject.tags.includes(tag)) {
@@ -141,14 +147,18 @@ export function StockListingAdmin() {
 
     }
 
-    function stockFilterFunction() {
-        return true;
+    function stockFilterFunction(foodObject) {
+        if (selectedShow == 0) {
+            return true;
+        } else if (selectedShow == 1) {
+            return foodObject.instock;
+        } else if (selectedShow == 2) {
+            return !foodObject.instock;
+        }
     }
 
 
     function getSort() {
-        console.log('entered getSort')
-        console.log(selectedSort)
         if (selectedSort == null) {
             return;
         } else if (selectedSort.value == "recently added") {
@@ -159,15 +169,14 @@ export function StockListingAdmin() {
     }
 
     function searchFunction(foodObject) {
-        console.log('calling searchFunction')
-        console.log(searchInput)
+        
         if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
             return true; 
         } else {
             return false; 
         }
     }
-
+    console.log(food);
     return (
         <div className="entireContent">
 
@@ -246,21 +255,33 @@ export function StockListingAdmin() {
                                 <div className="showText"> Show </div>
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(0);
+                                            }
+                                        } }></input>               
                                         All items
                                     </label>
                                 </div>
 
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(1);
+                                            }
+                                        } }></input>
                                         In stock items only
                                     </label>
                                 </div>
                                 
                                 <div className="form-check">
                                     <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(2);
+                                            }
+                                        } }></input>
                                         Not in stock items only
                                     </label>
                                 </div>
@@ -274,7 +295,18 @@ export function StockListingAdmin() {
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)
                             .filter(tagMatchFunction)
-                            .sort(getSort()).map(foodItem => (<Food name={foodItem.name} image={foodItem.image} in_stock={foodItem.instock} tags={foodItem.tags} />))}
+                            .sort(getSort()).map(foodItem => (
+                                <Food 
+                                    name={foodItem.name} 
+                                    image={foodItem.image} 
+                                    in_stock={foodItem.instock} 
+                                    tags={foodItem.tags} 
+                                    onChange={() => {
+                                        foodItem.instock = !foodItem.instock
+                                    }}
+                                    
+                                    
+                                    />))}
 
                     {/* food.filter(matchesTags) */}
                     </div>
@@ -289,7 +321,6 @@ export function StockListingUser() {
 
 
     function sortAZ(a, b) {
-        console.log('entered sortAZ')
         const nameA = a.name.toUpperCase(); // ignore upper and lowercase
         const nameB = b.name.toUpperCase(); // ignore upper and lowercase
         if (nameA < nameB) {
