@@ -112,8 +112,14 @@ export function StockListingAdmin() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
-
     const [searchInput, setSearchInput] = useState("");
+
+    function clearInputFieldsHelper() {
+        setSelectedSort();
+        setSelectedTags([]);
+        setSelectedShow(0);
+        setSearchInput("");
+    }
 
 
     function sortAZ(a, b) {
@@ -155,6 +161,16 @@ export function StockListingAdmin() {
         } else if (selectedShow == 2) {
             return !foodObject.instock;
         }
+    }
+
+    function setOutOfStock() {
+        console.log("clicked")
+        for (const f of food) {
+            f.instock = false;
+        }
+
+        // TODO: we're forcing a rerender because the array is external, fix this later
+        setSelectedSort(selectedShow)
     }
 
 
@@ -199,7 +215,7 @@ export function StockListingAdmin() {
                         </Routes> */}
 
                         </button>
-                        <button className="changeStock"> Set all items to out of stock </button>
+                        <button className="changeStock" onClick={setOutOfStock}> Set all items to out of stock </button>
                     </div>
 
                 </div>
@@ -210,7 +226,7 @@ export function StockListingAdmin() {
 
                         <div className="filterReset">
                             <div className="filterItems">Filter Items</div>
-                            <button className="resetFilters">Reset Filters</button>
+                            <button className="resetFilters" onClick={clearInputFieldsHelper}>Reset Filters</button>
                         </div>
 
                         <div className="filters">

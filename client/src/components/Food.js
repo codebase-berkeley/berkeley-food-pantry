@@ -9,6 +9,7 @@ function Food(props) {
         console.log("it works");
     }
 
+    console.log(props.in_stock)
     return(
         <div className = "componentContainer">
             <img src={props.image} class="foodImage" alt={props.name}/>
