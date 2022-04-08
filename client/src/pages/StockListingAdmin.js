@@ -28,7 +28,9 @@ const foodCategories = [
     { value: 'fruit', label: 'Fruit' },
     { value: 'dairy', label: 'Dairy' },
     { value: 'seafood', label: 'Seafood' },
-    { value: 'pet food', label: 'Pet food' }
+    { value: 'pet food', label: 'Pet food' },
+    { value: 'brown', label: 'Brown'},
+    { value: 'vegetarian', label: 'Vegetarian'}
 ]
 
 const sortOptions = [
@@ -89,11 +91,11 @@ const customStyles = {
     },
 }
 
-const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Vegan",, "Brown"] }, 
+const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
 {name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
 {name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Broccoli', image: broccoli, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
 {name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
 
 ];
@@ -103,6 +105,8 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 
 export function StockListingAdmin() {
     const [selectedSort, setSelectedSort] = useState();
+    const [selectedTags, setSelectedTags] = useState([]);
+
     const [searchInput, setSearchInput] = useState("");
 
 
@@ -121,12 +125,15 @@ export function StockListingAdmin() {
 
     }
 
-    function tagMatchFunction() {
-        // use food array and scan through the tags
-        // if the tags match our food tags then we display 
-        // else dont display 
-        return true;
+    function tagMatchFunction(foodObject) {
+        console.log(selectedTags);
+        for (const tag of selectedTags.map(tagObject => tagObject.label)) {
 
+            if (!foodObject.tags.includes(tag)) {
+                return false;
+            } 
+        }
+        return true;
     }
 
     function mostRecent() {
@@ -213,6 +220,8 @@ export function StockListingAdmin() {
                                         placeholder="Select..."
                                         isMulti
                                         options={foodCategories}
+                                        value={selectedTags}
+                                        onChange={setSelectedTags}
                                     />
                                 </div>
                             </div>
@@ -260,7 +269,12 @@ export function StockListingAdmin() {
                         </div>
                     </div>
                     <div className="filterItemDisplay">
-                        {food.filter(searchFunction).filter(tagMatchFunction).filter(stockFilterFunction).sort(getSort()).map(foodItem => (<Food name={foodItem.name} image={foodItem.image} in_stock={foodItem.instock} tags={foodItem.tags} />))}
+                        {food
+                            .filter(searchFunction)
+                            .filter(tagMatchFunction)
+                            .filter(stockFilterFunction)
+                            .filter(tagMatchFunction)
+                            .sort(getSort()).map(foodItem => (<Food name={foodItem.name} image={foodItem.image} in_stock={foodItem.instock} tags={foodItem.tags} />))}
 
                     {/* food.filter(matchesTags) */}
                     </div>
