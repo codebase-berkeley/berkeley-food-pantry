@@ -4,18 +4,18 @@ import './../components/SearchBar.css';
 import './StockListingAdmin.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import isbesPlusSign from './../Images/plusSign.svg';
+import isbesPlusSign from './../images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
 import Food from './../components/Food.js';
-import apple from "./../Images/apple.png";
-import banana from "./../Images/banana.png";
-import cocunut from "./../Images/cocunut.png";
-import meat from "./../Images/meat.png";
-import donut from './../Images/donut.png';
-import brocolli from './../Images/brocolli.png';
-import cannedBeans from './../Images/cannedBeans.png';
+import apple from "./../images/apple.png";
+import banana from "./../images/banana.png";
+import cocunut from "./../images/cocunut.png";
+import meat from "./../images/meat.png";
+import donut from './../images/donut.png';
+import brocolli from './../images/brocolli.png';
+import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 

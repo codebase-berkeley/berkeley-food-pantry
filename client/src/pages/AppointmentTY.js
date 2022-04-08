@@ -1,4 +1,4 @@
-import circleImage from './../Images/thankyou.png';
+import circleImage from './../images/thankyou.png';
 import { useLocation } from "react-router-dom";
 import AppointmentScheduler from './AppointmentScheduler';
 import './AppointmentTY.css';

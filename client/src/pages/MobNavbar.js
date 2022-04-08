@@ -1,9 +1,9 @@
 import './MobNavbar.css';
-import bfpLogo from './../Images/bfpLogo.svg';
-import xButton from './../Images/isbees-x-symbol.svg';
-import groceries from './../Images/navBarImage.png';
+import bfpLogo from './../images/bfpLogo.svg';
+import xButton from './../images/isbees-x-symbol.svg';
+import groceries from './../images/navBarImage.png';
 import React, { useState } from 'react';
-import dropdownIcon from './../Images/dropdown-icon.svg'
+import dropdownIcon from './../images/dropdown-icon.svg'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function MobNavbar() {

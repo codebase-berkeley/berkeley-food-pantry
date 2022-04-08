@@ -1,5 +1,5 @@
 import './AddFood.css';
-import saveitembutton from './../Images/saveitembutton.png';
+import saveitembutton from './../images/saveitembutton.png';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
