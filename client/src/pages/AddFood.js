@@ -2,10 +2,10 @@ import './AddFood.css';
 import saveitembutton from './../images/saveitembutton.png';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
-
-
+import { useLocation } from "react-router-dom";
+import Tags from '../components/Tags.js'
 
 const todayStock = [
     { value: 'in stock', label: 'In stock today' },
@@ -65,22 +65,52 @@ const customStyles = {
 
 export default function AddFood() {
 
+    const location = useLocation();
     const [edit, setEdit] = useState(true);
+    const [itemName, setItemName] = useState("");
+    // const [stockAvailability, setStockAvailability] = useState("");
+    const [tags, setTags] = useState([]);
 
-    function editDisplay() {}
-    if (edit) {
+    useEffect(() => {
+        setItemName(location.state.name);
+        setTags(location.state.tags);
         
-    }
+        // setStockAvailability(location.state.name);
+        console.log(tags);
+        //console.log(stockAvailability);
+      });
 
-    }
+    function headerDisplay() {
+        if (edit) {
+            return (
+                <div>
+                <h1>Edit Item</h1>
+                <p>Edit an existing item in the stock directory.</p>
+                </div>   
+            )
+            }
+        return (
+            <div>
+                <h1>Add Item</h1>
+                <p>Add a new item to the stock directory.</p>
+            </div>
+            )
+        }
+
+    // const colourStyles = {
+    //     placeholder: (defaultStyles) => {
+    //         return {
+    //             ...defaultStyles,
+    //             display: flex,
+    //             flexDirection: row,
+    //         }
+    //     }
+    // }
 
     return(
         <div className = 'add-food-component-container'>
             <div className = 'add-food-component-header'>
-                <div>
-                    <h1>Add Item</h1>
-                    <p>Add a new item to the stock directory.</p>
-                </div>
+                {headerDisplay()}
             </div>
                 <div className = 'main-add-food-component-container'>
                     <div className = 'item-selections'> 
@@ -89,7 +119,7 @@ export default function AddFood() {
                                 <label className = "item-name-input">
                                     Item Name 
                                     </label>
-                                    <input className = "item-name-textbox" type="text" name="name" />
+                                    <input className = "item-name-textbox" placeholder={itemName} type="text" name="name" />
                             </form>
                         </div>
 
@@ -102,7 +132,7 @@ export default function AddFood() {
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    placeholder="Select..."
+                                    defaultValue="select..."
                                     options={todayStock}
                                 />
                             </div>
@@ -112,9 +142,13 @@ export default function AddFood() {
                             <label className = "item-name-input">Select Dietary Categories (Optional)</label>
                             <div>
                                 <Select className="custom-dropdown"
-                                    styles={customStyles}
+                                    
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
+                                    placeholder = {tags.map((tag) => {
+                                        return (
+                                        <Tags name={tag} />
+                                    );})}
                                     isMulti
                                     options={dietaryCategories}
                                 />

@@ -3,6 +3,8 @@ import './Food.css'
 import Tags from './Tags.js'
 import edit_item from './../images/edit_item.png'
 import pen from './../images/pen.svg'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 function Food(props) {
     function editItem () {
@@ -25,13 +27,15 @@ function Food(props) {
                     </div>
                 </div>
                 <div className = "editIn">
+                {/* <Link to="/thankyou" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link> */}
                     <div>
-                        <button className="editButton" onClick={editItem}>
+                        {/* <button className="editButton" onClick={editItem}> */}
+                        <Link to="/addFood" state = {{name: props.name, tags: props.tags}} className = "editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="editItem">
                                 Edit Item
                             </div>
-                        </button>
+                        </Link>
                     </div>
                     <div style={{paddingLeft: "6%"}} className ="inStock">
                         <span style={{paddingRight: "11%"}}>In Stock</span>

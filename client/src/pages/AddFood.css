@@ -210,6 +210,12 @@ label, input {
 
 }
 
+.custom-dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
 @media screen and (orientation: portrait) {
     .add-food-component-container {
         flex-direction: column;
