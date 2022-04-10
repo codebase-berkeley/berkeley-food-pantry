@@ -237,7 +237,20 @@ export function ViewAppointments() {
                     </div>
 
                     <div className="checkboxes">
-                        <button className="changeStock" onClick={setOutOfStock}> Set all items to out of stock </button>
+                        <div className="form-check">
+                            <label class="form-check-label" for="exampleRadios1">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" value="ground beef" unchecked></input>
+                                Show appointments marked visited
+                            </label>
+                        </div>
+
+                        <div className="form-check">
+                            <label class="form-check-label" for="exampleRadios1">
+                                <input class="form-check-input" type="checkbox" name="exampleRadios"  value="ground beef" unchecked></input>
+                                Show past appointments
+                            </label>
+                        </div>
+                                
                     </div>
 
                 </div>
