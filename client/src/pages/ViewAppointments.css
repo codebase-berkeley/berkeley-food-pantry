@@ -61,6 +61,7 @@
 }
 
 .form-check-input {
+    float: right;
 }
 
 .form-check {
@@ -125,7 +126,7 @@
     height:70vh;
     border-style: solid;
     display: flex;
-    width: 80vw;
+    width: 90vw;
 }
 
 .filter-by {
@@ -163,18 +164,20 @@ p#filterControlLabel {
 
 .custom-dropdown {
     padding-top: 1px;
+    width: 25vw;
     border-color: #ACB9AC;
 }
 
-.filterItemControls {
+.appt-card-display {
     display: flex;
-    width: 25vw;
+    width: 35vw;
     height: 100%;
     flex: 1;
+    overflow-y: scroll;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 1vw 0 1vw;
+    background-color: pink;
 }
 
 .filterReset{
@@ -305,7 +308,7 @@ p#filterControlLabel {
 
 .filterItemDisplay {
     width: 55vw;
-    padding: 10px;
+    /* padding: 10px; */
     align-items: left;
     overflow-y: scroll;
     border-left: 1px solid #B8B8B8;

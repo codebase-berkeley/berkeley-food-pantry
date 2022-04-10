@@ -9,6 +9,7 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import { borderColor } from "@mui/system";
 import Food from './../components/Food.js';
+import DummyAppointment from './../components/DummyAppointment';
 import apple from "./../images/apple.png";
 import banana from "./../images/banana.png";
 import coconut from "./../images/cocunut.png";
@@ -32,6 +33,12 @@ const sortOptions = [
     { value: 'evening', label: 'Evening' }
 ]
 
+const showOptions = [
+    { value: 'all items', label: 'All items'},
+    { value: 'in stock items', label: 'In stock items only'},
+    { value: 'not in stock items', label: 'Not in stock items only'}
+]
+
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
     { value: 'three days', label: 'All appointments for three days' }, 
@@ -42,11 +49,6 @@ const timeOptions = [
     { value: 'morning', label: 'Morning' },
     { value: 'afternoon', label: 'Afternoon' }, 
     { value: 'evening', label: 'Evening' }
-]
-const showOptions = [
-    { value: 'all items', label: 'All items'},
-    { value: 'in stock items', label: 'In stock items only'},
-    { value: 'not in stock items', label: 'Not in stock items only'}
 ]
 
 
@@ -101,13 +103,15 @@ const customStyles = {
     },
 }
 
+const appt = [ {firstname: 'yojita', lastname: 'sharma', instock: true, tags: ["Vegetarian", "Brown"] }, 
+];
+
 const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
 {name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
 {name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
 {name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
 {name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
 {name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
-
 ];
 
 export function ViewAppointments() {
@@ -257,110 +261,30 @@ export function ViewAppointments() {
 
                 <div className="bottomContainer">
 
-                    <div className="filterItemControls">
-
-                        <div className="filterReset">
-                            <div className="filterItems">Filter Items</div>
-                            <button className="resetFilters" onClick={clearInputFieldsHelper}>Reset Filters</button>
-                        </div>
-
-                        <div className="filters">
-                            <div className="searchBox">
-                                <text>Search Items</text>
-                                <Search placeholder="Search..." searchInput={searchInput} setSearchInput={setSearchInput}/>
-                            </div>
-
-                            <div className="filter-by">
-                                <p id="filterControlLabel">Filter by Dietary Categories</p>
-                                <div id="filter-dropdown">
-                                    <Select className="custom-dropdown"
-                                        styles={customStyles}
-                                        closeMenuOnSelect={false}
-                                        components={animatedComponents}
-                                        placeholder="Select..."
-                                        isMulti
-                                        options={foodCategories}
-                                        value={selectedTags}
-                                        onChange={setSelectedTags}
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="sort-by">
-                                <p id="filterControlLabel">Sort By...</p>
-                                <div>
-                                    <Select className="custom-dropdown"
-                                        styles={customStyles}
-                                        closeMenuOnSelect={true}
-                                        components={animatedComponents}
-                                        placeholder="Alphabetical, A-Z"
-                                        options={sortOptions}
-                                        defaultValue={sortOptions[0]}
-                                        value={selectedSort}
-                                        onChange={setSelectedSort}
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="showFilter">
-                                <div className="showText"> Show </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
-                                            if (e.target.checked) {
-                                                setSelectedShow(0);
-                                            }
-                                        } }></input>               
-                                        All items
-                                    </label>
-                                </div>
-
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
-                                            if (e.target.checked) {
-                                                setSelectedShow(1);
-                                            }
-                                        } }></input>
-                                        In stock items only
-                                    </label>
-                                </div>
-                                
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
-                                            if (e.target.checked) {
-                                                setSelectedShow(2);
-                                            }
-                                        } }></input>
-                                        Not in stock items only
-                                    </label>
-                                </div>
-                            </div>
-
-                        </div>
+                    <div className="appt-card-display">
+                        <DummyAppointment date="Monday, April 4 2022" time="11:00 AM"firstname="Anthony" lastname ="Lu" />
+                        <DummyAppointment date="Monday, April 4 2022" time="2:00 PM"firstname="Yojita" lastname ="Sharma" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Gargi" lastname ="Deshpande" />
                     </div>
+
                     <div className="filterItemDisplay">
-                        {food
+                        {/* {food
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)
                             .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
-                                <Food 
-                                    name={foodItem.name} 
-                                    image={foodItem.image} 
-                                    in_stock={foodItem.instock} 
+                                <DummyAppointment 
+                                    firstname={foodItem.firstname} 
+                                    lastname={foodItem.lastname}
                                     tags={foodItem.tags} 
                                     onChange={() => {
                                         foodItem.instock = !foodItem.instock
                                     }}
                                     
                                     
-                                    />))}
-
-                    {/* food.filter(matchesTags) */}
-                    </div>
+                                    />))} */}
+                    </div> 
                 </div>
             </div>
         </div>
