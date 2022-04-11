@@ -14,7 +14,7 @@ import Details from './components/Details';
 // change admin login route before submitting pr
 
 function App() {
-  const data_dietary = ['Isbee', 'Gluten Free', 'Include Dog Food'];
+  const data_dietary = ['Im lactose introlerant lol', 'Gluten Free', 'Include Dog Food'];
   const data_item = ['Broccoli', 'Milk', 'Canned Beans', 'Steak', 'Apple', 'Oranges'];
   return (
     // <div className = "App">
@@ -48,6 +48,7 @@ function App() {
       phoneNumber = "420-420-6969"
       dietary_data = {data_dietary}
       item_data = {data_item}
+      visited = {false}
 
 
       

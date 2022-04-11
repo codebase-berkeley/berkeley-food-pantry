@@ -88,3 +88,44 @@
     color: #464646;
     margin-top: 1%;
 }
+
+.beenVisitedButton {
+    display: flex;
+    border: 1px solid #264425;
+    border-radius: 30px;
+    width: 80%;
+    height: 25%;
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    color: #264425;
+}
+
+.notVisitedButton {
+    display: flex;
+    border: 1px solid #519E8A;
+    border-radius: 30px;
+    width: 80%;
+    height: 25%;
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    color: #519E8A;
+}
+
+.marked {
+    display: flex;
+    padding-right: 2%;
+}
+
+.markAs {
+    display: flex;
+    width: 60%
+}
+
+.visitedButton {
+    width: 30%;
+    padding-top: 1%;
+}
