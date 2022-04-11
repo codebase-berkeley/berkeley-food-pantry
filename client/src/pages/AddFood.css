@@ -207,13 +207,15 @@ label, input {
     color:#B8B8B8;
     margin-top: 2.5%;  
     font-weight: 300; 
-
 }
 
 .custom-dropdown {
     display: flex;
-    flex-direction: column;
-    overflow-x: auto;
+    flex-direction: row;
+    overflow-x: scroll;
+    /* overflow-y: hidden; */
+    flex-wrap: nowrap;
+    /* justify-content: start; */
 }
 
 @media screen and (orientation: portrait) {
@@ -282,5 +284,4 @@ label, input {
         margin-top: 5%;
         margin-left: 20%;
     }
-
 }

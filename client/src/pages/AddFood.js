@@ -142,7 +142,7 @@ export default function AddFood() {
                             <label className = "item-name-input">Select Dietary Categories (Optional)</label>
                             <div>
                                 <Select className="custom-dropdown"
-                                    
+
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
                                     placeholder = {tags.map((tag) => {
