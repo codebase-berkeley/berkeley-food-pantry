@@ -23,6 +23,10 @@
     justify-content: space-between;
 }
 
+.show-appointments p {
+    margin-left: -1vw;
+}
+
 .show-dropdowns {
     display: flex;
     flex-direction: row;
@@ -60,15 +64,6 @@
     font-size: 10px;
 }
 
-.form-check-input {
-    float: right;
-}
-
-.form-check {
-}
-
-.form-check-input-items {
-}
 
 .form-check-input-items {
     border: #000000;
@@ -166,6 +161,8 @@ p#filterControlLabel {
     padding-top: 1px;
     width: 25vw;
     border-color: #ACB9AC;
+    background-color: red;
+    margin-right: -4vw;
 }
 
 .appt-card-display {
@@ -173,7 +170,7 @@ p#filterControlLabel {
     width: 35vw;
     height: 100%;
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -320,7 +317,9 @@ p#filterControlLabel {
 
 .form-check-label {
     font-family: 'Inter', sans-serif;
+
     font-size: 15px;
+    margin-right: 5%;
 }
 
 input[type="checkbox"], input[type="radio"] {

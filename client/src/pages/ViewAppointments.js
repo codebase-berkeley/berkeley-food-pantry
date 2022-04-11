@@ -75,7 +75,7 @@ const customStyles = {
 
     control: (provided, state) => ({
         ...provided,
-        width: '20vw',
+        width: '15vw',
         borderRadius: '.5vw',
         textOverflow: "hidden",
         whiteSpace: "nowrap",
@@ -241,18 +241,15 @@ export function ViewAppointments() {
                     </div>
 
                     <div className="checkboxes">
-                        <div className="form-check">
-                            <label class="form-check-label" for="exampleRadios1">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" value="ground beef" unchecked></input>
-                                Show appointments marked visited
-                            </label>
+                        
+                        <div className ="form-check-label">
+                            <span>Show appointments marked visited</span>
+                            <input type="checkbox"/>
                         </div>
 
-                        <div className="form-check">
-                            <label class="form-check-label" for="exampleRadios1">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios"  value="ground beef" unchecked></input>
-                                Show past appointments
-                            </label>
+                        <div className ="form-check-label">
+                            <span>Show appointments marked visited</span>
+                            <input type="checkbox"/>
                         </div>
                                 
                     </div>
@@ -265,6 +262,9 @@ export function ViewAppointments() {
                         <DummyAppointment date="Monday, April 4 2022" time="11:00 AM"firstname="Anthony" lastname ="Lu" />
                         <DummyAppointment date="Monday, April 4 2022" time="2:00 PM"firstname="Yojita" lastname ="Sharma" />
                         <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Gargi" lastname ="Deshpande" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Mawil" lastname ="Hasan" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Abby" lastname ="Brooks" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Aditya" lastname ="Bhandari" />
                     </div>
 
                     <div className="filterItemDisplay">
