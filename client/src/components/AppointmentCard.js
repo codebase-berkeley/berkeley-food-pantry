@@ -19,39 +19,37 @@ function AppointmentCard(props){
         if (visited == true) {
             // note to self, add onClick functionality to update database if checkmark is clicked
             return (
-                <button className="notVisitedButton" onClick = {setVisitedHelper}> 
-                    <img src={visitedMark} className = 'checkMark'></img>
-                    <div className='markAs'> Visited! </div> 
+                <button className="appointment-card-notVisitedButton" onClick = {setVisitedHelper}> 
+                    <img src={visitedMark} className = 'appointment-card-checkMark'></img>
+                    <div className='appointment-card-markAs'> Visited! </div> 
                 </button>
             )
         } else {
             return (
-                <button className="beenVisitedButton" onClick={setVisitedHelper}> 
-                    <img src={checkMark} className = 'checkMark'></img>
-                    <div className='marked'> Mark as visited </div> 
+                <button className="appointment-card-beenVisitedButton" onClick={setVisitedHelper}> 
+                    <img src={checkMark} className = 'appointment-card-checkMark'></img>
+                    <div className='appointment-card-marked'> Mark as visited </div> 
                 </button>
             )
         }
     }
 
     return(
-        <div className='centering'>
-        <div className="cardContainer">
-            <div className='leftStyling'>
-                <div className='appointmentInfo'>
-                    <div className='date'> {props.date} </div>
-                    <div className='time'> {props.time} </div>
-                    <div className='name'> {props.firstName} {props.lastName} </div>
+        <div className="appointment-card-cardContainer">
+            <div className='appointment-card-leftStyling'>
+                <div className='appointment-card-appointmentInfo'>
+                    <div className='appointment-card-date'> {props.date} </div>
+                    <div className='appointment-card-time'> {props.time} </div>
+                    <div className='appointment-card-name'> {props.firstName} {props.lastName} </div>
                 </div>
-                <div className='visitedButton'>
+                <div className='appointment-card-visitedButton'>
                     {beenVisited()}
                 </div>
             </div>
 
-            <div className='rightStyling'>
+            <div className='appointment-card-rightStyling'>
 
             </div>
-        </div>
         </div>
     )
 

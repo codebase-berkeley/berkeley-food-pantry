@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
-.centering{
-    padding: 4vw
-}
-.cardContainer {
+.appointment-card-cardContainer {
     display: flex;
     border-radius: 10px;
     height: 20vh;
@@ -10,22 +7,22 @@
     border: solid #ACB9AC;
     flex-direction: row;
 }
-.cardContainer:hover{
+.appointment-card-cardContainer:hover{
     background-color: #F5F6F3;
     border: solid #19381F;
 }
 
-.cardContainer:hover .rightStyling{
+.appointment-card-cardContainer:hover .appointment-card-rightStyling{
     background-color: #19381F;
 }
 
-.leftStyling {
+.appointment-card-leftStyling {
     width: 98%;
     display: flex;
     flex-direction: row;
 }
 
-.appointmentInfo {
+.appointment-card-appointmentInfo {
     display: flex;
     flex-direction: column;
     font-weight: 800;
@@ -38,11 +35,11 @@
     font-size: large;
 }
 
-.name {
+.appointment-card-name {
     font-size: x-large;
 }
 
-.visitedButton {
+.appointment-card-visitedButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +48,7 @@
     width: 35%;
 }
 
-.beenVisitedButton {
+.appointment-card-beenVisitedButton {
     display: flex;
     border: 1px solid #ACB9AC;
     border-radius: 30px;
@@ -64,7 +61,7 @@
     color: #ACB9AC;
 }
 
-.notVisitedButton {
+.appointment-card-notVisitedButton {
     display: flex;
     border: 1px solid #519E8A;
     border-radius: 30px;
@@ -77,27 +74,27 @@
     color: #519E8A;
 }
 
-.marked {
+.appointment-card-marked {
     display: flex;
     padding-right: 5%;
 }
 
-.markAs {
+.appointment-card-markAs {
     display: flex;
     width: 60%
 }
 
 
-.name {
+.appointment-card-name {
     padding-top: 5%;
 }
 
-.visitedButton {
+.appointment-card-visitedButton {
     flex-direction: column;
     justify-content: center;
 }
 
-.rightStyling{
+.appointment-card-rightStyling{
     display: flex;
     border-radius: 0 8px 8px 0;
     width: 2%;
@@ -105,7 +102,4 @@
     background-color: #ACB9AC;
 }
 
-.test {
-    background-color: red;
-}
 

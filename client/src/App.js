@@ -16,29 +16,28 @@ import apple from "./images/apple.png";
 
 function App() {
   return (
-    // <div className = "App">
+    <div className = "App">
 
-    //   <Router>
-    //   <MobileNavbar/>
-    //   <AdminLoginNavbar/>
+      <Router>
+      <MobileNavbar/>
+      <AdminLoginNavbar/>
 
-    //     <Routes>
-    //       <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
+        <Routes>
+          <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
       
-    //       <Route path = "/adminLogin" element={<AdminLogin/>}/>
+          <Route path = "/adminLogin" element={<AdminLogin/>}/>
 
-    //       <Route path="/thankyou" element={<AppointmentTY/>}/> 
+          <Route path="/thankyou" element={<AppointmentTY/>}/> 
         
-    //       <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
+          <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
-    //       <Route path="/addFood" element={<AddFood/>}/>
+          <Route path="/addFood" element={<AddFood/>}/>
 
-    //     </Routes>
-    //   </Router> 
+        </Routes>
+      </Router> 
 
-    // </div>
-    <AppointmentCard firstName = "Abigail" lastName = "Brooks" time = "4:20 pm" date = "Wednesday April 20, 2022" visited = {true} />
-    // <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+    </div>
+    // <AppointmentCard firstName = "Abigail" lastName = "Brooks" time = "4:20 pm" date = "Wednesday April 20, 2022" visited = {true} />
   )
 }
 
