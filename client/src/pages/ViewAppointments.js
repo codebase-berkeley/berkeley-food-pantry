@@ -41,14 +41,16 @@ const showOptions = [
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
-    { value: 'three days', label: 'All appointments for three days' }, 
-    { value: 'today', label: 'All appointments today' }
+    { value: 'monday', label: 'All appointments on Monday' }, 
+    { value: 'wednesday', label: 'All appointments on Wednesday' }, 
+    { value: 'friday', label: 'All appointments on Friday' }
 ]
 
 const timeOptions = [
-    { value: 'morning', label: 'Morning' },
-    { value: 'afternoon', label: 'Afternoon' }, 
-    { value: 'evening', label: 'Evening' }
+    { value: '2:00-2:30', label: '2:00 PM - 2:30 PM' },
+    { value: '2:30-3:00', label: '2:30 PM - 3:00 PM' }, 
+    { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
+    { value: '3:30-4:00', label: '3:30 PM - 4:00 PM' }
 ]
 
 
@@ -103,7 +105,9 @@ const customStyles = {
     },
 }
 
-const appt = [ {firstname: 'yojita', lastname: 'sharma', instock: true, tags: ["Vegetarian", "Brown"] }, 
+const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:30" },
+{firstname: 'anthony', lastname: 'sharma', date: "Wednesday, April 2022", time: "3:00"},
+{firstname: 'gargi', lastname: 'sharma', date: "Friday, April 2022", time: "3:30" }
 ];
 
 const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
@@ -118,15 +122,47 @@ export function ViewAppointments() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
+    const [selectedDay, setSelectedDay] = useState();
+    const [selectedTime, setSelecedTime] = useState("");
     const [searchInput, setSearchInput] = useState("");
 
+    
+    function apptDayFilter(appt) {
+        if (selectedDay.value == "all") {
+            return;
+        } else if (selectedDay.value == "monday") {
+            return appt.date.substring(0, 6) == "Monday";    
+        } else if (selectedDay.value == "wednesday") {
+            return appt.date.substring(0, 9) == "Wednesday";
+        } else if (selectedDay.value == "friday") {
+            return appt.date.substring(0, 6) == "Friday"; 
+        }
+    }
+    
+    function apptTimeFilter(appt) {
+        if (selectedTime.value == "all") {
+            return true;
+        }
+        else if (selectedTime.value == "2:00-2:30") {
+            return (appt.time.substring(0, 7) == "2:00 PM" || appt.time.substring(0, 7) == "2:15 PM" || appt.time.substring(0, 7) == "2:30 PM")
+        } 
+        else if (selectedTime.value == "2:30 - 3:00") {
+            return (appt.time.substring(0, 7) == "2:30 PM" || appt.time.substring(0, 7) == "2:45 PM" || appt.time.substring(0, 7) == "3:00 PM")
+        }
+        else if (selectedTime.value == "3:00-3:30") {
+            return (appt.time.substring(0, 7) == "3:00 PM" || appt.time.substring(0, 7) == "3:15 PM" || appt.time.substring(0, 7) == "3:30 PM")
+        }
+        else if (selectedTime.value == "3:30-3:40") {
+            return (appt.time.substring(0, 7) == "3:30 PM" || appt.time.substring(0, 7) == "3:45 PM" || appt.time.substring(0, 7) == "4:00 PM")
+        }
+    }
+    
     function clearInputFieldsHelper() {
         setSelectedSort();
         setSelectedTags([]);
         setSelectedShow(0);
         setSearchInput("");
     }
-
 
     function sortAZ(a, b) {
         const nameA = a.name.toUpperCase(); // ignore upper and lowercase
@@ -137,16 +173,13 @@ export function ViewAppointments() {
         if (nameA > nameB) {
             return 1;
         }
-    
         // names must be equal
         return 0;
-
     }
 
     function tagMatchFunction(foodObject) {
         
         for (const tag of selectedTags.map(tagObject => tagObject.label)) {
-
             if (!foodObject.tags.includes(tag)) {
                 return false;
             } 
@@ -156,7 +189,6 @@ export function ViewAppointments() {
 
     function mostRecent() {
         return;
-
     }
 
     function stockFilterFunction(foodObject) {
@@ -179,7 +211,7 @@ export function ViewAppointments() {
         setSelectedSort(selectedShow)
     }
 
-
+    
     function getSort() {
         if (selectedSort == null) {
             return;
@@ -218,43 +250,48 @@ export function ViewAppointments() {
                                         components={animatedComponents}
                                         options={apptOptions}
                                         defaultValue={apptOptions[0]}
-                                        // value={selectedSort}
-                                        // onChange={setSelectedSort}
+                                        value={apptOptions.value}
+                                        onChange={helper}
                                     />
                                 </div>
                             </div>
                             <div className="by-time">
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="custom-dropdown-2"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
                                         options={timeOptions}
                                         defaultValue={timeOptions[0]}
-                                        // value={selectedSort}
-                                        // onChange={setSelectedSort}
+                                        value={selectedSort}
+                                        onChange={setSelectedSort}
                                     />
                                 </div>
                             </div>
                         </div>
-    
                     </div>
 
-                    <div className="checkboxes">
+                    {/* <div className="checkboxes"> */}
                         
-                        <div className ="form-check-label">
+                    {/* <li>
+                        <label for="checkid"  style="word-wrap:break-word" className ="form-check-label">
+                            <input id="checkid"  type="checkbox" value="test" /> Show appointments marked visited
+                        </label>
+                    </li> */}
+                        {/* <div className ="form-check-label">
                             <span>Show appointments marked visited</span>
-                            <input type="checkbox"/>
-                        </div>
+                            <input style={{}} type="checkbox"/>
+                        </div> 
+                        style={{width: "10px", paddingLeft: "5%"}*/}
 
                         <div className ="form-check-label">
-                            <span>Show appointments marked visited</span>
-                            <input type="checkbox"/>
+                            <span className ="appts-text">Show appointments marked visited</span>
+                            <input className="checkers" type="checkbox"/>
                         </div>
                                 
                     </div>
 
-                </div>
+                {/* </div> */}
 
                 <div className="bottomContainer">
 
@@ -265,25 +302,16 @@ export function ViewAppointments() {
                         <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Mawil" lastname ="Hasan" />
                         <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Abby" lastname ="Brooks" />
                         <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Aditya" lastname ="Bhandari" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Aditya" lastname ="Bhandari" />
                     </div>
 
                     <div className="filterItemDisplay">
-                        {/* {food
-                            .filter(searchFunction)
-                            .filter(tagMatchFunction)
-                            .filter(stockFilterFunction)
-                            .filter(tagMatchFunction)
-                            .sort(getSort()).map(foodItem => (
+                        {appt
+                            .sort(apptTimeFilter()).map(apptSlot => (
                                 <DummyAppointment 
-                                    firstname={foodItem.firstname} 
-                                    lastname={foodItem.lastname}
-                                    tags={foodItem.tags} 
-                                    onChange={() => {
-                                        foodItem.instock = !foodItem.instock
-                                    }}
-                                    
-                                    
-                                    />))} */}
+                                    firstname={apptSlot.firstname} 
+                                    lastname={apptSlot.lastname}
+                            />))}
                     </div> 
                 </div>
             </div>
