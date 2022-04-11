@@ -19,9 +19,47 @@
     background-color: #19381F;
 }
 
-.appointmentInfo{
+.leftStyling {
     width: 98%;
+    display: flex;
+    flex-direction: row;
 }
+
+.appointmentInfo {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    padding-left: 5%;
+    height: 100%;
+    justify-content: center;
+    width: 55%;
+
+}
+
+.visitedButton {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+}
+
+.button {
+    border: 1px solid #ACB9AC;
+    border-radius: 30px;
+    width: 100%;
+    height: 30%;
+}
+.name {
+    padding-top: 5%;
+}
+
+.visitedButton {
+    flex-direction: column;
+    justify-content: center;
+}
+
 .rightStyling{
     display: flex;
     border-radius: 0 8px 8px 0;
@@ -30,8 +68,3 @@
     background-color: #ACB9AC;
 }
 
-.dateTime {
-    jus
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-}

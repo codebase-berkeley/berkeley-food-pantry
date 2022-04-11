@@ -37,7 +37,7 @@ function App() {
     //   </Router> 
 
     // </div>
-    <AppointmentCard name = "Abby Brooks" time = "4:20 pm" date = "April 20, 2022"/>
+    <AppointmentCard name = "Abigail Brooks" time = "4:20 pm" date = "Wednesday April 20, 2022"/>
     // <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
   )
 }
