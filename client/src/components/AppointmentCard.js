@@ -1,6 +1,6 @@
 function AppointmentCard(){
     return(
-        <div className="help">
+        <div className="canvas">
             
         </div>
     )
