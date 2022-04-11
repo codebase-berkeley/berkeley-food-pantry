@@ -7,6 +7,9 @@ import { StockListingUser, StockListingAdmin } from './pages/StockListingAdmin.j
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AppointmentScheduler from './pages/AppointmentScheduler';
 import AdminLogin from './pages/AdminLogin.js';
+import Food from './components/Food.js'
+import AppointmentCard from './components/AppointmentCard.js'
+import apple from "./images/apple.png";
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
@@ -31,9 +34,10 @@ function App() {
           <Route path="/addFood" element={<AddFood/>}/>
 
         </Routes>
-      </Router>       
+      </Router> 
 
     </div>
+    // <AppointmentCard firstName = "Abigail" lastName = "Brooks" time = "4:20 pm" date = "Wednesday April 20, 2022" visited = {true} />
   )
 }
 
