@@ -45,7 +45,7 @@ function App() {
       time = "4:20 pm" 
       date = "Wednesday April 20, 2022"
       email = "yourmom@berkeley.edu"
-      phoneNumber = "420 - 420 - 6969"
+      phoneNumber = "420-420-6969"
       dietary_data = {data_dietary}
       item_data = {data_item}
 
