@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-.container {
+.details-container {
     width: 50%;
 }
 
-.first-chunk {
+.details-first-chunk {
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -12,69 +12,69 @@
     margin-bottom: 2%;
 }
 
-.second-chunk {
+.details-second-chunk {
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.third-chunk {
+.details-third-chunk {
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.fourth-chunk {
+.details-fourth-chunk {
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.date-time {
+.details-date-time {
     margin-bottom: 10%;
 }
 
-.contact-email-phone {
+.details-contact-email-phone {
     margin-top: 10%;
 }
 
-.not-button {
+.details-not-button {
     align-content: space-between;
 }
 
-.date {
+.details-date {
     font-family: Inter;
     font-weight: 600;
     font-size: 18px;
     color: #4C4C4C;
 }
 
-.time {
+.details-time {
     font-family: Inter;
     font-weight: 600;
     font-size: 18px;
     color: #4C4C4C;
 }
 
-.name {
+.details-name {
     font-family: Inter;
     font-weight: 600;
     font-size: 25px;
     color: #4C4C4C;
 }
 
-.details_header {
+.details-header {
     font-family: Inter;
     font-weight: 600;
     font-size: 14px;
     color: #464646;
 }
 
-.details_email {
+.details-email {
     font-family: Inter;
     font-weight: 400;
     font-size: 12px;
     color: #464646;
 }
 
-.details_phoneNumber {
+.details-phoneNumber {
     font-family: Inter;
     font-weight: 400;
     font-size: 12px;
@@ -89,7 +89,7 @@
     margin-top: 1%;
 }
 
-.beenVisitedButton {
+.details-beenVisitedButton {
     display: flex;
     border: 1px solid #264425;
     border-radius: 30px;
@@ -102,7 +102,7 @@
     color: #264425;
 }
 
-.notVisitedButton {
+.details-notVisitedButton {
     display: flex;
     border: 1px solid #519E8A;
     border-radius: 30px;
@@ -115,17 +115,17 @@
     color: #519E8A;
 }
 
-.marked {
+.details-marked {
     display: flex;
     padding-right: 2%;
 }
 
-.markAs {
+.details-markAs {
     display: flex;
     width: 60%
 }
 
-.visitedButton {
+.details-visitedButton {
     width: 30%;
     padding-top: 1%;
 }

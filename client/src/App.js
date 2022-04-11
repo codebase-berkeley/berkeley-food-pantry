@@ -17,43 +17,43 @@ function App() {
   const data_dietary = ['Im lactose introlerant lol', 'Gluten Free', 'Include Dog Food'];
   const data_item = ['Broccoli', 'Milk', 'Canned Beans', 'Steak', 'Apple', 'Oranges'];
   return (
-    // <div className = "App">
+    <div className = "App">
 
-    //   <Router>
-    //   <MobileNavbar/>
-    //   <AdminLoginNavbar/>
+      <Router>
+      <MobileNavbar/>
+      <AdminLoginNavbar/>
 
-    //     <Routes>
-    //       <Route path="/stockListingAdmin" element={<ViewAppointments/>}/>
+        <Routes>
+          <Route path="/stockListingAdmin" element={<ViewAppointments/>}/>
       
-    //       <Route path = "/adminLogin" element={<AdminLogin/>}/>
+          <Route path = "/adminLogin" element={<AdminLogin/>}/>
 
-    //       <Route path="/thankyou" element={<AppointmentTY/>}/> 
+          <Route path="/thankyou" element={<AppointmentTY/>}/> 
         
-    //       <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
+          <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
-    //       <Route path="/addFood" element={<AddFood/>}/>
+          <Route path="/addFood" element={<AddFood/>}/>
 
-    //       <Route path="/viewappointments" element={<ViewAppointments/>}/> 
+          <Route path="/viewappointments" element={<ViewAppointments/>}/> 
           
-    //     </Routes>
-    //   </Router>       
+        </Routes>
+      </Router>       
 
-    // </div>
-    <Details 
-      name = "Abigail Brooks" 
-      time = "4:20 pm" 
-      date = "Wednesday April 20, 2022"
-      email = "yourmom@berkeley.edu"
-      phoneNumber = "420-420-6969"
-      dietary_data = {data_dietary}
-      item_data = {data_item}
-      visited = {false}
+    </div>
+    // <Details 
+    //   name = "Abigail Brooks" 
+    //   time = "4:20 pm" 
+    //   date = "Wednesday April 20, 2022"
+    //   email = "yourmom@berkeley.edu"
+    //   phoneNumber = "420-420-6969"
+    //   dietary_data = {data_dietary}
+    //   item_data = {data_item}
+    //   visited = {false}
 
 
       
       
-      ></Details>
+    //   ></Details>
   )
 }
 
