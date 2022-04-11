@@ -9,6 +9,8 @@ import AppointmentScheduler from './pages/AppointmentScheduler';
 import AdminLogin from './pages/AdminLogin.js';
 import { ViewAppointments } from './pages/ViewAppointments';
 import Details from './components/Details';
+import Food from './components/Food.js'
+import AppointmentCard from './components/AppointmentCard.js'
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
@@ -37,23 +39,9 @@ function App() {
           <Route path="/viewappointments" element={<ViewAppointments/>}/> 
           
         </Routes>
-      </Router>       
+      </Router> 
 
     </div>
-    // <Details 
-    //   name = "Abigail Brooks" 
-    //   time = "4:20 pm" 
-    //   date = "Wednesday April 20, 2022"
-    //   email = "yourmom@berkeley.edu"
-    //   phoneNumber = "420-420-6969"
-    //   dietary_data = {data_dietary}
-    //   item_data = {data_item}
-    //   visited = {false}
-
-
-      
-      
-    //   ></Details>
   )
 }
 
