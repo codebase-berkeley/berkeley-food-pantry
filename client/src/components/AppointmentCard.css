@@ -1,6 +1,37 @@
-.canvas {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
+.centering{
+    padding: 4vw
+}
+.cardContainer {
     display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: red;
+    border-radius: 10px;
+    height: 20vh;
+    width: 35vw;
+    border: solid #ACB9AC;
+    flex-direction: row;
+}
+.cardContainer:hover{
+    background-color: #F5F6F3;
+    border: solid #19381F;
+}
+
+.cardContainer:hover .rightStyling{
+    background-color: #19381F;
+}
+
+.appointmentInfo{
+    width: 98%;
+}
+.rightStyling{
+    display: flex;
+    border-radius: 0 8px 8px 0;
+    width: 2%;
+    justify-content: flex-end;
+    background-color: #ACB9AC;
+}
+
+.dateTime {
+    jus
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
 }

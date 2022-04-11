@@ -9,33 +9,36 @@ import AppointmentScheduler from './pages/AppointmentScheduler';
 import AdminLogin from './pages/AdminLogin.js';
 import Food from './components/Food.js'
 import AppointmentCard from './components/AppointmentCard.js'
+import apple from "./images/apple.png";
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
 
 function App() {
   return (
-    <div className = "App">
+    // <div className = "App">
 
-      <Router>
-      <MobileNavbar/>
-      <AdminLoginNavbar/>
+    //   <Router>
+    //   <MobileNavbar/>
+    //   <AdminLoginNavbar/>
 
-        <Routes>
-          <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
+    //     <Routes>
+    //       <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
       
-          <Route path = "/adminLogin" element={<AdminLogin/>}/>
+    //       <Route path = "/adminLogin" element={<AdminLogin/>}/>
 
-          <Route path="/thankyou" element={<AppointmentTY/>}/> 
+    //       <Route path="/thankyou" element={<AppointmentTY/>}/> 
         
-          <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
+    //       <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
-          <Route path="/addFood" element={<AddFood/>}/>
+    //       <Route path="/addFood" element={<AddFood/>}/>
 
-        </Routes>
-      </Router> 
+    //     </Routes>
+    //   </Router> 
 
-    </div>
+    // </div>
+    <AppointmentCard name = "Abby Brooks" time = "4:20 pm" date = "April 20, 2022"/>
+    // <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
   )
 }
 
