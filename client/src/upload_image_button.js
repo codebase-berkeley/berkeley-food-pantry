@@ -1,4 +1,4 @@
-import importimagecloud from './../Images/import-image-cloud.svg';
+import importimagecloud from './../images/import-image-cloud.svg';
 import './add_food.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';

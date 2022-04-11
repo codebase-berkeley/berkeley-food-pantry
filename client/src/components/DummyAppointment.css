@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.name {
+    font-family: "Inter";
+    color: #4C4C4C; 
+    font-weight:600;
+    font-size: 25px;
+    text-align: left;
+}
+
+.date-and-time {
+    font-family: "Inter";
+    color: #4C4C4C; 
+    font-weight:600;
+    font-size: 18px;
+    text-align: left;
+}
+
+.componentContainer {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ACB9AC;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.penFormat {
+    padding-right: 6%;
+}
+
+.editButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 35px;
+    border-color: #588157;
+    width: 15vw;
+    height: 5vh;
+    background-color: white;
+    border-width: 1px;
+}
+
+.editItem {
+    font: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    color: #588157;
+}
+
+.infoContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border: 10px;
+    border-color: black;
+    justify-content: space-between;
+}
+
+.inStock{
+    font-family: "Inter";
+    font-size: 16px;
+    color: #264425;
+    padding-top: 13%;
+    width: 97px;
+}
+
+.nameTags {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    padding-left: 5%;
+    text-transform: capitalize;
+}
+
+.editIn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    padding-right: 10%;
+}
+
+.tagsFormat {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: left;
+    flex-wrap: wrap;
+}
