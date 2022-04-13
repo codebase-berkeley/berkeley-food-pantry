@@ -86,10 +86,16 @@ const customStyles = {
     },
 }
 
-const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:30" },
-{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "3:00"},
-{firstname: 'gargi', lastname: 'deshpande', date: "Friday, April 2022", time: "3:30" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "2:00" },
+const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:00" },
+{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "2:15" ,timeValue: 215},
+{firstname: 'gargi', lastname: 'deshpande', date: "Friday, April 2022", time: "2:30" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "2:45" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:00" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:15" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:30" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:45" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "4:00" },
+
 ];
 
 export function ViewAppointments() {
@@ -113,12 +119,12 @@ export function ViewAppointments() {
     function apptTimeFilter(appt) {
         if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
             return true; }
-        console.log(appt.time.chatAt(0));
-        console.log(selectedTime.value.chatAt(0));
-        return appt.time.charAt(0) == selectedTime.value.charAt(0);
-        
+    
+        if (((appt.time.charAt(0) == selectedTime.value.charAt(0)) && ((appt.time.substring(2,3) == selectedTime.value.substring(2,3)))) || (selectedTime.value.charAt(11) == appt.time.charAt(0)) || 
+            ((appt.time.charAt(0) == selectedTime.value.charAt(0)) && (((appt.time.charAt(2) == "1") || (appt.time.charAt(2) == "3") || appt.time.charAt(2) == "4")))) {
+            return true;
         }
-        
+    }
     return (
         <div className="full-page">
 
@@ -186,7 +192,7 @@ export function ViewAppointments() {
 
                     <div className="appt-card-display">
                         {appt
-                            .filter(apptDayFilter, apptTimeFilter).map(filteredAppt => (
+                            .filter(apptTimeFilter).map(filteredAppt => (
                                 <DummyAppointment
                                     date={filteredAppt.date}
                                     time={filteredAppt.time}
