@@ -18,6 +18,7 @@ import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import moment from 'moment';
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -88,7 +89,7 @@ const customStyles = {
 const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:30" },
 {firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "3:00"},
 {firstname: 'gargi', lastname: 'deshpande', date: "Friday, April 2022", time: "3:30" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:00" },
+{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "2:00" },
 ];
 
 export function ViewAppointments() {
@@ -96,8 +97,11 @@ export function ViewAppointments() {
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [selectedDay, setSelectedDay] = useState("all");
-    const [selectedTime, setSelecedTime] = useState("");
+    const [selectedTime, setSelectedTime] = useState("all");
     const [searchInput, setSearchInput] = useState("");
+    // var moment = require('moment');
+    // moment("123", "hmm").format("HH:mm")
+
 
     function apptDayFilter(appt) {
         if (selectedDay == "all" || selectedDay.value.charAt(0) == 'a') {
@@ -107,12 +111,14 @@ export function ViewAppointments() {
     }
     
     function apptTimeFilter(appt) {
-        if (selectedTime.value.chatAt(0) == 'a') {
-            return true;
-        }
+        if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
+            return true; }
+        console.log(appt.time.chatAt(0));
+        console.log(selectedTime.value.chatAt(0));
         return appt.time.charAt(0) == selectedTime.value.charAt(0);
+        
         }
-    
+        
     return (
         <div className="full-page">
 
@@ -146,8 +152,8 @@ export function ViewAppointments() {
                                         components={animatedComponents}
                                         options={timeOptions}
                                         defaultValue={timeOptions[0]}
-                                        value={selectedSort}
-                                        onChange={setSelectedSort}
+                                        value={selectedTime}
+                                        onChange={setSelectedTime}
                                     />
                                 </div>
                             </div>
@@ -180,7 +186,7 @@ export function ViewAppointments() {
 
                     <div className="appt-card-display">
                         {appt
-                            .filter(apptDayFilter).map(filteredAppt => (
+                            .filter(apptDayFilter, apptTimeFilter).map(filteredAppt => (
                                 <DummyAppointment
                                     date={filteredAppt.date}
                                     time={filteredAppt.time}
