@@ -100,29 +100,18 @@ export function ViewAppointments() {
     const [searchInput, setSearchInput] = useState("");
 
     function apptDayFilter(appt) {
-        if (selectedDay.value.charAt(0) == 'a') {
-            return true;
-        }
+        if (selectedDay == "all" || selectedDay.value.charAt(0) == 'a') {
+            return true; }
+
         return appt.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
     }
     
     function apptTimeFilter(appt) {
-        if (selectedTime.value == "all") {
+        if (selectedTime.value.chatAt(0) == 'a') {
             return true;
         }
-        else if (selectedTime.value == "2:00-2:30") {
-            return (appt.time.substring(0, 7) == "2:00 PM" || appt.time.substring(0, 7) == "2:15 PM" || appt.time.substring(0, 7) == "2:30 PM")
-        } 
-        else if (selectedTime.value == "2:30 - 3:00") {
-            return (appt.time.substring(0, 7) == "2:30 PM" || appt.time.substring(0, 7) == "2:45 PM" || appt.time.substring(0, 7) == "3:00 PM")
+        return appt.time.charAt(0) == selectedTime.value.charAt(0);
         }
-        else if (selectedTime.value == "3:00-3:30") {
-            return (appt.time.substring(0, 7) == "3:00 PM" || appt.time.substring(0, 7) == "3:15 PM" || appt.time.substring(0, 7) == "3:30 PM")
-        }
-        else if (selectedTime.value == "3:30-3:40") {
-            return (appt.time.substring(0, 7) == "3:30 PM" || appt.time.substring(0, 7) == "3:45 PM" || appt.time.substring(0, 7) == "4:00 PM")
-        }
-    }
     
     return (
         <div className="full-page">
@@ -194,6 +183,7 @@ export function ViewAppointments() {
                             .filter(apptDayFilter).map(filteredAppt => (
                                 <DummyAppointment
                                     date={filteredAppt.date}
+                                    time={filteredAppt.time}
                                     firstname={filteredAppt.firstname}
                                     lastname={filteredAppt.lastname}/>
                             ))
