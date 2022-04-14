@@ -116,7 +116,7 @@ export function StockListingAdmin() {
     const [searchInput, setSearchInput] = useState("");
 
     function clearInputFieldsHelper() {
-        setSelectedSort();
+        setSelectedSort(sortOptions[0]);
         setSelectedTags([]);
         setSelectedShow(0);
         setSearchInput("");
