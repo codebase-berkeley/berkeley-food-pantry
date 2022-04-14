@@ -33,9 +33,10 @@ function Food(props) {
                             </div>
                         </button>
                     </div>
-                    <div style={{paddingLeft: "6%"}} className ="inStock">
-                        <span style={{paddingRight: "11%"}}>In Stock</span>
-                        <input type="checkbox"/>
+                    <div className ="inStock">
+                        <span >In Stock</span>
+                        
+                        <input type="checkbox" checked={props.in_stock} onChange={props.onChange}/>
                     </div>
                 </div>
             </div>
