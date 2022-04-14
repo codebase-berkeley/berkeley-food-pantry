@@ -18,7 +18,12 @@ import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+<<<<<<< HEAD
 //import moment from 'moment';
+=======
+import moment from 'moment';
+import { applyPatch } from "prettier";
+>>>>>>> 7638363829c8690507226b0e99a45e3133792b23
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -28,6 +33,7 @@ const apptOptions = [
 ]
 
 const timeOptions = [
+    { value: 'all', label: 'All times this week' },
     { value: '2:00-2:30', label: '2:00 PM - 2:30 PM' },
     { value: '2:30-3:00', label: '2:30 PM - 3:00 PM' }, 
     { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
@@ -87,8 +93,9 @@ const customStyles = {
 }
 
 const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:00" },
-{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "2:15" ,timeValue: 215},
+{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "2:15"},
 {firstname: 'gargi', lastname: 'deshpande', date: "Friday, April 2022", time: "2:30" },
+{firstname: 'isabel', lastname: 'li', date: "Wednesday, April 2022", time: "2:30" },
 {firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "2:45" },
 {firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:00" },
 {firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:15" },
@@ -115,16 +122,28 @@ export function ViewAppointments() {
 
         return appt.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
     }
-    
+
     function apptTimeFilter(appt) {
+        const splitInt = appt.time.split(":");
+        const newSplitInt = parseInt(splitInt[0]) * 100 + parseInt(splitInt[1]);
+        console.log(splitInt);
+        console.log(newSplitInt);
         if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
             return true; }
-    
-        if (((appt.time.charAt(0) == selectedTime.value.charAt(0)) && ((appt.time.substring(2,3) == selectedTime.value.substring(2,3)))) || (selectedTime.value.charAt(11) == appt.time.charAt(0)) || 
-            ((appt.time.charAt(0) == selectedTime.value.charAt(0)) && (((appt.time.charAt(2) == "1") || (appt.time.charAt(2) == "3") || appt.time.charAt(2) == "4")))) {
-            return true;
+        else if (selectedTime.value == "2:00-2:30") {
+            return ((newSplitInt >= 200) && (newSplitInt <= 230));
+            }
+        else if ((selectedTime.value == "2:30-3:00")) {
+            return ((newSplitInt >= 230) && (newSplitInt <= 300));
+            }
+        else if ((selectedTime.value == "3:00-3:30")) {
+            return ((newSplitInt >= 300) && (newSplitInt <= 330));
+            }
+        else if ((selectedTime.value == "3:30-4:00")) {
+            return ((newSplitInt >= 330) && (newSplitInt <= 400));
+            }           
         }
-    }
+
     return (
         <div className="full-page">
 
@@ -188,7 +207,7 @@ export function ViewAppointments() {
 
                     <div className="appt-card-display">
                         {appt
-                            .filter(apptTimeFilter).map(filteredAppt => (
+                            .filter(apptDayFilter).filter(apptTimeFilter).map(filteredAppt => (
                                 <DummyAppointment
                                     date={filteredAppt.date}
                                     time={filteredAppt.time}
