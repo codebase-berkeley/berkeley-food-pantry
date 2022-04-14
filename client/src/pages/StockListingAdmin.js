@@ -34,8 +34,9 @@ const foodCategories = [
 ]
 
 const sortOptions = [
-    { value: 'alphabetical', label: 'Alphabetical, A-Z' },
-    { value: 'recently added', label: 'Most Recently Added' }
+    { value: 'recently added', label: 'Most Recently Added' },
+    { value: 'alphabetical', label: 'Alphabetical, A-Z' }
+    
 ]
 
 const showOptions = [
