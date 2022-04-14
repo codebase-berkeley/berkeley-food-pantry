@@ -194,6 +194,7 @@ export function StockListingAdmin() {
         }
     }
     console.log(food);
+
     return (
         <div className="entireContent">
 
@@ -205,18 +206,20 @@ export function StockListingAdmin() {
                         <h1>Edit Today's Stock</h1>
                         <p>Manage today's stock listing.</p>
                     </div>
-
+                
                     <div className="rightSide">
-                        <button type="button" class="btn" className="addButton">
+                    <Link to="/addFood" className = "addButton" style = {{textDecoration: 'none'}}>
+                        {/* <button onClick {to="/stockListingAdmin"} type="button" class="btn" className="addButton"> */}
                             <img src={isbesPlusSign}></img>
                             <div className="addItem"> Add new item </div>
 
                         {/* <Routes>
                             <Route path="./AddFood" element={<AddFood/>}/>
                         </Routes> */}
-
+                    </Link>
                         </button>
                         <button className="changeStock" onClick={setOutOfStock}> Set all items to out of stock </button>
+
                     </div>
 
                 </div>

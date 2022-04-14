@@ -96,15 +96,16 @@
  .clear-all-button {
     display: flex;
     align-items: center;
+    margin-left: 1%;
     justify-content: center;
     width: 10vw;
     height: 5.5vh;
-    font-size: 2.25vh;
     border-radius: 20px;
     border: #588157 solid 1px;
-    color: #588157;
-    font-family: 'Montserrat';
     background-color: white;
+    color: #588157;
+    font-size: 2.25vh;
+    font-family: 'Montserrat';
 }
 
 .clear-all-button:hover {
@@ -123,7 +124,6 @@
     width: 10vw;
     height: 5.5vh;
     border-radius: 20px;
-    /* border: #588157 solid 1px; */
     background-color: #264425;
     color: white;
     font-size: 2.25vh;
@@ -145,7 +145,12 @@
     width: 100%;
     align-items: flex-start;
     height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filter-dropdown {
+    width: 100%;
 }
 
 .appt-sched-dropdown {
@@ -160,16 +165,14 @@ p#input-field-label {
     color: #262626;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 14px;
-    
+    font-size: 1.5vh;
 }
 
 p#item-checklist-label {
     color: #000000;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 10px;
-    
+    font-size: 2vh;
 }
 
 .form-check-input {
@@ -177,12 +180,19 @@ p#item-checklist-label {
 }
 
 .form-check-input-items {
-    margin-bottom: 15%;
+    margin-bottom: 3%;
+}
+
+.form-check-input-items {
+    margin-bottom: 8%; 
+    border: #000000;
 }
 
 .custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
+    width: 20vw !important;
+
 }
 
 .searchInputs {
@@ -216,15 +226,15 @@ input::placeholder{
 }
 
 .name-box {
-    width: 10vw;
+    width: 15vw;
 }
 
 .contact-box {
     height: 20vh;
-    width: 33vw;
+    width: 31.5vw;
     border-color: #ACB9AC;
     border: solid #ACB9AC 1px;
-    border-radius: .5vw;
+    border-radius: 10px;
     padding-left: .5vw;
     box-shadow: #ACB9AC;
     text-align: top;
@@ -239,7 +249,6 @@ input::placeholder{
     font-family: "Inter";
     display: flex;
     flex-direction: column;
-    background-color: red;
     height: 32vh;
     width: 40vw;
 }
@@ -268,4 +277,123 @@ input::placeholder{
     overflow-x: hidden;
     overflow-y: auto;
     margin-bottom: 10px;
+    
+}
+
+.additional-information-text-field {
+    margin-top: 10vh;
+}
+
+@media screen and (orientation: portrait) {
+    .intro-text {
+        font-weight: bold;
+    }
+    
+    .main-appointment-scheduler-container {
+        display: flex;
+        flex-direction: column;
+        height: 150vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-appointment-scheduler-left {
+        width: 100%;
+        height: 150%;
+        overflow-y: auto;
+        overflow-x: initial;
+        border: white;
+    }
+
+    .main-appointment-scheduler-right {
+        width: 100%;
+        height: 100vh;
+        border: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .custom-dropdown-1 {
+        width: 70% !important;
+        border-radius: 10px;
+    }
+
+    .step-heading {
+        font-size: 2vh;
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .left-checklist-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        height: 50%;
+        overflow-y: auto;
+        border-radius: 10px;
+    }
+
+    .appt-sched-dropdown {
+        width: 100%;
+    }
+
+    .input-name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name-box {
+        width: 80vw;
+    }
+
+    .contact-box {
+        width: 80vw;
+        height: 10vh;
+        border-radius: 10px;
+    }
+
+    .form-check {
+        margin-bottom: 2%;
+    }
+
+    .additional-information-text-field {
+        margin-top: 2vh;
+    }
+
+    .clear-all-button {
+        display: none;
+        align-items: center;
+        margin-left: 1%;
+        justify-content: center;
+        width: 10vw;
+        height: 5.5vh;
+        border-radius: 20px;
+        border: #588157 solid 1px;
+        background-color: white;
+        color: #588157;
+        font-size: 2.25vh;
+        font-family: 'Montserrat';
+    }
+
+    .button-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .submit-button {
+        font-weight: bold;
+        width: 30vw;
+    }
+
+    p#item-checklist-label {
+        margin-top: 2vh;
+        margin-bottom: .5vh;
+        margin-left: 3vw;
+        font-size: 1.5vh;
+    }
+
+    .pickup-items-selection {
+        margin-left: 3vw;
+    }
 }
