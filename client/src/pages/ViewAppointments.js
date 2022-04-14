@@ -29,6 +29,7 @@ const apptOptions = [
 ]
 
 const timeOptions = [
+    { value: 'all', label: 'All times this week' },
     { value: '2:00-2:30', label: '2:00 PM - 2:30 PM' },
     { value: '2:30-3:00', label: '2:30 PM - 3:00 PM' }, 
     { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
@@ -88,8 +89,9 @@ const customStyles = {
 }
 
 const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:00" },
-{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "2:15" ,timeValue: 215},
+{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "2:15"},
 {firstname: 'gargi', lastname: 'deshpande', date: "Friday, April 2022", time: "2:30" },
+{firstname: 'isabel', lastname: 'li', date: "Wednesday, April 2022", time: "2:30" },
 {firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "2:45" },
 {firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:00" },
 {firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:15" },
@@ -205,7 +207,7 @@ export function ViewAppointments() {
 
                     <div className="appt-card-display">
                         {appt
-                            .filter(apptTimeFilter).map(filteredAppt => (
+                            .filter(apptDayFilter).filter(apptTimeFilter).map(filteredAppt => (
                                 <DummyAppointment
                                     date={filteredAppt.date}
                                     time={filteredAppt.time}
