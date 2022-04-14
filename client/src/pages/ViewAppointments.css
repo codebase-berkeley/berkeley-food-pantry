@@ -325,17 +325,26 @@ p#filterControlLabel {
     justify-content: flex-end;
 }
 
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* justify-content: space-between; */
+}
+
 .checkers {
-    width: 100%;
+    width: 50%;
+    height: 50%;
 }
 
 .appts-text {
-    width: 100%;
+    /* width: 80%; */
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
 
-input[type="checkbox"], input[type="radio"] {
+/* input[type="checkbox"], input[type="radio"] {
     border: 1.5px solid #B8B8B8;
 }
 
@@ -349,4 +358,4 @@ input[type="checkbox"]:checked, input[type="radio"]:checked {
 input[type="checkbox"]:hover, input[type="radio"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
-}
+} */

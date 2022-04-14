@@ -18,7 +18,7 @@ import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import moment from 'moment';
+//import moment from 'moment';
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -166,27 +166,23 @@ export function ViewAppointments() {
                         </div>
                     </div>
 
-                    {/* <div className="checkboxes"> */}
-                        
-                    {/* <li>
-                        <label for="checkid"  style="word-wrap:break-word" className ="form-check-label">
-                            <input id="checkid"  type="checkbox" value="test" /> Show appointments marked visited
-                        </label>
-                    </li> */}
-                        {/* <div className ="form-check-label">
-                            <span>Show appointments marked visited</span>
-                            <input style={{}} type="checkbox"/>
-                        </div> 
-                        style={{width: "10px", paddingLeft: "5%"}*/}
+                
+                        <div className="checkboxes">
+                            <div className ="form-check-label">
+                                <span className ="appts-text">Show appointments marked visited</span>
+                                <input className="checkers" type="checkbox"/>
+                            </div>
+                            <div className ="form-check-label">
+                                <span className ="appts-text">Show appointments marked visited</span>
+                                <input className="checkers" type="checkbox"/>
+                            </div>
 
-                        <div className ="form-check-label">
-                            <span className ="appts-text">Show appointments marked visited</span>
-                            <input className="checkers" type="checkbox"/>
-                        </div>
-                                
+                          
+                         </div>
+                            
+                        
                     </div>
 
-                {/* </div> */}
 
                 <div className="bottomContainer">
 
