@@ -295,9 +295,10 @@ input[type="checkbox"], input[type="radio"] {
 
 input[type="checkbox"]:checked, input[type="radio"]:checked {
     border: 1.5px solid #B8B8B8;
-    background-color: solid #264425;
+    background-color: solid #264425; 
+    accent-color: #264425;
     box-shadow: "transparent";
-    box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #264425;
+    
 }
 
 input[type="checkbox"]:hover, input[type="radio"]:hover {
