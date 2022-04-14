@@ -118,37 +118,24 @@ export function ViewAppointments() {
     }
 
     function apptTimeFilter(appt) {
-    
+        const splitInt = appt.time.split(":");
+        const newSplitInt = parseInt(splitInt[0]) * 100 + parseInt(splitInt[1]);
+        console.log(splitInt);
+        console.log(newSplitInt);
         if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
             return true; }
-        else if (selectedTime == "2:00 - 2:30") {
-            const splitInt = appt.time.split(":");
-            const newSplitInt = splitInt[0] + splitInt[1];
-            if ((newSplitInt >= 200) && (newSplitInt <= 230)) {
-                return true;
+        else if (selectedTime.value == "2:00-2:30") {
+            return ((newSplitInt >= 200) && (newSplitInt <= 230));
             }
+        else if ((selectedTime.value == "2:30-3:00")) {
+            return ((newSplitInt >= 230) && (newSplitInt <= 300));
             }
-        else if ((selectedTime == "2:30-3:00")) {
-            const splitInt = appt.time.split(":");
-            const newSplitInt = splitInt[0] + splitInt[1];
-            if ((newSplitInt >= 230) && (newSplitInt <= 300)) {
-                return true;
+        else if ((selectedTime.value == "3:00-3:30")) {
+            return ((newSplitInt >= 300) && (newSplitInt <= 330));
             }
-            }
-        else if ((selectedTime == "3:00-3:30")) {
-            const splitInt = appt.time.split(":");
-            const newSplitInt = splitInt[0] + splitInt[1];
-            if ((newSplitInt >= 300) && (newSplitInt <= 330)) {
-                return true;
-            }
-            }
-        else if ((selectedTime == "3:30-4:00")) {
-            const splitInt = appt.time.split(":");
-            const newSplitInt = splitInt[0] + splitInt[1];
-            if ((newSplitInt >= 330) && (newSplitInt <= 400)) {
-                return true;
-            }    
-            }          
+        else if ((selectedTime.value == "3:30-4:00")) {
+            return ((newSplitInt >= 330) && (newSplitInt <= 400));
+            }           
         }
 
     return (
