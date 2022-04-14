@@ -68,14 +68,17 @@ export default function AddFood() {
     const location = useLocation();
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
-    // const [stockAvailability, setStockAvailability] = useState("");
+    const [stockAvailability, setStockAvailability] = useState("");
     const [tags, setTags] = useState([]);
 
     useEffect(() => {
         setItemName(location.state.name);
         setTags(location.state.tags);
-        
-        // setStockAvailability(location.state.name);
+        if (location.state.inStock) {
+            setStockAvailability("In Stock Today");
+        }
+        else {setStockAvailability("Out of Stock Today");}
+    
         console.log(tags);
         //console.log(stockAvailability);
       });
@@ -97,15 +100,6 @@ export default function AddFood() {
             )
         }
 
-    // const colourStyles = {
-    //     placeholder: (defaultStyles) => {
-    //         return {
-    //             ...defaultStyles,
-    //             display: flex,
-    //             flexDirection: row,
-    //         }
-    //     }
-    // }
 
     return(
         <div className = 'add-food-component-container'>
@@ -129,6 +123,7 @@ export default function AddFood() {
                                 <Select className="custom-dropdown"
                                     menuPlacement='auto'
                                     menuPosition='fixed'
+                                    placeholder={stockAvailability}
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
@@ -140,14 +135,13 @@ export default function AddFood() {
 
                         <div className="categories-dropdown">
                             <label className = "item-name-input">Select Dietary Categories (Optional)</label>
-                            <div>
-                                <Select className="custom-dropdown"
-
+                            <div style={{ overflowX: "scroll", maxHeight: "20%", minWidth: "100%"}}>
+                                <Select className="custom-dropdown" style={{overflowX: "scroll", minWidth: "100%", maxHeight: "20%"}}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
                                     placeholder = {tags.map((tag) => {
                                         return (
-                                        <Tags name={tag} />
+                                        <Tags name={tag}/>
                                     );})}
                                     isMulti
                                     options={dietaryCategories}

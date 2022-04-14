@@ -30,7 +30,7 @@ function Food(props) {
                 {/* <Link to="/thankyou" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link> */}
                     <div>
                         {/* <button className="editButton" onClick={editItem}> */}
-                        <Link to="/addFood" state = {{name: props.name, tags: props.tags}} className = "editButton">
+                        <Link to="/addFood" state = {{name: props.name, tags: props.tags, inStock: true}} className = "editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="editItem">
                                 Edit Item
