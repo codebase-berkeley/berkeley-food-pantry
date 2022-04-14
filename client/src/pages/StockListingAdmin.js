@@ -217,7 +217,7 @@ export function StockListingAdmin() {
                             <Route path="./AddFood" element={<AddFood/>}/>
                         </Routes> */}
                     </Link>
-                        </button>
+                    
                         <button className="changeStock" onClick={setOutOfStock}> Set all items to out of stock </button>
 
                     </div>

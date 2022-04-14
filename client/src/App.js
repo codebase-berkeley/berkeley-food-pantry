@@ -26,7 +26,7 @@ function App() {
       <AdminLoginNavbar/>
 
         <Routes>
-          <Route path="/stockListingAdmin" element={<ViewAppointments/>}/>
+          <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
       
           <Route path = "/adminLogin" element={<AdminLogin/>}/>
 
