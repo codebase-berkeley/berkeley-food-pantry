@@ -19,6 +19,7 @@ import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import moment from 'moment';
+import { applyPatch } from "prettier";
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -115,16 +116,41 @@ export function ViewAppointments() {
 
         return appt.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
     }
-    
+
     function apptTimeFilter(appt) {
+    
         if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
             return true; }
-    
-        if (((appt.time.charAt(0) == selectedTime.value.charAt(0)) && ((appt.time.substring(2,3) == selectedTime.value.substring(2,3)))) || (selectedTime.value.charAt(11) == appt.time.charAt(0)) || 
-            ((appt.time.charAt(0) == selectedTime.value.charAt(0)) && (((appt.time.charAt(2) == "1") || (appt.time.charAt(2) == "3") || appt.time.charAt(2) == "4")))) {
-            return true;
+        else if (selectedTime == "2:00 - 2:30") {
+            const splitInt = appt.time.split(":");
+            const newSplitInt = splitInt[0] + splitInt[1];
+            if ((newSplitInt >= 200) && (newSplitInt <= 230)) {
+                return true;
+            }
+            }
+        else if ((selectedTime == "2:30-3:00")) {
+            const splitInt = appt.time.split(":");
+            const newSplitInt = splitInt[0] + splitInt[1];
+            if ((newSplitInt >= 230) && (newSplitInt <= 300)) {
+                return true;
+            }
+            }
+        else if ((selectedTime == "3:00-3:30")) {
+            const splitInt = appt.time.split(":");
+            const newSplitInt = splitInt[0] + splitInt[1];
+            if ((newSplitInt >= 300) && (newSplitInt <= 330)) {
+                return true;
+            }
+            }
+        else if ((selectedTime == "3:30-4:00")) {
+            const splitInt = appt.time.split(":");
+            const newSplitInt = splitInt[0] + splitInt[1];
+            if ((newSplitInt >= 330) && (newSplitInt <= 400)) {
+                return true;
+            }    
+            }          
         }
-    }
+
     return (
         <div className="full-page">
 
