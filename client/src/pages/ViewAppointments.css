@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 
-.full-page {
+.appt-full-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,13 +27,13 @@
     margin-left: -1vw;
 }
 
-.show-dropdowns {
+.show-appt-dropdowns {
     display: flex;
     flex-direction: row;
     width: 50%;
 }
 
-.checkboxes {
+.appointment-filter-checkboxes {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -114,7 +114,7 @@
     overflow-y: scroll;
 }
 
-.bottomContainer {
+.apptBottomContainer {
     border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
@@ -132,7 +132,7 @@
     padding-bottom: 2vh;
 }
 
-.by-day {
+.appt-by-day {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -140,7 +140,7 @@
     height: '6vh';
 }
 
-.by-time {
+.appt-by-time {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -157,14 +157,14 @@ p#filterControlLabel {
     font-size: 16px;
 }
 
-.custom-dropdown {
+.appt-custom-dropdown {
     padding-top: 1px;
     width: 25vw;
     border-color: #ACB9AC;
     margin-right: -4vw;
 }
 
-.custom-dropdown-2 {
+.appt-custom-dropdown-2 {
     padding-top: 1px;
     width: 25vw;
     border-color: #ACB9AC;
@@ -316,7 +316,7 @@ p#filterControlLabel {
     width: 400px;
 }
 
-.form-check-labell {
+.appointment-form-check-label {
     /* padding-left: 50%; */
     display: flex;
     width: 180%;

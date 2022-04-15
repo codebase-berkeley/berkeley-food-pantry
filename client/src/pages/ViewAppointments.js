@@ -142,7 +142,7 @@ export function ViewAppointments() {
         }
 
     return (
-        <div className="full-page">
+        <div className="appt-full-page">
 
             <div className="stockListingPage">
 
@@ -151,10 +151,10 @@ export function ViewAppointments() {
                     <div className="show-appointments">
                         <p>Show appointments for:</p>
                         
-                        <div className="show-dropdowns">
-                            <div className="by-day">
+                        <div className="show-appt-dropdowns">
+                            <div className="appt-by-day">
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="appt-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -166,9 +166,9 @@ export function ViewAppointments() {
                                     />
                                 </div>
                             </div>
-                            <div className="by-time">
+                            <div className="appt-by-time">
                                 <div>
-                                    <Select className="custom-dropdown-2"
+                                    <Select className="appt-custom-dropdown-2"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -182,12 +182,12 @@ export function ViewAppointments() {
                         </div>
                     </div>
                    
-                        <div className="checkboxes"> 
-                            <div className ="form-check-labell">
+                        <div className="appointment-filter-checkboxes"> 
+                            <div className ="appointment-form-check-label">
                                 <span className ="appts-text">Show appointments marked visited</span>
                                 <input type="checkbox"/>
                             </div>
-                            <div className ="form-check-labell">
+                            <div className ="appointment-form-check-label">
                                 <span className ="appts-text">Show appointments marked visited</span>
                                 <input type="checkbox"/>
                             </div>
@@ -199,7 +199,7 @@ export function ViewAppointments() {
                     </div>
 
 
-                <div className="bottomContainer">
+                <div className="apptBottomContainer">
 
                     <div className="appt-card-display">
                         {appt
