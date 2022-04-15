@@ -7,6 +7,18 @@ const initFoodModel = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        instock: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        tags: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        image_path: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     }, {
         tableName: 'food',
