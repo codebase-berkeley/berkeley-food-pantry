@@ -18,12 +18,9 @@ import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-<<<<<<< HEAD
-//import moment from 'moment';
-=======
-import moment from 'moment';
-import { applyPatch } from "prettier";
->>>>>>> 7638363829c8690507226b0e99a45e3133792b23
+
+// import moment from 'moment';
+// import { applyPatch } from "prettier";
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -185,7 +182,6 @@ export function ViewAppointments() {
                         </div>
                     </div>
 
-                
                         <div className="checkboxes">
                             <div className ="form-check-label">
                                 <span className ="appts-text">Show appointments marked visited</span>
