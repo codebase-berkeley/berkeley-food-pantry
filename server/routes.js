@@ -31,6 +31,21 @@ module.exports = (app) => {
     });
 
     app.put('/food', async (req, res) => {
+        const name = req.body.name;
+        if (!name || name.length <= 0) return res.status(400).end();
+        const instock = req.body.instock;
+        const tags = req.body.tags;
+        const image = req.body.image_path;
+
+        await Food.update({
+            name: name, 
+            instock: instock,
+            tags: tags,
+            image_path: image
+        });
+        await Food.save();
+        res.status(200).end();
+        
 
     });
 }
