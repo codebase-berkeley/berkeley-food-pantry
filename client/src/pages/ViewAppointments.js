@@ -112,7 +112,6 @@ export function ViewAppointments() {
     // var moment = require('moment');
     // moment("123", "hmm").format("HH:mm")
 
-
     function apptDayFilter(appt) {
         if (selectedDay == "all" || selectedDay.value.charAt(0) == 'a') {
             return true; }
@@ -185,11 +184,11 @@ export function ViewAppointments() {
                         <div className="appointment-filter-checkboxes"> 
                             <div className ="appointment-form-check-label">
                                 <span className ="appts-text">Show appointments marked visited</span>
-                                <input type="checkbox"/>
+                                <input className = "appointment-view-input"type="checkbox"/>
                             </div>
                             <div className ="appointment-form-check-label">
-                                <span className ="appts-text">Show appointments marked visited</span>
-                                <input type="checkbox"/>
+                                <span className ="appts-text">Show past appointments</span>
+                                <input className = "appointment-view-input" type="checkbox"/>
                             </div>
 
                           
