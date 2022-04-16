@@ -21,6 +21,7 @@ module.exports = (app) => {
         const instock = req.body.instock;
         const tags = req.body.tags;
         await Food.create({
+            
             name: name,
             instock: instock,
             tags: tags,
@@ -36,16 +37,19 @@ module.exports = (app) => {
         const instock = req.body.instock;
         const tags = req.body.tags;
         const image = req.body.image_path;
-
-        await Food.update({
+        console.log(req.body.name);
+        if (await Food.update({
             name: name, 
             instock: instock,
             tags: tags,
             image_path: image
-        });
-        await Food.save();
+        }, 
+        {
+            where: {
+                name: name
+            }
+        }) <= 0) return res.status(400).end();
         res.status(200).end();
         
-
     });
 }

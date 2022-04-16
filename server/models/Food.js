@@ -4,7 +4,7 @@ class Food extends Model {}
 
 const initFoodModel = (sequelize) => {
     Food.init({
-        
+       
         name: {
             type: DataTypes.STRING,
             allowNull: false
