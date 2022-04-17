@@ -51,8 +51,23 @@
     font-weight: 800;
     font-family: 'Montserrat';
 }
+.delete-item-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5.5vh;
+    margin-top: 43%;
+    margin-left: -17%;
+    border-radius: 40px;
+    color: white;
+    background-color: #264425;
+    font-size: 2.25vh;
+    font-weight: 800;
+    font-family: 'Montserrat';
+}
 
-.item-selections {
+.add-item-selections {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +86,7 @@
     font-size: 150%;
 }
 
-.stock-dropdown {
+.add-item-stock-dropdown {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -79,12 +94,13 @@
     width: 30vw;
 }
 
-.categories-dropdown {
+.add-item-categories-dropdown {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 2vh;
     width: 30vw;
+    
 }
 
 p#filterControlLabel {
@@ -105,14 +121,14 @@ p#filterControlLabel {
     width: 30vw;
 }
 
-.item-name-textbox {
+.add-item-name-textbox {
     width: 30vw;
     height: 5vh;
     border-radius: .5vw;
     border: solid #ACB9AC;
 }
 
-label, input {
+label.add-item-name-input, input {
     display:flex;
     flex-direction: column;
     border-radius: 4px 4px 4px 4px;
@@ -209,7 +225,7 @@ label, input {
     font-weight: 300; 
 }
 
-.custom-dropdown {
+.add-item-custom-dropdown {
     /* overflow-x: auto;
     overflow-y: hidden; */
     display: flex;

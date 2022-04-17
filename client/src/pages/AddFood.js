@@ -74,7 +74,7 @@ export default function AddFood() {
     useEffect(() => {
         setItemName(location.state.name);
         setTags(location.state.tags);
-        if (location.state.inStock) {
+        if (location.state.inStock == true) {
             setStockAvailability("In Stock Today");
         }
         else {setStockAvailability("Out of Stock Today");}
@@ -100,43 +100,40 @@ export default function AddFood() {
             )
         }
 
-
     return(
         <div className = 'add-food-component-container'>
             <div className = 'add-food-component-header'>
                 {headerDisplay()}
             </div>
                 <div className = 'main-add-food-component-container'>
-                    <div className = 'item-selections'> 
-                        <div className = "item-name">
+                    <div className = 'add-item-selections'> 
                             <form>
-                                <label className = "item-name-input">
+                                <label className = "add-item-name-input">
                                     Item Name 
                                     </label>
-                                    <input className = "item-name-textbox" placeholder={itemName} type="text" name="name" />
+                                    <input className = "add-item-name-textbox" defaultValue={itemName} type="text" name="name" />
                             </form>
-                        </div>
 
-                        <div className="stock-dropdown">
-                            <label className = "item-name-input">Set Stock Availability</label>
-                            <div id="filter-dropdown">
-                                <Select className="custom-dropdown"
+                        <div className="add-item-stock-dropdown">
+                            <label className = "add-item-name-input">Set Stock Availability</label>
+                            <div>
+                                <Select className="add-item-custom-dropdown"
                                     menuPlacement='auto'
                                     menuPosition='fixed'
-                                    placeholder={stockAvailability}
+                                    placeholder="select..."
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    defaultValue="select..."
+                                    defaultValue={stockAvailability} 
                                     options={todayStock}
                                 />
                             </div>
                         </div>
 
-                        <div className="categories-dropdown">
-                            <label className = "item-name-input">Select Dietary Categories (Optional)</label>
-                            <div style={{ overflowX: "scroll", maxHeight: "20%", minWidth: "100%"}}>
-                                <Select className="custom-dropdown" style={{overflowX: "scroll", minWidth: "100%", maxHeight: "20%"}}
+                        <div className="add-item-categories-dropdown">
+                            <label className = "add-item-name-input">Select Dietary Categories (Optional)</label>
+                            <div >
+                                <Select className="add-item-custom-dropdown"
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
                                     placeholder = {tags.map((tag) => {
@@ -156,6 +153,7 @@ export default function AddFood() {
                     </div>
                 </div>
             
+                <input className = "delete-item-button-container" type="button" value="Delete Item"></input>
                 <input className = "save-item-button-container" type="button" value="Save Item"></input>
         
         </div>
