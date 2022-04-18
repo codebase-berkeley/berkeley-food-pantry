@@ -14,7 +14,7 @@ function Food(props) {
             return (
                 <div className = "editIn" style={{paddingRight: "2%", width: "35%"}}>
                             <img src={checkmark} className="stockImage" alt="checkmark" />
-                        <div className ="inStock" style={{paddingLeft: "16%", width: "100%"}}>
+                        <div className ="inStock" style={{width: "100%"}}>
                             <span >In Stock Today</span>
                         </div>
                     </div>
@@ -23,7 +23,7 @@ function Food(props) {
         return (
             <div className = "editIn" style={{paddingRight: "4%", width: "35%"}}>
                     <img src={xmark} className="stockImage" alt="checkmark" />
-                    <div className ="inStock" style={{paddingLeft: "6%", width: "100%"}}>
+                    <div className ="inStock" style={{width: "100%"}}>
                         <span>Not In Stock Today</span>
                     </div>
                 </div>
@@ -55,8 +55,9 @@ function Food(props) {
                                 </div>
                             </div>
                         </div>
-                        <div style={{paddingLeft: "6%"}} className ="inStockCheck">
-                            <span style={{paddingRight: "11%"}}>In Stock</span>
+                        {/* style={{paddingRight: "11%"}} style={{paddingLeft: "6%"}} */}
+                        <div className ="inStockCheck">
+                            <span >In Stock</span>
                             <input type="checkbox"></input>
                         </div>
                     </div>

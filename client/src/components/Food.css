@@ -68,6 +68,8 @@
 }
 
 .inStock{
+    display: flex;
+    justify-content: center;
     font-family: "Inter";
     font-size: 16px;
     color: #264425;
@@ -80,6 +82,9 @@
     color: #264425;
     padding-top: 13%;
     width: 97px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nameTags {
