@@ -11,7 +11,10 @@
 .foodImage {
     height: 100%;
     width: 20%;
+
 }
+
+
 
 .componentContainer {
     display: flex;
@@ -40,8 +43,16 @@
     width: 120px;
     height: 32px;
     background-color: white;
-    border-width: 1px;
-    
+    border-width: 1px; 
+}
+
+.stockImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: white;
 }
 
 .editItem {
@@ -60,8 +71,10 @@
     justify-content: space-between;
 }
 
-.inStock{
+
+.in-stock-text{
     display: flex;
+    justify-content: center;
     font-family: "Inter";
     align-items: center;
     justify-content: center;
@@ -73,6 +86,27 @@
     gap: 10%; 
 }
 
+.out-of-stock-text{
+    display: flex;
+    justify-content: center;
+    font-family: "Inter";
+    font-size: 16px;
+    color: #888888;
+    padding-top: 13%;
+    width: 97px;
+}
+
+.inStockCheck{
+    font-family: "Inter";
+    font-size: 16px;
+    color: #264425;
+    padding-top: 13%;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
 
 
 .nameTags {

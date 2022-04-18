@@ -19,7 +19,6 @@ import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
-
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
     { value: 'strawberry', label: 'Veggies' },
@@ -196,19 +195,20 @@ export function StockListingAdmin() {
     console.log(food);
 
     return (
-        <div className="entireContent">
+        <div className="stocklisting-entireContent">
 
-            <div className="stockListingPage">
+            <div className="stocklisting-stockListingPage">
 
-                <div className="topContainer">
+                <div className="stocklisting-topContainer">
 
-                    <div className="leftSide">
+                    <div className="stocklisting-leftSide">
                         <h1>Edit Today's Stock</h1>
                         <p>Manage today's stock listing.</p>
                     </div>
-                
-                    <div className="rightSide">
-                    <Link to="/addFood" className = "addButton" style = {{textDecoration: 'none'}}>
+
+
+                    <div className="stocklisting-rightSide">
+                         <Link to="/addFood" className = "addButton" style = {{textDecoration: 'none'}}>
                         {/* <button onClick {to="/stockListingAdmin"} type="button" class="btn" className="addButton"> */}
                             <img src={isbesPlusSign}></img>
                             <div className="addItem"> Add new item </div>
@@ -217,32 +217,32 @@ export function StockListingAdmin() {
                             <Route path="./AddFood" element={<AddFood/>}/>
                         </Routes> */}
                     </Link>
-                    
-                        <button className="changeStock" onClick={setOutOfStock}> Set all items to out of stock </button>
+                        <button className="stocklisting-changeStock"> Set all items to out of stock </button>
 
                     </div>
 
                 </div>
 
-                <div className="bottomContainer">
+                <div className="stocklisting-bottomContainer">
 
-                    <div className="filterItemControls">
+                    <div className="stocklisting-filterItemControls">
 
-                        <div className="filterReset">
-                            <div className="filterItems">Filter Items</div>
-                            <button className="resetFilters" onClick={clearInputFieldsHelper}>Reset Filters</button>
+                        <div className="stocklisting-filterReset">
+                            <div className="stocklisting-filterItems">Filter Items</div>
+                            <button className="stocklisting-resetFilters" onClick={clearInputFieldsHelper}>Reset Filters</button>
+
                         </div>
 
-                        <div className="filters">
-                            <div className="searchBox">
+                        <div className="stocklisting-filters">
+                            <div className="stocklisting-searchBox">
                                 <text>Search Items</text>
                                 <Search placeholder="Search..." searchInput={searchInput} setSearchInput={setSearchInput}/>
                             </div>
 
-                            <div className="filter-by">
-                                <p id="filterControlLabel">Filter by Dietary Categories</p>
-                                <div id="filter-dropdown">
-                                    <Select className="custom-dropdown"
+                            <div className="stocklisting-filter-by">
+                                <p id="stocklisting-filterControlLabel">Filter by Dietary Categories</p>
+                                <div id="stocklisting-filter-dropdown">
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={false}
                                         components={animatedComponents}
@@ -255,10 +255,10 @@ export function StockListingAdmin() {
                                 </div>
                             </div>
 
-                            <div className="sort-by">
-                                <p id="filterControlLabel">Sort By...</p>
+                            <div className="stocklisting-sort-by">
+                                <p id="stocklisting-filterControlLabel">Sort By...</p>
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -271,37 +271,42 @@ export function StockListingAdmin() {
                                 </div>
                             </div>
 
-                            <div className="showFilter">
-                                <div className="showText"> Show </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
+
+                            <div className="stocklisting-showFilter">
+                                <div className="sstocklisting-howText"> Show </div>
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
+                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(0);
                                             }
-                                        } }></input>               
+                                        }></input>
+
                                         All items
                                     </label>
                                 </div>
 
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
+                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(1);
                                             }
-                                        } }></input>
+                                        } }>></input>
+
                                         In stock items only
                                     </label>
                                 </div>
                                 
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
+
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
+                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(2);
                                             }
-                                        } }></input>
+                                        } ></input>
+
                                         Not in stock items only
                                     </label>
                                 </div>
@@ -309,6 +314,7 @@ export function StockListingAdmin() {
 
                         </div>
                     </div>
+
                     <div className="filterItemDisplay">
                         {food
                             .filter(searchFunction)
@@ -329,6 +335,7 @@ export function StockListingAdmin() {
                                     />))}
 
                     {/* food.filter(matchesTags) */}
+
                     </div>
                 </div>
             </div>
@@ -372,13 +379,13 @@ export function StockListingUser() {
         }
     }
     return (
-        <div className="entireContent">
+        <div className="stocklisting-entireContent">
 
-            <div className="stockListingPage">
+            <div className="stocklisting-stockListingPage">
 
-                <div className="topContainer">
+                <div className="stocklisting-topContainer">
 
-                    <div className="leftSide">
+                    <div className="stocklisting-leftSide">
                         <h1>Check out what we have in stock today.</h1>
                         <p>Last updated: March 25, 7:47am.<br></br>
                         Stock availability varies day by day. If something you’re looking for is out of stock, it might be available on another day.</p>
@@ -386,25 +393,25 @@ export function StockListingUser() {
 
                 </div>
 
-                <div className="bottomContainer">
+                <div className="stocklisting-bottomContainer">
 
-                    <div className="filterItemControls">
+                    <div className="stocklisting-filterItemControls">
 
-                        <div className="filterReset">
-                            <div className="filterItems">Filter Items</div>
-                            <button className="resetFilters">Reset Filters</button>
+                        <div className="stocklisting-filterReset">
+                            <div className="stocklisting-filterItems">Filter Items</div>
+                            <button className="stocklisting-resetFilters">Reset Filters</button>
                         </div>
 
-                        <div className="filters">
-                            <div className="searchBox">
+                        <div className="stocklisting-filters">
+                            <div className="stocklisting-searchBox">
                                 <text>Search Items</text>
                                 <Search placeholder="Search..." />
                             </div>
 
-                            <div className="filter-by">
-                                <p id="filterControlLabel">Filter by Dietary Categories</p>
-                                <div id="filter-dropdown">
-                                    <Select className="custom-dropdown"
+                            <div className="stocklisting-filter-by">
+                                <p id="stocklisting-filterControlLabel">Filter by Dietary Categories</p>
+                                <div id="stocklisting-filter-dropdown">
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={false}
                                         components={animatedComponents}
@@ -415,10 +422,10 @@ export function StockListingUser() {
                                 </div>
                             </div>
 
-                            <div className="sort-by">
-                                <p id="filterControlLabel">Sort By...</p>
+                            <div className="stocklisting-sort-by">
+                                <p id="stocklisting-filterControlLabel">Sort By...</p>
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -429,9 +436,9 @@ export function StockListingUser() {
                                 </div>
                             </div>
 
-                            <div className="showFilter">
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
+                            <div className="stocklisting-showFilter">
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
                                         <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         Only show items in stock today.
                                     </label>
@@ -440,13 +447,15 @@ export function StockListingUser() {
 
                         </div>
                     </div>
-                    <div className="filterItemDisplay">
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Coconut" image={coconut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Broccoli" image={broccoli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
-                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+
+                    <div className="stocklisting-filterItemDisplay">
+                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
+                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false} />
+                    <Food name="Coconut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+
                     </div>
                 </div>
             </div>
