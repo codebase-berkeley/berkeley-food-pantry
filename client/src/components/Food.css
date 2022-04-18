@@ -74,6 +74,13 @@
     padding-top: 13%;
     width: 97px;
 }
+.inStockCheck{
+    font-family: "Inter";
+    font-size: 16px;
+    color: #264425;
+    padding-top: 13%;
+    width: 97px;
+}
 
 .nameTags {
     display: flex;

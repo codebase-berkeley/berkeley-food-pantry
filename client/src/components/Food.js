@@ -8,10 +8,7 @@ import xmark from '../images/notinstock.svg'
 
 
 function Food(props) {
-    function editItem () {
-        console.log("it works");
-    }
-
+    
     function stockOption() {
         if ((props.in_stock) == true) {
             return (
@@ -27,7 +24,7 @@ function Food(props) {
             <div className = "editIn" style={{paddingRight: "4%", width: "35%"}}>
                     <img src={xmark} className="stockImage" alt="checkmark" />
                     <div className ="inStock" style={{paddingLeft: "6%", width: "100%"}}>
-                        <span> Not In Stock Today</span>
+                        <span>Not In Stock Today</span>
                     </div>
                 </div>
         );
@@ -58,8 +55,9 @@ function Food(props) {
                                 </div>
                             </div>
                         </div>
-                        <div style={{paddingLeft: "6%"}} className ="inStock">
-                            <span style={{paddingRight: "11%"}}>In Stock Today</span>
+                        <div style={{paddingLeft: "6%"}} className ="inStockCheck">
+                            <span style={{paddingRight: "11%"}}>In Stock</span>
+                            <input type="checkbox"></input>
                         </div>
                     </div>
                 </div>
