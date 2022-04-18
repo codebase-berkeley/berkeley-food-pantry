@@ -17,7 +17,6 @@
 }
 
 .show-appointments {
-    background-color: pink;
     display: flex;
     flex: 3;
     flex-direction: column;
@@ -32,7 +31,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: lavender;
 }
 
 /* .appointment-filter-checkboxes {
@@ -316,7 +314,6 @@ p#filterControlLabel {
 }
 
 .appointment-filter-checkboxes {
-    background-color: lightblue;
     display: flex;
     flex-direction: column;
     align-items: center;  
