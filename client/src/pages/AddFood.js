@@ -131,9 +131,19 @@ export default function AddFood() {
             </div>
             <div className = "save-item-button-container-final">
                     <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
-                    <Modal isOpen = {modalIsOpen}>
-               
-                    </Modal>
+                    <div className = "editItemModal ">
+                        <Modal isOpen = {modalIsOpen}>
+                            <h1>Confirm delete item?</h1>
+                            <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
+                            <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
+                        </Modal>
+
+                    </div>
+                    {/* <Modal isOpen = {modalIsOpen} id = "modal">
+                        <h1>Confirm delete item?</h1>
+                        <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
+                        <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
+                    </Modal> */}
                     <input className = "add-food-save-item-button" type="button" onClick={addItem} value="Save Item"></input>
                 </div>
         </div>

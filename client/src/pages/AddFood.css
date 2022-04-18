@@ -299,5 +299,9 @@ label, input {
         margin-left: 20%;
         
     }
+    .editItemModal {
+        width: 50%;
+        height: 50%; 
+    }
 
 }
