@@ -154,7 +154,6 @@ export function ViewAppointments() {
                             <div className="appt-by-day">
                                 <div>
                                     <Select className="appt-custom-dropdown"
-                                        styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
                                         options={apptOptions}
@@ -168,7 +167,6 @@ export function ViewAppointments() {
                             <div className="appt-by-time">
                                 <div>
                                     <Select className="appt-custom-dropdown-2"
-                                        styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
                                         options={timeOptions}
@@ -190,11 +188,7 @@ export function ViewAppointments() {
                                 <span className ="appts-text">Show past appointments</span>
                                 <input className = "appointment-view-input" type="checkbox"/>
                             </div>
-
-                          
                          </div>
-                            
-                        
                     </div>
 
 
