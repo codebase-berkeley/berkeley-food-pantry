@@ -34,11 +34,13 @@ module.exports = (app) => {
     app.put('/food', async (req, res) => {
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
+        const id = req.param.id; 
         const instock = req.body.instock;
         const tags = req.body.tags;
         const image = req.body.image_path;
         console.log(req.body.name);
         if (await Food.update({
+            
             name: name, 
             instock: instock,
             tags: tags,
@@ -46,7 +48,7 @@ module.exports = (app) => {
         }, 
         {
             where: {
-                name: name
+                id: id 
             }
         }) <= 0) return res.status(400).end();
         res.status(200).end();

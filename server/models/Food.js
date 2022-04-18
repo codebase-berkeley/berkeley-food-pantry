@@ -4,6 +4,10 @@ class Food extends Model {}
 
 const initFoodModel = (sequelize) => {
     Food.init({
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey : true
+        },
        
         name: {
             type: DataTypes.STRING,
