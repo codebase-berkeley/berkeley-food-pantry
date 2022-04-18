@@ -66,6 +66,7 @@ function Food(props) {
                             <input type="checkbox"></input>
                         </div>
                     </div>
+
                 </div>
             </div>                
         );   
@@ -84,6 +85,7 @@ function Food(props) {
                                 <Tags name={tag} />
                             );})}
                         </div>
+
                     </div>
                     {stockOption()}
                 </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Search from './../components/SearchBar.js';
 import './../components/SearchBar.css';
 import './StockListingAdmin.css';
@@ -11,12 +11,13 @@ import { borderColor } from "@mui/system";
 import Food from './../components/Food.js';
 import apple from "./../images/apple.png";
 import banana from "./../images/banana.png";
-import cocunut from "./../images/cocunut.png";
+import coconut from "./../images/cocunut.png";
 import meat from "./../images/meat.png";
 import donut from './../images/donut.png';
-import brocolli from './../images/brocolli.png';
+import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 const foodCategories = [
     { value: 'chocolate', label: 'Meat' },
@@ -26,13 +27,23 @@ const foodCategories = [
     { value: 'fruit', label: 'Fruit' },
     { value: 'dairy', label: 'Dairy' },
     { value: 'seafood', label: 'Seafood' },
-    { value: 'pet food', label: 'Pet food' }
+    { value: 'pet food', label: 'Pet food' },
+    { value: 'brown', label: 'Brown'},
+    { value: 'vegetarian', label: 'Vegetarian'}
 ]
 
 const sortOptions = [
-    { value: 'alphabetical', label: 'Alphabetical, A-Z' },
-    { value: 'recently added', label: 'Most Recently Added' }
+    { value: 'recently added', label: 'Most Recently Added' },
+    { value: 'alphabetical', label: 'Alphabetical, A-Z' }
+    
 ]
+
+const showOptions = [
+    { value: 'all items', label: 'All items'},
+    { value: 'in stock items', label: 'In stock items only'},
+    { value: 'not in stock items', label: 'Not in stock items only'}
+]
+
 
 const animatedComponents = makeAnimated();
 const customStyles = {
@@ -85,9 +96,104 @@ const customStyles = {
     },
 }
 
+const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
+{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
+{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
+{name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
+
+];
+
+
 
 
 export function StockListingAdmin() {
+    const [selectedSort, setSelectedSort] = useState();
+    const [selectedTags, setSelectedTags] = useState([]);
+    const [selectedShow, setSelectedShow] = useState(0);
+    const [searchInput, setSearchInput] = useState("");
+
+    function clearInputFieldsHelper() {
+        setSelectedSort(sortOptions[0]);
+        setSelectedTags([]);
+        setSelectedShow(0);
+        setSearchInput("");
+    }
+
+
+    function sortAZ(a, b) {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+    
+        // names must be equal
+        return 0;
+
+    }
+
+    function tagMatchFunction(foodObject) {
+        
+        for (const tag of selectedTags.map(tagObject => tagObject.label)) {
+
+            if (!foodObject.tags.includes(tag)) {
+                return false;
+            } 
+        }
+        return true;
+    }
+
+    function mostRecent() {
+        return;
+
+    }
+
+    function stockFilterFunction(foodObject) {
+        if (selectedShow == 0) {
+            return true;
+        } else if (selectedShow == 1) {
+            return foodObject.instock;
+        } else if (selectedShow == 2) {
+            return !foodObject.instock;
+        }
+    }
+
+    function setOutOfStock() {
+        console.log("clicked")
+        for (const f of food) {
+            f.instock = false;
+        }
+
+        // TODO: we're forcing a rerender because the array is external, fix this later
+        setSelectedSort(selectedShow)
+    }
+
+
+    function getSort() {
+        if (selectedSort == null) {
+            return;
+        } else if (selectedSort.value == "recently added") {
+            return mostRecent;
+        } else if (selectedSort.value == "alphabetical") {
+            return sortAZ;
+        }
+    }
+
+    function searchFunction(foodObject) {
+        
+        if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+    console.log(food);
+
     return (
         <div className="stocklisting-entireContent">
 
@@ -100,13 +206,19 @@ export function StockListingAdmin() {
                         <p>Manage today's stock listing.</p>
                     </div>
 
-                    <div className="stocklisting-rightSide">
-                        <button type="button" class="btn" className="stocklisting-addButton">
-                            <img src={isbesPlusSign}></img>
-                            <div className="stocklisting-addItem"> Add new item </div>
 
-                        </button>
+                    <div className="stocklisting-rightSide">
+                         <Link to="/addFood" className = "addButton" style = {{textDecoration: 'none'}}>
+                        {/* <button onClick {to="/stockListingAdmin"} type="button" class="btn" className="addButton"> */}
+                            <img src={isbesPlusSign}></img>
+                            <div className="addItem"> Add new item </div>
+
+                        {/* <Routes>
+                            <Route path="./AddFood" element={<AddFood/>}/>
+                        </Routes> */}
+                    </Link>
                         <button className="stocklisting-changeStock"> Set all items to out of stock </button>
+
                     </div>
 
                 </div>
@@ -117,13 +229,14 @@ export function StockListingAdmin() {
 
                         <div className="stocklisting-filterReset">
                             <div className="stocklisting-filterItems">Filter Items</div>
-                            <button className="stocklisting-resetFilters">Reset Filters</button>
+                            <button className="stocklisting-resetFilters" onClick={clearInputFieldsHelper}>Reset Filters</button>
+
                         </div>
 
                         <div className="stocklisting-filters">
                             <div className="stocklisting-searchBox">
                                 <text>Search Items</text>
-                                <Search placeholder="Search..." />
+                                <Search placeholder="Search..." searchInput={searchInput} setSearchInput={setSearchInput}/>
                             </div>
 
                             <div className="stocklisting-filter-by">
@@ -136,6 +249,8 @@ export function StockListingAdmin() {
                                         placeholder="Select..."
                                         isMulti
                                         options={foodCategories}
+                                        value={selectedTags}
+                                        onChange={setSelectedTags}
                                     />
                                 </div>
                             </div>
@@ -150,29 +265,48 @@ export function StockListingAdmin() {
                                         placeholder="Alphabetical, A-Z"
                                         options={sortOptions}
                                         defaultValue={sortOptions[0]}
+                                        value={selectedSort}
+                                        onChange={setSelectedSort}
                                     />
                                 </div>
                             </div>
+
 
                             <div className="stocklisting-showFilter">
                                 <div className="sstocklisting-howText"> Show </div>
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(0);
+                                            }
+                                        }></input>
+
                                         All items
                                     </label>
                                 </div>
 
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(1);
+                                            }
+                                        } }>></input>
+
                                         In stock items only
                                     </label>
                                 </div>
                                 
+
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(2);
+                                            }
+                                        } ></input>
+
                                         Not in stock items only
                                     </label>
                                 </div>
@@ -180,13 +314,28 @@ export function StockListingAdmin() {
 
                         </div>
                     </div>
-                    <div className="stocklisting-filterItemDisplay">
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Coconut" image={cocunut} in_stock={false} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
+
+                    <div className="filterItemDisplay">
+                        {food
+                            .filter(searchFunction)
+                            .filter(tagMatchFunction)
+                            .filter(stockFilterFunction)
+                            .filter(tagMatchFunction)
+                            .sort(getSort()).map(foodItem => (
+                                <Food 
+                                    name={foodItem.name} 
+                                    image={foodItem.image} 
+                                    in_stock={foodItem.instock} 
+                                    tags={foodItem.tags} 
+                                    onChange={() => {
+                                        foodItem.instock = !foodItem.instock
+                                    }}
+                                    
+                                    
+                                    />))}
+
+                    {/* food.filter(matchesTags) */}
+
                     </div>
                 </div>
             </div>
@@ -195,6 +344,40 @@ export function StockListingAdmin() {
 }
 
 export function StockListingUser() {
+    const [selectedSort, setSelectedSort] = useState();
+
+
+    function sortAZ(a, b) {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+    
+        // names must be equal
+        return 0;
+
+    }
+
+    function mostRecent() {
+        return;
+
+    }
+
+
+    function getSort() {
+        
+        if (selectedSort == null) {
+            return;
+        } else if (selectedSort == "recently added") {
+            return mostRecent;
+        } else if (selectedSort == "alphabetical") {
+            return sortAZ;
+        }
+    }
     return (
         <div className="stocklisting-entireContent">
 
@@ -264,6 +447,7 @@ export function StockListingUser() {
 
                         </div>
                     </div>
+
                     <div className="stocklisting-filterItemDisplay">
                     <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
                     <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false} />
@@ -271,6 +455,7 @@ export function StockListingUser() {
                     <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
                     <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
                     <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+
                     </div>
                 </div>
             </div>
