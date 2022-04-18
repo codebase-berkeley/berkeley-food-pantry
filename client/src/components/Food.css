@@ -98,10 +98,11 @@
     font-size: 16px;
     color: #264425;
     padding-top: 13%;
-    width: 97px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+  
 }
 
 .nameTags {
