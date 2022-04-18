@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import { useLocation } from "react-router-dom";
 import Tags from '../components/Tags.js'
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 const todayStock = [
     { value: 'in stock', label: 'In stock today' },
@@ -80,6 +81,7 @@ export default function AddFood() {
         else {setStockAvailability("Out of Stock Today");}
     
         console.log(tags);
+        //setFoodImage(l)
         //console.log(stockAvailability);
       });
 
@@ -100,6 +102,16 @@ export default function AddFood() {
             )
         }
 
+    function displayTags() {
+        <div className = "addTagsFormat">
+                        {tags.map((tag) => {
+                            return (
+                            <Tags name={tag} />
+                        );})}
+                </div>
+    }
+        
+
     return(
         <div className = 'add-food-component-container'>
             <div className = 'add-food-component-header'>
@@ -118,13 +130,11 @@ export default function AddFood() {
                             <label className = "add-item-name-input">Set Stock Availability</label>
                             <div>
                                 <Select className="add-item-custom-dropdown"
-                                    menuPlacement='auto'
-                                    menuPosition='fixed'
                                     placeholder="select..."
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    defaultValue={stockAvailability} 
+                                    defaultInputValue={stockAvailability} 
                                     options={todayStock}
                                 />
                             </div>
@@ -132,14 +142,17 @@ export default function AddFood() {
 
                         <div className="add-item-categories-dropdown">
                             <label className = "add-item-name-input">Select Dietary Categories (Optional)</label>
-                            <div >
+                            <div>
                                 <Select className="add-item-custom-dropdown"
                                     closeMenuOnSelect={true}
+                                    styles={customStyles}
                                     components={animatedComponents}
-                                    placeholder = {tags.map((tag) => {
-                                        return (
-                                        <Tags name={tag}/>
-                                    );})}
+                                    defaultInputValue={displayTags()}
+                                    
+                                    // placeholder = {tags.map((tag) => {
+                                    //     return (
+                                    //     <Tags name={tag}/>
+                                    // );})}
                                     isMulti
                                     options={dietaryCategories}
                                 />
@@ -150,12 +163,17 @@ export default function AddFood() {
                     <div className = 'right-side-container'>
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
                         <UploadImageButton/>
+
+                        <div>
+                            <img src={location.state.image} className="imgFormat" alt="food image"/>
+                        </div>
+
                     </div>
                 </div>
             
-                <input className = "delete-item-button-container" type="button" value="Delete Item"></input>
-                <input className = "save-item-button-container" type="button" value="Save Item"></input>
-        
+                <input className = "save-item-button-container" type = "button" value="Save Item"></input>
+                <input className = "save-item-button-container-2" type="button" value="Delete Item"></input>
+
         </div>
     )
 }
