@@ -20,8 +20,6 @@ module.exports = (app) => {
         const item_preferences = req.body.item_preferences;
         const notes = req.body.notes;
         
-        console.log(req.body.last_name);
-
         if (!last_name || last_name.length <= 0 ) return res.status(400).end();
         if (!first_name || first_name.length <= 0) return res.status(400).end();
         if (!date || date.length <= 0) return res.status(400).end();
@@ -36,7 +34,21 @@ module.exports = (app) => {
     });
 
     app.put('/appointment', async (req, res) => {
+        const apptID = req.body.id;
+        const visitedValue = req.body.visited;
         
-    });
+        if (visitedValue == null) return res.status(400).end();
 
+        if (await Appointment.update(
+            {
+                visited: !visitedValue,
+            },
+            {
+                where: {id: apptID}
+            }
+        ) <= 0) return res.status(400).end();
+
+        res.status(200).end();
+    });
+    
 }

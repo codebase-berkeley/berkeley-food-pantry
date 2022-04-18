@@ -4,6 +4,11 @@ class Appointment extends Model {}
 
 const initAppointmentModel = (sequelize) => {
     Appointment.init({
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
         last_name: {
             type: DataTypes.STRING,
             allowNull: false
