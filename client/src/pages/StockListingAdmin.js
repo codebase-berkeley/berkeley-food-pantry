@@ -280,7 +280,7 @@ export function StockListingAdmin() {
                                             if (e.target.checked) {
                                                 setSelectedShow(0);
                                             }
-                                        }></input>
+                                        }}></input>
 
                                         All items
                                     </label>
@@ -305,7 +305,7 @@ export function StockListingAdmin() {
                                             if (e.target.checked) {
                                                 setSelectedShow(2);
                                             }
-                                        } ></input>
+                                        }} ></input>
 
                                         Not in stock items only
                                     </label>
@@ -451,9 +451,9 @@ export function StockListingUser() {
                     <div className="stocklisting-filterItemDisplay">
                     <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
                     <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false} />
-                    <Food name="Coconut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <Food name="Coconut" image={coconut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
                     <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <Food name="Broccoli" image={broccoli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
                     <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
 
                     </div>
