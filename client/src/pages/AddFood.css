@@ -64,6 +64,24 @@
     font-family: 'Montserrat';
     margin-top: 3vh;
     margin-right: 7vw;
+}
+
+.add-food-delete-item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 40px;
+    color: red;
+    /* background-color: white; */
+    border: 1px solid red;
+    
+    font-size: 2.25vh;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-top: 3vh;
+    margin-right: 7vw;
     
 }
 
@@ -219,8 +237,15 @@ label, input {
     flex-direction: column;
     height: 30vh;
     width: 100%;
-    margin-top: 3vh;
-    
+    margin-top: 3vh;   
+}
+
+.delete-item-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
 }
 
 @media screen and (orientation: portrait) {

@@ -4,6 +4,9 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
+import axios from 'axios';
+import Modal from 'react-modal';
+
 
 const todayStock = [
     { value: 'in stock', label: 'In stock today' },
@@ -62,6 +65,18 @@ const customStyles = {
 }
 
 export default function AddFood() {
+    function deleteItem() {
+        // Simple DELETE request with axios
+        axios.delete('/server/food')
+            .then(() => this.setState({ status: 'Delete successful' }));
+    }
+
+    const addItem = async () => {
+        await axios.post('/sever/food')
+    }
+    
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return(
         <div className = "main-container">
         <div className = "add-food-component-header">
@@ -115,7 +130,11 @@ export default function AddFood() {
                 </div>
             </div>
             <div className = "save-item-button-container-final">
-                    <input className = "add-food-save-item-button" type="button" value="Save Item"></input>
+                    <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
+                    <Modal isOpen = {modalIsOpen}>
+               
+                    </Modal>
+                    <input className = "add-food-save-item-button" type="button" onClick={addItem} value="Save Item"></input>
                 </div>
         </div>
     )
