@@ -17,10 +17,11 @@
 }
 
 .show-appointments {
+    background-color: pink;
     display: flex;
     flex: 3;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .show-appointments p {
@@ -31,16 +32,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* background-color: red; */
-    /* width: 100%; */
+    background-color: lavender;
 }
 
-.appointment-filter-checkboxes {
+/* .appointment-filter-checkboxes {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 2%;
-}
+} */
 
 .top-container h1 {
     text-align: left;
@@ -138,7 +138,6 @@
     flex-direction: column;
     align-items: flex-start;
     height: 6vh;
-    margin-bottom: 2%;
 }
 
 .appt-by-time {
@@ -146,7 +145,6 @@
     flex-direction: column;
     align-items: flex-start;
     height: 6vh;
-    margin-bottom: 2%;
 }
 
 p#filterControlLabel {
@@ -318,6 +316,7 @@ p#filterControlLabel {
 }
 
 .appointment-filter-checkboxes {
+    background-color: lightblue;
     display: flex;
     flex-direction: column;
     align-items: center;  
