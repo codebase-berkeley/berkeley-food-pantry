@@ -89,47 +89,47 @@ const customStyles = {
 
 export function StockListingAdmin() {
     return (
-        <div className="entireContent">
+        <div className="stocklisting-entireContent">
 
-            <div className="stockListingPage">
+            <div className="stocklisting-stockListingPage">
 
-                <div className="topContainer">
+                <div className="stocklisting-topContainer">
 
-                    <div className="leftSide">
+                    <div className="stocklisting-leftSide">
                         <h1>Edit Today's Stock</h1>
                         <p>Manage today's stock listing.</p>
                     </div>
 
-                    <div className="rightSide">
-                        <button type="button" class="btn" className="addButton">
+                    <div className="stocklisting-rightSide">
+                        <button type="button" class="btn" className="stocklisting-addButton">
                             <img src={isbesPlusSign}></img>
-                            <div className="addItem"> Add new item </div>
+                            <div className="stocklisting-addItem"> Add new item </div>
 
                         </button>
-                        <button className="changeStock"> Set all items to out of stock </button>
+                        <button className="stocklisting-changeStock"> Set all items to out of stock </button>
                     </div>
 
                 </div>
 
-                <div className="bottomContainer">
+                <div className="stocklisting-bottomContainer">
 
-                    <div className="filterItemControls">
+                    <div className="stocklisting-filterItemControls">
 
-                        <div className="filterReset">
-                            <div className="filterItems">Filter Items</div>
-                            <button className="resetFilters">Reset Filters</button>
+                        <div className="stocklisting-filterReset">
+                            <div className="stocklisting-filterItems">Filter Items</div>
+                            <button className="stocklisting-resetFilters">Reset Filters</button>
                         </div>
 
-                        <div className="filters">
-                            <div className="searchBox">
+                        <div className="stocklisting-filters">
+                            <div className="stocklisting-searchBox">
                                 <text>Search Items</text>
                                 <Search placeholder="Search..." />
                             </div>
 
-                            <div className="filter-by">
-                                <p id="filterControlLabel">Filter by Dietary Categories</p>
-                                <div id="filter-dropdown">
-                                    <Select className="custom-dropdown"
+                            <div className="stocklisting-filter-by">
+                                <p id="stocklisting-filterControlLabel">Filter by Dietary Categories</p>
+                                <div id="stocklisting-filter-dropdown">
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={false}
                                         components={animatedComponents}
@@ -140,10 +140,10 @@ export function StockListingAdmin() {
                                 </div>
                             </div>
 
-                            <div className="sort-by">
-                                <p id="filterControlLabel">Sort By...</p>
+                            <div className="stocklisting-sort-by">
+                                <p id="stocklisting-filterControlLabel">Sort By...</p>
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -154,25 +154,25 @@ export function StockListingAdmin() {
                                 </div>
                             </div>
 
-                            <div className="showFilter">
-                                <div className="showText"> Show </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                            <div className="stocklisting-showFilter">
+                                <div className="sstocklisting-howText"> Show </div>
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
+                                        <input class="stocklisting-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         All items
                                     </label>
                                 </div>
 
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
+                                        <input class="stocklisting-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         In stock items only
                                     </label>
                                 </div>
                                 
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
+                                        <input class="stocklisting-form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         Not in stock items only
                                     </label>
                                 </div>
@@ -180,13 +180,13 @@ export function StockListingAdmin() {
 
                         </div>
                     </div>
-                    <div className="filterItemDisplay">
+                    <div className="stocklisting-filterItemDisplay">
                     <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Coconut" image={cocunut} in_stock={false} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
+                    <Food name="Coconut" image={cocunut} in_stock={false} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
+                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
+                    <Food name="Broccoli" image={brocolli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
+                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
                     </div>
                 </div>
             </div>
@@ -196,13 +196,13 @@ export function StockListingAdmin() {
 
 export function StockListingUser() {
     return (
-        <div className="entireContent">
+        <div className="stocklisting-entireContent">
 
-            <div className="stockListingPage">
+            <div className="stocklisting-stockListingPage">
 
-                <div className="topContainer">
+                <div className="stocklisting-topContainer">
 
-                    <div className="leftSide">
+                    <div className="stocklisting-leftSide">
                         <h1>Check out what we have in stock today.</h1>
                         <p>Last updated: March 25, 7:47am.<br></br>
                         Stock availability varies day by day. If something you’re looking for is out of stock, it might be available on another day.</p>
@@ -210,25 +210,25 @@ export function StockListingUser() {
 
                 </div>
 
-                <div className="bottomContainer">
+                <div className="stocklisting-bottomContainer">
 
-                    <div className="filterItemControls">
+                    <div className="stocklisting-filterItemControls">
 
-                        <div className="filterReset">
-                            <div className="filterItems">Filter Items</div>
-                            <button className="resetFilters">Reset Filters</button>
+                        <div className="stocklisting-filterReset">
+                            <div className="stocklisting-filterItems">Filter Items</div>
+                            <button className="stocklisting-resetFilters">Reset Filters</button>
                         </div>
 
-                        <div className="filters">
-                            <div className="searchBox">
+                        <div className="stocklisting-filters">
+                            <div className="stocklisting-searchBox">
                                 <text>Search Items</text>
                                 <Search placeholder="Search..." />
                             </div>
 
-                            <div className="filter-by">
-                                <p id="filterControlLabel">Filter by Dietary Categories</p>
-                                <div id="filter-dropdown">
-                                    <Select className="custom-dropdown"
+                            <div className="stocklisting-filter-by">
+                                <p id="stocklisting-filterControlLabel">Filter by Dietary Categories</p>
+                                <div id="stocklisting-filter-dropdown">
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={false}
                                         components={animatedComponents}
@@ -239,10 +239,10 @@ export function StockListingUser() {
                                 </div>
                             </div>
 
-                            <div className="sort-by">
-                                <p id="filterControlLabel">Sort By...</p>
+                            <div className="stocklisting-sort-by">
+                                <p id="stocklisting-filterControlLabel">Sort By...</p>
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="stocklisting-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -253,9 +253,9 @@ export function StockListingUser() {
                                 </div>
                             </div>
 
-                            <div className="showFilter">
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
+                            <div className="stocklisting-showFilter">
+                                <div className="stocklisting-form-check">
+                                    <label class="stocklisting-form-check-label" for="exampleRadios1">
                                         <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         Only show items in stock today.
                                     </label>
@@ -264,7 +264,7 @@ export function StockListingUser() {
 
                         </div>
                     </div>
-                    <div className="filterItemDisplay">
+                    <div className="stocklisting-filterItemDisplay">
                     <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
                     <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false} />
                     <Food name="Coconut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>

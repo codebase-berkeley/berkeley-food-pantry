@@ -18,13 +18,13 @@ function App() {
       <NavbarComponent/>
 
         <Routes>
-          <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
+          <Route path="/stockListingAdmin" element={<StockListingUser/>}/>
       
           <Route path = "/adminLogin" element={<AdminLogin/>}/>
         
           <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
 
-          <Route path="addFood" element={<AddFood/>}/>
+          <Route path="/addFood" element={<AddFood/>}/>
 
         </Routes>
       </Router>      
