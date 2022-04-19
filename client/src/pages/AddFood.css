@@ -115,7 +115,6 @@
     font-weight: 800;
     font-family: 'Montserrat';
 
-
     /* display: flex;
     align-items: center;
     margin-left: 1%;
@@ -130,6 +129,11 @@
     font-family: 'Montserrat'; */
 }
 
+.add-item-image-display {
+    display: flex;
+    justify-content: center;
+}
+
 .add-item-selections {
     display: flex;
     flex-direction: column;
@@ -140,11 +144,11 @@
 
 .upload-image {
     display: flex;
-    justify-content: column;
+    justify-content: center;
     flex-direction: column;
     height: 80%;
     width: 40%;
-    padding-left: 10%;
+    /* padding-left: 10%; */
     font-family: "Montserrat";
     font-size: 150%;
 }
@@ -231,7 +235,8 @@ label.add-item-name-input, input {
     border-radius: 100px;
     border: #264425 solid 1px;
     margin-top: 8%;
-    margin-left: -10%;
+    margin-left: 20%;
+    /* margin-left: -10%; */
     background-color: white;
 }
 
@@ -274,13 +279,15 @@ label.add-item-name-input, input {
 
 .right-side-container {
     display: flex;
-    justify-content: center;
+    align-items: center;
     height: 50vh;
     width: 50vw;
+    flex-direction: column;
 }
 
 .upload-image-header {
-    margin-top: 2.5%;
+    display: flex;
+    justify-content: center;
     font-weight: 450;
     height: 5%;
     font: 'inter';
@@ -304,6 +311,8 @@ label.add-item-name-input, input {
 }
 
 .imgFormat {
+    display: flex;
+    justify-content: center;
     height: 50px;
     width: 50px;
 }
@@ -313,7 +322,6 @@ label.add-item-name-input, input {
     display: flex;
     flex-direction: row; 
     height: 20%;
-
 
     /* overflow-x: scroll; */
     /* overflow-y: hidden; */
