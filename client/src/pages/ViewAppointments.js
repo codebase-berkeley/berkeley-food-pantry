@@ -19,22 +19,36 @@ import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-// import moment from 'moment';
-// import { applyPatch } from "prettier";
+
+const foodCategories = [
+    { value: 'chocolate', label: 'Meat' },
+    { value: 'strawberry', label: 'Veggies' },
+    { value: 'beverages', label: 'Beverages' },
+    { value: 'vegetarian', label: 'Vegetarian'}
+]
+
+const sortOptions = [
+    { value: 'morning', label: 'Morning' },
+    { value: 'afternoon', label: 'Afternoon' }, 
+    { value: 'evening', label: 'Evening' }
+]
+
+const showOptions = [
+    { value: 'all items', label: 'All items'},
+    { value: 'in stock items', label: 'In stock items only'},
+    { value: 'not in stock items', label: 'Not in stock items only'}
+]
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
-    { value: 'monday', label: 'All appointments on Monday' }, 
-    { value: 'wednesday', label: 'All appointments on Wednesday' }, 
-    { value: 'friday', label: 'All appointments on Friday' }
+    { value: 'three days', label: 'All appointments for three days' }, 
+    { value: 'today', label: 'All appointments today' }
 ]
 
 const timeOptions = [
-    { value: 'all', label: 'All times this week' },
-    { value: '2:00-2:30', label: '2:00 PM - 2:30 PM' },
-    { value: '2:30-3:00', label: '2:30 PM - 3:00 PM' }, 
-    { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
-    { value: '3:30-4:00', label: '3:30 PM - 4:00 PM' }
+    { value: 'morning', label: 'Morning' },
+    { value: 'afternoon', label: 'Afternoon' }, 
+    { value: 'evening', label: 'Evening' }
 ]
 
 
@@ -89,59 +103,104 @@ const customStyles = {
     },
 }
 
-const appt = [ {firstname: 'yojita', lastname: 'sharma', date: "Monday, April 2022", time: "2:00" },
-{firstname: 'anthony', lastname: 'lu', date: "Wednesday, April 2022", time: "2:15"},
-{firstname: 'gargi', lastname: 'deshpande', date: "Friday, April 2022", time: "2:30" },
-{firstname: 'isabel', lastname: 'li', date: "Wednesday, April 2022", time: "2:30" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "2:45" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:00" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:15" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:30" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "3:45" },
-{firstname: 'isabel', lastname: 'li', date: "Friday, April 2022", time: "4:00" },
+const appt = [ {firstname: 'yojita', lastname: 'sharma', instock: true, tags: ["Vegetarian", "Brown"] }, 
+];
 
+const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
+{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
+{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
+{name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
 ];
 
 export function ViewAppointments() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
-    const [selectedDay, setSelectedDay] = useState("all");
-    const [selectedTime, setSelectedTime] = useState("all");
     const [searchInput, setSearchInput] = useState("");
-    // var moment = require('moment');
-    // moment("123", "hmm").format("HH:mm")
 
-    function apptDayFilter(appt) {
-        if (selectedDay == "all" || selectedDay.value.charAt(0) == 'a') {
-            return true; }
-
-        return appt.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
+    function clearInputFieldsHelper() {
+        setSelectedSort();
+        setSelectedTags([]);
+        setSelectedShow(0);
+        setSearchInput("");
     }
 
-    function apptTimeFilter(appt) {
-        const splitInt = appt.time.split(":");
-        const newSplitInt = parseInt(splitInt[0]) * 100 + parseInt(splitInt[1]);
-        console.log(splitInt);
-        console.log(newSplitInt);
-        if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
-            return true; }
-        else if (selectedTime.value == "2:00-2:30") {
-            return ((newSplitInt >= 200) && (newSplitInt <= 230));
-            }
-        else if ((selectedTime.value == "2:30-3:00")) {
-            return ((newSplitInt >= 230) && (newSplitInt <= 300));
-            }
-        else if ((selectedTime.value == "3:00-3:30")) {
-            return ((newSplitInt >= 300) && (newSplitInt <= 330));
-            }
-        else if ((selectedTime.value == "3:30-4:00")) {
-            return ((newSplitInt >= 330) && (newSplitInt <= 400));
-            }           
+
+    function sortAZ(a, b) {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+    
+        // names must be equal
+        return 0;
+
+    }
+
+    function tagMatchFunction(foodObject) {
+        
+        for (const tag of selectedTags.map(tagObject => tagObject.label)) {
+
+            if (!foodObject.tags.includes(tag)) {
+                return false;
+            } 
+        }
+        return true;
+    }
+
+    function mostRecent() {
+        return;
+
+    }
+
+    function stockFilterFunction(foodObject) {
+        if (selectedShow == 0) {
+            return true;
+        } else if (selectedShow == 1) {
+            return foodObject.instock;
+        } else if (selectedShow == 2) {
+            return !foodObject.instock;
+        }
+    }
+
+    function setOutOfStock() {
+        console.log("clicked")
+        for (const f of food) {
+            f.instock = false;
         }
 
+        // TODO: we're forcing a rerender because the array is external, fix this later
+        setSelectedSort(selectedShow)
+    }
+
+
+    function getSort() {
+        if (selectedSort == null) {
+            return;
+        } else if (selectedSort.value == "recently added") {
+            return mostRecent;
+        } else if (selectedSort.value == "alphabetical") {
+            return sortAZ;
+        }
+    }
+
+    function searchFunction(foodObject) {
+        
+        if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+    console.log(food);
     return (
-        <div className="appt-full-page">
+        <div className="full-page">
 
             <div className="stockListingPage">
 
@@ -150,64 +209,81 @@ export function ViewAppointments() {
                     <div className="show-appointments">
                         <p>Show appointments for:</p>
                         
-                        <div className="show-appt-dropdowns">
-                            <div className="appt-by-day">
+                        <div className="show-dropdowns">
+                            <div className="by-day">
                                 <div>
-                                    <Select className="appt-custom-dropdown"
+                                    <Select className="custom-dropdown"
+                                        styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
                                         options={apptOptions}
                                         defaultValue={apptOptions[0]}
-                                        value={selectedDay}
-                                        // onChange={e => setSelectedDay(e.target.value)}
-                                        onChange={setSelectedDay}
+                                        // value={selectedSort}
+                                        // onChange={setSelectedSort}
                                     />
                                 </div>
                             </div>
-                            <div className="appt-by-time">
+                            <div className="by-time">
                                 <div>
-                                    <Select className="appt-custom-dropdown-2"
+                                    <Select className="custom-dropdown"
+                                        styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
                                         options={timeOptions}
                                         defaultValue={timeOptions[0]}
-                                        value={selectedTime}
-                                        onChange={setSelectedTime}
+                                        // value={selectedSort}
+                                        // onChange={setSelectedSort}
                                     />
                                 </div>
                             </div>
                         </div>
-                    </div>
-                   
-                        <div className="appointment-filter-checkboxes"> 
-                            <div className ="appointment-form-check-label">
-                                <span className ="appts-text">Show appointments marked visited</span>
-                                <input className = "appointment-view-input"type="checkbox"/>
-                            </div>
-                            <div className ="appointment-form-check-label">
-                                <span className ="appts-text">Show past appointments</span>
-                                <input className = "appointment-view-input" type="checkbox"/>
-                            </div>
-                         </div>
+    
                     </div>
 
+                    <div className="checkboxes">
+                        
+                        <div className ="form-check-label">
+                            <span>Show appointments marked visited</span>
+                            <input type="checkbox"/>
+                        </div>
 
-                <div className="apptBottomContainer">
+                        <div className ="form-check-label">
+                            <span>Show appointments marked visited</span>
+                            <input type="checkbox"/>
+                        </div>
+                                
+                    </div>
+
+                </div>
+
+                <div className="bottomContainer">
 
                     <div className="appt-card-display">
-                        {appt
-                            .filter(apptDayFilter).filter(apptTimeFilter).map(filteredAppt => (
-                                <DummyAppointment
-                                    date={filteredAppt.date}
-                                    time={filteredAppt.time}
-                                    firstname={filteredAppt.firstname}
-                                    lastname={filteredAppt.lastname}/>
-                            ))
-                        }
+                        <DummyAppointment date="Monday, April 4 2022" time="11:00 AM"firstname="Anthony" lastname ="Lu" />
+                        <DummyAppointment date="Monday, April 4 2022" time="2:00 PM"firstname="Yojita" lastname ="Sharma" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Gargi" lastname ="Deshpande" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Mawil" lastname ="Hasan" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Abby" lastname ="Brooks" />
+                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Aditya" lastname ="Bhandari" />
                     </div>
 
                     <div className="filterItemDisplay">
-                        
+                        {/* {food
+                            .filter(searchFunction)
+                            .filter(tagMatchFunction)
+                            .filter(stockFilterFunction)
+                            .filter(tagMatchFunction)
+                            .sort(getSort()).map(foodItem => (
+                                <DummyAppointment 
+                                    firstname={foodItem.firstname} 
+                                    lastname={foodItem.lastname}
+                                    tags={foodItem.tags} 
+                                    onChange={() => {
+                                        foodItem.instock = !foodItem.instock
+                                    }}
+                                    
+                                    
+                                    />))} */}
                     </div> 
                 </div>
             </div>
