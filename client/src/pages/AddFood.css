@@ -119,6 +119,7 @@ p#filterControlLabel {
     border: solid #ACB9AC;
 }
 
+
 label.item-name-input, input.item-name-textbox {
     display:flex;
     flex-direction: column;
@@ -126,8 +127,24 @@ label.item-name-input, input.item-name-textbox {
     font-size: 2vh;
     font-family: "Montserrat";
     margin-top: 2%;
-    height: 32%;
-    width: 140%;
+
+    height: 16px;
+    width: 16px;
+    border-color: #588157;
+  }
+
+  label {
+    display:flex;
+    flex-direction: column;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 2vh;
+
+    margin-top: 2%;
+
+    margin: 2px;
+    border-color: #588157;
+  }
+.change-image-button {
     border-color: #588157;
   }
 

@@ -1,0 +1,53 @@
+.admin-pic {
+    display: flex;
+    border-radius: 50%;
+    margin-right: -200px;
+}
+
+.admin-login-button {
+    border-radius: 25%;
+    border-color: #383838;
+    border-width: 5px;
+    width: 100px;
+    height: 50px;
+    fill: #ffffff;
+}
+
+.admin-component-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 85vh;
+    width: 100vw;
+}
+
+.admin-login-text-container {
+    color: #383838;
+    display:flex;
+    text-align: left;
+    align-items: center;
+    width: 30vw;
+    height: 100vh;
+    font-size: 20px;
+    font-family: Inter;
+}
+
+.admin-login-text-container h1 {
+    font-family: 'Montserrat';
+}
+
+.admin-google-sign-in {
+    height: 90%;
+    width: 75%;
+}
+
+.google-sign-in-button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border: #264425 solid 1px;
+    margin-top: 7%;
+}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 
-.entireContent {
+.stocklisting-entireContent {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,25 +10,25 @@
     width: 90vw;
 }
 
-.topContainer {
+.stocklisting-topContainer {
     display: flex;
     flex-direction: row;
 }
 
-.leftSide {
+.stocklisting-leftSide {
     display: flex;
     flex: 3;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.rightSide {
+.stocklisting-rightSide {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.topContainer h1 {
+.stocklisting-topContainer h1 {
     text-align: left;
     padding-left: 1vw;
     font-weight: 600;
@@ -39,7 +39,7 @@
     padding-bottom: 1vh;
 }
 
-.topContainer p {
+.stocklisting-topContainer p {
     text-align: left;
     font-size: 14;
     text-align: left;
@@ -48,11 +48,11 @@
     font-family: 'Inter', sans-serif;
 }
 
-.h3{
+.stocklisting-h3{
     font-size: 10px;
 }
 
-.addButton {
+.stocklisting-addButton {
     background-color: #264425;
     display: flex;
     height: 5vh;
@@ -65,17 +65,17 @@
     align-items: center;
 }
 
-.addButton:hover {
+.stocklisting-addButton:hover {
     background-color: #ACB9AC;
     color: #fff; 
 }
 
-.addItem{
+.stocklisting-addItem{
     display: flex;
     padding-right: 1vw;
 }
 
-.changeStock{
+.stocklisting-changeStock{
     font-size: 16;
     background-color: white;
     color: #6A7E69;
@@ -84,11 +84,11 @@
     width: 275px;
 }
 
-.changeStock:hover{
+.stocklisting-changeStock:hover{
     text-decoration: underline;
 }
 
-.filters {
+.stocklisting-filters {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -97,7 +97,7 @@
     overflow-y: scroll;
 }
 
-.bottomContainer {
+.stocklisting-bottomContainer {
     border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
@@ -107,7 +107,7 @@
     width: 80vw;
 }
 
-.filter-by {
+.stocklisting-filter-by {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -115,7 +115,7 @@
     padding-bottom: 2vh;
 }
 
-.sort-by {
+.stocklisting-sort-by {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -123,19 +123,19 @@
     height: '6vh';
 }
 
-p#filterControlLabel {
+p#stocklisting-filterControlLabel {
     color: #4C4C4C;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 16px;
 }
 
-.custom-dropdown {
+.stocklisting-custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
 }
 
-.filterItemControls {
+.stocklisting-filterItemControls {
     display: flex;
     width: 25vw;
     height: 100%;
@@ -146,7 +146,7 @@ p#filterControlLabel {
     padding: 0 1vw 0 1vw;
 }
 
-.filterReset{
+.stocklisting-filterReset{
     display: flex;
     padding-top: 2vh;
     flex-direction: row;
@@ -155,7 +155,7 @@ p#filterControlLabel {
     width: 20vw;
 }
 
-.filterItems{
+.stocklisting-filterItems{
     color: #4C4C4C;
     font-size: 24px;
     display: flex;
@@ -164,7 +164,7 @@ p#filterControlLabel {
     justify-content: start;
 }
 
-.resetFilters{
+.stocklisting-resetFilters{
     font-size: 16px;
     background-color: #fff;
     color: #A71E47;
@@ -174,47 +174,47 @@ p#filterControlLabel {
     font-weight: 450;
 }
 
-.resetFilters:hover {
+.stocklisting-resetFilters:hover {
     text-decoration: underline;
 }
 
-.firstRow {
+.stocklisting-firstRow {
     display: flex; 
     flex-direction: row; 
     justify-content: flex-end;
     padding-left: 1vw; 
 }
 
-.secondRow {
+.stocklisting-secondRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-left: 1vw; 
 }
 
-.thirdRow {
+.stocklisting-thirdRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-left: 1vw; 
 }
 
-.firstRow h1 {
+.stocklisting-firstRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem; 
 }
 
-.secondRow h1 {
+.stocklisting-secondRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem;   
 }
 
-.thirdRow h1 {
+.stocklisting-thirdRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem;
 }
 
-.firstRow .allItemBtn {
+.stocklisting-firstRow .stocklisting-allItemBtn {
     display: block;
     background-color: white;
     height: 1vw;
@@ -223,7 +223,7 @@ p#filterControlLabel {
     border: 1px solid black;
 }
 
-.secondRow .stockBtn {
+.stocklisting-secondRow .stocklisting-stockBtn {
     display: block;
     background-color: white;
     height: 1vw;
@@ -232,7 +232,7 @@ p#filterControlLabel {
     border: 1px solid black;
 }
 
-.thirdRow .noStockBtn {
+.stocklisting-thirdRow .stocklisting-noStockBtn {
     display: block;
     background-color: white;
     height: 1vw;
@@ -241,7 +241,7 @@ p#filterControlLabel {
     border: 1px solid black;
 }
 
-.searchBox{
+.stocklisting-searchBox{
     padding-bottom: 2vh;
     width: 20vw;
     text-align: left; 
@@ -252,19 +252,19 @@ p#filterControlLabel {
     padding-bottom: 2vh;
 }
 
-.searchBox.text {
+.stocklisting-searchBox.text {
     padding-bottom: 1vh;
     font-size: 16px;
 }
 
-.showFilter {
+.stocklisting-showFilter {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     width: 90%;
 }
 
-.showText {
+.stocklisting-showText {
     color: #4C4C4C;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
@@ -272,7 +272,7 @@ p#filterControlLabel {
     padding-bottom: 1vh;
 }
 
-.filterItemDisplay {
+.stocklisting-filterItemDisplay {
     width: 55vw;
     padding: 10px;
     align-items: left;
@@ -280,27 +280,40 @@ p#filterControlLabel {
     border-left: 1px solid #B8B8B8;
 }
 
-.foodPanel {
+
+.stocklisting-foodPanel {
     width: 400px;
 }
 
-.form-check-label {
+.stocklisting-form-check-label {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.stocklisting-form-check-label {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
 }
 
 input[type="checkbox"], input[type="radio"] {
     border: 1.5px solid #B8B8B8;
+    margin: 4px 8px 4px 8px;
 }
 
 input[type="checkbox"]:checked, input[type="radio"]:checked {
     border: 1.5px solid #B8B8B8;
-    background-color: solid #264425;
+    background-color: solid #264425; 
+    accent-color: #264425;
     box-shadow: "transparent";
+
     box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #264425;
+    margin: 4px 8px 4px 8px;
+
 }
 
 input[type="checkbox"]:hover, input[type="radio"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
+    margin: 4px 8px 4px 8px;
 }

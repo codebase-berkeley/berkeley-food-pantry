@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 
-.circle-pic {
+.ty-circle-pic {
     display: flex;
     border-radius: 50%;
     align-items: center;
     height: 60vh;
 }
 
-.appt-button-container {
+.ty-appt-button-container {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-.appt-button {
+.ty-appt-button {
     display: flex;
     background-color: white;
     align-items: center;
@@ -33,13 +33,13 @@
     margin-top: 8%;
 }
 
-.appt-button:hover {
+.ty-appt-button:hover {
     font-family: Montserrat;
     color: #264425;
     text-decoration: none;
 }
 
-.full-page {
+.ty-full-page {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -48,7 +48,7 @@
     width: 100vw;
 }
 
-.information-display {
+.ty-information-display {
     color: #383838;
     display:flex;
     flex-direction: column;
@@ -58,33 +58,33 @@
     height: 100vh;
 }
 
-.confirmation-text {
+.ty-confirmation-text {
     display: flex;
     flex-direction: column;
     margin-top: 10vh;
 }
 
-.confirmation-text h1 {
+.ty-confirmation-text h1 {
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 8%;
 }
 
-p#description-text {
+p#ty-description-text {
     font-family: 'Inter';
     color: #4C4C4C;
     font-size: 18px;
 }
 
-p#time-text {
+p#ty-time-text {
     font-family: 'Inter';
     color: #4C4C4C;
     font-weight: bold;
     font-size: 24px;
 }
 
-a#weblink {
+a#ty-weblink {
     font-family: 'Inter';
     font-size: 18px;
     font-weight: bold;
@@ -92,7 +92,7 @@ a#weblink {
 }
 
 @media screen and (orientation: portrait) { 
-    .full-page {
+    .ty-full-page {
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-around;
@@ -102,7 +102,7 @@ a#weblink {
         margin-top: -5vh;
     }
 
-    .circle-pic {
+    .ty-circle-pic {
         display: flex;
         border-radius: 50%;
         align-items: center;
@@ -110,7 +110,7 @@ a#weblink {
         margin-top: 2px;
     }
 
-    .confirmation-text {
+    .ty-confirmation-text {
         display: flex;
         flex-direction: column;
         height: 50vh;
@@ -118,14 +118,14 @@ a#weblink {
         margin-top: 20vh;
     }
     
-    .information-display {
+    .ty-information-display {
         width: 65%;
         height: 20%;
         font-size: 14px;
         font-family: 'Inter', sans-serif;
     }
 
-    .appt-button {
+    .ty-appt-button {
         display: flex;
         background-color: white;
         align-items: center;
@@ -143,7 +143,7 @@ a#weblink {
         margin-bottom: 5vh; 
     }
 
-    .appt-button-container {
+    .ty-appt-button-container {
         display: flex;
         width: 100%;
         align-items: center;
