@@ -119,8 +119,7 @@ p#filterControlLabel {
     border: solid #ACB9AC;
 }
 
-
-label.item-name-input, input.item-name-textbox {
+input {
     display:flex;
     flex-direction: column;
     border-radius: 4px 4px 4px 4px;
@@ -147,6 +146,8 @@ label.item-name-input, input.item-name-textbox {
 .change-image-button {
     border-color: #588157;
   }
+
+
 
 .import-image-button {
     display: flex;
