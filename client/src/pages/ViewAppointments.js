@@ -1,23 +1,18 @@
 import React, {useState} from "react";
-import Search from './../components/SearchBar.js';
 import './../components/SearchBar.css';
 import './ViewAppointments.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import isbesPlusSign from './../images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
-import { borderColor } from "@mui/system";
-import Food from './../components/Food.js';
-import DummyAppointment from './../components/DummyAppointment';
+import AppointmentCard from './../components/AppointmentCard';
+import Details from './../components/Details';
 import apple from "./../images/apple.png";
 import banana from "./../images/banana.png";
 import coconut from "./../images/cocunut.png";
-import meat from "./../images/meat.png";
 import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 const foodCategories = [
@@ -259,31 +254,16 @@ export function ViewAppointments() {
                 <div className="bottomContainer">
 
                     <div className="appt-card-display">
-                        <DummyAppointment date="Monday, April 4 2022" time="11:00 AM"firstname="Anthony" lastname ="Lu" />
-                        <DummyAppointment date="Monday, April 4 2022" time="2:00 PM"firstname="Yojita" lastname ="Sharma" />
-                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Gargi" lastname ="Deshpande" />
-                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Mawil" lastname ="Hasan" />
-                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Abby" lastname ="Brooks" />
-                        <DummyAppointment date="Monday, April 4 2022" time="4:00 PM"firstname="Aditya" lastname ="Bhandari" />
+                        <AppointmentCard date="Monday, April 4 2022" time="11:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
+                        <AppointmentCard date="Monday, April 4 2022" time="2:00 PM"firstName="Yojita" lastName ="Sharma" />
+                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Gargi" lastName ="Deshpande" />
+                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Mawil" lastName ="Hasan" />
+                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" />
+                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Aditya" lastName ="Bhandari" />
                     </div>
 
-                    <div className="filterItemDisplay">
-                        {/* {food
-                            .filter(searchFunction)
-                            .filter(tagMatchFunction)
-                            .filter(stockFilterFunction)
-                            .filter(tagMatchFunction)
-                            .sort(getSort()).map(foodItem => (
-                                <DummyAppointment 
-                                    firstname={foodItem.firstname} 
-                                    lastname={foodItem.lastname}
-                                    tags={foodItem.tags} 
-                                    onChange={() => {
-                                        foodItem.instock = !foodItem.instock
-                                    }}
-                                    
-                                    
-                                    />))} */}
+                    <div className="appointments-detail-display">
+                        <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/>
                     </div> 
                 </div>
             </div>

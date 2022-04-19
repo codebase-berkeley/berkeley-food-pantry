@@ -52,7 +52,7 @@ function Details(props) {
                   <div className='details-date'> {props.date} </div>
                   <div className='details-time'> {props.time} </div>
                 </div>
-                <div className='details-name'> {props.name} </div>
+                <div className='details-name'> {props.firstName} {props.lastName} </div>
                 <div className="details-contact-email-phone">
                   <h1 className='details-header'>Contact</h1>
                   <h1 className='details-email'>{props.email}</h1>
@@ -84,7 +84,7 @@ function Details(props) {
 
             <div className="details-fourth-chunk">
               <h1 className = 'details-header'>Notes</h1>
-              <div className ="details-diet-prefs">None, thank you!</div>
+              <div className ="details-diet-prefs">{props.notes}</div>
             </div>
             
         </div>

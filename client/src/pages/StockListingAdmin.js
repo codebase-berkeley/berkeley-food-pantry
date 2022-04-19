@@ -192,7 +192,7 @@ export function StockListingAdmin() {
             return false; 
         }
     }
-    console.log(food);
+
 
     return (
         <div className="stocklisting-entireContent">
@@ -208,16 +208,11 @@ export function StockListingAdmin() {
 
 
                     <div className="stocklisting-rightSide">
-                         <Link to="/addFood" className = "addButton" style = {{textDecoration: 'none'}}>
-                        {/* <button onClick {to="/stockListingAdmin"} type="button" class="btn" className="addButton"> */}
+                         <Link to="/add-food" className = "addButton" style = {{textDecoration: 'none'}}>
                             <img src={isbesPlusSign}></img>
                             <div className="addItem"> Add new item </div>
-
-                        {/* <Routes>
-                            <Route path="./AddFood" element={<AddFood/>}/>
-                        </Routes> */}
                     </Link>
-                        <button className="stocklisting-changeStock"> Set all items to out of stock </button>
+                        <button className="stocklisting-changeStock" onClick={() => setOutOfStock()}> Set all items to out of stock </button>
 
                     </div>
 
@@ -280,7 +275,7 @@ export function StockListingAdmin() {
                                             if (e.target.checked) {
                                                 setSelectedShow(0);
                                             }
-                                        }}></input>
+                                        }}/>
 
                                         All items
                                     </label>
@@ -292,7 +287,7 @@ export function StockListingAdmin() {
                                             if (e.target.checked) {
                                                 setSelectedShow(1);
                                             }
-                                        } }>></input>
+                                        } }></input>
 
                                         In stock items only
                                     </label>
@@ -327,14 +322,13 @@ export function StockListingAdmin() {
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 
                                     tags={foodItem.tags} 
+                                    admin={true}
                                     onChange={() => {
                                         foodItem.instock = !foodItem.instock
                                     }}
                                     
                                     
                                     />))}
-
-                    {/* food.filter(matchesTags) */}
 
                     </div>
                 </div>
@@ -345,6 +339,16 @@ export function StockListingAdmin() {
 
 export function StockListingUser() {
     const [selectedSort, setSelectedSort] = useState();
+    const [selectedTags, setSelectedTags] = useState([]);
+    const [selectedShow, setSelectedShow] = useState(0);
+    const [searchInput, setSearchInput] = useState("");
+
+    function clearInputFieldsHelper() {
+        setSelectedSort(sortOptions[0]);
+        setSelectedTags([]);
+        setSelectedShow(0);
+        setSearchInput("");
+    }
 
 
     function sortAZ(a, b) {
@@ -362,22 +366,62 @@ export function StockListingUser() {
 
     }
 
+    function tagMatchFunction(foodObject) {
+        
+        for (const tag of selectedTags.map(tagObject => tagObject.label)) {
+
+            if (!foodObject.tags.includes(tag)) {
+                return false;
+            } 
+        }
+        return true;
+    }
+
     function mostRecent() {
         return;
 
     }
 
+    function stockFilterFunction(foodObject) {
+        if (selectedShow == 0) {
+            return true;
+        } else if (selectedShow == 1) {
+            return foodObject.instock;
+        } else if (selectedShow == 2) {
+            return !foodObject.instock;
+        }
+    }
+
+    function setOutOfStock() {
+        console.log("clicked")
+        for (const f of food) {
+            f.instock = false;
+        }
+
+        // TODO: we're forcing a rerender because the array is external, fix this later
+        setSelectedSort(selectedShow)
+    }
+
 
     function getSort() {
-        
         if (selectedSort == null) {
             return;
-        } else if (selectedSort == "recently added") {
+        } else if (selectedSort.value == "recently added") {
             return mostRecent;
-        } else if (selectedSort == "alphabetical") {
+        } else if (selectedSort.value == "alphabetical") {
             return sortAZ;
         }
     }
+
+    function searchFunction(foodObject) {
+        
+        if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+    
     return (
         <div className="stocklisting-entireContent">
 
@@ -412,12 +456,14 @@ export function StockListingUser() {
                                 <p id="stocklisting-filterControlLabel">Filter by Dietary Categories</p>
                                 <div id="stocklisting-filter-dropdown">
                                     <Select className="stocklisting-custom-dropdown"
-                                        styles={customStyles}
-                                        closeMenuOnSelect={false}
-                                        components={animatedComponents}
-                                        placeholder="Select..."
-                                        isMulti
-                                        options={foodCategories}
+                                            styles={customStyles}
+                                            closeMenuOnSelect={false}
+                                            components={animatedComponents}
+                                            placeholder="Select..."
+                                            isMulti
+                                            options={foodCategories}
+                                            value={selectedTags}
+                                            onChange={setSelectedTags}
                                     />
                                 </div>
                             </div>
@@ -448,13 +494,23 @@ export function StockListingUser() {
                         </div>
                     </div>
 
-                    <div className="stocklisting-filterItemDisplay">
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={true}/>
-                    <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false} />
-                    <Food name="Coconut" image={coconut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Broccoli" image={broccoli} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
-                    <Food name="Canned Beans" image={cannedBeans} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} admin={false}/>
+                    <div className="filterItemDisplay">
+                        {food
+                            .filter(searchFunction)
+                            .filter(stockFilterFunction)
+                            .filter(tagMatchFunction)
+                            .sort(getSort()).map(foodItem => (
+                                <Food 
+                                    name={foodItem.name} 
+                                    image={foodItem.image} 
+                                    in_stock={foodItem.instock} 
+                                    tags={foodItem.tags} 
+                                    onChange={() => {
+                                        foodItem.instock = !foodItem.instock
+                                    }}
+                                    
+                                    
+                                    />))}
 
                     </div>
                 </div>

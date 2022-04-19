@@ -26,17 +26,19 @@ function App() {
       <AdminLoginNavbar/>
 
         <Routes>
-          <Route path="/stockListingAdmin" element={<StockListingUser/>}/>
+          <Route path="/edit-stock" element={<StockListingAdmin/>}/>
+          <Route path="/view-stock" element={<StockListingUser/>}/>
+          <Route path="/" element={<StockListingUser/>}/>
       
-          <Route path = "/adminLogin" element={<AdminLogin/>}/>
+          <Route path = "/login" element={<AdminLogin/>}/>
 
-          <Route path="/thankyou" element={<AppointmentTY/>}/> 
+          <Route path="/thank-you" element={<AppointmentTY/>}/> 
         
-          <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
+          <Route path="/schedule-appointment" element={<AppointmentScheduler/>}/>
 
-          <Route path="/addFood" element={<AddFood/>}/>
+          <Route path="/add-food" element={<AddFood/>}/>
 
-          <Route path="/viewappointments" element={<ViewAppointments/>}/> 
+          <Route path="/view-appointments" element={<ViewAppointments/>}/> 
           
         </Routes>
       </Router> 

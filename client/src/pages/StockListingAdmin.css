@@ -105,6 +105,7 @@
     border-style: solid;
     display: flex;
     width: 80vw;
+    overflow: hidden;
 }
 
 .stocklisting-filter-by {
