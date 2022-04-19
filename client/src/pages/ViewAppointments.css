@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
 
-.full-page {
+.appt-full-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,25 +20,25 @@
     display: flex;
     flex: 3;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .show-appointments p {
     margin-left: -1vw;
 }
 
-.show-dropdowns {
+.show-appt-dropdowns {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    align-items: center;
 }
 
-.checkboxes {
+/* .appointment-filter-checkboxes {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /* justify-content: space-between; */
-}
+    margin-bottom: 2%;
+} */
 
 .top-container h1 {
     text-align: left;
@@ -63,7 +63,6 @@
 .h3{
     font-size: 10px;
 }
-
 
 .form-check-input-items {
     border: #000000;
@@ -108,13 +107,11 @@
 .filters {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height:70vh;
     align-items: center;
     overflow-y: scroll;
 }
 
-.bottomContainer {
+.apptBottomContainer {
     border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
@@ -129,26 +126,24 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-bottom: 2vh;
+    padding-bottom: 4vh;
+    width: 100%;
+    background-color: green;
 }
 
-.by-day {
+.appt-by-day {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 2vh;
-    height: '6vh';
+    height: 6vh;
 }
 
-.by-time {
+.appt-by-time {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 2vh;
-    height: '6vh';
+    height: 6vh;
 }
-
-
 
 p#filterControlLabel {
     color: #4C4C4C;
@@ -157,23 +152,22 @@ p#filterControlLabel {
     font-size: 16px;
 }
 
-.custom-dropdown {
-    padding-top: 1px;
-    width: 25vw;
+.appt-custom-dropdown {
+    width: 20vw;
     border-color: #ACB9AC;
-    margin-right: -4vw;
+    border-radius: 25px;
+}
+
+.appt-custom-dropdown-2 {
+    width: 20vw;
+    border-color: #ACB9AC;
+    margin-left: 2vw;
 }
 
 .appt-card-display {
-    display: flex;
-    width: 35vw;
+    width: 50vw;
     height: 100%;
-    flex: 1;
-    overflow-y: auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: pink;
+    overflow-y: scroll;
 }
 
 .filterReset{
@@ -197,7 +191,6 @@ p#filterControlLabel {
 .resetFilters{
     font-size: 16px;
     background-color: #fff;
-    color: #A71E47;
     align-items: right;
     padding-top: 1vh;
     font-family: 'Inter', sans-serif;
@@ -304,7 +297,6 @@ p#filterControlLabel {
 
 .filterItemDisplay {
     width: 55vw;
-    /* padding: 10px; */
     align-items: left;
     overflow-y: scroll;
     border-left: 1px solid #B8B8B8;
@@ -314,25 +306,44 @@ p#filterControlLabel {
     width: 400px;
 }
 
-.form-check-label {
+.appointment-form-check-label {
+    display: flex;
+    width: 140%;
+    color: #264425;
+    align-items: right;
+}
+
+.appointment-filter-checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-top: 4%; 
+    margin-bottom: 2%;
+    margin-right: 1%;
+}
+
+
+input.appointment-view-input {
+    border-radius: 4px 4px 4px 4px;
+    font-size: 2vh;
+    font-family: "Montserrat";
+    margin-top: 2%;
+}
+
+.appts-text {
+    width: 80%;
     font-family: 'Inter', sans-serif;
-
-    font-size: 15px;
-    margin-right: 5%;
+    font-size: 16px;
+    text-align: right;
+    padding-right: 4%;
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"] {
     border: 1.5px solid #B8B8B8;
 }
 
-input[type="checkbox"]:checked, input[type="radio"]:checked {
+input[type="checkbox"]:checked {
     border: 1.5px solid #B8B8B8;
-    background-color: solid #264425;
+    accent-color: #264425;
     box-shadow: "transparent";
-    box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #264425;
-}
-
-input[type="checkbox"]:hover, input[type="radio"]:hover {
-    border: 1.5px solid #B8B8B8;
-    background-color: white;
 }
