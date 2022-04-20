@@ -254,6 +254,12 @@ input {
     width: 100%;
     }
 
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dietary-categories-select-list {
     font-family: "Montserrat";
     margin-top: 0%;

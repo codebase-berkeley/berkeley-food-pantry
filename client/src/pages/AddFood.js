@@ -131,21 +131,31 @@ export default function AddFood() {
             </div>
             <div className = "save-item-button-container-final">
                     <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
-                    <Modal isOpen = {modalIsOpen} id = "modal" style={{content: {
-      width: "10vw",
-      border: '1px solid #ccc',
-      background: '#fff',
-      overflow: 'auto',
-      WebkitOverflowScrolling: 'touch',
-      borderRadius: '4px',
-      outline: 'none',
-      padding: '20px'
-    }}}>
+                    <div className = "modal-container">
+                    <Modal isOpen = {modalIsOpen} id = "modal" 
+                    style={{content: {
+                            display: "flex", 
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "25vw",
+                            height: "40vh",
+                            border: '1px solid #ccc',
+                            background: '#fff',
+                            overflow: 'auto',
+                            WebkitOverflowScrolling: 'touch',
+                            borderRadius: '10px',
+                            outline: 'none',
+                            outlineColor: "#588157",
+                            padding: '20px',
+                            backgroundColor: "red"
+                    }}}>
                         <h1>Confirm delete item?</h1>
                         <input className = "add-food-delete-item-final-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                         <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
                         
                     </Modal>
+                    </div>
                     <input className = "add-food-save-item-button" type="button" onClick={addItem} value="Save Item"></input>
                 </div>
         </div>
