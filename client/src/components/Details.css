@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 .details-container {
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 5%;
 }
 
 .details-first-chunk {
@@ -94,7 +98,8 @@
     border: 1px solid #264425;
     border-radius: 30px;
     width: 80%;
-    height: 25%;
+    height:25%;
+
     flex-direction: row;
     font-family: 'Inter', sans-serif;
     justify-content: space-between;
@@ -107,7 +112,8 @@
     border: 1px solid #519E8A;
     border-radius: 30px;
     width: 80%;
-    height: 25%;
+    height:25%;
+
     flex-direction: row;
     font-family: 'Inter', sans-serif;
     justify-content: space-between;
@@ -122,7 +128,7 @@
 
 .details-markAs {
     display: flex;
-    width: 60%
+    width: 60%;
 }
 
 .details-visitedButton {

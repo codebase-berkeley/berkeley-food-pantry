@@ -161,20 +161,19 @@ p#filterControlLabel {
     padding-top: 1px;
     width: 25vw;
     border-color: #ACB9AC;
+<<<<<<< HEAD
+=======
     /* background-color: red; */
+>>>>>>> tmp
     margin-right: -4vw;
 }
 
 .appt-card-display {
-    display: flex;
-    width: 35vw;
+    width: 40vw;
     height: 100%;
-    flex: 1;
+
     overflow-y: auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: pink;
+
 }
 
 .filterReset{
@@ -303,8 +302,8 @@ p#filterControlLabel {
     padding-bottom: 1vh;
 }
 
-.filterItemDisplay {
-    width: 55vw;
+.appointments-detail-display {
+    width: 50vw;
     /* padding: 10px; */
     align-items: left;
     overflow-y: scroll;
