@@ -297,6 +297,14 @@ p#stocklisting-filterControlLabel {
     font-size: 15px;
 }
 
+.stocklisting-filterItemDisplay {
+    width: 55vw;
+    /* padding: 10px; */
+    align-items: left;
+    overflow-y: scroll;
+    border-left: 1px solid #B8B8B8;
+}
+
 input[type="checkbox"], input[type="radio"] {
     border: 1.5px solid #B8B8B8;
     margin: 4px 8px 4px 8px;

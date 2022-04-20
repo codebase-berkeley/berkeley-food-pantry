@@ -494,7 +494,7 @@ export function StockListingUser() {
                         </div>
                     </div>
 
-                    <div className="filterItemDisplay">
+                    <div className="stocklisting-filterItemDisplay">
                         {food
                             .filter(searchFunction)
                             .filter(stockFilterFunction)
