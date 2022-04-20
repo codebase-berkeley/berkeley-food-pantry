@@ -31,7 +31,7 @@ export default function AppointmentTY(props) {
                 </div>
 
                 <div className = 'ty-appt-button-container'>
-                    <Link to="/appointmentScheduler" className = "ty-appt-button" style ={{textDecoration: 'none'}}>Schedule New Appointment</Link>
+                    <Link to="/schedule-appointment" className = "ty-appt-button" style ={{textDecoration: 'none'}}>Schedule New Appointment</Link>
                 </div>
 
             </div>
