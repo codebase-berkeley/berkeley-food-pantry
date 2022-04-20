@@ -76,19 +76,20 @@ export default function AddFood() {
     
     useEffect(() => {
         setItemName(location.state.name);
+        setTags(location.state.tags);
         
 
-        if (tags.length == 0) {
-            const returnTags = dictionaryHelper();
+        // if (tags.length == 0) {
+        //     const returnTags = dictionaryHelper();
 
-            console.log("return tags");
-            console.log(returnTags);
-            setTags(returnTags);
+        //     console.log("return tags");
+        //     console.log(returnTags);
+        //     setTags(returnTags);
 
-            console.log("check tags");
-            console.log(tags);
+        //     console.log("check tags");
+        //     console.log(tags);
 
-        }
+        // }
 
         if (location.state.inStock == true) {
             setStockAvailability("In Stock Today");
@@ -100,14 +101,14 @@ export default function AddFood() {
 
     console.log(tags);
 
-    function dictionaryHelper() {
-        const listOfTags = [];
-        for (let i = 0; i < location.state.tags.length; i++) {
-            listOfTags.push({label: location.state.tags[i], value: i})
-        }
+    // function dictionaryHelper() {
+    //     const listOfTags = [];
+    //     for (let i = 0; i < location.state.tags.length; i++) {
+    //         listOfTags.push({label: location.state.tags[i], value: i})
+    //     }
 
-        return listOfTags
-    }
+    //     return listOfTags
+    // }
 
     function headerDisplay() {
         if (edit) {
@@ -116,8 +117,7 @@ export default function AddFood() {
                 <h1>Edit Item</h1>
                 <p>Edit an existing item in the stock directory.</p>
                 </div>   
-            )
-            }
+            )}
         return (
             <div>
                 <h1>Add Item</h1>

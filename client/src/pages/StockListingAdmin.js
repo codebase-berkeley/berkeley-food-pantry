@@ -84,9 +84,25 @@ const customStyles = {
     },
 }
 
+function dictionaryHelper(foodTags) {
+    const listOfTags = [];
+    // for (let i = 0; i < location.state.tags.length; i++) {
+    //     listOfTags.push({label: location.state.tags[i], value: i})
+    // }
+    const newArr = [] 
+    for (let i = 0; i < foodTags.length; i++) { 
+        const temp = {label: foodTags[i], value: i}; 
+        newArr.push(temp);
+    }
+
+    console.log(newArr);
+
+    return newArr;
+}
 
 
 export function StockListingAdmin() {
+
     return (
         <div className="entireContent">
 
@@ -100,7 +116,7 @@ export function StockListingAdmin() {
                     </div>
 
                     <div className="rightSide">
-                        <button type="button" class="btn" className="addButton">
+                        <button type="button" className="btn">
                             <img src={isbesPlusSign}></img>
                             <div className="addItem"> Add new item </div>
                         </button>
@@ -155,22 +171,22 @@ export function StockListingAdmin() {
                             <div className="showFilter">
                                 <div className="showText"> Show </div>
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         All items
                                     </label>
                                 </div>
 
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         In stock items only
                                     </label>
                                 </div>
                                 
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         Not in stock items only
                                     </label>
                                 </div>
@@ -179,7 +195,7 @@ export function StockListingAdmin() {
                         </div>
                     </div>
                     <div className="filterItemDisplay">
-                    <Food name="Apple" image={apple} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
+                    <Food name="Apple" image={apple} in_stock={true} tags={dictionaryHelper(["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ])} />
                     <Food name="Banana" image={banana} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     <Food name="Coconut" image={cocunut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
                     <Food name="Donut" image={donut} in_stock={true} tags={["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Fruit" ]} />
@@ -253,8 +269,8 @@ export function StockListingUser() {
 
                             <div className="showFilter">
                                 <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                    <label className="form-check-label" for="exampleRadios1">
+                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
                                         Only show items in stock today.
                                     </label>
                                 </div>
