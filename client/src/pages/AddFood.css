@@ -64,7 +64,61 @@
     font-family: 'Montserrat';
     margin-top: 3vh;
     margin-right: 7vw;
+}
+
+.add-food-delete-item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 40px;
+    border: 1px solid #A71E34 !important;
+    color: #A71E34;
+    background-color: white;
+    font-size: 2.25vh;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-top: 3vh;
+    margin-right: 7vw;
     
+}
+.add-food-delete-item-final-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 40px;
+    color: white;
+    background-color: #A71E34;
+    border: 1px solid #A71E34 !important;
+    
+    font-size: 2.25vh;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-top: 3vh;
+    margin-right: 7vw;
+}
+.add-food-cancel-item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 40px;
+    color: #264425;
+    background-color: white;
+    border: 2px solid #264425 !important;
+
+    /* color: white;
+    background-color: #264425; */
+    font-size: 2.25vh;
+    font-weight: 800;
+    font-family: 'Montserrat';
+    margin-top: 3vh;
+    margin-right: 7vw;
+
 }
 
 .add-food-item-selections {
@@ -237,8 +291,15 @@ input {
     flex-direction: column;
     height: 30vh;
     width: 100%;
-    margin-top: 3vh;
-    
+    margin-top: 3vh;   
+}
+
+.delete-item-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
 }
 
 @media screen and (orientation: portrait) {
@@ -292,5 +353,20 @@ input {
         margin-left: 20%;
         
     }
+    .editItemModal {
+        width: 50%;
+        height: 50%; 
+    }
+    /* .modal {
+        position: absolute; 
+        inset: 40px;
+        border: 1px solid rgb(204, 204, 204);
+        background: rgb(255, 255, 255);
+        overflow: auto;
+        border-radius: 4px;
+        outline: none;
+        padding: 20px;
+
+    } */
 
 }
