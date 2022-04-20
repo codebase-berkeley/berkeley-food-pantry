@@ -131,7 +131,16 @@ export default function AddFood() {
             </div>
             <div className = "save-item-button-container-final">
                     <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
-                    <Modal isOpen = {modalIsOpen} id = "modal" style={{position: 'absolute', backgroundColor: 'red'}}>
+                    <Modal isOpen = {modalIsOpen} id = "modal" style={{content: {
+      width: "10vw",
+      border: '1px solid #ccc',
+      background: '#fff',
+      overflow: 'auto',
+      WebkitOverflowScrolling: 'touch',
+      borderRadius: '4px',
+      outline: 'none',
+      padding: '20px'
+    }}}>
                         <h1>Confirm delete item?</h1>
                         <input className = "add-food-delete-item-final-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                         <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
