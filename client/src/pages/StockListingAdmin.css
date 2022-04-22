@@ -260,7 +260,7 @@ p#stocklisting-filterControlLabel {
 
 .stocklisting-showFilter {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     width: 90%;
 }
@@ -289,21 +289,11 @@ p#stocklisting-filterControlLabel {
 .stocklisting-form-check-label {
     display: flex;
     flex-direction: row;
-}
-
-
-.stocklisting-form-check-label {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
 }
 
-.stocklisting-filterItemDisplay {
-    width: 55vw;
-    /* padding: 10px; */
-    align-items: left;
-    overflow-y: scroll;
-    border-left: 1px solid #B8B8B8;
-}
+
 
 input[type="checkbox"], input[type="radio"] {
     border: 1.5px solid #B8B8B8;
@@ -326,3 +316,4 @@ input[type="checkbox"]:hover, input[type="radio"]:hover {
     background-color: white;
     margin: 4px 8px 4px 8px;
 }
+

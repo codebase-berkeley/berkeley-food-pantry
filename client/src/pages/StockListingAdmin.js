@@ -310,7 +310,7 @@ export function StockListingAdmin() {
                         </div>
                     </div>
 
-                    <div className="filterItemDisplay">
+                    <div className="stocklisting-filterItemDisplay">
                         {food
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
