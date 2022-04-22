@@ -148,7 +148,12 @@ export default function AddFood() {
                             outline: 'none',
                             outlineColor: "#588157",
                             padding: '20px',
-                            backgroundColor: "red"
+                            backgroundColor: "white",
+                            position: "absolute",
+                            float: "left",
+                            left: "50%",
+                            top: "50%",
+                            transform: "translate(-50%, -50%)"
                     }}}>
                         <h1>Confirm delete item?</h1>
                         <input className = "add-food-delete-item-final-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>

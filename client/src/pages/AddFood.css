@@ -80,9 +80,9 @@
     font-weight: bold;
     font-family: 'Montserrat';
     margin-top: 3vh;
-    margin-right: 7vw;
-    
+    margin-right: 3vw;    
 }
+
 .add-food-delete-item-final-button {
     display: flex;
     justify-content: center;
@@ -99,6 +99,7 @@
     font-family: 'Montserrat';
     margin-top: 3vh;
     margin-right: 7vw;
+    margin-left: 6.5vw;
 }
 .add-food-cancel-item-button {
     display: flex;
@@ -110,15 +111,12 @@
     color: #264425;
     background-color: white;
     border: 2px solid #264425 !important;
-
-    /* color: white;
-    background-color: #264425; */
     font-size: 2.25vh;
     font-weight: 800;
     font-family: 'Montserrat';
     margin-top: 3vh;
     margin-right: 7vw;
-
+    margin-left: 6.5vw;
 }
 
 .add-food-item-selections {
