@@ -73,10 +73,23 @@ export default function AddFood() {
     }
 
     function addItem(nameFood) {
-        axios.post('http://localhost:4000/food', {name: nameFood, instock: true, tags: "ryan", image_path: "codebase.com"})
+        console.log(document.getElementById("addItem-food-name").value);
+        // console.log(document.getElementById("filter-dropdown"));
+        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: true, tags: "ryan", image_path: "codebase.com"})
             .then(() => console.log("add item works"));
     }
+
+
+    document.getElementById('filter-dropdown').onclick = function() {
+        if (document.getElementById("filter-dropdown").options == 'In stock today') {
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+    }
     
+    
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     return(
@@ -92,9 +105,10 @@ export default function AddFood() {
                         <form>
                             <label className = "item-name-input">
                                 Item Name 
-                                </label>
-                                <input className = "item-name-textbox" type="text" name="name" />
+                            </label>
+                                <input id = "addItem-food-name" className = "item-name-textbox" type="text" name="name" />
                             </form>
+                            
                         </div>
                         </div> 
                         <div className="stock-dropdown">
