@@ -64,15 +64,17 @@ const customStyles = {
     }
 }
 
+
 export default function AddFood() {
-    function deleteItem() {
+    function deleteItem(nameFood) {
         // Simple DELETE request with axios
-        axios.delete('/server/food')
-            .then(() => this.setState({ status: 'Delete successful' }));
+        axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
+            .then(() => console.log("something"));
     }
 
-    const addItem = async () => {
-        await axios.post('/sever/food')
+    function addItem(nameFood) {
+        axios.post('http://localhost:4000/food', {name: nameFood, instock: true, tags: "ryan", image_path: "codebase.com"})
+            .then(() => console.log("add item works"));
     }
     
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -156,7 +158,10 @@ export default function AddFood() {
                             transform: "translate(-50%, -50%)"
                     }}}>
                         <h1>Confirm delete item?</h1>
-                        <input className = "add-food-delete-item-final-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
+                        <input className = "add-food-delete-item-final-button" type="button" onClick={() => {
+                            setModalIsOpen(true);
+                            deleteItem("anthony");
+                        }} value="Delete Item"></input>
                         <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
                         
 
@@ -164,7 +169,7 @@ export default function AddFood() {
                         
                     </Modal>
                     </div>
-                    <input className = "add-food-save-item-button" type="button" onClick={addItem} value="Save Item"></input>
+                    <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
                 </div>
         </div>
     )
