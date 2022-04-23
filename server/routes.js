@@ -16,6 +16,8 @@ module.exports = (app) => {
 
     app.post('/food', async (req, res) => {
         const name = req.body.name;
+        console.log(req.body.data);
+        console.log(name);
         if (!name || name.length <= 0) return res.status(400).end();
         const image = req.body.image_path;
         const instock = req.body.instock;

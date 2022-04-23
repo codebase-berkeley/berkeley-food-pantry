@@ -6,7 +6,8 @@ const initFoodModel = (sequelize) => {
     Food.init({
         id: {
             type: DataTypes.INTEGER,
-            primaryKey : true
+            primaryKey : true, 
+            autoIncrement : true
         },
        
         name: {
