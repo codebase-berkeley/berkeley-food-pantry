@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 
-.ty-circle-pic {
+
+.thankyou-circle-pic {
     display: flex;
     border-radius: 50%;
     align-items: center;
     height: 60vh;
 }
 
-.ty-appt-button-container {
+.thankyou-appt-button-container {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-.ty-appt-button {
+.thankyou-appt-button {
     display: flex;
     background-color: white;
     align-items: center;
@@ -25,6 +26,7 @@
     border-radius: 100px;
     border: #264425 solid 1px;
     text-decoration: none;
+    text-align: center;
     font-weight: 600;
     color: #264425;
     list-style-type: none;
@@ -33,13 +35,14 @@
     margin-top: 8%;
 }
 
-.ty-appt-button:hover {
+.thankyou-appt-button:hover {
     font-family: Montserrat;
     color: #264425;
     text-decoration: none;
 }
 
-.ty-full-page {
+
+.thankyou-full-page {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -48,7 +51,7 @@
     width: 100vw;
 }
 
-.ty-information-display {
+.thankyou-information-display {
     color: #383838;
     display:flex;
     flex-direction: column;
@@ -58,33 +61,33 @@
     height: 100vh;
 }
 
-.ty-confirmation-text {
+.thankyou-confirmation-text {
     display: flex;
     flex-direction: column;
     margin-top: 10vh;
 }
 
-.ty-confirmation-text h1 {
+.thankyou-confirmation-text h1 {
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 8%;
 }
 
-p#ty-description-text {
+p#thankyou-description-text {
     font-family: 'Inter';
     color: #4C4C4C;
     font-size: 18px;
 }
 
-p#ty-time-text {
+p#thankyou-time-text {
     font-family: 'Inter';
     color: #4C4C4C;
     font-weight: bold;
     font-size: 24px;
 }
 
-a#ty-weblink {
+a#thankyou-weblink {
     font-family: 'Inter';
     font-size: 18px;
     font-weight: bold;
@@ -92,7 +95,7 @@ a#ty-weblink {
 }
 
 @media screen and (orientation: portrait) { 
-    .ty-full-page {
+    .thankyou-full-page {
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-around;
@@ -102,15 +105,15 @@ a#ty-weblink {
         margin-top: -5vh;
     }
 
-    .ty-circle-pic {
+    .thankyou-circle-pic {
         display: flex;
         border-radius: 50%;
         align-items: center;
         height: 30vh;
         margin-top: 2px;
     }
-
-    .ty-confirmation-text {
+      
+    .thankyou-confirmation-text {
         display: flex;
         flex-direction: column;
         height: 50vh;
@@ -118,14 +121,16 @@ a#ty-weblink {
         margin-top: 20vh;
     }
     
-    .ty-information-display {
+    .thankyou-information-display {
+        display: flex;
+        flex-direction: column;
         width: 65%;
         height: 20%;
         font-size: 14px;
         font-family: 'Inter', sans-serif;
     }
 
-    .ty-appt-button {
+    .thankyou-appt-button {
         display: flex;
         background-color: white;
         align-items: center;
@@ -143,7 +148,7 @@ a#ty-weblink {
         margin-bottom: 5vh; 
     }
 
-    .ty-appt-button-container {
+    .thankyou-appt-button-container {
         display: flex;
         width: 100%;
         align-items: center;
