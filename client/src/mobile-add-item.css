@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.mob-add-item-component-container {
+    display: flex;
+}
+
+
+.addItem {
+    font-family: "Montserrat";
+    color: #383838;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .addItemDesc {
+    font-family: "Inter";
+    color: #4C4C4C;
+    font-size: 14px;
+  }
+
+  .boxHeaders {
+      font-family: "Inter";
+      font-weight: 600;
+      color: #4C4C4C;
+      font-size: 18px; 
+  }
+

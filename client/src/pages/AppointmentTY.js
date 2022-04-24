@@ -9,6 +9,7 @@ export default function AppointmentTY(props) {
     const timeSelected = location.state?.time;
 
    return(
+
     <div className = 'thankyou-full-page'>
             
             <div className = 'thankyou-information-display'>
@@ -28,6 +29,7 @@ export default function AppointmentTY(props) {
                         <Link to="/appointmentScheduler" className = "thankyou-appt-button" style ={{textDecoration: 'none'}}>Schedule New Appointment</Link>
                     </div>
                 </div>
+
             </div>
             
             <div >

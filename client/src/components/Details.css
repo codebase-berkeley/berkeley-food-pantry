@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 5%;
+}
+
+.details-first-chunk {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.details-second-chunk {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.details-third-chunk {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.details-fourth-chunk {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.details-date-time {
+    margin-bottom: 10%;
+}
+
+.details-contact-email-phone {
+    margin-top: 10%;
+}
+
+.details-not-button {
+    align-content: space-between;
+}
+
+.details-date {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    color: #4C4C4C;
+}
+
+.details-time {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    color: #4C4C4C;
+}
+
+.details-name {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 25px;
+    color: #4C4C4C;
+}
+
+.details-header {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 14px;
+    color: #464646;
+}
+
+.details-email {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    color: #464646;
+}
+
+.details-phoneNumber {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    color: #464646;
+}
+
+.diet-prefs {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    color: #464646;
+    margin-top: 1%;
+}
+
+.details-beenVisitedButton {
+    display: flex;
+    border: 1px solid #264425;
+    border-radius: 30px;
+    width: 80%;
+    height:25%;
+
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    color: #264425;
+}
+
+.details-notVisitedButton {
+    display: flex;
+    border: 1px solid #519E8A;
+    border-radius: 30px;
+    width: 80%;
+    height:25%;
+
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    color: #519E8A;
+}
+
+.details-marked {
+    display: flex;
+    padding-right: 2%;
+}
+
+.details-markAs {
+    display: flex;
+    width: 60%;
+}
+
+.details-visitedButton {
+    width: 30%;
+    padding-top: 1%;
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
+.appointment-card-cardContainer {
+    display: flex;
+    border-radius: 10px;
+    height: 20vh;
+    width: 40vw;
+    border: solid #ACB9AC;
+    flex-direction: row;
+}
+.appointment-card-cardContainer:hover{
+    background-color: #F5F6F3;
+    border: solid #19381F;
+}
+
+.appointment-card-cardContainer:hover .appointment-card-rightStyling{
+    background-color: #19381F;
+}
+
+.appointment-card-leftStyling {
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+}
+
+.appointment-card-appointmentInfo {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    padding-left: 5%;
+    height: 100%;
+    justify-content: center;
+    width: 55%;
+    color: #4C4C4C;
+    font-size: large;
+}
+
+.appointment-card-name {
+    font-size: x-large;
+}
+
+.appointment-card-visitedButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 35%;
+}
+
+.appointment-card-beenVisitedButton {
+    display: flex;
+    border: 1px solid #ACB9AC;
+    border-radius: 30px;
+    width: 100%;
+    height: 30%;
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    color: #ACB9AC;
+}
+
+.appointment-card-notVisitedButton {
+    display: flex;
+    border: 1px solid #519E8A;
+    border-radius: 30px;
+    width: 100%;
+    height: 30%;
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    color: #519E8A;
+}
+
+.appointment-card-marked {
+    display: flex;
+    padding-right: 5%;
+}
+
+.appointment-card-markAs {
+    display: flex;
+    width: 60%
+}
+
+
+.appointment-card-name {
+    padding-top: 5%;
+}
+
+.appointment-card-visitedButton {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.appointment-card-rightStyling{
+    display: flex;
+    border-radius: 0 8px 8px 0;
+    width: 2%;
+    justify-content: flex-end;
+    background-color: #ACB9AC;
+}
+
+

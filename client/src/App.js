@@ -7,11 +7,17 @@ import { StockListingUser, StockListingAdmin } from './pages/StockListingAdmin.j
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AppointmentScheduler from './pages/AppointmentScheduler';
 import AdminLogin from './pages/AdminLogin.js';
+import { ViewAppointments } from './pages/ViewAppointments';
+import Details from './components/Details';
+import Food from './components/Food.js'
+import AppointmentCard from './components/AppointmentCard.js'
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
 
 function App() {
+  const data_dietary = ['Im lactose introlerant lol', 'Gluten Free', 'Include Dog Food'];
+  const data_item = ['Broccoli', 'Milk', 'Canned Beans', 'Steak', 'Apple', 'Oranges'];
   return (
     <div className = "App">
 
@@ -20,18 +26,22 @@ function App() {
       <AdminLoginNavbar/>
 
         <Routes>
-          <Route path="/stockListingAdmin" element={<StockListingAdmin/>}/>
+          <Route path="/edit-stock" element={<StockListingAdmin/>}/>
+          <Route path="/view-stock" element={<StockListingUser/>}/>
+          <Route path="/" element={<StockListingUser/>}/>
       
-          <Route path = "/adminLogin" element={<AdminLogin/>}/>
+          <Route path = "/login" element={<AdminLogin/>}/>
 
-          <Route path="/thankyou" element={<AppointmentTY/>}/> 
+          <Route path="/thank-you" element={<AppointmentTY/>}/> 
         
-          <Route path="/appointmentScheduler" element={<AppointmentScheduler/>}/>
+          <Route path="/schedule-appointment" element={<AppointmentScheduler/>}/>
 
-          <Route path="/addFood" element={<AddFood/>}/>
+          <Route path="/add-food" element={<AddFood/>}/>
 
+          <Route path="/view-appointments" element={<ViewAppointments/>}/> 
+          
         </Routes>
-      </Router>       
+      </Router> 
 
     </div>
   )

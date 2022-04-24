@@ -1,5 +1,5 @@
 import './AddFood.css';
-import saveitembutton from './../Images/saveitembutton.png';
+// import saveitembutton from './../Images/saveitembutton.png';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
@@ -83,7 +83,7 @@ export default function AddFood() {
                         <div className="stock-dropdown">
                             <label className = "item-name-input">Set Stock Availability</label>
                             <div id="filter-dropdown">
-                                <Select className="custom-dropdown"
+                                <Select className="custom-dropdown-2"
                                     menuPlacement='auto'
                                     menuPosition='fixed'
                                     styles={customStyles}

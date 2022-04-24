@@ -1,9 +1,9 @@
 import './MobNavbar.css';
-import bfpLogo from './../Images/bfpLogo.svg';
-import xButton from './../Images/isbees-x-symbol.svg';
-import groceries from './../Images/navBarImage.png';
+import bfpLogo from './../images/bfpLogo.svg';
+import xButton from './../images/isbees-x-symbol.svg';
+import groceries from './../images/navBarImage.png';
 import React, { useState } from 'react';
-import dropdownIcon from './../Images/dropdown-icon.svg'
+import dropdownIcon from './../images/dropdown-icon.svg'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function MobNavbar() {
@@ -28,9 +28,9 @@ function MobNavbar() {
                     <div className='dropDownLinks'>
                         <a href="https://www.berkeleyfoodpantry.org/aboutus" 
                         target="_blank" rel="noopener noreferrer" className='dropDownText' onClick = {setFalse}>About the Pantry</a>
-                        <Link to = "/stockListingAdmin" onClick={setFalse} className = 'dropDownText'> Edit Today's Stock </Link>
-                        <a href="google.com" className='dropDownText'>View Appointments</a>
-                        <Link to = "/adminLogin" onClick={setFalse} className = 'dropDownText'> Login </Link>
+                        <Link to = "/edit-stock" onClick={setFalse} className = 'dropDownText'> Edit Today's Stock </Link>
+                        <a href="/view-appointments" className='dropDownText'>View Appointments</a>
+                        <Link to = "/login" onClick={setFalse} className = 'dropDownText'> Login </Link>
                         {/* <a href="google.com" className='dropDownText'>Edit Today's Stock</a>
                         <a href="google.com" className='dropDownText'>View Appointments</a>
                         <a href="google.com" className='dropDownText'>Logout</a> */}
