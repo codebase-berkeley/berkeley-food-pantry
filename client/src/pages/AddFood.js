@@ -1,13 +1,10 @@
 import './AddFood.css';
-// import saveitembutton from './../Images/saveitembutton.png';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
-import { caretTrimReplace } from 'prettier';
-
 
 const todayStock = [
     { value: true, label: 'In stock today' },

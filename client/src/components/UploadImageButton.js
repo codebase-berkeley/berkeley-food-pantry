@@ -1,8 +1,5 @@
 import importimagecloud from './../images/import-image-cloud.svg';
 import './../pages/AddFood.css';
-import saveitembutton from './../images/saveitembutton.png';
-import Select, { NonceProvider } from 'react-select';
-import makeAnimated from 'react-select/animated';
 import React, { useState } from 'react';
 
 export default function UploadImageButton() {
