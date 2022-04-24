@@ -6,11 +6,12 @@ import React, { useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
+import { caretTrimReplace } from 'prettier';
 
 
 const todayStock = [
-    { value: 'in stock', label: 'In stock today' },
-    { value: 'out of stock', label: 'Out of stock today' }
+    { value: true, label: 'In stock today' },
+    { value: false, label: 'Out of stock today' }
 ]
 
 const dietaryCategories = [
@@ -75,29 +76,24 @@ export default function AddFood() {
     function addItem(nameFood) {
         console.log(document.getElementById("addItem-food-name").value);
         // console.log(document.getElementById("filter-dropdown"));
-        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockCond(), tags: "ryan", image_path: "codebase.com"})
+        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockValue.value, tags: categoriesList(categoriesValue), image_path: "codebase.com"})
             .then(() => console.log("add item works"));
     }
-    function stockCond() {
-        console.log(document.getElementById("filter-dropdown").options);
-        if (document.getElementsByClassName("custom-dropdown-2").options == 'in stock') {
-            // console.log(e);
-            console.log(document.getElementsByClassName("custom-dropdown-2").options);
-            return true; 
-        } else {
-            console.log("false"); 
-            return false; 
-        }
+    function categoriesList(categoriesValue) {
+        console.log(categoriesValue);
+        console.log(categoriesValue.map((category) => category.value));
+        
+        return categoriesValue.map((category) => category.value);
+
     }
 
     
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [value, setValue] = useState("");
+    const [stockValue, setStockValue] = useState(true);
+    const [categoriesValue, setCategoriesValue] = useState([""]);
 
-    // const handleChange = e => setValue(e.target.value);
-
-
+   
     return(
         <div className = "main-container">
         <div className = "add-food-component-header">
@@ -121,7 +117,8 @@ export default function AddFood() {
                             <label className = "item-name-input">Set Stock Availability</label>
                             <div id="filter-dropdown">
                                 <Select className="custom-dropdown-2" 
-                                    // onChange={handleChange}
+                                    onChange={setStockValue}
+                                    value = {stockValue}
                                     id = 'stock-option'
                                     menuPlacement='auto'
                                     menuPosition='fixed'
@@ -138,6 +135,8 @@ export default function AddFood() {
                             <label className = "item-name-input">Select Dietary Categories (Optional)</label>
                             <div>
                                 <Select className="custom-dropdown"
+                                    onChange = {setCategoriesValue}
+                                    value = {categoriesValue}
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
