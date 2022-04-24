@@ -3,7 +3,7 @@ import './Food.css'
 import Tags from './Tags.js'
 import edit_item from './../images/edit_item.png'
 import pen from './../images/pen.svg'
-import checkmark from './../images/darkCheckMark.svg'
+import checkmark from './../images/instockMark.svg'
 import xmark from '../images/notinstock.svg'
 
 

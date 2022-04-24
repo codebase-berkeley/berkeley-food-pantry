@@ -1,5 +1,5 @@
 import './AppointmentCard.css'
-import checkMark from './../images/darkCheckMark.svg'
+import checkMark from './../images/unvisitedMark.svg'
 import visitedMark from './../images/visitedMark.svg'
 import React, { useState, useEffect } from 'react';
 
