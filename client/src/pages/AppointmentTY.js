@@ -2,6 +2,7 @@ import circleImage from './../images/thankyou.png';
 import { useLocation } from "react-router-dom";
 import './AppointmentTY.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 export default function AppointmentTY(props) {
     const location = useLocation();
@@ -36,6 +37,9 @@ export default function AppointmentTY(props) {
                 <img src={circleImage} className = "thankyou-circle-pic" alt = "admin-login"></img>
             </div>
             
+            <Helmet>
+                <title>Thank you!</title>
+            </Helmet>
     </div>
         
    )

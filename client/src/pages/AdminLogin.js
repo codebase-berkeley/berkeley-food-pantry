@@ -1,6 +1,7 @@
 import adminLoginPic from './../images/carrots.svg';
 import './AdminLogin.css';
 import admingooglesignin from './../images/googlePic.png';
+import { Helmet } from 'react-helmet';
 
 export default function AdminLogin() {
    return(
@@ -17,7 +18,10 @@ export default function AdminLogin() {
                     </div>
                 </div>
             </div>
+        <Helmet>
+            <title>Login</title>
+       </Helmet>
     </div>
-        
+         
    )
 }

@@ -4,6 +4,7 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import AppointmentTY from './AppointmentTY';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const dates = [
     { value: 0, label: 'Select date...' },
@@ -351,6 +352,9 @@ export default function AppointmentScheduler() {
                     <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
                 </div>
             </div>
+            <Helmet>
+                <title>Schedule an Appointment</title> 
+            </Helmet>
         </div>
     )
 

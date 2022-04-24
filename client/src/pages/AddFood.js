@@ -7,6 +7,7 @@ import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { caretTrimReplace } from 'prettier';
+import { Helmet } from 'react-helmet';
 
 
 const todayStock = [
@@ -193,6 +194,9 @@ export default function AddFood() {
                     </div>
                     <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
                 </div>
+                <Helmet>
+                    <title>Add Item</title>
+                </Helmet>
         </div>
     )
 }
