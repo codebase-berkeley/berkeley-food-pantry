@@ -2,7 +2,7 @@ import React from 'react'
 import './Food.css'
 import Tags from './Tags.js'
 import pen from './../images/pen.svg'
-import checkmark from './../images/checkmark.svg'
+import checkmark from './../images/instockMark.svg'
 import xmark from '../images/notinstock.svg'
 
 
