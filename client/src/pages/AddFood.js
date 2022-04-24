@@ -6,6 +6,8 @@ import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
 
+//checking to see if my branch exists
+
 const todayStock = [
     { value: true, label: 'In stock today' },
     { value: false, label: 'Out of stock today' }
