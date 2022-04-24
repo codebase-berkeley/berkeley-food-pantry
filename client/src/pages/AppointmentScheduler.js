@@ -2,7 +2,6 @@ import './AppointmentScheduler.css'
 import React, { useState } from 'react';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
-import AppointmentTY from './AppointmentTY';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const dates = [
