@@ -3,7 +3,7 @@ import './Food.css'
 import Tags from './Tags.js'
 import edit_item from './../images/edit_item.png'
 import pen from './../images/pen.svg'
-// import checkmark from './../images/checkmark.svg'
+import checkmark from './../images/checkmark.svg'
 import xmark from '../images/notinstock.svg'
 
 
@@ -16,7 +16,7 @@ function Food(props) {
         if ((props.in_stock) == true) {
             return (
                 <div className = "editIn" style={{paddingRight: "2%", width: "35%"}}>
-                            {/* <img src={checkmark} className="stockImage" alt="checkmark" /> */}
+                            <img src={checkmark} className="stockImage" alt="checkmark" />
                         <div className ="in-stock-text" style={{width: "100%"}}>
                             <span >In Stock Today</span>
                         </div>
