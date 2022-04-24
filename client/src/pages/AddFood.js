@@ -75,22 +75,28 @@ export default function AddFood() {
     function addItem(nameFood) {
         console.log(document.getElementById("addItem-food-name").value);
         // console.log(document.getElementById("filter-dropdown"));
-        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: true, tags: "ryan", image_path: "codebase.com"})
+        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockCond(), tags: "ryan", image_path: "codebase.com"})
             .then(() => console.log("add item works"));
     }
-
-
-    document.getElementById('filter-dropdown').onclick = function() {
-        if (document.getElementById("filter-dropdown").options == 'In stock today') {
-            console.log('true');
+    function stockCond() {
+        console.log(document.getElementById("filter-dropdown").options);
+        if (document.getElementsByClassName("custom-dropdown-2").options == 'in stock') {
+            // console.log(e);
+            console.log(document.getElementsByClassName("custom-dropdown-2").options);
+            return true; 
         } else {
-            console.log('false');
+            console.log("false"); 
+            return false; 
         }
     }
-    
+
     
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [value, setValue] = useState("");
+
+    // const handleChange = e => setValue(e.target.value);
+
 
     return(
         <div className = "main-container">
@@ -114,7 +120,9 @@ export default function AddFood() {
                         <div className="stock-dropdown">
                             <label className = "item-name-input">Set Stock Availability</label>
                             <div id="filter-dropdown">
-                                <Select className="custom-dropdown-2"
+                                <Select className="custom-dropdown-2" 
+                                    // onChange={handleChange}
+                                    id = 'stock-option'
                                     menuPlacement='auto'
                                     menuPosition='fixed'
                                     styles={customStyles}
@@ -123,6 +131,7 @@ export default function AddFood() {
                                     placeholder="Select..."
                                     options={todayStock}
                                 />
+                               
                             </div>
                         </div> 
                         <div className="categories-dropdown">
