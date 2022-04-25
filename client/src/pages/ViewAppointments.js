@@ -199,15 +199,15 @@ export function ViewAppointments() {
 
             <div className="stockListingPage">
 
-                <div className="top-container">
+                <div className="view-appts-top-container">
 
-                    <div className="show-appointments">
+                    <div className="view-appts-show-appointments">
                         <p>Show appointments for:</p>
                         
-                        <div className="show-dropdowns">
-                            <div className="by-day">
+                        <div className="view-appts-show-dropdowns">
+                            <div className="view-appts-by-day">
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="view-appts-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -218,9 +218,9 @@ export function ViewAppointments() {
                                     />
                                 </div>
                             </div>
-                            <div className="by-time">
+                            <div className="view-appts-by-time">
                                 <div>
-                                    <Select className="custom-dropdown"
+                                    <Select className="view-appts-custom-dropdown"
                                         styles={customStyles}
                                         closeMenuOnSelect={true}
                                         components={animatedComponents}
@@ -235,14 +235,14 @@ export function ViewAppointments() {
     
                     </div>
 
-                    <div className="checkboxes">
+                    <div className="view-appts-checkboxes">
                         
-                        <div className ="form-check-label">
+                        <div className ="view-appts-form-check-label">
                             <span>Show appointments marked visited</span>
                             <input type="checkbox"/>
                         </div>
 
-                        <div className ="form-check-label">
+                        <div className ="view-appts-form-check-label">
                             <span>Show appointments marked visited</span>
                             <input type="checkbox"/>
                         </div>
@@ -251,9 +251,9 @@ export function ViewAppointments() {
 
                 </div>
 
-                <div className="bottomContainer">
+                <div className="view-appts-bottomContainer">
 
-                    <div className="appt-card-display">
+                    <div className="view-appts-appt-card-display">
                         <AppointmentCard date="Monday, April 4 2022" time="11:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
                         <AppointmentCard date="Monday, April 4 2022" time="2:00 PM"firstName="Yojita" lastName ="Sharma" />
                         <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Gargi" lastName ="Deshpande" />
@@ -262,7 +262,7 @@ export function ViewAppointments() {
                         <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Aditya" lastName ="Bhandari" />
                     </div>
 
-                    <div className="appointments-detail-display">
+                    <div className="view-appts-appointments-detail-display">
                         <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/>
                     </div> 
                 </div>

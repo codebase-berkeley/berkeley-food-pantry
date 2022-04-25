@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-.intro-text-container {
+.apptsched-intro-text-container {
     display: flex;
     flex-direction: column;
     height: 10vh;
@@ -10,7 +10,7 @@
     margin-bottom: -.5%;
 }
 
-.intro-text {
+.apptsched-intro-text {
     margin-left: 5.5%;
     font-family: 'Montserrat';
     font-size: 18px;
@@ -18,7 +18,7 @@
     color: #264425;
 }
 
-.intro-text-pt2 {
+.apptsched-intro-text-pt2 {
     font-weight: 300;
     margin-left: 4%;
     font-family: 'Inter', sans-serif;
@@ -26,7 +26,7 @@
     color: #262626;
 }
 
-.main-appointment-scheduler-container {
+.apptsched-main-appointment-scheduler-container {
     display: flex;
     height: 65vh;
     width: 90vw;
@@ -34,7 +34,7 @@
     margin-left: 5%;
 }
 
-.main-appointment-scheduler-left {
+.apptsched-main-appointment-scheduler-left {
     display: flex;
     height: 65vh;
     width: 45vw;
@@ -50,7 +50,7 @@
     overflow-y: auto;
 }
 
-.main-appointment-scheduler-right {
+.apptsched-main-appointment-scheduler-right {
     display: flex;
     height: 65vh;
     width: 45vw;
@@ -67,7 +67,7 @@
     overflow-y: auto;
 }
 
-.step-heading {
+.apptsched-step-heading {
    font-size: 2.5vh;
    font-family: 'Montserrat', sans-serif;
    font-weight:700;
@@ -76,7 +76,7 @@
    margin-top: 20px;
 }
 
-.step-heading-2 {
+.apptsched-step-heading-2 {
     font-size: 2.5vh;
     font-family: 'Montserrat', sans-serif;
     font-weight:700;
@@ -85,7 +85,7 @@
     margin-top: 20px;
 }
 
- .button-container {
+ .apptsched-button-container {
      display: flex;
      margin-top: 2%;
      height: 10vh;
@@ -93,7 +93,7 @@
      margin-right: 5%;
  }
 
- .clear-all-button {
+ .apptsched-clear-all-button {
     display: flex;
     align-items: center;
     margin-left: 1%;
@@ -108,15 +108,15 @@
     font-family: 'Montserrat';
 }
 
-.clear-all-button:hover {
+.apptsched-clear-all-button:hover {
     background-color: rgb(240, 230, 230);
   }
 
-.submit-button:hover {
+.apptsched-submit-button:hover {
     background-color: #69ac67;
 }
 
-.submit-button {
+.apptsched-submit-button {
     display: flex;
     align-items: center;
     margin-left: 1%;
@@ -130,7 +130,7 @@
     font-family: 'Montserrat';
 }
 
-.submit {
+.apptsched-submit {
     font-size: 2.2vh;
     color: #264425;
     display: flex;
@@ -139,7 +139,7 @@
     justify-content: center;
 }
 
-.scheduler-filters {
+.apptsched-scheduler-filters {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -149,11 +149,11 @@
     overflow-x: hidden;
 }
 
-.filter-dropdown {
+.apptsched-filter-dropdown {
     width: 100%;
 }
 
-.appt-sched-dropdown {
+.apptsched-dropdown {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -161,53 +161,65 @@
     padding-bottom: 2vh;
 }
 
-p#input-field-label {
+p#apptsched-input-field-label {
     color: #262626;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 1.5vh;
+    font-size: 14px;
 }
 
-p#item-checklist-label {
+p#apptsched-input-field-label-additional {
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: -2vh;
+}
+
+p#apptsched-item-checklist-label {
     color: #000000;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 2vh;
 }
 
-.form-check-input {
+.apptsched-form-check-label {
+    display: flex;
+    flex-direction: row;
+}
+.apptsched-form-check-input {
     margin-bottom: 2.5%;
 }
 
-.form-check-input-items {
+/* .apptsched-form-check-input-items {
     margin-bottom: 3%;
-}
+} */
 
-.form-check-input-items {
+.apptsched-form-check-input-items {
     margin-bottom: 8%; 
     border: #000000;
 }
 
-.custom-dropdown {
+.apptsched-custom-dropdown {
     padding-top: 1px;
     border-color: #ACB9AC;
     width: 20vw !important;
 
 }
 
-.searchInputs {
+.apptsched-searchInputs {
     margin-top: 1vw;
     display: flex;
     flex-direction: column;
     border: 0px solid;
 }
 
-.input-name {
+.apptsched-input-name {
     display: flex;
     flex-direction: row;
 }
   
-.search-inputs input {
+.apptsched-search-inputs input {
     border-color: #ACB9AC;
     border: solid #ACB9AC 1px;
     border-radius: .5vw;
@@ -225,11 +237,11 @@ input::placeholder{
     background-position: 97%;
 }
 
-.name-box {
+.apptsched-name-box {
     width: 15vw;
 }
 
-.contact-box {
+.apptsched-contact-box {
     height: 20vh;
     width: 31.5vw;
     border-color: #ACB9AC;
@@ -240,12 +252,12 @@ input::placeholder{
     text-align: top;
 }
 
-.pickup-items {
+.apptsched-pickup-items {
     font-family: 'Inter';
     margin-right: 7%;
 }
 
-.dietary-preferences {
+.apptsched-dietary-preferences {
     font-family: "Inter";
     display: flex;
     flex-direction: column;
@@ -253,18 +265,18 @@ input::placeholder{
     width: 40vw;
 }
 
-.pick-up-items {
+.apptsched-pick-up-items {
     font-family: "Inter";
     height: 32vh;
     width: 40vw;
 }
 
-.text-field {
+.apptsched-text-field {
     margin-bottom: 3%;
     margin-right: 5%;
 }
 
-.left-checklist-container {
+.apptsched-left-checklist-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -277,19 +289,19 @@ input::placeholder{
     overflow-x: hidden;
     overflow-y: auto;
     margin-bottom: 10px;
-    
+    padding: 1vh;
 }
 
-.additional-information-text-field {
-    margin-top: 10vh;
+.apptsched-additional-information-text-field {
+    margin-top: 3vh;
 }
 
 @media screen and (orientation: portrait) {
-    .intro-text {
+    .apptsched-intro-text {
         font-weight: bold;
     }
     
-    .main-appointment-scheduler-container {
+    .apptsched-main-appointment-scheduler-container {
         display: flex;
         flex-direction: column;
         height: 150vh;
@@ -297,7 +309,7 @@ input::placeholder{
         align-items: center;
     }
 
-    .main-appointment-scheduler-left {
+    .apptsched-main-appointment-scheduler-left {
         width: 100%;
         height: 150%;
         overflow-y: auto;
@@ -305,7 +317,7 @@ input::placeholder{
         border: white;
     }
 
-    .main-appointment-scheduler-right {
+    .apptsched-main-appointment-scheduler-right {
         width: 100%;
         height: 100vh;
         border: white;
@@ -313,18 +325,18 @@ input::placeholder{
         overflow-x: hidden;
     }
 
-    .custom-dropdown-1 {
+    .apptsched-custom-dropdown-1 {
         width: 70% !important;
         border-radius: 10px;
     }
 
-    .step-heading {
+    .apptsched-step-heading {
         font-size: 2vh;
         width: 100%;
         margin-bottom: 2vh;
     }
 
-    .left-checklist-container {
+    .apptsched-left-checklist-container {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -334,34 +346,37 @@ input::placeholder{
         border-radius: 10px;
     }
 
-    .appt-sched-dropdown {
+    .apptsched-dropdown {
         width: 100%;
     }
 
-    .input-name {
+    .apptsched-input-name {
         display: flex;
         flex-direction: column;
     }
 
-    .name-box {
+    .apptsched-name-box {
         width: 80vw;
     }
 
-    .contact-box {
+    .apptsched-contact-box {
         width: 80vw;
         height: 10vh;
         border-radius: 10px;
     }
 
-    .form-check {
-        margin-bottom: 2%;
+    .apptsched-form-check {
+        display: flex;
+        flex-direction: row;
+        /* margin-bottom: 2%;
+        margin-left: -2vw; */
     }
 
-    .additional-information-text-field {
+    .apptsched-additional-information-text-field {
         margin-top: 2vh;
     }
 
-    .clear-all-button {
+    .apptsched-clear-all-button {
         display: none;
         align-items: center;
         margin-left: 1%;
@@ -376,24 +391,24 @@ input::placeholder{
         font-family: 'Montserrat';
     }
 
-    .button-container {
+    .apptsched-button-container {
         justify-content: center;
         align-items: center;
     }
 
-    .submit-button {
+    .apptsched-submit-button {
         font-weight: bold;
         width: 30vw;
     }
 
-    p#item-checklist-label {
+    p#apptsched-item-checklist-label {
         margin-top: 2vh;
         margin-bottom: .5vh;
         margin-left: 3vw;
         font-size: 1.5vh;
     }
 
-    .pickup-items-selection {
+    .apptsched-pickup-items-selection {
         margin-left: 3vw;
     }
 }

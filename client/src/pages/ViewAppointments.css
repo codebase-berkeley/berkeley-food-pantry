@@ -11,36 +11,36 @@
     width: 90vw;
 }
 
-.top-container {
+.view-appts-top-container {
     display: flex;
     flex-direction: row;
 }
 
-.show-appointments {
+.view-appts-show-appointments {
     display: flex;
     flex: 3;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.show-appointments p {
+.view-appts-show-appointments p {
     margin-left: -1vw;
 }
 
-.show-dropdowns {
+.view-appts-show-dropdowns {
     display: flex;
     flex-direction: row;
     width: 50%;
 }
 
-.checkboxes {
+.view-appts-checkboxes {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     /* justify-content: space-between; */
 }
 
-.top-container h1 {
+.view-appts-top-container h1 {
     text-align: left;
     padding-left: 1vw;
     font-weight: 600;
@@ -51,7 +51,7 @@
     padding-bottom: 1vh;
 }
 
-.top-container p {
+.view-appts-top-container p {
     text-align: left;
     font-size: 14;
     text-align: left;
@@ -60,16 +60,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.h3{
-    font-size: 10px;
-}
-
-
-.form-check-input-items {
-    border: #000000;
-}
-
-.addButton {
+.view-appts-addButton {
     background-color: #264425;
     display: flex;
     height: 5vh;
@@ -82,17 +73,17 @@
     align-items: center;
 }
 
-.addButton:hover {
+.view-appts-addButton:hover {
     background-color: #ACB9AC;
     color: #fff; 
 }
 
-.addItem{
+.view-appts-addItem{
     display: flex;
     padding-right: 1vw;
 }
 
-.changeStock{
+.view-appts-changeStock{
     font-size: 16;
     background-color: white;
     color: #6A7E69;
@@ -101,11 +92,11 @@
     width: 275px;
 }
 
-.changeStock:hover{
+.view-appts-changeStock:hover{
     text-decoration: underline;
 }
 
-.filters {
+.view-appts-filters {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -114,7 +105,7 @@
     overflow-y: scroll;
 }
 
-.bottomContainer {
+.view-appts-bottomContainer {
     border-color: #B8B8B8;
     border-width: 1px;
     border-radius: 10px;
@@ -124,7 +115,7 @@
     width: 90vw;
 }
 
-.filter-by {
+.view-appts-filter-by {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -132,7 +123,7 @@
     padding-bottom: 2vh;
 }
 
-.by-day {
+.view-appts-by-day {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -140,15 +131,13 @@
     height: '6vh';
 }
 
-.by-time {
+.view-appts-by-time {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 2vh;
     height: '6vh';
 }
-
-
 
 p#filterControlLabel {
     color: #4C4C4C;
@@ -157,23 +146,20 @@ p#filterControlLabel {
     font-size: 16px;
 }
 
-.custom-dropdown {
-    padding-top: 1px;
+.view-appts-custom-dropdown {
     width: 25vw;
     border-color: #ACB9AC;
     /* background-color: red; */
-    margin-right: -4vw;
+    margin-right: -8vw;
 }
 
-.appt-card-display {
+.view-appts-appt-card-display {
     width: 40vw;
     height: 100%;
-
     overflow-y: auto;
-
 }
 
-.filterReset{
+.view-appts-filterReset{
     display: flex;
     padding-top: 2vh;
     flex-direction: row;
@@ -182,7 +168,7 @@ p#filterControlLabel {
     width: 20vw;
 }
 
-.filterItems{
+.view-appts-filterItems{
     color: #4C4C4C;
     font-size: 24px;
     display: flex;
@@ -191,7 +177,7 @@ p#filterControlLabel {
     justify-content: start;
 }
 
-.resetFilters{
+.view-appts-resetFilters{
     font-size: 16px;
     background-color: #fff;
     color: #A71E47;
@@ -201,47 +187,47 @@ p#filterControlLabel {
     font-weight: 450;
 }
 
-.resetFilters:hover {
+.view-appts-resetFilters:hover {
     text-decoration: underline;
 }
 
-.firstRow {
+.view-appts-firstRow {
     display: flex; 
     flex-direction: row; 
     justify-content: flex-end;
     padding-left: 1vw; 
 }
 
-.secondRow {
+.view-appts-secondRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-left: 1vw; 
 }
 
-.thirdRow {
+.view-appts-thirdRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-left: 1vw; 
 }
 
-.firstRow h1 {
+.view-appts-firstRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem; 
 }
 
-.secondRow h1 {
+.view-appts-secondRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem;   
 }
 
-.thirdRow h1 {
+.view-appts-thirdRow h1 {
     padding-left: 1vw;
     font-size: 0.75rem;
 }
 
-.firstRow .allItemBtn {
+.view-appts-firstRow .allItemBtn {
     display: block;
     background-color: white;
     height: 1vw;
@@ -250,7 +236,7 @@ p#filterControlLabel {
     border: 1px solid black;
 }
 
-.secondRow .stockBtn {
+.view-appts-secondRow .stockBtn {
     display: block;
     background-color: white;
     height: 1vw;
@@ -259,7 +245,7 @@ p#filterControlLabel {
     border: 1px solid black;
 }
 
-.thirdRow .noStockBtn {
+.view-appts-thirdRow .noStockBtn {
     display: block;
     background-color: white;
     height: 1vw;
@@ -268,7 +254,7 @@ p#filterControlLabel {
     border: 1px solid black;
 }
 
-.searchBox{
+.view-appts-searchBox{
     padding-bottom: 2vh;
     width: 20vw;
     text-align: left; 
@@ -279,19 +265,19 @@ p#filterControlLabel {
     padding-bottom: 2vh;
 }
 
-.searchBox.text {
+.view-appts-searchBox.text {
     padding-bottom: 1vh;
     font-size: 16px;
 }
 
-.showFilter {
+.view-appts-showFilter {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
 }
 
-.showText {
+.view-appts-showText {
     color: #4C4C4C;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
@@ -299,26 +285,24 @@ p#filterControlLabel {
     padding-bottom: 1vh;
 }
 
-.appointments-detail-display {
+.view-appts-appointments-detail-display {
     width: 50vw;
-    /* padding: 10px; */
     align-items: left;
     overflow-y: scroll;
     border-left: 1px solid #B8B8B8;
 }
 
-.foodPanel {
+.view-appts-foodPanel {
     width: 400px;
 }
 
-.form-check-label {
+.view-appts-form-check-label {
     font-family: 'Inter', sans-serif;
-
     font-size: 15px;
     margin-right: 5%;
 }
 
-input[type="checkbox"], input[type="radio"] {
+.input[type="checkbox"], input[type="radio"] {
     border: 1.5px solid #B8B8B8;
 }
 

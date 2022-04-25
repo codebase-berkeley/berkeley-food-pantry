@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.foodName {
+.food-foodName {
     font-family: "Inter";
     color: #4C4C4C; 
     font-weight:600;
@@ -8,15 +8,13 @@
     text-align: left;
 }
 
-.foodImage {
+.food-foodImage {
     height: 100%;
     width: 20%;
 
 }
 
-
-
-.componentContainer {
+.food-componentContainer {
     display: flex;
     padding: 5px;
     margin-bottom: 5px;
@@ -29,11 +27,11 @@
     border-radius: 10px;
 }
 
-.penFormat {
+.food-penFormat {
     padding-right: 6%;
 }
 
-.editButton {
+.food-editButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +44,7 @@
     border-width: 1px; 
 }
 
-.stockImage {
+.food-stockImage {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,14 +53,14 @@
     background-color: white;
 }
 
-.editItem {
+.food-editItem {
     font: "Inter";
     font-size: 12px;
     font-weight: 600;
     color: #588157;
 }
 
-.infoContainer {
+.food-infoContainer {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -72,7 +70,7 @@
 }
 
 
-.in-stock-text{
+.food-in-stock-text{
     display: flex;
     justify-content: center;
     font-family: "Inter";
@@ -86,7 +84,7 @@
     gap: 10%; 
 }
 
-.out-of-stock-text{
+.food-out-of-stock-text{
     display: flex;
     justify-content: center;
     font-family: "Inter";
@@ -96,7 +94,7 @@
     width: 97px;
 }
 
-.inStockCheck{
+.food-inStockCheck{
     font-family: "Inter";
     font-size: 16px;
     color: #264425;
@@ -109,7 +107,7 @@
 }
 
 
-.nameTags {
+.food-nameTags {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,7 +116,7 @@
     text-transform: capitalize;
 }
 
-.editIn {
+.food-editIn {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +125,7 @@
     
 }
 
-.tagsFormat {
+.food-tagsFormat {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

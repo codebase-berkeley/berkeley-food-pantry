@@ -6,20 +6,20 @@
 }
 
 
-.addItem {
+.mobile-addItem {
     font-family: "Montserrat";
     color: #383838;
     font-weight: 600;
     font-size: 24px;
   }
 
-  .addItemDesc {
+  .mobile-addItemDesc {
     font-family: "Inter";
     color: #4C4C4C;
     font-size: 14px;
   }
 
-  .boxHeaders {
+  .mobile-boxHeaders {
       font-family: "Inter";
       font-weight: 600;
       color: #4C4C4C;

@@ -12,7 +12,7 @@ export default function AdminLogin() {
                     <div>
                         <p>Please sign in with an administrative account to access additional features.</p>
                     </div>
-                    <div className = "google-sign-in-button-div">
+                    <div className = "admin-login-google-sign-in-button-div">
                         <img src={admingooglesignin} className = "admin-google-sign-in" alt = "google-sign-in"></img>
                     </div>
                 </div>

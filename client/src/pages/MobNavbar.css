@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.dropNavBar {
+.mobnav-dropNavBar {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-.logo {
+.mobnav-logo {
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -21,23 +21,23 @@
     display: block;
 }
 
-.xButton {
+.mobnav-xButton {
     width: auto;
     height: auto;
     padding-right: 5%;
 }
 
-.imageAndDropDowns{
+.mobnav-imageAndDropDowns{
     display: flex;
     flex-direction: column;
 }
 
-.dropDownLogo {
+.mobnav-dropDownLogo {
     width: auto;
     height: auto;
 }
 
-.dropDownText, .dropDownText:visited {
+.mobnav-dropDownText, .mobnav-dropDownText:visited {
     display: flex;
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
@@ -50,7 +50,7 @@
     text-decoration: none;
 }
 
-.dropDownLinks{
+.mobnav-dropDownLinks{
     display: flex;
     flex-direction: column;
     height: 20%;
@@ -60,7 +60,7 @@ button{
     background-color: transparent;
     padding-right: 3%;
 }
-.navBar {
+.mobnav-navBar {
     display: none;
     justify-content: space-between;
     flex-direction: row;
@@ -69,16 +69,8 @@ button{
     height: 7.5%;
     position: sticky;
 }
-.logo {
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: auto;
-    height: auto;
-    max-height: 80%;
-    display: block;
-}
-.icon {
+
+.mobnav-icon {
     width: auto;
     height: auto;
     padding-right: 5%;
@@ -90,7 +82,7 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-    .navBar {
+    .mobnav-navBar {
         display: flex;
     }
     
