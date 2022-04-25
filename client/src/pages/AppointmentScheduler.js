@@ -4,6 +4,7 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import AppointmentTY from './AppointmentTY';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import axios from 'axios';
 
 const dates = [
     { value: 0, label: 'Select date...' },
@@ -88,7 +89,7 @@ export default function AppointmentScheduler() {
         setSelectedTime([]);
     }
 
-    function submitForm() {
+    async function submitForm() {
 
         console.log("contact information:")
         for (var i = 1; i <= 4; i++) {
@@ -97,7 +98,7 @@ export default function AppointmentScheduler() {
                 console.log(document.getElementById(checkString).value);
             }
         }
-        
+        console.log(selectedDate, selectedTime)
         console.log("items to pick up:")
         for (var i = 1; i <= 15; i++) {
             var checkString = "checkbox-" + i;
@@ -116,7 +117,44 @@ export default function AppointmentScheduler() {
 
         console.log("additional information:")
         console.log(document.getElementById('input-values-5').value); 
-    }   
+
+        let dietaryPrefs = ""
+        for (var i = 16; i <= 21; i++) {
+            var checkString = "checkbox-" + i;
+            if (document.getElementById(checkString).checked == true) {
+                dietaryPrefs = dietaryPrefs + "," + document.getElementById(checkString).value;
+            }
+        }
+        dietaryPrefs = dietaryPrefs.substring(1, dietaryPrefs.length);
+
+        let itemPrefs = "";
+        for (var i = 1; i <= 15; i++) {
+            var checkString = "checkbox-" + i;
+            if (document.getElementById(checkString).checked == true) {
+                itemPrefs+= ","  + (document.getElementById(checkString).value);
+            }
+        }
+        itemPrefs.substring(1, itemPrefs.length);
+        
+            axios.post('http://localhost:5000/appointment', {
+                last_name: document.getElementById("input-values-2"),
+                first_name: document.getElementById("input-values-1"),
+                date: selectedDate,
+                time:selectedTime, 
+                email: document.getElementById("input-values-3"),
+                phone_number: document.getElementById("input-values-4"),
+                visited: false,
+                dietary_preferences: dietaryPrefs,
+                item_preferences: itemPrefs,
+                notes: document.getElementById("input-values-5")
+            })
+            .then(res => {
+                // console.log(res);
+                // console.log(res.data);
+            })
+        
+        
+    }  
         
     return (
         <div>
