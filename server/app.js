@@ -7,6 +7,8 @@ const routes = require('./routes');
 require('dotenv').config();
 const { initFoodModel } = require('./models/Food');
 
+require('./aws-config.js');
+
 const PORT = process.env.PORT;
 
 const app = express();
