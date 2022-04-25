@@ -25,7 +25,7 @@ function App() {
       <MobileNavbar/>
       <AdminLoginNavbar/>
 
-        <Routes>
+      <Routes>
           <Route path="/edit-stock" element={<StockListingAdmin/>}/>
           <Route path="/view-stock" element={<StockListingUser/>}/>
           <Route path="/" element={<StockListingUser/>}/>

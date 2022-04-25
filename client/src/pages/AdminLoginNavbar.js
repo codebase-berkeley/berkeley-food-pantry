@@ -5,7 +5,7 @@ import berkeleyfoodpantrylogo from './../images/berkeley-food-pantry-logo.png';
 export default function AdminLoginNavbar() {
    return(
       <div className= "navbarContainer">
-         <img src={berkeleyfoodpantrylogo} className = "navbarLogo" alt = "navbar logo"></img>
+         <Link to ="/view-stock"><img src={berkeleyfoodpantrylogo} className = "navbarLogo" alt = "navbar logo"></img></Link>
             <ul className = "navbar-container"> 
                   <a href="https://www.berkeleyfoodpantry.org/aboutus" 
                         target="_blank" rel="noopener noreferrer" className = "headerTags" style={{ textDecoration: 'none'}} >About the Pantry</a>
