@@ -30,7 +30,7 @@ function App() {
           <Route path="/view-stock" element={<StockListingUser/>}/>
           <Route path="/" element={<StockListingUser/>}/>
       
-          <Route path = "/login" element={<AdminLogin/>}/>
+          <Route path = "/login" element={<AddFood/>}/>
 
           <Route path="/thank-you" element={<AppointmentTY/>}/> 
         

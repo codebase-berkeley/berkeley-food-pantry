@@ -6,9 +6,9 @@ import { uploadFile } from 'react-s3';
  
 const config = {
     bucketName: 'stock-listing-img',
-    dirName: 'photos', /* optional */
+    dirName: 'images', /* optional */
     region: 'us-west-1',
     //i dont have access keys
-    accessKeyId: 'ANEIFNENI4324N2NIEXAMPLE',
-    secretAccessKey: 'cms21uMxçduyUxYjeg20+DEkgDxe6veFosBT7eUgEXAMPLE',
+    accessKeyId: 'AKIATRSR2YSAYN5LZKKH',
+    secretAccessKey: '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',
 }
