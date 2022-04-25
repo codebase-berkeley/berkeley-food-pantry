@@ -71,19 +71,22 @@ export default function AddFood() {
     const [itemName, setItemName] = useState("");
     const [stockAvailability, setStockAvailability] = useState("");
     const [tags, setTags] = useState([]);
+    const [image, setImage] = useState("");
 
     useEffect(() => {
         setItemName(location.state.name);
         setTags(location.state.tags);
+        setImage(location.state.image);
+
         if (location.state.inStock == true) {
             setStockAvailability("In Stock Today");
         }
         else {setStockAvailability("Out of Stock Today");}
-    
-        console.log(tags);
-        //setFoodImage(l)
-        //console.log(stockAvailability);
       });
+
+    function save() {
+        console.log(itemName, stockAvailability, tags, image, location.state.inStock);
+    }
 
     function headerDisplay() {
         if (edit) {
@@ -134,7 +137,8 @@ export default function AddFood() {
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    defaultInputValue={stockAvailability} 
+                                    // defaultValue={stockAvailability} 
+                                    defaultValue={location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
                                 />
                             </div>
@@ -147,7 +151,9 @@ export default function AddFood() {
                                     closeMenuOnSelect={true}
                                     styles={customStyles}
                                     components={animatedComponents}
-                                    defaultInputValue={displayTags()}
+                                    defaultValue={location.state.tags.map( (tag) => 
+                                        ({label: tag, value: tag})
+                                    )}
                                     
                                     // placeholder = {tags.map((tag) => {
                                     //     return (
@@ -171,7 +177,7 @@ export default function AddFood() {
                     </div>
                 </div>
             
-                <input className = "save-item-button-container" type = "button" value="Save Item"></input>
+                <input className = "save-item-button-container" type = "button" onClick={() => save() } value="Save Item"></input>
                 <input className = "save-item-button-container-2" type="button" value="Delete Item"></input>
 
         </div>
