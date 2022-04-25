@@ -14,18 +14,18 @@ function Food(props) {
     function stockOption() {
         if ((props.in_stock) == true) {
             return (
-                <div className = "editIn" style={{paddingRight: "2%", width: "35%"}}>
-                            <img src={checkmark} className="stockImage" alt="checkmark" />
-                        <div className ="in-stock-text" style={{width: "100%"}}>
+                <div className = "food-editIn" style={{paddingRight: "2%", width: "35%"}}>
+                            <img src={checkmark} className="food-stockImage" alt="checkmark" />
+                        <div className ="food-in-stock-text" style={{width: "100%"}}>
                             <span >In Stock Today</span>
                         </div>
                     </div>
             );
         }
         return (
-            <div className = "editIn" style={{paddingRight: "4%", width: "35%"}}>
-                    <img src={xmark} className="stockImage" alt="checkmark" />
-                    <div className ="out-of-stock-text" style={{width: "100%"}}>
+            <div className = "food-editIn" style={{paddingRight: "4%", width: "35%"}}>
+                    <img src={xmark} className="food-stockImage" alt="checkmark" />
+                    <div className ="food-out-of-stock-text" style={{width: "100%"}}>
                         <span>Not In Stock Today</span>
                     </div>
                 </div>
@@ -34,25 +34,25 @@ function Food(props) {
 
     if ((props.admin) == true) {
         return(
-            <div className = "componentContainer">
-                <img src={props.image} class="foodImage" alt={props.name}/>
-                <div className = "infoContainer">
-                    <div className = "nameTags">
-                        <div className = "foodName">
+            <div className = "food-componentContainer">
+                <img src={props.image} class="food-foodImage" alt={props.name}/>
+                <div className = "food-infoContainer">
+                    <div className = "food-nameTags">
+                        <div className = "food-foodName">
                             {props.name}
                         </div>
-                        <div className = "tagsFormat">
+                        <div className = "food-tagsFormat">
                             {props.tags.map((tag) => {
                                 return (
                                 <Tags name={tag} />
                             );})}
                         </div>
                     </div>
-                    <div className = "editIn">
+                    <div className = "food-editIn">
                     <div>
-                        <button className="editButton" onClick={editItem}>
-                            <img src={pen} className="penFormat" alt="pen"/>
-                            <div className="editItem">
+                        <button className="food-editButton" onClick={editItem}>
+                            <img src={pen} className="food-penFormat" alt="pen"/>
+                            <div className="food-editItem">
                                 Edit Item
                                 </div>
                                 </button>
@@ -60,7 +60,7 @@ function Food(props) {
                         
                         
                         {/* style={{paddingRight: "11%"}} style={{paddingLeft: "6%"}} */}
-                        <div className ="inStockCheck">
+                        <div className ="food-inStockCheck">
                             In Stock
                             <input type="checkbox"></input>
                         </div>
@@ -71,14 +71,14 @@ function Food(props) {
         );   
     } else {
        return(
-            <div className = "componentContainer">
-                <img src={props.image} class="foodImage" alt={props.name}/>
-                <div className = "infoContainer">
-                    <div className = "nameTags">
-                        <div className = "foodName">
+            <div className = "food-componentContainer">
+                <img src={props.image} class="food-foodImage" alt={props.name}/>
+                <div className = "food-infoContainer">
+                    <div className = "food-nameTags">
+                        <div className = "food-foodName">
                             {props.name}
                         </div>
-                        <div className = "tagsFormat">
+                        <div className = "food-tagsFormat">
                             {props.tags.map((tag) => {
                                 return (
                                 <Tags name={tag} />

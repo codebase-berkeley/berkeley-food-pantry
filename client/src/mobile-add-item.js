@@ -61,22 +61,22 @@ const animatedComponents = makeAnimated();
 export default function MobileAddItem() {
     return (
         <div className = "mob-add-item-component-container">
-            <div className = "addItem">
+            <div className = "mobile-addItem">
                 Add Item
             </div>
-            <div className = "addItemDesc">
+            <div className = "mobile-addItemDesc">
                 Add a new item to the stock directory.
             </div>
-            <div className = "boxHeaders">
+            <div className = "mobile-boxHeaders">
                 Item Name
             </div>
-            <div className = "boxHeaders">
+            <div className = "mobile-boxHeaders">
                 Set Stock Availability
             </div>
-            <div className = "boxHeaders">
+            <div className = "mobile-boxHeaders">
                 Select Dietary Categories (Optional)
             </div>
-            <div className = "boxHeaders">
+            <div className = "mobile-boxHeaders">
                 Upload Image (Optional)
             </div>
 

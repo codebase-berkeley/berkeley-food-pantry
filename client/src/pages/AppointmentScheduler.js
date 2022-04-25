@@ -119,19 +119,19 @@ export default function AppointmentScheduler() {
         
     return (
         <div>
-            <div className = 'intro-text-container'>
-                <h1 className = 'intro-text'>Welcome to the Berkeley Food Pantry! 
-                    <span class='intro-text-pt2'><br></br>Please fill out the following form to schedule an appointment.</span>
+            <div className = 'apptsched-intro-text-container'>
+                <h1 className = 'apptsched-intro-text'>Welcome to the Berkeley Food Pantry! 
+                    <span class='apptsched-intro-text-pt2'><br></br>Please fill out the following form to schedule an appointment.</span>
                 </h1>    
             </div>
-            <div className = 'main-appointment-scheduler-container'>
-                <div className = 'main-appointment-scheduler-left'>
-                    <h1 className = 'step-heading'>Step 1: Choose your appointment time.</h1>                 
-                    <div className="scheduler-filters">               
-                        <div className="appt-sched-dropdown">
-                            <p id="input-field-label">Pick a date for your appointment:</p>
-                            <div className="filter-dropdown">
-                                <Select className="custom-dropdown-1" 
+            <div className = 'apptsched-main-appointment-scheduler-container'>
+                <div className = 'apptsched-main-appointment-scheduler-left'>
+                    <h1 className = 'apptsched-step-heading'>Step 1: Choose your appointment time.</h1>                 
+                    <div className="apptsched-scheduler-filters">               
+                        <div className="apptsched-dropdown">
+                            <p id="apptsched-input-field-label">Pick a date for your appointment:</p>
+                            <div className="apptsched-filter-dropdown">
+                                <Select className="apptsched-custom-dropdown-1" 
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
@@ -142,10 +142,10 @@ export default function AppointmentScheduler() {
                                 />
                             </div>
                         </div>
-                        <div className="appt-sched-dropdown">
-                            <p id="input-field-label">Pick a time for your appointment:</p>
-                            <div className="filter-dropdown">
-                                <Select className="custom-dropdown"
+                        <div className="apptsched-dropdown">
+                            <p id="apptsched-input-field-label">Pick a time for your appointment:</p>
+                            <div className="apptsched-filter-dropdown">
+                                <Select className="apptsched-custom-dropdown"
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
@@ -156,108 +156,108 @@ export default function AppointmentScheduler() {
                                 />
                             </div>
                         </div>
-                        <p id='input-field-label'>Which of the available items would you like to pick up?</p>
-                        <div className = "left-checklist-container">
-                        <div className="pickup-items">
-                            <p id="item-checklist-label">Vegetables & Fruit</p>
-                            <div className="pickup-items-selection">
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
+                        <p id='apptsched-input-field-label'>Which of the available items would you like to pick up?</p>
+                        <div className = "apptsched-left-checklist-container">
+                        <div className="apptsched-pickup-items">
+                            <p id="apptsched-item-checklist-label">Vegetables & Fruit</p>
+                            <div className="apptsched-pickup-items-selection">
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
                                         <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-1" value="kale" ></input>
                                         Kale
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-2" value="tomatoes" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-2" value="tomatoes" unchecked></input>
                                         Tomatoes
                                     </label>
                                 </div> 
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-3" value="apples" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-3" value="apples" unchecked></input>
                                         Apples
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-4" value="dragon fruit" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-4" value="dragon fruit" unchecked></input>
                                         Dragon Fruit
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-5" value="carrot" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-5" value="carrot" unchecked></input>
                                         Carrot
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div className="pickup-items">
-                            <p id="item-checklist-label">Meat</p>
-                            <div className="pickup-items-selection">
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-6" value="tuna" unchecked></input>
+                        <div className="apptsched-pickup-items">
+                            <p id="apptsched-item-checklist-label">Meat</p>
+                            <div className="apptsched-pickup-items-selection">
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-6" value="tuna" unchecked></input>
                                         Tuna
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-7" value="salmon" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-7" value="salmon" unchecked></input>
                                         Salmon
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-8" value="ground beef" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-8" value="ground beef" unchecked></input>
                                         Ground Beef
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-9" value="bacon" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-9" value="bacon" unchecked></input>
                                         Bacon
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-10" value="other meat?" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-10" value="other meat?" unchecked></input>
                                         Other meat?
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div className="pickup-items">
-                            <p id="item-checklist-label">Non-Perishables</p>
-                            <div className="pickup-items-selection">
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-11" value="canned fruit" unchecked></input>
+                        <div className="apptsched-pickup-items">
+                            <p id="apptsched-item-checklist-label">Non-Perishables</p>
+                            <div className="apptsched-pickup-items-selection">
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-11" value="canned fruit" unchecked></input>
                                         Canned Fruit
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-12" value="cannced corn" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-12" value="cannced corn" unchecked></input>
                                         Canned Corn
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-13" value="pasta" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-13" value="pasta" unchecked></input>
                                         Pasta
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-14" value="instant jello" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-14" value="instant jello" unchecked></input>
                                         Instant Jello
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-15" value="canned vegetables" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label class="apptsched-form-check-label" for="exampleRadios1">
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-15" value="canned vegetables" unchecked></input>
                                         Canned Vegetables
                                     </label>
                                 </div>  
@@ -266,88 +266,88 @@ export default function AppointmentScheduler() {
                         </div>
                     </div>
                 </div> 
-                <div className = 'main-appointment-scheduler-right'>
-                    <h1 className = 'step-heading'>Step 2: Fill in your information.</h1>
+                <div className = 'apptsched-main-appointment-scheduler-right'>
+                    <h1 className = 'apptsched-step-heading'>Step 2: Fill in your information.</h1>
                    
-                        <div className = "search-inputs">
-                            <div className="input-name">
+                        <div className = "apptsched-search-inputs">
+                            <div className="apptsched-input-name">
                             
-                                <div className="text-field">
+                                <div className="apptsched-text-field">
                                     
-                                    <p id="input-field-label">First name</p>
-                                    <div id = 'mainContainer'>
-                                    <input className="name-box" type="text" placeholder = "Jane" name="name" id = "input-values-1" />
+                                    <p id="apptsched-input-field-label">First name</p>
+                                    <div id = 'apptsched-mainContainer'>
+                                    <input className="apptsched-name-box" type="text" placeholder = "Jane" name="name" id = "input-values-1" />
                                     </div>
                                 </div>
                                 
-                                <div className="text-field">
-                                    <p id="input-field-label">Last name</p>
-                                    <input className="name-box" type="text" placeholder = "Doe" name="name" id = "input-values-2"/>
+                                <div className="apptsched-text-field">
+                                    <p id="apptsched-input-field-label">Last name</p>
+                                    <input className="apptsched-name-box" type="text" placeholder = "Doe" name="name" id = "input-values-2"/>
                                 </div>
                             </div>
-                            <div className="text-field">
-                                <p id="input-field-label">Email</p>
-                                <input className="contact-box" type="text" placeholder = "janedoe@example.com" name="name" id = "input-values-3"/>
+                            <div className="apptsched-text-field">
+                                <p id="apptsched-input-field-label">Email</p>
+                                <input className="apptsched-contact-box" type="text" placeholder = "janedoe@example.com" name="name" id = "input-values-3"/>
                             </div>
-                            <div className="text-field">
-                                <p id="input-field-label">Phone number</p>
-                                <input className="contact-box" type="text" placeholder = "XXX-XXX-XXXX" name="name" id = "input-values-4"/>
+                            <div className="apptsched-text-field">
+                                <p id="apptsched-input-field-label">Phone number</p>
+                                <input className="apptsched-contact-box" type="text" placeholder = "XXX-XXX-XXXX" name="name" id = "input-values-4"/>
                             </div>
                     </div>
                     
-                    <div className="pick-up-items">
-                            <p id="input-field-label">Please select your dietary preferences.</p>
-                            <div className="pickup-items-selection">
-                                <div className="form-check">
-                                    <label className="form-check-label" for="exampleRadios1">
-                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-16" value="vegetarian" unchecked></input>
+                    <div className="apptsched-pick-up-items">
+                            <p id="apptsched-input-field-label">Please select your dietary preferences.</p>
+                            <div className="apptsched-pickup-items-selection">
+                                <div className="apptsched-form-check">
+                                    <label className="apptsched-form-check-label" for="exampleRadios1">
+                                        <input className="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-16" value="vegetarian" unchecked></input>
                                         &nbsp;&nbsp;Vegetarian
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label className="form-check-label" for="exampleRadios1">
-                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-17" value="vegan" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label className="apptsched-form-check-label" for="exampleRadios1">
+                                        <input className="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-17" value="vegan" unchecked></input>
                                         &nbsp;&nbsp;Vegan
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label className="form-check-label" for="exampleRadios1">
-                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-18" value="gluten free" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label className="apptsched-form-check-label" for="exampleRadios1">
+                                        <input className="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-18" value="gluten free" unchecked></input>
                                         &nbsp;&nbsp;Gluten Free
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label className="form-check-label" for="exampleRadios1">
-                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-19" value="pescetarian" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label className="apptsched-form-check-label" for="exampleRadios1">
+                                        <input className="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-19" value="pescetarian" unchecked></input>
                                         &nbsp;&nbsp;Pescetarian
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label className="form-check-label" for="exampleRadios1">
-                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-20" value="include cat food" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label className="apptsched-form-check-label" for="exampleRadios1">
+                                        <input className="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-20" value="include cat food" unchecked></input>
                                         &nbsp;&nbsp;Include cat food
                                     </label>
                                 </div>
-                                <div className="form-check">
-                                    <label className="form-check-label" for="exampleRadios1">
-                                        <input className="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-21" value="include dog food" unchecked></input>
+                                <div className="apptsched-form-check">
+                                    <label className="apptsched-form-check-label" for="exampleRadios1">
+                                        <input className="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-21" value="include dog food" unchecked></input>
                                         &nbsp;&nbsp;Include dog food
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div className="additional-information-text-field">
-                                <p id="input-field-label">Is there anything else we should know?</p>
-                                <textarea className="contact-box" type="text" name="name" id = 'input-values-5'/>
+                        <div className="apptsched-additional-information-text-field">
+                                <p id="apptsched-input-field-label-additional">Is there anything else we should know?</p>
+                                <textarea className="apptsched-contact-box" type="text" name="name" id = 'input-values-5'/>
                             </div>
                 </div>   
             </div>
-            <div className = 'button-container'>
-                <div className = 'clear-all-button'> 
-                    <input onClick={clearInputFieldsHelper} className = "clear-all-button" type="button" id ="btClear" value="Clear all"></input>
+            <div className = 'apptsched-button-container'>
+                <div className = 'apptsched-clear-all-button'> 
+                    <input onClick={clearInputFieldsHelper} className = "apptsched-clear-all-button" type="button" id ="btClear" value="Clear all"></input>
                 </div>
-                <div className = 'submit-button'> 
-                    <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
+                <div className = 'apptsched-submit-button'> 
+                    <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "apptsched-submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
                 </div>
             </div>
         </div>
