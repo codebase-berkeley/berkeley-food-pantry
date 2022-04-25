@@ -42,7 +42,6 @@ const showOptions = [
     { value: 'not in stock items', label: 'Not in stock items only'}
 ]
 
-
 const animatedComponents = makeAnimated();
 const customStyles = {
     placeholder: (defaultStyles) => ({
@@ -104,8 +103,6 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 ];
 
 
-
-
 export function StockListingAdmin() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
@@ -118,7 +115,6 @@ export function StockListingAdmin() {
         setSelectedShow(0);
         setSearchInput("");
     }
-
 
     function sortAZ(a, b) {
         const nameA = a.name.toUpperCase(); // ignore upper and lowercase
@@ -206,9 +202,9 @@ export function StockListingAdmin() {
 
 
                     <div className="stocklisting-rightSide">
-                         <Link to="/add-food" className = "addButton" style = {{textDecoration: 'none'}}>
+                         <Link to="/add-food" className = "stocklisting-addButton" style = {{textDecoration: 'none'}}>
                             <img src={isbesPlusSign}></img>
-                            <div className="addItem"> Add new item </div>
+                            <div className="stocklisting-addItem"> Add new item </div>
                     </Link>
                         <button className="stocklisting-changeStock" onClick={() => setOutOfStock()}> Set all items to out of stock </button>
 
@@ -266,10 +262,10 @@ export function StockListingAdmin() {
 
 
                             <div className="stocklisting-showFilter">
-                                <div className="sstocklisting-howText"> Show </div>
+                                <div className="stocklisting-howText"> Show </div>
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(0);
                                             }
@@ -281,7 +277,7 @@ export function StockListingAdmin() {
 
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(1);
                                             }
@@ -294,7 +290,7 @@ export function StockListingAdmin() {
 
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(2);
                                             }
