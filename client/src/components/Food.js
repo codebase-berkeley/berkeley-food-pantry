@@ -72,7 +72,10 @@ function Food(props) {
     } else {
        return(
             <div className = "food-componentContainer">
-                <img src={props.image} class="food-foodImage" alt={props.name}/>
+                <div className = "food-imgdiv">
+                    <img src={props.image} class="food-foodImage" alt={props.name}/>
+                </div>
+                
                 <div className = "food-infoContainer">
                     <div className = "food-nameTags">
                         <div className = "food-foodName">

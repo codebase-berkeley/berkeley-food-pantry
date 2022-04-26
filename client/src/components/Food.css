@@ -8,15 +8,24 @@
     text-align: left;
 }
 
-.food-foodImage {
-    height: 100%;
-    width: 20%;
+.food-imgdiv {
+    padding: 0px;
+    overflow: hidden;
+    height: 188px;
+    width: 200px;
+}
 
+.food-foodImage {
+    height: 200px;
+    width: 200px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    object-fit: cover;
 }
 
 .food-componentContainer {
     display: flex;
-    padding: 5px;
+    /* padding: 5px; */
     margin-bottom: 5px;
     border-width: 1px;
     border-style: solid;
