@@ -59,15 +59,17 @@ module.exports = (app) => {
         
     });
 
-    app.post('/auth', async (req, res) => {
+    app.get('/auth', async (req, res) => {
         const { token }  = req.body
         const ticket = await client.verifyIdToken({
             idToken: token,
             audience: process.env.CLIENT_ID
         });
-        const { name, email, picture } = ticket.getPayload();   
+        const { name, email, picture } = ticket.getPayload();  
+        
+        //authorised = db.get(email)
         
         res.status(201)
-        res.json({name, email, picture})
+        res.json(// authorised)
     })
 }
