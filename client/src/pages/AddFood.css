@@ -217,8 +217,8 @@ label.add-item-name-input, input {
     height: 5.5vh;
     border-radius: 100px;
     border: #264425 solid 1px;
-    margin-top: 8%;
-    margin-left: -10%;
+    margin-top: 2%;
+    margin-left: 30%;
     background-color: #D6DECD;
 }
 
@@ -230,8 +230,8 @@ label.add-item-name-input, input {
     height: 5.5vh;
     border-radius: 100px;
     border: #264425 solid 1px;
-    margin-top: 8%;
-    margin-left: -10%;
+    margin-top: 2%;
+    margin-left: 25%;
     background-color: white;
 }
 
@@ -274,18 +274,21 @@ label.add-item-name-input, input {
 
 .right-side-container {
     display: flex;
-    justify-content: center;
-    height: 50vh;
-    width: 50vw;
+    width: 50%;
+    flex-direction: column;
+    /* background-color: red; */
 }
 
 .upload-image-header {
-    margin-top: 2.5%;
+    /* margin-top: 2.5%; */
+    margin-top: -5%;
     font-weight: 450;
     height: 5%;
     font: 'inter';
     font-size: 2vh;
-    margin-left: -30%;
+    margin-left: 20%;
+    /* margin-right: -50%; */
+    /* background-color: red; */
 }
 
 .optional-text {
@@ -304,8 +307,11 @@ label.add-item-name-input, input {
 }
 
 .imgFormat {
-    height: 50px;
-    width: 50px;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    padding-right: 
+
 }
 .add-item-custom-dropdown {
     /* overflow-x: auto;

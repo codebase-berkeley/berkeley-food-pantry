@@ -137,7 +137,6 @@ export default function AddFood() {
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    // defaultValue={stockAvailability} 
                                     defaultValue={location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
                                 />
@@ -151,14 +150,10 @@ export default function AddFood() {
                                     closeMenuOnSelect={true}
                                     styles={customStyles}
                                     components={animatedComponents}
-                                    defaultValue={location.state.tags.map( (tag) => 
+                                    defaultValue={location.state.tags.map((tag) => 
                                         ({label: tag, value: tag})
                                     )}
                                     
-                                    // placeholder = {tags.map((tag) => {
-                                    //     return (
-                                    //     <Tags name={tag}/>
-                                    // );})}
                                     isMulti
                                     options={dietaryCategories}
                                 />
