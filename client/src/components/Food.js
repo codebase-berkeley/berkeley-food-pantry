@@ -15,11 +15,11 @@ function Food(props) {
         if ((props.in_stock) == true) {
             return (
                 <div className = "food-editIn" style={{paddingRight: "2%", width: "35%"}}>
-                            <img src={checkmark} className="food-stockImage" alt="checkmark" />
-                        <div className ="food-in-stock-text" style={{width: "100%"}}>
-                            <span >In Stock Today</span>
-                        </div>
+                    <img src={checkmark} className="food-stockImage" alt="checkmark" />
+                    <div className ="food-in-stock-text" style={{width: "100%"}}>
+                        <span >In Stock Today</span>
                     </div>
+                </div>
             );
         }
         return (
@@ -58,8 +58,6 @@ function Food(props) {
                                 </button>
                             </div>
                         
-                        
-                        {/* style={{paddingRight: "11%"}} style={{paddingLeft: "6%"}} */}
                         <div className ="food-inStockCheck">
                             In Stock
                             <input className = "form-check-input" type="checkbox"></input>
@@ -91,6 +89,9 @@ function Food(props) {
                     </div>
                     {stockOption()}
                 </div>
+
+                <div className={props.in_stock? "food-colorblock-green":"food-colorblock-grey"}></div>
+                
             </div>                
         );
     }
