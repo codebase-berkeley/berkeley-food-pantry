@@ -19,7 +19,6 @@
 
   input::placeholder{
     border-color: #ACB9AC;
-    background-image: url(./../images/IsbeesSearchIcon.svg);
     background-repeat: no-repeat;
     background-position: 97%;
   }
