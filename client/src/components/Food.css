@@ -11,12 +11,12 @@
 .food-imgdiv {
     padding: 0px;
     overflow: hidden;
-    height: 188px;
+    height: 200px;
     width: 200px;
 }
 
 .food-foodImage {
-    height: 200px;
+    height: 199px;
     width: 200px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -27,7 +27,7 @@
     display: flex;
     /* padding: 5px; */
     margin-bottom: 5px;
-    border-width: 1px;
+    border-width: 1.667px;
     border-style: solid;
     border-color: #ACB9AC;
     width: 100%;
