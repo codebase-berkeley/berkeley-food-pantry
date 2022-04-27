@@ -7,6 +7,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
+    "google-auth-library": "^8.0.1",
     "pg": "^8.7.3",
     "sequelize": "^6.18.0"
   },

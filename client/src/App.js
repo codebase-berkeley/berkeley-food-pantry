@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import AppointmentTY from './pages/AppointmentTY.js';
 import AdminLoginNavbar from './pages/AdminLoginNavbar';
 import MobileNavbar from './pages/MobNavbar';
@@ -11,6 +12,7 @@ import { ViewAppointments } from './pages/ViewAppointments';
 import Details from './components/Details';
 import Food from './components/Food.js'
 import AppointmentCard from './components/AppointmentCard.js'
+import {LoginContext} from './LoginContext';
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
@@ -18,7 +20,9 @@ import AppointmentCard from './components/AppointmentCard.js'
 function App() {
   const data_dietary = ['Im lactose introlerant lol', 'Gluten Free', 'Include Dog Food'];
   const data_item = ['Broccoli', 'Milk', 'Canned Beans', 'Steak', 'Apple', 'Oranges'];
+  const [loggedIn, setLoggedIn] = React.useState(false);
   return (
+    <LoginContext.Provider value = {{ loggedIn, setLoggedIn }}>
     <div className = "App">
 
       <Router>
@@ -26,7 +30,10 @@ function App() {
       <AdminLoginNavbar/>
 
       <Routes>
+        {loggedIn ? (
           <Route path="/edit-stock" element={<StockListingAdmin/>}/>
+        ) : ( <Route path="/edit-stock" element={<AdminLogin/>}/>)}
+
           <Route path="/view-stock" element={<StockListingUser/>}/>
           <Route path="/" element={<StockListingUser/>}/>
       
@@ -44,6 +51,7 @@ function App() {
       </Router> 
 
     </div>
+    </LoginContext.Provider>
   )
 }
 

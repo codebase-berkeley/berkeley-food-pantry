@@ -1,4 +1,6 @@
 const { Food } = require("./models/Food")
+const { OAuth2Client } = require('google-auth-library')
+const client = new OAuth2Client(process.env.CLIENT_ID)
 
 module.exports = (app) => {
     app.get('/food', async (reg, res) => {
@@ -56,4 +58,16 @@ module.exports = (app) => {
         res.status(200).end();
         
     });
+
+    app.post('/auth', async (req, res) => {
+        const { token }  = req.body
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: process.env.CLIENT_ID
+        });
+        const { name, email, picture } = ticket.getPayload();   
+        
+        res.status(201)
+        res.json({name, email, picture})
+    })
 }
