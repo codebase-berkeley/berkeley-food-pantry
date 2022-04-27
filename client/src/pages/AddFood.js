@@ -5,6 +5,12 @@ import React, { useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
+<<<<<<< HEAD
+=======
+import { caretTrimReplace } from 'prettier';
+import { Helmet } from 'react-helmet';
+
+>>>>>>> fav-icon-page-titles
 
 const todayStock = [
     { value: true, label: 'In stock today' },
@@ -190,6 +196,9 @@ export default function AddFood() {
                     </div>
                     <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
                 </div>
+                <Helmet>
+                    <title>Add Item</title>
+                </Helmet>
         </div>
     )
 }

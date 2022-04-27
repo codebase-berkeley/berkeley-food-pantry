@@ -15,6 +15,7 @@ import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 
 const foodCategories = [
@@ -331,6 +332,10 @@ export function StockListingAdmin() {
                     </div>
                 </div>
             </div>
+
+            <Helmet>
+                <title>Edit Today's Stock</title>
+            </Helmet>
         </div>
     )
 }
@@ -421,6 +426,8 @@ export function StockListingUser() {
     }
     
     return (
+
+
         <div className="stocklisting-entireContent">
 
             <div className="stocklisting-stockListingPage">
@@ -513,6 +520,10 @@ export function StockListingUser() {
                     </div>
                 </div>
             </div>
+
+            <Helmet>
+                <title>View Today's Stock</title>
+            </Helmet>
         </div>
     )
 

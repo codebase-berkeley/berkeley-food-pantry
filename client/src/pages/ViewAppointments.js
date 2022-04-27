@@ -13,6 +13,7 @@ import coconut from "./../images/cocunut.png";
 import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
+import { Helmet } from 'react-helmet';
 
 
 const foodCategories = [
@@ -267,6 +268,9 @@ export function ViewAppointments() {
                     </div> 
                 </div>
             </div>
+            <Helmet>
+                <title>View Appointments</title>
+            </Helmet>  
         </div>
     )
 }
