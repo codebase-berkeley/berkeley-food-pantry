@@ -13,6 +13,8 @@ function GoogleOAuth() {
         alert(result);
     };
     const handleLogin = async(googleData) => {
+        console.log(googleData)
+        /**
         const res = await fetch('/api/google-login', {
             method: 'POST',
             body: JSON.stringify({
@@ -25,6 +27,7 @@ function GoogleOAuth() {
         const data = await res.json();
         setLoginData(data);
         localStorage.setItem('loginData', JSON.stringify(data));
+        */
 
     };
     const handleLogout = () => {
