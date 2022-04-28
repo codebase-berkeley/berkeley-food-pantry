@@ -10,6 +10,7 @@ import { LoginContext } from '../LoginContext';
 export default function AdminLogin() {
     const { loggedIn, setLoggedIn } = React.useContext(LoginContext) 
     async function handleLogin(response) {
+        console.log(response)
         /** 
         const res = await fetch("/api/v1/auth/google", {
             method: "POST",

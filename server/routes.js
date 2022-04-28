@@ -66,10 +66,16 @@ module.exports = (app) => {
             audience: process.env.CLIENT_ID
         });
         const { name, email, picture } = ticket.getPayload();  
-        
+        console.log(email);
+        if (email == 'mawil0721@berkeley.edu') {
+            res.status(201).end();
+        } else {
+            res.status(403).end();
+        }
+
         //authorised = db.get(email)
         
-        res.status(201)
-        res.json(// authorised)
-    })
+        // res.status(201)
+        // res.json()// authorised)
+    });
 }
