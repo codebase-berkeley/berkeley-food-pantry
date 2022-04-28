@@ -3,7 +3,6 @@ import './AdminLogin.css';
 import admingooglesignin from './../images/googlePic.png';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import {GoogleLogin} from 'react-google-login';
 import { LoginContext } from '../LoginContext';
 
 
@@ -38,14 +37,7 @@ export default function AdminLogin() {
                     <div>
                         <p>Please sign in with an administrative account to access additional features.</p>
                     </div>
-                    <GoogleLogin
-                            clientId="856494336809-g00hpps6u34k4225k38flk9ftgmenqps.apps.googleusercontent.com"
-                            buttonText="Sign in with Google"
-                            onSuccess={handleLogin}
-                            onFailure={handleFailure}
-                            cookiePolicy={'single_host_origin'}>
-                        
-                    </GoogleLogin>
+                    <a href="http://localhost:4000/auth/google">login to google!</a>
                 </div>
             </div>
         <Helmet>

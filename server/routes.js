@@ -1,6 +1,5 @@
+const passport = require('passport')
 const { Food } = require("./models/Food")
-const { OAuth2Client } = require('google-auth-library')
-const client = new OAuth2Client(process.env.CLIENT_ID)
 
 module.exports = (app) => {
     app.get('/food', async (reg, res) => {
@@ -59,23 +58,32 @@ module.exports = (app) => {
         
     });
 
-    app.get('/auth', async (req, res) => {
-        const { token }  = req.body
-        const ticket = await client.verifyIdToken({
-            idToken: token,
-            audience: process.env.CLIENT_ID
-        });
-        const { name, email, picture } = ticket.getPayload();  
-        console.log(email);
-        if (email == 'mawil0721@berkeley.edu') {
-            res.status(201).end();
-        } else {
-            res.status(403).end();
-        }
+    // app.get('/auth', async (req, res) => {
+    //     const { token }  = req.body
+    //     const ticket = await client.verifyIdToken({
+    //         idToken: token,
+    //         audience: process.env.CLIENT_ID
+    //     });
+    //     const { name, email, picture } = ticket.getPayload();  
+    //     console.log(email);
+    //     if (email == 'mawil0721@berkeley.edu') {
+    //         res.status(201).end();
+    //     } else {
+    //         res.status(403).end();
+    //     }
 
-        //authorised = db.get(email)
+    //     //authorised = db.get(email)
         
-        // res.status(201)
-        // res.json()// authorised)
-    });
+    //     // res.status(201)
+    //     // res.json()// authorised)
+    // });
+
+    app.get('/auth/google',
+        passport.authenticate('google', { scope: [ 'email', 'profile' ]
+    }));
+
+    app.get('/auth/google/callback', passport.authenticate( 'google', {
+        successRedirect: 'http://localhost:3000/edit-stock',
+        failureRedirect: 'http://localhost:3000/login'
+    }));
 }
