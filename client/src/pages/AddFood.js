@@ -90,7 +90,7 @@ export default function AddFood() {
         setTags(location.state.tags);
         setImage(location.state.image);
 
-        if (location.state.inStock == true) {
+        if (location.state.inStock) {
             setStockAvailability("In Stock Today");
         }
         else {setStockAvailability("Out of Stock Today");}
@@ -163,7 +163,7 @@ export default function AddFood() {
                                     styles={customStyles}
                                     components={animatedComponents}
                                     defaultValue={location.state.tags.map((tag) => 
-                                        ({label: tag, value: tag})
+                                        ({label: tag, value: tag.toLowerCase()})
                                     )}
                                     
                                     isMulti

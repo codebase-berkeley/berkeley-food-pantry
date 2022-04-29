@@ -311,20 +311,6 @@ label.add-item-name-input, input {
     margin-left: 30%;
 }
 
-.add-item-custom-dropdown {
-    /* overflow-x: auto;
-    overflow-y: hidden; */
-    /* display: flex;
-    flex-direction: row; 
-    height: 20%; */
-
-
-    /* overflow-x: scroll; */
-    /* overflow-y: hidden; */
-    /* flex-wrap: nowrap; */
-    /* justify-content: start; */
-}
-
 .app {
     height: 40px;
     overflow-x: scroll;
