@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Search from './../components/SearchBar.js';
 import './../components/SearchBar.css';
 import './StockListingAdmin.css';
@@ -16,6 +16,9 @@ import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import axios from "axios";
+import AdminLoginNavbar from "./AdminLoginNavbar.js";
+
 
 
 const foodCategories = [
@@ -112,6 +115,16 @@ export function StockListingAdmin() {
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
+    useEffect(() => {
+        axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
+           .catch((error) => {
+               if (error.response.status === 403) {
+                   window.location.href = "/login"
+
+               }
+           });
+        
+    }, [])
 
     function clearInputFieldsHelper() {
         setSelectedSort(sortOptions[0]);
@@ -194,6 +207,8 @@ export function StockListingAdmin() {
 
 
     return (
+        <>
+        <AdminLoginNavbar isAdmin={true}/>
         <div className="stocklisting-entireContent">
 
             <div className="stocklisting-stockListingPage">
@@ -337,6 +352,7 @@ export function StockListingAdmin() {
                 <title>Edit Today's Stock</title>
             </Helmet>
         </div>
+        </>
     )
 }
 
@@ -426,6 +442,8 @@ export function StockListingUser() {
     }
     
     return (
+        <>
+        <AdminLoginNavbar isAdmin={false}/>
 
 
         <div className="stocklisting-entireContent">
@@ -525,6 +543,7 @@ export function StockListingUser() {
                 <title>View Today's Stock</title>
             </Helmet>
         </div>
+        </>
     )
 
     }

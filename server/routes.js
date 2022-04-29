@@ -1,13 +1,29 @@
 const passport = require('passport')
 const { Food } = require("./models/Food")
 
+const checkAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.status(403).end();
+    }
+}
+
 module.exports = (app) => {
-    app.get('/food', async (reg, res) => {
+    app.get('/logout', (req, res) => {
+        req.logout();
+        res.redirect('http://localhost:3000/login');
+    })
+    app.get('/check_authenticated', checkAuthenticated, async (req, res) => {
+        res.status(200).end(); 
+    });
+
+    app.get('/food', async (req, res) => {
         const food = await Food.findAll();
         res.status(200).json(food);
     });
     
-    app.delete('/food', async (req, res) => {
+    app.delete('/food', checkAuthenticated, async (req, res) => {
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
         if (await Food.destroy({ where: { name }}) <= 0) return res.status(400).end();
@@ -15,7 +31,7 @@ module.exports = (app) => {
         
     });
 
-    app.post('/food', async (req, res) => {
+    app.post('/food', checkAuthenticated, async (req, res) => {
         const name = req.body.name;
         console.log(req.body.data);
         console.log(name);
@@ -34,7 +50,7 @@ module.exports = (app) => {
     
     });
 
-    app.put('/food', async (req, res) => {
+    app.put('/food', checkAuthenticated, async (req, res) => {
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
         const id = req.param.id; 

@@ -9,49 +9,34 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AppointmentScheduler from './pages/AppointmentScheduler';
 import AdminLogin from './pages/AdminLogin.js';
 import { ViewAppointments } from './pages/ViewAppointments';
-import Details from './components/Details';
-import Food from './components/Food.js'
-import AppointmentCard from './components/AppointmentCard.js'
-import {LoginContext} from './LoginContext';
 
 // PAGES : Stock Listing Admin, Admin Login, Stock Listing User, Appointment TY
 // change admin login route before submitting pr
 
 function App() {
-  const data_dietary = ['Im lactose introlerant lol', 'Gluten Free', 'Include Dog Food'];
-  const data_item = ['Broccoli', 'Milk', 'Canned Beans', 'Steak', 'Apple', 'Oranges'];
-  const [loggedIn, setLoggedIn] = React.useState(false);
   return (
-    <LoginContext.Provider value = {{ loggedIn, setLoggedIn }}>
     <div className = "App">
 
-      <Router>
-      <MobileNavbar/>
-      <AdminLoginNavbar/>
+        <Router>
+          <MobileNavbar/>
 
-      <Routes>
-        {loggedIn ? (
-          <Route path="/edit-stock" element={<StockListingAdmin/>}/>
-        ) : ( <Route path="/edit-stock" element={<AdminLogin/>}/>)}
+          <Routes>
+            {/* User End  */}
+            <Route path="/" element={<StockListingUser/>}/>
+            <Route path="/view-stock" element={<StockListingUser/>}/>
+            <Route path="/schedule-appointment" element={<AppointmentScheduler/>}/>
+            <Route path="/thank-you" element={<AppointmentTY/>}/> 
 
-          <Route path="/view-stock" element={<StockListingUser/>}/>
-          <Route path="/" element={<StockListingUser/>}/>
-      
-          <Route path = "/login" element={<AdminLogin/>}/>
+            {/* Admin End  */}
+            <Route path = "/login" element={<AdminLogin/>}/>
+            <Route path="/edit-stock" element={<StockListingAdmin/>}/>
+            <Route path="/add-food" element={<AddFood/>}/>
+            <Route path="/view-appointments" element={<ViewAppointments/>}/> 
+              
+          </Routes>
+        </Router> 
 
-          <Route path="/thank-you" element={<AppointmentTY/>}/> 
-        
-          <Route path="/schedule-appointment" element={<AppointmentScheduler/>}/>
-
-          <Route path="/add-food" element={<AddFood/>}/>
-
-          <Route path="/view-appointments" element={<ViewAppointments/>}/> 
-          
-        </Routes>
-      </Router> 
-
-    </div>
-    </LoginContext.Provider>
+      </div>
   )
 }
 

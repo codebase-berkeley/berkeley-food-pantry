@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './../components/SearchBar.css';
 import './ViewAppointments.css';
 import 'rsuite/dist/rsuite.min.css';
@@ -14,6 +14,8 @@ import donut from './../images/donut.png';
 import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { Helmet } from 'react-helmet';
+import axios from "axios";
+import AdminLoginNavbar from "./AdminLoginNavbar";
 
 
 const foodCategories = [
@@ -116,6 +118,17 @@ export function ViewAppointments() {
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
 
+    useEffect(() => {
+        axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
+           .catch((error) => {
+               if (error.response.status === 403) {
+                   window.location.href = "/login"
+
+               }
+           });
+        
+    }, [])
+
     function clearInputFieldsHelper() {
         setSelectedSort();
         setSelectedTags([]);
@@ -196,6 +209,8 @@ export function ViewAppointments() {
     }
     console.log(food);
     return (
+        <>
+        <AdminLoginNavbar isAdmin={true}/>
         <div className="full-page">
 
             <div className="stockListingPage">
@@ -272,5 +287,6 @@ export function ViewAppointments() {
                 <title>View Appointments</title>
             </Helmet>  
         </div>
+        </>
     )
 }

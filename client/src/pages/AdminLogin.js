@@ -4,6 +4,7 @@ import admingooglesignin from './../images/googlePic.png';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { LoginContext } from '../LoginContext';
+import AdminLoginNavbar from './AdminLoginNavbar';
 
 
 export default function AdminLogin() {
@@ -29,6 +30,8 @@ export default function AdminLogin() {
 
     }
    return(
+    <>
+    <AdminLoginNavbar isAdmin={false}/>
     <div className = 'admin-component-container'>
             <img src={adminLoginPic} className = "admin-pic" alt = "admin-login"></img>
             <div className = 'admin-login-text-container'>
@@ -44,6 +47,7 @@ export default function AdminLogin() {
             <title>Login</title>
        </Helmet>
     </div>
+    </>
          
    )
 }

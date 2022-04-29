@@ -1,12 +1,13 @@
 import './AddFood.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { caretTrimReplace } from 'prettier';
 import { Helmet } from 'react-helmet';
+import AdminLoginNavbar from './AdminLoginNavbar';
 
 
 const todayStock = [
@@ -67,6 +68,19 @@ const customStyles = {
 
 
 export default function AddFood() {
+
+    useEffect(() => {
+        axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
+           .catch((error) => {
+               if (error.response.status === 403) {
+                   window.location.href = "/login"
+
+               }
+           });
+        
+    }, [])
+
+
     function deleteItem(nameFood) {
         // Simple DELETE request with axios
         axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
@@ -95,6 +109,8 @@ export default function AddFood() {
 
    
     return(
+        <>
+        <AdminLoginNavbar isAdmin={true}/>
         <div className = "main-container">
         <div className = "add-food-component-header">
             <h1>Add Item</h1>
@@ -197,5 +213,6 @@ export default function AddFood() {
                     <title>Add Item</title>
                 </Helmet>
         </div>
+        </>
     )
 }

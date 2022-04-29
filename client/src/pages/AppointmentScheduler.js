@@ -4,6 +4,7 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import AdminLoginNavbar from './AdminLoginNavbar';
 
 const dates = [
     { value: 0, label: 'Select date...' },
@@ -119,6 +120,8 @@ export default function AppointmentScheduler() {
     }   
         
     return (
+        <>
+        <AdminLoginNavbar isAdmin={false}/>
         <div>
             <div className = 'apptsched-intro-text-container'>
                 <h1 className = 'apptsched-intro-text'>Welcome to the Berkeley Food Pantry! 
@@ -355,6 +358,7 @@ export default function AppointmentScheduler() {
                 <title>Schedule an Appointment</title> 
             </Helmet>
         </div>
+        </>
     )
 
 } 
