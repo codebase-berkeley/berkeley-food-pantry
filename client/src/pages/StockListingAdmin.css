@@ -329,10 +329,8 @@ input[type='radio']:checked {
     border-radius: 100%;
     color: black;
     background-color: black;
-    accent-color: black;
+    accent-color: #264425;
   }
-
-
 
 /* input[type="checkbox"]:checked, input[type="radio"]:checked {
     border: 1.5px solid #B8B8B8;

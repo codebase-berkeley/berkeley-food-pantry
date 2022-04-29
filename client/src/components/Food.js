@@ -62,7 +62,9 @@ function Food(props) {
                         {/* style={{paddingRight: "11%"}} style={{paddingLeft: "6%"}} */}
                         <div className ="food-inStockCheck">
                             In Stock
-                            <input type="checkbox"></input>
+                            <input type="checkbox" checked={props.in_stock} onChange={() => {
+                                        props.in_stock = !props.in_stock
+                                    }}></input>
                         </div>
                     </div>
 
