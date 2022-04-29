@@ -9,7 +9,6 @@ module.exports = (app) => {
     });
 
     app.post('/appointment', async (req, res) => {
-        // console.log("HELLO ABIGAIL");
         const last_name = req.body.last_name;
         const first_name = req.body.first_name;
         const date = req.body.date;
