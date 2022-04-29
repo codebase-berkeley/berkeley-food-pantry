@@ -40,13 +40,22 @@ passport.use(new GoogleStrategy({
   }, (request, accessToken, refreshToken, profile, done) => {
     const email = profile.emails[0].value
 
-    // If the authenticated user is not allowed:
-    if (email !== 'mawil0721@berkeley.edu') {
-        return done(null, false);
-    } else {
-        // If allowed:
+
+    if (email === 'mawil0721@berkeley.edu' || 
+        email === 'ysharma@berkeley.edu' || 
+        email === 'a.brooks@berkeley.edu' ||
+        email === 'anthonylu@berkeley.edu' ||
+        email === 'adityabhandari@berkeley.edu' ||
+        email === 'gargi@berkeley.edu' ||
+        email === 'ranonl@berkeley.edu' ||
+        email === 'ilyues@berkeley.edu' ||
+        email === 'tyli@berkeley.edu') {
         return done(null, email);
+    } else {
+        return done(null, false);
+
     }
+
 }))
 
 passport.serializeUser((email, done) => {
