@@ -39,10 +39,22 @@ const customStyles = {
     indicatorSeparator: () => null,
 
     control: (provided, state) => ({
-        height: '6vh',
+        // height: '6vh',
+        // ...provided,
+        // width: '30vw',
+        // borderRadius: '.5vw',
+        // border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
+        // boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
+        // '&:hover': {
+        //     border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
+        // },
         ...provided,
         width: '30vw',
         borderRadius: '.5vw',
+        textOverflow: "hidden",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        flexWrap: 'nowrap',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
@@ -122,7 +134,7 @@ export default function AddFood() {
             </div>
                 <div className = 'main-add-food-component-container'>
                     <div className = 'add-item-selections'> 
-                            <form>
+                            <form style={{marginTop: "8%"}}>
                                 <label className = "add-item-name-input">
                                     Item Name 
                                     </label>
