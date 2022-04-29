@@ -56,7 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
+    width: 15%;
     height: 5.5vh;
     margin-top: 43%;
     margin-left: -17%;
@@ -231,7 +231,7 @@ label.add-item-name-input, input {
     border-radius: 100px;
     border: #264425 solid 1px;
     margin-top: 2%;
-    margin-left: 25%;
+    margin-left: 30%;
     background-color: white;
 }
 
@@ -310,9 +310,9 @@ label.add-item-name-input, input {
     height: 50%;
     width: 50%;
     display: flex;
-    padding-right: 
-
+    margin-left: 25%;
 }
+
 .add-item-custom-dropdown {
     /* overflow-x: auto;
     overflow-y: hidden; */
