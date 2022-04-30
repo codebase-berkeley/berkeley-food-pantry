@@ -100,6 +100,15 @@ module.exports = (app) => {
 
     app.get('/auth/google/callback', passport.authenticate( 'google', {
         successRedirect: 'http://localhost:3000/edit-stock',
-        failureRedirect: 'http://localhost:3000/login'
+        failureRedirect: 'http://localhost:3000/schedule-appointment',
+        failureMessage: true,
+        failureFlash: true
     }));
+    /**
+    app.get('/auth/google/callback', passport.authenticate( 'google', {
+        failureRedirect: 'http://localhost:3000/edit-stock'
+    }), function(req, res) {
+        res.redirect('/schedule-appointment');
+    });
+    */
 }

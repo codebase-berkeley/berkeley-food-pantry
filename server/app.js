@@ -32,6 +32,8 @@ app.use(Session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+/**allbackURL: "http://localhost:4000/auth/google/callback", */
+
 passport.use(new GoogleStrategy({
     clientID:     GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
@@ -41,7 +43,8 @@ passport.use(new GoogleStrategy({
     const email = profile.emails[0].value
 
 
-    if (email === 'mawil0721@berkeley.edu' || 
+    if (email === 'mawil0721@berkeley.edu' ||
+        email === 'kieron.ong@gmail.com' || 
         email === 'ysharma@berkeley.edu' || 
         email === 'a.brooks@berkeley.edu' ||
         email === 'anthonylu@berkeley.edu' ||
@@ -53,7 +56,6 @@ passport.use(new GoogleStrategy({
         return done(null, email);
     } else {
         return done(null, false);
-
     }
 
 }))
