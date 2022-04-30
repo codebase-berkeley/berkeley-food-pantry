@@ -1,7 +1,7 @@
 import './AddFood.css';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
@@ -73,12 +73,35 @@ export default function AddFood() {
             .then(() => console.log("something"));
     }
 
+    async function onSelectFile(event) {
+        const file = event.target.files[0];
+        const convertedFile = await convertToBase64(file);
+        setFileName(file.name);
+        setFoodImg(convertedFile);
+    }
+
+    const convertToBase64 = (file) => {
+        return new Promise(resolve => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                resolve(reader.result);
+            }
+        })
+    }
+
     function addItem(nameFood) {
         console.log(document.getElementById("addItem-food-name").value);
         // console.log(document.getElementById("filter-dropdown"));
-        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockValue.value, tags: categoriesList(categoriesValue), image_path: "codebase.com"})
-            .then(() => console.log("add item works"));
+        axios.post('http://localhost:4000/food', {
+            name: document.getElementById("addItem-food-name").value, 
+            instock: stockValue.value, 
+            tags: categoriesList(categoriesValue), 
+            image_name: fileName,
+            image: foodImg
+        })
     }
+
     function categoriesList(categoriesValue) {
         console.log(categoriesValue);
         console.log(categoriesValue.map((category) => category.value));
@@ -92,6 +115,8 @@ export default function AddFood() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [stockValue, setStockValue] = useState(true);
     const [categoriesValue, setCategoriesValue] = useState([""]);
+    const [foodImg, setFoodImg] = useState();
+    const [fileName, setFileName] = useState();
 
    
     return(
@@ -149,7 +174,7 @@ export default function AddFood() {
                 <div className = "main-add-food-component-container-right">
                     <div className = "upload-image-container">
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                            <UploadImageButton/>
+                            <UploadImageButton onSelectFile = {onSelectFile}/>
                     </div>
                 </div>
             </div>
