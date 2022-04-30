@@ -231,12 +231,6 @@ p#apptsched-item-checklist-label {
     font-weight: 300;
 }
 
-input::placeholder{
-    border-color: #ACB9AC;
-    background-repeat: no-repeat;
-    background-position: 97%;
-}
-
 .apptsched-name-box {
     width: 15vw;
 }
@@ -357,6 +351,7 @@ input::placeholder{
 
     .apptsched-name-box {
         width: 80vw;
+        background-image: none;
     }
 
     .apptsched-contact-box {
