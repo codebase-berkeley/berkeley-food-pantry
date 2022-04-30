@@ -13,8 +13,6 @@ function AppointmentCard(props){
         console.log(visited)
     }
 
-
-
     function beenVisited() {
         if (visited == true) {
             // note to self, add onClick functionality to update database if checkmark is clicked
@@ -54,4 +52,5 @@ function AppointmentCard(props){
     )
 
 }
+
 export default AppointmentCard;

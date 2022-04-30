@@ -6,6 +6,7 @@ const http = require('http');
 const routes = require('./routes');
 require('dotenv').config();
 const { initFoodModel } = require('./models/Food');
+const { initAppointmentModel } = require('./models/Appointment');
 
 const PORT = process.env.PORT;
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 const sequelize = new Sequelize(process.env.DB_CONNECTION_STRING);
 initFoodModel(sequelize);
+initAppointmentModel(sequelize);
 sequelize.sync();
 
 routes(app);

@@ -4,6 +4,7 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
 
 const dates = [
     { value: 0, label: 'Select date...' },
@@ -88,35 +89,42 @@ export default function AppointmentScheduler() {
         setSelectedTime([]);
     }
 
-    function submitForm() {
+    async function submitForm() {
 
-        console.log("contact information:")
-        for (var i = 1; i <= 4; i++) {
-            var checkString = "input-values-" + i;
-            if (document.getElementById(checkString).value != "") {
-                console.log(document.getElementById(checkString).value);
-            }
-        }
-        
-        console.log("items to pick up:")
-        for (var i = 1; i <= 15; i++) {
-            var checkString = "checkbox-" + i;
-            if (document.getElementById(checkString).checked == true) {
-                console.log(document.getElementById(checkString).value);
-            }
-        }
 
-        console.log("dietary preferences:")
+        let dietaryPrefs = ""
         for (var i = 16; i <= 21; i++) {
             var checkString = "checkbox-" + i;
             if (document.getElementById(checkString).checked == true) {
-                console.log(document.getElementById(checkString).value);
+                dietaryPrefs += ", " + document.getElementById(checkString).value;
             }
         }
+        dietaryPrefs = dietaryPrefs.substring(2, dietaryPrefs.length);
 
-        console.log("additional information:")
-        console.log(document.getElementById('input-values-5').value); 
-    }   
+        let itemPrefs = "";
+        for (var i = 1; i <= 15; i++) {
+            var checkString = "checkbox-" + i;
+            if (document.getElementById(checkString).checked == true) {
+                itemPrefs+= ", "  + (document.getElementById(checkString).value);
+            }
+        }
+        itemPrefs = itemPrefs.substring(2, itemPrefs.length);
+
+            axios.post('http://localhost:5000/appointment', {
+                last_name: document.getElementById("input-values-2").value,
+                first_name: document.getElementById("input-values-1").value,
+                date: selectedDate.label,
+                time:selectedTime.label, 
+                email: document.getElementById("input-values-3").value,
+                phone_number: document.getElementById("input-values-4").value,
+                visited: false,
+                dietary_preferences: dietaryPrefs,
+                item_preferences: itemPrefs,
+                notes: document.getElementById("input-values-5").value
+            })
+        
+        
+    }  
         
     return (
         <div>
