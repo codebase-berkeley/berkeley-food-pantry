@@ -322,10 +322,6 @@ export function StockListingAdmin() {
                                     in_stock={foodItem.instock} 
                                     tags={foodItem.tags} 
                                     admin={true}
-                                    onChange={() => {
-                                        foodItem.instock = !foodItem.instock
-                                    }}
-                                    
                                     
                                     />))}
 
@@ -509,12 +505,7 @@ export function StockListingUser() {
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 
-                                    tags={foodItem.tags} 
-                                    onChange={() => {
-                                        foodItem.instock = !foodItem.instock
-                                    }}
-                                    
-                                    
+                                    tags={foodItem.tags}                                      
                                     />))}
 
                     </div>
