@@ -209,7 +209,7 @@ export function StockListingAdmin() {
                     <div className="stocklisting-rightSide">
                          <Link to="/add-food" className = "addButton" style = {{textDecoration: 'none'}}>
                             <img src={isbesPlusSign}></img>
-                            <div className="addItem"> Add new item </div>
+                            <div className="stocklisting-addItem"> Add new item </div>
                     </Link>
                         <button className="stocklisting-changeStock" onClick={() => setOutOfStock()}> Set all items to out of stock </button>
 
@@ -270,13 +270,13 @@ export function StockListingAdmin() {
                                 <div className="sstocklisting-howText"> Show </div>
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
+                                        <input className = "stocklisting-form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(0);
                                             }
-                                        }}/>
-
+                                        }}></input>
                                         All items
+                            
                                     </label>
                                 </div>
 
@@ -322,10 +322,6 @@ export function StockListingAdmin() {
                                     in_stock={foodItem.instock} 
                                     tags={foodItem.tags} 
                                     admin={true}
-                                    onChange={() => {
-                                        foodItem.instock = !foodItem.instock
-                                    }}
-                                    
                                     
                                     />))}
 
@@ -509,12 +505,7 @@ export function StockListingUser() {
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 
-                                    tags={foodItem.tags} 
-                                    onChange={() => {
-                                        foodItem.instock = !foodItem.instock
-                                    }}
-                                    
-                                    
+                                    tags={foodItem.tags}                                      
                                     />))}
 
                     </div>

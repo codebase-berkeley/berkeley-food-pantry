@@ -4,6 +4,7 @@ import Tags from './Tags.js'
 import pen from './../images/pen.svg'
 import checkmark from './../images/instockMark.svg'
 import xmark from '../images/notinstock.svg'
+import { useState } from 'react'; 
 
 
 function Food(props) {
@@ -62,7 +63,7 @@ function Food(props) {
                         {/* style={{paddingRight: "11%"}} style={{paddingLeft: "6%"}} */}
                         <div className ="food-inStockCheck">
                             In Stock
-                            <input type="checkbox"></input>
+                            <input type="checkbox" checked = {props.in_stock}></input>
                         </div>
                     </div>
 

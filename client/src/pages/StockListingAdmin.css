@@ -52,7 +52,13 @@
     font-size: 10px;
 }
 
-.stocklisting-addButton {
+.stocklisting-something {
+    border-radius: 100%;
+    background-color: red;
+    color: red;
+}
+
+.stocklisting-addItem {
     background-color: #264425;
     display: flex;
     height: 5vh;
@@ -65,15 +71,20 @@
     align-items: center;
 }
 
+.stocklisting-buttonthing {
+    background-color: red;
+    background: red;
+    color: red;
+}
 .stocklisting-addButton:hover {
     background-color: #ACB9AC;
     color: #fff; 
 }
 
-.stocklisting-addItem{
+/* .stocklisting-addItem{
     display: flex;
     padding-right: 1vw;
-}
+} */
 
 .stocklisting-changeStock{
     font-size: 16;
@@ -293,27 +304,46 @@ p#stocklisting-filterControlLabel {
     font-size: 15px;
 }
 
-
-
-input[type="checkbox"], input[type="radio"] {
-    border: 1.5px solid #B8B8B8;
-    margin: 4px 8px 4px 8px;
+.stocklisting-form-check-input {
+    border-radius: 5%;
+    background-color: red;
+    color: red;
+    background-color: red;
 }
 
-input[type="checkbox"]:checked, input[type="radio"]:checked {
-    border: 1.5px solid #B8B8B8;
-    background-color: solid #264425; 
-    accent-color: #264425;
-    box-shadow: "transparent";
 
+input[type="checkbox"] {
+    border: 1.5px solid #B8B8B8;
+    margin: 4px 8px 4px 8px;
+
+}
+
+input[type="radio"] {
+    border-radius: 100%;
+    background-color: #333;
+    margin-right: 1vw;
+    margin-top: .35vh;
+}
+
+input[type='radio']:checked {
+    border-radius: 100%;
+    color: black;
+    background-color: black;
+    accent-color: #264425;
+  }
+
+/* input[type="checkbox"]:checked, input[type="radio"]:checked {
+    border: 1.5px solid #B8B8B8;
+    background-color: red; 
+    box-shadow: "transparent"; 
     box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #264425;
     margin: 4px 8px 4px 8px;
+    border-radius: 999px;
+} */
 
-}
-
-input[type="checkbox"]:hover, input[type="radio"]:hover {
+/* input[type="checkbox"]:hover, input[type="radio"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
     margin: 4px 8px 4px 8px;
-}
+} */
 

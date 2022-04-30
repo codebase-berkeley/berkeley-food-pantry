@@ -306,14 +306,14 @@ p#filterControlLabel {
     border: 1.5px solid #B8B8B8;
 }
 
-input[type="checkbox"]:checked, input[type="radio"]:checked {
+input[type="checkbox"]:checked {
     border: 1.5px solid #B8B8B8;
-    background-color: solid #264425;
+    background-color: solid black;
     box-shadow: "transparent";
-    box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #264425;
+    box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #333;
 }
 
-input[type="checkbox"]:hover, input[type="radio"]:hover {
+input[type="checkbox"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
 }
