@@ -76,6 +76,7 @@ export default function AddFood() {
     async function onSelectFile(event) {
         const file = event.target.files[0];
         const convertedFile = await convertToBase64(file);
+        let tempPath = (URL.createObjectURL(event.target.files[0]));
         setFileName(file.name);
         setFoodImg(convertedFile);
     }

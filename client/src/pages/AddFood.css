@@ -198,17 +198,7 @@ input {
 
 
 
-.import-image-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 17vw;
-    height: 5.5vh;
-    border-radius: 100px;
-    border: #264425 solid 1px;
-    background-color: white;
-    margin-left: 15%;
-}
+
 
 .change-image-button {
     display: flex;
@@ -222,9 +212,7 @@ input {
     margin-left: 15%;
 }
 
-.import-image-button:hover {
-    background-color: #D6DECD;
-}
+
 
 .cloud-format {
     height: 2.5vh;
@@ -263,14 +251,6 @@ input {
     border-color: #588157;
 }
 
-.upload-image-text-h1 {
-    font-size: 2vh;
-    color: #264425;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: .70vh;
-}
 
 .upload-image-header {
     margin-top: 2.5vh;
