@@ -17,23 +17,23 @@ function AppointmentCard(props){
         if (visited == true) {
             // note to self, add onClick functionality to update database if checkmark is clicked
             return (
-                <button className="appointment-card-notVisitedButton" onClick = {setVisitedHelper}> 
-                    <img src={visitedMark} className = 'appointment-card-checkMark'></img>
+                // <button className="appointment-card-notVisitedButton" onClick = {setVisitedHelper}> 
+                    // <img src={visitedMark} className = 'appointment-card-checkMark'></img>
                     <div className='appointment-card-markAs'> Visited! </div> 
-                </button>
+                
             )
         } else {
             return (
-                <button className="appointment-card-beenVisitedButton" onClick={setVisitedHelper}> 
-                    <img src={checkMark} className = 'appointment-card-checkMark'></img>
+                // <button className="appointment-card-beenVisitedButton" onClick={setVisitedHelper}> 
+                    // <img src={checkMark} className = 'appointment-card-checkMark'></img>
                     <div className='appointment-card-marked'> Mark as visited </div> 
-                </button>
+                // </button>
             )
         }
     }
 
     return(
-        <div className="appointment-card-cardContainer">
+        <div className="appointment-card-cardContainer" onClick={() => props.onclickFunc(props.id)}>
             <div className='appointment-card-leftStyling'>
                 <div className='appointment-card-appointmentInfo'>
                     <div className='appointment-card-date'> {props.date} </div>

@@ -7,19 +7,7 @@ import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import AppointmentCard from './../components/AppointmentCard';
 import Details from './../components/Details';
-import apple from "./../images/apple.png";
-import banana from "./../images/banana.png";
-import coconut from "./../images/cocunut.png";
-import donut from './../images/donut.png';
-import broccoli from './../images/brocolli.png';
-import cannedBeans from './../images/cannedBeans.png';
 import { Helmet } from 'react-helmet';
-
-const showOptions = [
-    { value: 'all items', label: 'All items'},
-    { value: 'in stock items', label: 'In stock items only'},
-    { value: 'not in stock items', label: 'Not in stock items only'}
-]
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -34,7 +22,6 @@ const timeOptions = [
     { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
     { value: '3:30-4:00', label: '3:30 PM - 4:00 PM' }
 ]
-
 
 const animatedComponents = makeAnimated();
 const customStyles = {
@@ -90,20 +77,12 @@ const customStyles = {
 const appt = [ {firstname: 'yojita', lastname: 'sharma', instock: true, tags: ["Vegetarian", "Brown"] }, 
 ];
 
-const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
-{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
-{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
-{name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
-];
-
-const card = [ {date: 'Monday, April 4 2022', time: '2:00 PM', firstName: 'Abby', lastName: 'Brooks', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{date: 'Wednesday, April 6 2022', time: '3:00 PM', firstName: 'Anthony', lastName: 'Lu', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{date: 'Friday, April 5 2022', time: '3:30 PM', firstName: 'Aditya', lastName: 'Bhandari', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{date: 'Friday, April 7 2022', time: '1:00 PM', firstName: 'Gargi', lastName: 'Deshpande', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{date: 'Wednesday, April 6 2022', time: '2:00 PM', firstName: 'Mawil', lastName: 'Hasan', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{date: 'Monday, April 4 2022', time: '1:30 PM', firstName: 'Yojita', lastName: 'Sharma', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'}
+const card = [ {id: 0, date: 'Monday, April 4 2022', time: '2:00 PM', firstName: 'Abby', lastName: 'Brooks', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{id: 1, date: 'Wednesday, April 6 2022', time: '3:00 PM', firstName: 'Anthony', lastName: 'Lu', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{id: 2, date: 'Friday, April 5 2022', time: '3:30 PM', firstName: 'Aditya', lastName: 'Bhandari', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{id: 3, date: 'Friday, April 7 2022', time: '1:00 PM', firstName: 'Gargi', lastName: 'Deshpande', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{id: 4, date: 'Wednesday, April 6 2022', time: '2:00 PM', firstName: 'Mawil', lastName: 'Hasan', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{id: 5, date: 'Monday, April 4 2022', time: '1:30 PM', firstName: 'Yojita', lastName: 'Sharma', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'}
 ];
 
 export function ViewAppointments() {
@@ -113,6 +92,7 @@ export function ViewAppointments() {
     const [searchInput, setSearchInput] = useState("");
     const [selectedDay, setSelectedDay] = useState("all");
     const [selectedTime, setSelectedTime] = useState("all");
+    const [activeAppt, setActiveAppt] = useState(card[0]);
 
     function clearInputFieldsHelper() {
         setSelectedSort();
@@ -121,82 +101,14 @@ export function ViewAppointments() {
         setSearchInput("");
     }
 
-
-    function sortAZ(a, b) {
-        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-    
-        // names must be equal
-        return 0;
-
-    }
-
-    function tagMatchFunction(foodObject) {
-        
-        for (const tag of selectedTags.map(tagObject => tagObject.label)) {
-
-            if (!foodObject.tags.includes(tag)) {
-                return false;
-            } 
-        }
-        return true;
-    }
-
-    function mostRecent() {
-        return;
-
-    }
-
-    function stockFilterFunction(foodObject) {
-        if (selectedShow == 0) {
-            return true;
-        } else if (selectedShow == 1) {
-            return foodObject.instock;
-        } else if (selectedShow == 2) {
-            return !foodObject.instock;
-        }
-    }
-
-    function setOutOfStock() {
-        console.log("clicked")
-        for (const f of food) {
-            f.instock = false;
-        }
-
-        // TODO: we're forcing a rerender because the array is external, fix this later
-        setSelectedSort(selectedShow)
-    }
-
-    function getSort() {
-        if (selectedSort == null) {
-            return;
-        } else if (selectedSort.value == "recently added") {
-            return mostRecent;
-        } else if (selectedSort.value == "alphabetical") {
-            return sortAZ;
-        }
-    }
-
-    function searchFunction(foodObject) {
-        if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
-            return true; 
-        } else {
-            return false; 
-        }
-    }
-    
     function apptDayFilter(card) {
         if (selectedDay == "all" || selectedDay.value.charAt(0) == 'a') {
             return true; 
         }
         return card.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
     }
+
+    
 
     function apptTimeFilter(card) {
         const splitInt = card.time.split(":");
@@ -217,6 +129,15 @@ export function ViewAppointments() {
         else if ((selectedTime.value == "3:30-4:00")) {
             return ((newSplitInt >= 330) && (newSplitInt <= 400));
             }           
+    }
+
+    function selectCard(activeId) {
+        for (const each of card) {
+            if (each.id == activeId) {
+                setActiveAppt(each);
+                break;
+            }
+        }
     }
 
     return (
@@ -279,28 +200,33 @@ export function ViewAppointments() {
                 <div className="view-appts-bottomContainer">
 
                     <div className="view-appts-appt-card-display">
+                          
                         {card
                             .filter(apptDayFilter)
                             .filter(apptTimeFilter)
                             .map(filteredAppt => (
                                 <AppointmentCard
+                                    id={filteredAppt.id}
                                     date={filteredAppt.date}
                                     time={filteredAppt.time}
                                     firstName={filteredAppt.firstName}
                                     lastName={filteredAppt.lastName}
-                                    visited={filteredAppt.visited}/>
+                                    visited={filteredAppt.visited}
+                                    email={filteredAppt.email}
+                                    phoneNumber={filteredAppt.phoneNumber}
+                                    dietaryData={filteredAppt.dietary_data}
+                                    itemData={filteredAppt.item_data}
+                                    notes={filteredAppt.notes}
+                                    onclickFunc={selectCard}
+                                    />
                             ))
                         }
-                        {/* <AppointmentCard date="Monday, April 4 2022" time="11:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
-                        <AppointmentCard date="Monday, April 4 2022" time="2:00 PM"firstName="Yojita" lastName ="Sharma" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Gargi" lastName ="Deshpande" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Mawil" lastName ="Hasan" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Aditya" lastName ="Bhandari" /> */}
+                        
                     </div>
 
                     <div className="view-appts-appointments-detail-display">
-                        <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/>
+                        {/* <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/> */}
+                        <Details date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited}/>
                     </div> 
                 </div>
             </div>

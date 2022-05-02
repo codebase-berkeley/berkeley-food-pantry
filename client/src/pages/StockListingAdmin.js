@@ -105,8 +105,6 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 ];
 
 
-
-
 export function StockListingAdmin() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
