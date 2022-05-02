@@ -37,11 +37,9 @@ passport.use('admin-google', new GoogleStrategy.OAuth2Strategy({
     clientSecret: GOOGLE_CLIENT_SECRET,
     callbackURL: "http://localhost:4000/auth/google"
   }, (accessToken, refreshToken, profile, done) => {
-    console.log(profile)
     const email = profile.emails[0].value
 
-
-    if ( email === 'mawil0721@gmail.com' || 
+    if ( email === 'mawil0721@berkeley.edu' || 
         email === 'ysharma@berkeley.edu' || 
         email === 'a.brooks@berkeley.edu' ||
         email === 'anthonylu@berkeley.edu' ||

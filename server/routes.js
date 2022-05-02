@@ -33,8 +33,6 @@ module.exports = (app) => {
 
     app.post('/food', checkAuthenticated, async (req, res) => {
         const name = req.body.name;
-        console.log(req.body.data);
-        console.log(name);
         if (!name || name.length <= 0) return res.status(400).end();
         const image = req.body.image_path;
         const instock = req.body.instock;
@@ -57,7 +55,6 @@ module.exports = (app) => {
         const instock = req.body.instock;
         const tags = req.body.tags;
         const image = req.body.image_path;
-        console.log(req.body.name);
         if (await Food.update({
             
             name: name, 
@@ -74,25 +71,6 @@ module.exports = (app) => {
         
     });
 
-    // app.get('/auth', async (req, res) => {
-    //     const { token }  = req.body
-    //     const ticket = await client.verifyIdToken({
-    //         idToken: token,
-    //         audience: process.env.CLIENT_ID
-    //     });
-    //     const { name, email, picture } = ticket.getPayload();  
-    //     console.log(email);
-    //     if (email == 'mawil0721@berkeley.edu') {
-    //         res.status(201).end();
-    //     } else {
-    //         res.status(403).end();
-    //     }
-
-    //     //authorised = db.get(email)
-        
-    //     // res.status(201)
-    //     // res.json()// authorised)
-    // });
 
     const passportAuthenticate = passport.authenticate('admin-google', { 
         scope: [ 'email', 'profile' ], 
@@ -101,10 +79,9 @@ module.exports = (app) => {
         failureRedirect: 'http://localhost:3000/login'
     })
 
-    app.get('/auth/google', passportAuthenticate);
+    app.get('/auth/google', (req, res, next) => {
+        next();
+    }, passportAuthenticate);
 
-    // app.get('/auth/google/callback', passport.authenticate( 'google', {
-    //     successRedirect: 'http://localhost:3000/edit-stock',
-    //     failureRedirect: 'http://localhost:3000/login'
-    // }));
+ 
 }
