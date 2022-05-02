@@ -8,7 +8,7 @@ import isbesPlusSign from './../images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import Food from './../components/Food.js';
-import apple from "./../images/apple.png";
+import apples from "./../images/apples.png";
 import banana from "./../images/banana.png";
 import coconut from "./../images/cocunut.png";
 import donut from './../images/donut.png';
@@ -42,7 +42,6 @@ const showOptions = [
     { value: 'in stock items', label: 'In stock items only'},
     { value: 'not in stock items', label: 'Not in stock items only'}
 ]
-
 
 const animatedComponents = makeAnimated();
 const customStyles = {
@@ -100,11 +99,9 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 {name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
 {name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
 {name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
-{name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
+{name: 'Apple', image: apples, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
 
 ];
-
-
 
 
 export function StockListingAdmin() {
@@ -119,7 +116,6 @@ export function StockListingAdmin() {
         setSelectedShow(0);
         setSearchInput("");
     }
-
 
     function sortAZ(a, b) {
         const nameA = a.name.toUpperCase(); // ignore upper and lowercase
@@ -207,7 +203,7 @@ export function StockListingAdmin() {
 
 
                     <div className="stocklisting-rightSide">
-                         <Link to="/add-food" className = "addButton" style = {{textDecoration: 'none'}}>
+                         <Link to="/add-food" className = "stocklisting-addButton" style = {{textDecoration: 'none'}}>
                             <img src={isbesPlusSign}></img>
                             <div className="stocklisting-addItem"> Add new item </div>
                     </Link>
@@ -267,10 +263,10 @@ export function StockListingAdmin() {
 
 
                             <div className="stocklisting-showFilter">
-                                <div className="sstocklisting-howText"> Show </div>
+                                <div className="stocklisting-howText"> Show </div>
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input className = "stocklisting-form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(0);
                                             }
@@ -282,7 +278,7 @@ export function StockListingAdmin() {
 
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 1} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(1);
                                             }
@@ -295,7 +291,7 @@ export function StockListingAdmin() {
 
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="stocklisting-form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
+                                        <input class="form-check-input" type="radio" checked={selectedShow == 2} onChange={e => {
                                             if (e.target.checked) {
                                                 setSelectedShow(2);
                                             }

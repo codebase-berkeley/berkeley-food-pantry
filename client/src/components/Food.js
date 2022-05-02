@@ -16,11 +16,11 @@ function Food(props) {
         if ((props.in_stock) == true) {
             return (
                 <div className = "food-editIn" style={{paddingRight: "2%", width: "35%"}}>
-                            <img src={checkmark} className="food-stockImage" alt="checkmark" />
-                        <div className ="food-in-stock-text" style={{width: "100%"}}>
-                            <span >In Stock Today</span>
-                        </div>
+                    <img src={checkmark} className="food-stockImage" alt="checkmark" />
+                    <div className ="food-in-stock-text" style={{width: "100%"}}>
+                        <span >In Stock Today</span>
                     </div>
+                </div>
             );
         }
         return (
@@ -59,11 +59,9 @@ function Food(props) {
                                 </button>
                             </div>
                         
-                        
-                        {/* style={{paddingRight: "11%"}} style={{paddingLeft: "6%"}} */}
                         <div className ="food-inStockCheck">
                             In Stock
-                            <input type="checkbox" checked = {props.in_stock}></input>
+                            <input className = "form-check-input" type="checkbox"></input>
                         </div>
                     </div>
 
@@ -73,7 +71,10 @@ function Food(props) {
     } else {
        return(
             <div className = "food-componentContainer">
-                <img src={props.image} class="food-foodImage" alt={props.name}/>
+                <div className = "food-imgdiv">
+                    <img src={props.image} class="food-foodImage" alt={props.name}/>
+                </div>
+                
                 <div className = "food-infoContainer">
                     <div className = "food-nameTags">
                         <div className = "food-foodName">
@@ -89,6 +90,9 @@ function Food(props) {
                     </div>
                     {stockOption()}
                 </div>
+
+                <div className={props.in_stock? "food-colorblock-green":"food-colorblock-grey"}></div>
+                
             </div>                
         );
     }
