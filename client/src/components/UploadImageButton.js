@@ -12,11 +12,11 @@ export default function UploadImageButton(props) {
     function setButtonHelper() {
         setButtonType(true)
         hiddenFileInput.current.click()
-        setUploadedFile(props.tempPath)
-        return (
-            <img src={uploadedFile}/>
-            //here it should return a div with the uploaded img and the "img uploaded succesfully thing"
-        )
+        //setUploadedFile(URL.createObjectURL(event.target.files[0]))
+        // return (
+        //     <img src={uploadedFile}/>
+        //     //here it should return a div with the uploaded img and the "img uploaded succesfully thing"
+        // )
     }
     
     if (buttonType == false) {
@@ -31,6 +31,7 @@ export default function UploadImageButton(props) {
                     ref={hiddenFileInput} 
                     onChange={props.onSelectFile} 
                     style ={{display: 'none'}}/> 
+                    <img src={uploadedFile}/>
             </div>
         )
     } else if (buttonType == true) {
@@ -45,6 +46,7 @@ export default function UploadImageButton(props) {
                     ref={hiddenFileInput} 
                     onChange={props.onSelectFile} 
                     style ={{display: 'none'}}/> 
+                    <img src={uploadedFile}/>
             </div>
         )
     }
