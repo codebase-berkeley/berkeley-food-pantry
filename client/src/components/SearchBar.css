@@ -17,10 +17,18 @@
     font-weight: 300;
   }
 
-  input::placeholder{
-    border-color: #ACB9AC;
+  .searchInputIcon {
     background-image: url(./../images/IsbeesSearchIcon.svg);
     background-repeat: no-repeat;
     background-position: 97%;
   }
+    
+  
+
+  /* input::placeholder{
+    border-color: #ACB9AC;
+    background-image: url(./../images/IsbeesSearchIcon.svg);
+    background-repeat: no-repeat;
+    background-position: 97%;
+  } */
   
