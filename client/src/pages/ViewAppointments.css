@@ -31,11 +31,16 @@
     display: flex;
     flex-direction: row;
     width: 50%;
+    margin-bottom: 1.5vh;
+    
 }
 
 .view-appts-checkboxes {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
+    /* align-items: flex-start; */
+    margin-top: 5vh;
     align-items: flex-end;
     /* justify-content: space-between; */
 }
@@ -83,7 +88,7 @@
     padding-right: 1vw;
 }
 
-.view-appts-changeStock{
+.view-appts-changeStock {
     font-size: 16;
     background-color: white;
     color: #6A7E69;
@@ -92,7 +97,7 @@
     width: 275px;
 }
 
-.view-appts-changeStock:hover{
+.view-appts-changeStock:hover {
     text-decoration: underline;
 }
 
@@ -101,7 +106,7 @@
     flex-direction: column;
     width: 100%;
     height:70vh;
-    align-items: center;
+    align-items: flex-start;
     overflow-y: scroll;
 }
 
@@ -159,7 +164,7 @@ p#filterControlLabel {
     overflow-y: auto;
 }
 
-.view-appts-filterReset{
+.view-appts-filterReset {
     display: flex;
     padding-top: 2vh;
     flex-direction: row;
@@ -168,7 +173,7 @@ p#filterControlLabel {
     width: 20vw;
 }
 
-.view-appts-filterItems{
+.view-appts-filterItems {
     color: #4C4C4C;
     font-size: 24px;
     display: flex;
@@ -177,7 +182,7 @@ p#filterControlLabel {
     justify-content: start;
 }
 
-.view-appts-resetFilters{
+.view-appts-resetFilters {
     font-size: 16px;
     background-color: #fff;
     color: #A71E47;
@@ -234,6 +239,10 @@ p#filterControlLabel {
     width: 1vw;
     border-radius: 50%;
     border: 1px solid black;
+}
+
+.something123 {
+    margin-left: ;
 }
 
 .view-appts-secondRow .stockBtn {
@@ -299,7 +308,9 @@ p#filterControlLabel {
 .view-appts-form-check-label {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    margin-right: 5%;
+    display: flex;
+
+    /* align-items: center; */
 }
 
 .input[type="checkbox"], input[type="radio"] {

@@ -15,20 +15,6 @@ import broccoli from './../images/brocolli.png';
 import cannedBeans from './../images/cannedBeans.png';
 import { Helmet } from 'react-helmet';
 
-
-const foodCategories = [
-    { value: 'chocolate', label: 'Meat' },
-    { value: 'strawberry', label: 'Veggies' },
-    { value: 'beverages', label: 'Beverages' },
-    { value: 'vegetarian', label: 'Vegetarian'}
-]
-
-const sortOptions = [
-    { value: 'morning', label: 'Morning' },
-    { value: 'afternoon', label: 'Afternoon' }, 
-    { value: 'evening', label: 'Evening' }
-]
-
 const showOptions = [
     { value: 'all items', label: 'All items'},
     { value: 'in stock items', label: 'In stock items only'},
@@ -37,14 +23,16 @@ const showOptions = [
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
-    { value: 'three days', label: 'All appointments for three days' }, 
-    { value: 'today', label: 'All appointments today' }
+    { value: 'monday', label: 'All appointments on Monday' }, 
+    { value: 'wednesday', label: 'All appointments on Wednesday' }, 
+    { value: 'friday', label: 'All appointments on Friday' }
 ]
-
 const timeOptions = [
-    { value: 'morning', label: 'Morning' },
-    { value: 'afternoon', label: 'Afternoon' }, 
-    { value: 'evening', label: 'Evening' }
+    { value: 'all', label: 'All times this week' },
+    { value: '2:00-2:30', label: '2:00 PM - 2:30 PM' },
+    { value: '2:30-3:00', label: '2:30 PM - 3:00 PM' }, 
+    { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
+    { value: '3:30-4:00', label: '3:30 PM - 4:00 PM' }
 ]
 
 
@@ -110,11 +98,21 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 {name: 'Apple', image: apple, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
 ];
 
+const card = [ {date: 'Monday, April 4 2022', time: '2:00 PM', firstName: 'Abby', lastName: 'Brooks', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{date: 'Wednesday, April 6 2022', time: '3:00 PM', firstName: 'Anthony', lastName: 'Lu', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{date: 'Friday, April 5 2022', time: '3:30 PM', firstName: 'Aditya', lastName: 'Bhandari', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{date: 'Friday, April 7 2022', time: '1:00 PM', firstName: 'Gargi', lastName: 'Deshpande', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{date: 'Wednesday, April 6 2022', time: '2:00 PM', firstName: 'Mawil', lastName: 'Hasan', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+{date: 'Monday, April 4 2022', time: '1:30 PM', firstName: 'Yojita', lastName: 'Sharma', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'}
+];
+
 export function ViewAppointments() {
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
+    const [selectedDay, setSelectedDay] = useState("all");
+    const [selectedTime, setSelectedTime] = useState("all");
 
     function clearInputFieldsHelper() {
         setSelectedSort();
@@ -175,7 +173,6 @@ export function ViewAppointments() {
         setSelectedSort(selectedShow)
     }
 
-
     function getSort() {
         if (selectedSort == null) {
             return;
@@ -187,14 +184,41 @@ export function ViewAppointments() {
     }
 
     function searchFunction(foodObject) {
-        
         if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
             return true; 
         } else {
             return false; 
         }
     }
-    console.log(food);
+    
+    function apptDayFilter(card) {
+        if (selectedDay == "all" || selectedDay.value.charAt(0) == 'a') {
+            return true; 
+        }
+        return card.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
+    }
+
+    function apptTimeFilter(card) {
+        const splitInt = card.time.split(":");
+        const newSplitInt = parseInt(splitInt[0]) * 100 + parseInt(splitInt[1]);
+        console.log(splitInt);
+        console.log(newSplitInt);
+        if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
+            return true; }
+        else if (selectedTime.value == "2:00-2:30") {
+            return ((newSplitInt >= 200) && (newSplitInt <= 230));
+            }
+        else if ((selectedTime.value == "2:30-3:00")) {
+            return ((newSplitInt >= 230) && (newSplitInt <= 300));
+            }
+        else if ((selectedTime.value == "3:00-3:30")) {
+            return ((newSplitInt >= 300) && (newSplitInt <= 330));
+            }
+        else if ((selectedTime.value == "3:30-4:00")) {
+            return ((newSplitInt >= 330) && (newSplitInt <= 400));
+            }           
+    }
+
     return (
         <div className="full-page">
 
@@ -214,8 +238,8 @@ export function ViewAppointments() {
                                         components={animatedComponents}
                                         options={apptOptions}
                                         defaultValue={apptOptions[0]}
-                                        // value={selectedSort}
-                                        // onChange={setSelectedSort}
+                                        value={selectedDay}
+                                        onChange={setSelectedDay}
                                     />
                                 </div>
                             </div>
@@ -227,8 +251,8 @@ export function ViewAppointments() {
                                         components={animatedComponents}
                                         options={timeOptions}
                                         defaultValue={timeOptions[0]}
-                                        // value={selectedSort}
-                                        // onChange={setSelectedSort}
+                                        value={selectedTime}
+                                        onChange={setSelectedTime}
                                     />
                                 </div>
                             </div>
@@ -239,12 +263,12 @@ export function ViewAppointments() {
                     <div className="view-appts-checkboxes">
                         
                         <div className ="view-appts-form-check-label">
-                            <span>Show appointments marked visited</span>
+                            <span> Show appointments marked visited</span>
                             <input type="checkbox"/>
                         </div>
 
                         <div className ="view-appts-form-check-label">
-                            <span>Show appointments marked visited</span>
+                            <span>Show past appointments</span>
                             <input type="checkbox"/>
                         </div>
                                 
@@ -255,12 +279,24 @@ export function ViewAppointments() {
                 <div className="view-appts-bottomContainer">
 
                     <div className="view-appts-appt-card-display">
-                        <AppointmentCard date="Monday, April 4 2022" time="11:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
+                        {card
+                            .filter(apptDayFilter)
+                            .filter(apptTimeFilter)
+                            .map(filteredAppt => (
+                                <AppointmentCard
+                                    date={filteredAppt.date}
+                                    time={filteredAppt.time}
+                                    firstName={filteredAppt.firstName}
+                                    lastName={filteredAppt.lastName}
+                                    visited={filteredAppt.visited}/>
+                            ))
+                        }
+                        {/* <AppointmentCard date="Monday, April 4 2022" time="11:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
                         <AppointmentCard date="Monday, April 4 2022" time="2:00 PM"firstName="Yojita" lastName ="Sharma" />
                         <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Gargi" lastName ="Deshpande" />
                         <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Mawil" lastName ="Hasan" />
                         <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Aditya" lastName ="Bhandari" />
+                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Aditya" lastName ="Bhandari" /> */}
                     </div>
 
                     <div className="view-appts-appointments-detail-display">
