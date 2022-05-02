@@ -18,7 +18,7 @@ export default function UploadImageButton(props) {
             <div className = "upload-image-button-container">
                 <div className='import-image-button' role = 'button' onClick = {setButtonHelper}>
                     <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
-                    <h1 className = 'upload-image-text-h1'>Import Image</h1>
+                    <h1 className = 'upload-image-button-text-h1'>Import Image</h1>
                 </div>
                 <input type = "file" 
                     accept="image/*" 
@@ -30,9 +30,9 @@ export default function UploadImageButton(props) {
     } else if (buttonType == true) {
         return (
             <div className = "upload-image-button-container" role = 'button' onClick = {setButtonHelper}>
-            <div className = 'change-image-button'> 
+            <div className = 'upload-image-button-change-image'> 
                 <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
-                <h1 className = 'upload-image-text-h1'>Change Image</h1>
+                <h1 className = 'upload-image-button-text-h1'>Change Image</h1>
             </div>
             <input type = "file" 
                     accept="image/*" 
@@ -40,7 +40,7 @@ export default function UploadImageButton(props) {
                     onChange={props.onSelectFile} 
                     style ={{display: 'none'}}/> 
             
-            <div className='imgDiv' style={props.previewPath == null ? {display:"none"} : {display: "flex"}}><img src={props.previewPath}/></div>
+            <div className='upload-image-button-img-div' style={props.previewPath == null ? {display:"none"} : {display: "flex"}}><img src={props.previewPath}/></div>
                     
             </div>
         )

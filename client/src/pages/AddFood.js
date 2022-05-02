@@ -175,7 +175,8 @@ export default function AddFood() {
                         </div>
                     </div>   
                 <div className = "main-add-food-component-container-right">
-                    <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+
+                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
                      <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage}/> </div>
                 </div>
             </div>

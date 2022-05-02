@@ -15,7 +15,7 @@
     /* margin-left: 15%; */
 }
 
-.change-image-button {
+.upload-image-button-change-image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +33,7 @@
     background-color: #D6DECD;
 }
 
-.upload-image-text-h1 {
+.upload-image-button-text-h1 {
     font-size: 2vh;
     color: #264425;
     display: flex;
@@ -42,7 +42,7 @@
     margin-top: .70vh;
 }
 
-.imgDiv {
+.upload-image-button-img-div {
     display: flex;
     /* margin-top: 5%; */
     flex-direction: row;
@@ -50,7 +50,7 @@
     width: 250px;
 }
 
-.imgDiv img {
+.upload-image-button-img-div img {
     object-fit: cover;
     width: 250px;
     height: 250px;
