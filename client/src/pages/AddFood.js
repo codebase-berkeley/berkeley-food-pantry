@@ -77,7 +77,9 @@ export default function AddFood() {
         const file = event.target.files[0];
         const convertedFile = await convertToBase64(file);
         let tempPath = (URL.createObjectURL(event.target.files[0]));
+        console.log(tempPath)
         setFileName(file.name);
+        setPreviewImage(tempPath)
         setFoodImg(convertedFile);
     }
 
@@ -93,7 +95,6 @@ export default function AddFood() {
 
     function addItem(nameFood) {
         console.log(document.getElementById("addItem-food-name").value);
-        // console.log(document.getElementById("filter-dropdown"));
         axios.post('http://localhost:4000/food', {
             name: document.getElementById("addItem-food-name").value, 
             instock: stockValue.value, 
@@ -118,6 +119,7 @@ export default function AddFood() {
     const [categoriesValue, setCategoriesValue] = useState([""]);
     const [foodImg, setFoodImg] = useState();
     const [fileName, setFileName] = useState();
+    const [previewImage, setPreviewImage] = useState();
 
    
     return(
@@ -173,10 +175,8 @@ export default function AddFood() {
                         </div>
                     </div>   
                 <div className = "main-add-food-component-container-right">
-                    <div className = "upload-image-container">
-                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                            <UploadImageButton onSelectFile = {onSelectFile}/>
-                    </div>
+                    <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage}/> </div>
                 </div>
             </div>
             <div className = "save-item-button-container-final">

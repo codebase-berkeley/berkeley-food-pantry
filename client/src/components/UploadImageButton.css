@@ -1,3 +1,8 @@
+.upload-image-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .import-image-button {
     display: flex;
     align-items: center;
@@ -7,8 +12,22 @@
     border-radius: 100px;
     border: #264425 solid 1px;
     background-color: white;
-    margin-left: 15%;
+    /* margin-left: 15%; */
 }
+
+.change-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 100px;
+    border: #264425 solid 1px;
+    background-color: #D6DECD;
+    margin-bottom: 5%;
+    /* margin-left: 15%; */
+}
+
 
 .import-image-button:hover {
     background-color: #D6DECD;
@@ -21,4 +40,19 @@
     align-items: center;
     justify-content: center;
     margin-top: .70vh;
+}
+
+.imgDiv {
+    display: flex;
+    /* margin-top: 5%; */
+    flex-direction: row;
+    height: 250px;
+    width: 250px;
+}
+
+.imgDiv img {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    border-radius: 5%;
 }

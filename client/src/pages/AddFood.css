@@ -42,6 +42,7 @@
 
 .main-add-food-component-container-right {
     display: flex;
+    flex-direction: column;
     height: 100%;
     width: 33vw;
     margin-left: 8vw;
@@ -200,17 +201,7 @@ input {
 
 
 
-.change-image-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 17vw;
-    height: 5.5vh;
-    border-radius: 100px;
-    border: #264425 solid 1px;
-    background-color: #D6DECD;
-    margin-left: 15%;
-}
+
 
 
 
@@ -253,17 +244,15 @@ input {
 
 
 .upload-image-header {
-    margin-top: 2.5vh;
-    font-weight: 450;
-    height: 20%;
-    font: 'inter';
-    font-size: 2vh;
-    margin-bottom: -2vh;
+    color: #4C4C4C;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 3%;
 }
 
 .optional-text {
-    color:#B8B8B8;
-    margin-top: 2.5%;  
+    color:#B8B8B8; 
     font-weight: 300; 
 }
 
@@ -272,7 +261,14 @@ input {
     flex-direction: column;
     height: 30vh;
     width: 100%;
-    margin-top: 3vh;   
+    margin-top: 3vh;  
+    position: relative; 
+}
+
+.addFood-upload-bttn {
+    display: flex;
+    height: 50%;
+    width: 50%
 }
 
 .delete-item-confirmation {

@@ -5,23 +5,17 @@ import React, { useState } from 'react';
 
 export default function UploadImageButton(props) {
     const [buttonType, setButtonType] = useState(false);
-    const [uploadedFile, setUploadedFile] = useState(null);
     const hiddenFileInput = React.useRef(null);
 
 
     function setButtonHelper() {
         setButtonType(true)
         hiddenFileInput.current.click()
-        //setUploadedFile(URL.createObjectURL(event.target.files[0]))
-        // return (
-        //     <img src={uploadedFile}/>
-        //     //here it should return a div with the uploaded img and the "img uploaded succesfully thing"
-        // )
     }
     
     if (buttonType == false) {
         return(
-            <div className = "upload-image-container">
+            <div className = "upload-image-button-container">
                 <div className='import-image-button' role = 'button' onClick = {setButtonHelper}>
                     <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
                     <h1 className = 'upload-image-text-h1'>Import Image</h1>
@@ -31,12 +25,11 @@ export default function UploadImageButton(props) {
                     ref={hiddenFileInput} 
                     onChange={props.onSelectFile} 
                     style ={{display: 'none'}}/> 
-                    <img src={uploadedFile}/>
             </div>
         )
     } else if (buttonType == true) {
         return (
-            <div className = "upload-image-container" role = 'button' onClick = {setButtonHelper}>
+            <div className = "upload-image-button-container" role = 'button' onClick = {setButtonHelper}>
             <div className = 'change-image-button'> 
                 <img src = {importimagecloud} className = 'cloud-format' alt = "upload image cloud"></img>
                 <h1 className = 'upload-image-text-h1'>Change Image</h1>
@@ -46,7 +39,9 @@ export default function UploadImageButton(props) {
                     ref={hiddenFileInput} 
                     onChange={props.onSelectFile} 
                     style ={{display: 'none'}}/> 
-                    <img src={uploadedFile}/>
+            
+            <div className='imgDiv' style={props.previewPath == null ? {display:"none"} : {display: "flex"}}><img src={props.previewPath}/></div>
+                    
             </div>
         )
     }
