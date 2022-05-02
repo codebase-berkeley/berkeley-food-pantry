@@ -94,21 +94,17 @@ module.exports = (app) => {
     //     // res.json()// authorised)
     // });
 
-    app.get('/auth/google',
-        passport.authenticate('google', { scope: [ 'email', 'profile' ]
-    }));
-
-    app.get('/auth/google/callback', passport.authenticate( 'google', {
+    const passportAuthenticate = passport.authenticate('admin-google', { 
+        scope: [ 'email', 'profile' ], 
+        prompt: 'select_account',
         successRedirect: 'http://localhost:3000/edit-stock',
-        failureRedirect: 'http://localhost:3000/schedule-appointment',
-        failureMessage: true,
-        failureFlash: true
-    }));
-    /**
-    app.get('/auth/google/callback', passport.authenticate( 'google', {
-        failureRedirect: 'http://localhost:3000/edit-stock'
-    }), function(req, res) {
-        res.redirect('/schedule-appointment');
-    });
-    */
+        failureRedirect: 'http://localhost:3000/login'
+    })
+
+    app.get('/auth/google', passportAuthenticate);
+
+    // app.get('/auth/google/callback', passport.authenticate( 'google', {
+    //     successRedirect: 'http://localhost:3000/edit-stock',
+    //     failureRedirect: 'http://localhost:3000/login'
+    // }));
 }

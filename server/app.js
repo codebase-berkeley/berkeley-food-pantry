@@ -4,7 +4,7 @@ const Session = require('express-session');
 const { Sequelize } = require('sequelize')
 const http = require('http');
 const passport = require('passport')
-const GoogleStrategy = require('passport-google-oauth2')
+const GoogleStrategy = require('passport-google-oauth')
 const cookieParser = require('cookie-parser');
 
 const routes = require('./routes');
@@ -32,27 +32,24 @@ app.use(Session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-/**allbackURL: "http://localhost:4000/auth/google/callback", */
-
-passport.use(new GoogleStrategy({
+passport.use('admin-google', new GoogleStrategy.OAuth2Strategy({
     clientID:     GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:4000/auth/google/callback",
-    passReqToCallback: true
-  }, (request, accessToken, refreshToken, profile, done) => {
+    callbackURL: "http://localhost:4000/auth/google"
+  }, (accessToken, refreshToken, profile, done) => {
+    console.log(profile)
     const email = profile.emails[0].value
 
 
-    if (email === 'mawil0721@berkeley.edu' ||
-        email === 'kieron.ong@gmail.com' || 
+    if ( email === 'mawil0721@gmail.com' || 
         email === 'ysharma@berkeley.edu' || 
         email === 'a.brooks@berkeley.edu' ||
         email === 'anthonylu@berkeley.edu' ||
         email === 'adityabhandari@berkeley.edu' ||
         email === 'gargi@berkeley.edu' ||
         email === 'ranonl@berkeley.edu' ||
-        email === 'ilyues@berkeley.edu' ||
-        email === 'tyli@berkeley.edu') {
+        email === 'ilyues@berkeley.edu' 
+        ) {
         return done(null, email);
     } else {
         return done(null, false);
