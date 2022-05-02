@@ -8,7 +8,7 @@ import isbesPlusSign from './../images/plusSign.svg';
 import Select, { NonceProvider } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import Food from './../components/Food.js';
-import apples from "./../images/apples.png";
+import apples from "./../images/apple.png";
 import banana from "./../images/banana.png";
 import coconut from "./../images/cocunut.png";
 import donut from './../images/donut.png';
@@ -310,7 +310,7 @@ export function StockListingAdmin() {
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)
-                            .filter(tagMatchFunction)
+                            // .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
                                     name={foodItem.name} 
@@ -409,7 +409,7 @@ export function StockListingUser() {
     }
 
     function searchFunction(foodObject) {
-        
+
         if (foodObject.name.toUpperCase().includes(searchInput.toUpperCase())) {
             return true; 
         } else {
@@ -446,7 +446,7 @@ export function StockListingUser() {
                         <div className="stocklisting-filters">
                             <div className="stocklisting-searchBox">
                                 <text>Search Items</text>
-                                <Search placeholder="Search..." />
+                                <Search placeholder="Search..." searchInput={searchInput} setSearchInput={setSearchInput}/>
                             </div>
 
                             <div className="stocklisting-filter-by">
@@ -475,6 +475,8 @@ export function StockListingUser() {
                                         placeholder="Alphabetical, A-Z"
                                         options={sortOptions}
                                         defaultValue={sortOptions[0]}
+                                        value={selectedSort}
+                                        onChange={setSelectedSort}
                                     />
                                 </div>
                             </div>
@@ -494,8 +496,9 @@ export function StockListingUser() {
                     <div className="stocklisting-filterItemDisplay">
                         {food
                             .filter(searchFunction)
-                            .filter(stockFilterFunction)
                             .filter(tagMatchFunction)
+                            .filter(stockFilterFunction)
+                            // .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
                                     name={foodItem.name} 
