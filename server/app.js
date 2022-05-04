@@ -10,6 +10,8 @@ const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 require('dotenv').config();
 const { initFoodModel } = require('./models/Food');
+const { initAppointmentModel } = require('./models/Appointment');
+
 const e = require('cors');
 
 const { PORT, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
