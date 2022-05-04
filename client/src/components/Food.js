@@ -5,6 +5,7 @@ import pen from './../images/pen.svg'
 import checkmark from './../images/instockMark.svg'
 import xmark from '../images/notinstock.svg'
 import { useState } from 'react'; 
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 function Food(props) {
@@ -49,20 +50,27 @@ function Food(props) {
                             );})}
                         </div>
                     </div>
-                    <div className = "food-editIn">
-                    <div>
-                        <button className="food-editButton" onClick={editItem}>
+                   
+                    
+                        {/* <button className="food-editButton" onClick={editItem}>
                             <img src={pen} className="food-penFormat" alt="pen"/>
                             <div className="food-editItem">
-                                Edit Item
-                                </div>
-                                </button>
                             </div>
-                        
+                                </button> */}
+                <div className = "food-editIn">
+        
+                        <Link to="/addFood" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "editButton">
+                            <img src={pen} className="penFormat" alt="pen"/>
+                            <div className="editItem">
+                                Edit Item
+                                
+                            </div>
+                            </Link>
                         <div className ="food-inStockCheck">
                             In Stock
                             <input className = "form-check-input" type="checkbox"></input>
                         </div>
+                        
                     </div>
 
                 </div>

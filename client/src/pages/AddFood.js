@@ -9,6 +9,9 @@ import { caretTrimReplace } from 'prettier';
 import { Helmet } from 'react-helmet';
 import AdminLoginNavbar from './AdminLoginNavbar';
 
+import { useLocation } from "react-router-dom";
+import Tags from '../components/Tags.js'
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 const todayStock = [
     { value: true, label: 'In stock today' },
@@ -41,10 +44,22 @@ const customStyles = {
     indicatorSeparator: () => null,
 
     control: (provided, state) => ({
-        height: '6vh',
+        // height: '6vh',
+        // ...provided,
+        // width: '30vw',
+        // borderRadius: '.5vw',
+        // border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
+        // boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
+        // '&:hover': {
+        //     border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
+        // },
         ...provided,
         width: '30vw',
         borderRadius: '.5vw',
+        textOverflow: "hidden",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        flexWrap: 'nowrap',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
@@ -65,6 +80,55 @@ const customStyles = {
         };
     }
 }
+
+const location = useLocation();
+    const [edit, setEdit] = useState(true);
+    const [itemName, setItemName] = useState("");
+    const [stockAvailability, setStockAvailability] = useState("");
+    const [tags, setTags] = useState([]);
+    const [image, setImage] = useState("");
+
+    useEffect(() => {
+        setItemName(location.state.name);
+        setTags(location.state.tags);
+        setImage(location.state.image);
+
+        if (location.state.inStock) {
+            setStockAvailability("In Stock Today");
+        }
+        else {setStockAvailability("Out of Stock Today");}
+      });
+
+    function save() {
+        console.log(itemName, stockAvailability, tags, image, location.state.inStock);
+    }
+
+    function headerDisplay() {
+        if (edit) {
+            return (
+                <div>
+                <h1>Edit Item</h1>
+                <p>Edit an existing item in the stock directory.</p>
+                </div>   
+            )
+            }
+        return (
+            <div>
+                <h1>Add Item</h1>
+                <p>Add a new item to the stock directory.</p>
+            </div>
+            )
+        }
+
+    function displayTags() {
+        <div className = "addTagsFormat">
+                        {tags.map((tag) => {
+                            return (
+                            <Tags name={tag} />
+                        );})}
+                </div>
+    }
+        
 
 
 export default function AddFood() {
@@ -108,54 +172,48 @@ export default function AddFood() {
     const [categoriesValue, setCategoriesValue] = useState([""]);
 
    
-    return(
+    return (
         <>
         <AdminLoginNavbar isAdmin={true}/>
-        <div className = "main-container">
-        <div className = "add-food-component-header">
-            <h1>Add Item</h1>
-            <p className = "">Add a new item to the stock directory.</p>
-        </div>
-        <div className = "main-add-food-component-container">
-            <div className = "main-add-food-component-container-left">
-                <div className = 'add-food-item-selections'> 
-                    <div className = "item-name">
-                        <form>
-                            <label className = "item-name-input">
-                                Item Name 
-                            </label>
-                                <input id = "addItem-food-name" className = "item-name-textbox" type="text" name="name" />
+        
+        <div className = 'add-food-component-container'>
+            <div className = 'add-food-component-header'>
+                {headerDisplay()}
+            </div>
+                <div className = 'main-add-food-component-container'>
+                    <div className = 'add-item-selections'> 
+                            <form style={{marginTop: "8%"}}>
+                                <label className = "add-item-name-input">
+                                    Item Name 
+                                    </label>
+                                    <input className = "add-item-name-textbox" defaultValue={itemName} type="text" name="name" />
                             </form>
-                            
-                        </div>
-                        </div> 
-                        <div className="stock-dropdown">
-                            <label className = "item-name-input">Set Stock Availability</label>
-                            <div id="filter-dropdown">
-                                <Select className="custom-dropdown-2" 
-                                    onChange={setStockValue}
-                                    value = {stockValue}
-                                    id = 'stock-option'
-                                    menuPlacement='auto'
-                                    menuPosition='fixed'
+
+                        <div className="add-item-stock-dropdown">
+                            <label className = "add-item-name-input">Set Stock Availability</label>
+                            <div>
+                                <Select className="add-item-custom-dropdown"
+                                    placeholder="select..."
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    placeholder="Select..."
+                                    defaultValue={location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
                                 />
                                
-                            </div>
                         </div> 
-                        <div className="categories-dropdown">
-                            <label className = "item-name-input">Select Dietary Categories (Optional)</label>
+
+                        <div className="add-item-categories-dropdown">
+                            <label className = "add-item-name-input">Select Dietary Categories (Optional)</label>
                             <div>
-                                <Select className="custom-dropdown"
-                                    onChange = {setCategoriesValue}
-                                    value = {categoriesValue}
-                                    styles={customStyles}
+                                <Select className="add-item-custom-dropdown"
                                     closeMenuOnSelect={true}
+                                    styles={customStyles}
                                     components={animatedComponents}
+                                    defaultValue={location.state.tags.map((tag) => 
+                                        ({label: tag, value: tag.toLowerCase()})
+                                    )}
+                                    
                                     isMulti
                                     options={dietaryCategories}
                                 />
@@ -165,6 +223,7 @@ export default function AddFood() {
                 <div className = "main-add-food-component-container-right">
                     <div className = "upload-image-container">
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+
                             <UploadImageButton/>
                     </div>
                 </div>
@@ -202,9 +261,6 @@ export default function AddFood() {
                         }} value="Delete Item"></input>
                         <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
                         
-
-
-                        
                     </Modal>
                     </div>
                     <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
@@ -212,7 +268,20 @@ export default function AddFood() {
                 <Helmet>
                     <title>Add Item</title>
                 </Helmet>
-        </div>
-        </>
+
+                        <UploadImageButton/>
+
+                        {/* <div>
+                            <img src={location.state.image} className="imgFormat" alt="food image"/>
+                        </div> */}
+
+                    </div>
+                </div>
+
+                
+            </>
+      
+        
     )
+    
 }
