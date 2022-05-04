@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import './AppointmentTY.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import AdminLoginNavbar from './AdminLoginNavbar';
 
 export default function AppointmentTY(props) {
     const location = useLocation();
@@ -10,6 +11,8 @@ export default function AppointmentTY(props) {
     const timeSelected = location.state?.time;
 
    return(
+    <>
+    <AdminLoginNavbar isAdmin={false}/>
 
     <div className = 'thankyou-full-page'>
             
@@ -41,6 +44,7 @@ export default function AppointmentTY(props) {
                 <title>Thank you!</title>
             </Helmet>
     </div>
+    </>
         
    )
 }
