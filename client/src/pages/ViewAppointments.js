@@ -109,7 +109,6 @@ export function ViewAppointments() {
         return card.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
     }
 
-
     function apptTimeFilter(card) {
         const splitInt = card.time.split(":");
         const newSplitInt = parseInt(splitInt[0]) * 100 + parseInt(splitInt[1]);
@@ -131,10 +130,20 @@ export function ViewAppointments() {
             }           
     }
 
+    function setCardVisited(activeId) {
+        for (const each of card) {
+            if (each.id == activeId) {
+                // AppointmentCard.setVisited(each);
+                break;
+            }
+        }
+    }
+
     function selectCard(activeId) {
         for (const each of card) {
             if (each.id == activeId) {
                 setActiveAppt(each);
+                // console.log(activeAppt);
                 break;
             }
         }
@@ -235,7 +244,7 @@ export function ViewAppointments() {
 
                     <div className="view-appts-appointments-detail-display">
                         {/* <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/> */}
-                        <Details card={this} date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited}/>
+                        <Details card={activeAppt} date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited}/>
                     </div> 
                 </div>
             </div>

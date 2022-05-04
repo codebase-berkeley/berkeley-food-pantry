@@ -9,8 +9,8 @@ function AppointmentCard(props){
     const [visited, setVisited] = useState(props.visited);
 
     function setVisitedHelper() {
-        setVisited(!visited)
-        console.log(visited)
+        setVisited(!visited);
+        // console.log(visited)
     }
 
     function beenVisited() {

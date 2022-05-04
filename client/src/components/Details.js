@@ -21,19 +21,20 @@ function Details(props) {
     
       function setVisitedHelper() {
         setVisited(!visited)
-        console.log(props.visited);
-        props.card.setVisited();
+        props.card.visited = !props.card.visited;
       }
 
-
       function beenVisited() {
+        console.log(props.card);
         if (visited == true) {
             // note to self, add onClick functionality to update database if checkmark is clicked
             return (
                 <button className="details-notVisitedButton" onClick={setVisitedHelper}> 
                     <img src={visitedMark} className = 'details-checkMark'></img>
                     <div className='details-markAs'> Visited! </div> 
+                    
                 </button>
+                
             )
         } else {
             return (
