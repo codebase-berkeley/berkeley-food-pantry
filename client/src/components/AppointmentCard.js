@@ -20,7 +20,6 @@ function AppointmentCard(props){
                 // <button className="appointment-card-notVisitedButton" onClick = {setVisitedHelper}> 
                     // <img src={visitedMark} className = 'appointment-card-checkMark'></img>
                     <div className='appointment-card-markAs'> Visited! </div> 
-                
             )
         } else {
             return (
@@ -39,6 +38,7 @@ function AppointmentCard(props){
                     <div className='appointment-card-date'> {props.date} </div>
                     <div className='appointment-card-time'> {props.time} </div>
                     <div className='appointment-card-name'> {props.firstName} {props.lastName} </div>
+                    <div className='appointment-card-markAs'>{props.visited}</div> 
                 </div>
                 <div className='appointment-card-visitedButton'>
                     {beenVisited()}

@@ -93,6 +93,7 @@ export function ViewAppointments() {
     const [selectedDay, setSelectedDay] = useState("all");
     const [selectedTime, setSelectedTime] = useState("all");
     const [activeAppt, setActiveAppt] = useState(card[0]);
+    const [activeVisited, setActiveVisited] = useState(false);
 
     function clearInputFieldsHelper() {
         setSelectedSort();
@@ -108,7 +109,6 @@ export function ViewAppointments() {
         return card.date.toLowerCase().charAt(0) == selectedDay.value.charAt(0);
     }
 
-    
 
     function apptTimeFilter(card) {
         const splitInt = card.time.split(":");
@@ -139,6 +139,15 @@ export function ViewAppointments() {
             }
         }
     }
+
+    // function displayVisited() {
+    //     for (const each in card) {
+    //         if (each.id == activeId) {
+    //             setVisited(each);
+    //             break;
+    //         }
+    //     }
+    // }
 
     return (
         <div className="full-page">
@@ -226,7 +235,7 @@ export function ViewAppointments() {
 
                     <div className="view-appts-appointments-detail-display">
                         {/* <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/> */}
-                        <Details date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited}/>
+                        <Details card={this} date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited}/>
                     </div> 
                 </div>
             </div>
