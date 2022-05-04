@@ -38,16 +38,7 @@ passport.use('admin-google', new GoogleStrategy.OAuth2Strategy({
     callbackURL: "http://localhost:4000/auth/google"
   }, (accessToken, refreshToken, profile, done) => {
     const email = profile.emails[0].value
-
-    if ( email === 'mawil0721@berkeley.edu' || 
-        email === 'ysharma@berkeley.edu' || 
-        email === 'a.brooks@berkeley.edu' ||
-        email === 'anthonylu@berkeley.edu' ||
-        email === 'adityabhandari@berkeley.edu' ||
-        email === 'gargi@berkeley.edu' ||
-        email === 'ranonl@berkeley.edu' ||
-        email === 'ilyues@berkeley.edu' 
-        ) {
+    if ( email.includes('@berkeley.edu')) {
         return done(null, email);
     } else {
         return done(null, false);
