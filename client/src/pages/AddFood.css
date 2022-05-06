@@ -41,6 +41,9 @@
 }
 
 .main-add-food-component-container-right {
+    /* display: flex;
+    width: 50%;
+    flex-direction: column; */
     display: flex;
     height: 100%;
     width: 33vw;
@@ -48,22 +51,23 @@
     margin-top: .5vh;
     justify-content: center;
     /* background-color: red; */
+   
 }
 
 .add-food-save-item-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
-    height: 5.5vh;
-    margin-top: 43%;
-    margin-left: -17%;
+    width: 15vw;
+    height: 5vh;
     border-radius: 40px;
     color: white;
     background-color: #264425;
     font-size: 2.25vh;
     font-weight: 800;
     font-family: 'Montserrat';
+    margin-top: 3vh;
+    margin-right: 7vw;
 }
 
 .save-item-button-container-2 {
@@ -112,7 +116,7 @@
     font-weight: bold;
     font-family: 'Montserrat';
     margin-top: 3vh;
-    margin-right: 3vw;    
+    margin-right: 3vw;   
 }
 
 .add-food-delete-item-final-button {
@@ -166,10 +170,7 @@
     padding-bottom: 2%;
     padding-top: 3%;
     width: 30vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+
     margin-top: -5%;
 }
 
@@ -190,7 +191,7 @@ p#filterControlLabel {
 
 .item-name-input {
     display: flex;
-    margin-top: 6.5vh;
+    /* margin-top: 6.5vh; */
     width: 30vw;
     text-align: left; 
     color: #4C4C4C;
@@ -198,7 +199,6 @@ p#filterControlLabel {
     font-weight: bold;
     font-size: 18px;
     padding-bottom: 2vh;
-    width: 30vw;
 }
 
 .add-item-button-container {
@@ -209,7 +209,7 @@ p#filterControlLabel {
 
 .add-item-name-textbox {
     width: 30vw;
-    height: 6vh;
+    height: 5vh;
     border-radius: .5vw;
     border: solid #ACB9AC;
 }
@@ -217,12 +217,15 @@ p#filterControlLabel {
 label.add-item-name-input {
     display:flex;
     flex-direction: column;
+    justify-content: left;
     border-radius: 4px 4px 4px 4px;
     font-size: 2vh;
     font-family: "Montserrat";
     margin-top: 2%;
 
     border-color: #588157;
+        font-weight: 600;
+        padding-top: 2vh;
   }
 
   label {
@@ -236,9 +239,9 @@ label.add-item-name-input {
     margin: 2px;
     border-color: #588157;
   }
-.change-image-button {
+/* .change-image-button {
     border-color: #588157;
-  }
+  } */
 
 
 .import-image-button {
@@ -264,11 +267,14 @@ label.add-item-name-input {
     height: 5.5vh;
     border-radius: 100px;
     border: #264425 solid 1px;
-    /* background-color: #D6DECD; */
-    /* margin-left: 15%; */
+    background-color: #D6DECD; 
+    margin-left: 15%;
+    margin-top: 2%;
+
+    /* margin-left: 15%;
     margin-top: 2%;
     margin-left: 30%;
-    background-color: white;
+    /* background-color: #588157; */
 }
 
 .import-image-button:hover {
@@ -321,9 +327,9 @@ label.add-item-name-input {
     margin-top: .70vh;
 }
 
-.upload-image-header {
+/* .upload-image-header {
     margin-top: 2.5vh;
-}
+} */
 
 .right-side-container {
     display: flex;
@@ -338,10 +344,7 @@ label.add-item-name-input {
     height: 20%;
     font: 'inter';
     font-size: 2vh;
-    /* margin-bottom: -2vh; */
-    margin-left: 20%;
-    /* margin-right: -50%; */
-    /* background-color: red; */
+    /* margin-bottom: 2%; */
 }
 
 .optional-text {
@@ -411,11 +414,7 @@ label.add-item-name-input {
         margin-bottom: -3%;
         font-weight: 600;
     }
-    .stock-dropdown {
-        display: flex;
-        align-items: center;
-        text-align: left;
-    }
+
     .categories-dropdown {
         align-items: center;
     }

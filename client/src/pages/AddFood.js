@@ -195,17 +195,19 @@ export default function AddFood() {
                 {headerDisplay()}
             </div>
                 <div className = 'main-add-food-component-container'>
-                    <div className = 'add-item-selections'> 
-                            <form style={{marginTop: "8%"}}>
-                                <label className = "add-item-name-input">
+                    <div className = "main-add-food-component-container-left">
+                        <div className = 'add-item-selections'> 
+                            <div className = "item-name">
+                              <form style={{marginTop: "8%"}}>
+                                 <label className = "add-item-name-input">
                                     Item Name 
                                     </label>
                                     <input className = "add-item-name-textbox" defaultValue={itemName} type="text" name="name" />
-                            </form>
-
-                        <div className="add-item-stock-dropdown">
-                            <label className = "add-item-name-input">Set Stock Availability</label>
-                            <div>
+                                </form>
+                            </div>
+                            <div className="add-item-stock-dropdown">
+                                <label className = "add-item-name-input">Set Stock Availability</label>
+                                
                                 <Select className="add-item-custom-dropdown"
                                     placeholder="select..."
                                     styles={customStyles}
@@ -215,12 +217,12 @@ export default function AddFood() {
                                     options={todayStock}
                                 />
                                
-                        </div> 
+                            </div> 
 
-                        <div className="add-item-categories-dropdown">
-                            <label className = "add-item-name-input">Select Dietary Categories (Optional)</label>
-                            <div>
-                                <Select className="add-item-custom-dropdown"
+                            <div className="add-item-categories-dropdown">
+                                <label className = "add-item-name-input">Select Dietary Categories (Optional)</label>
+                                <div>
+                                    <Select className="add-item-custom-dropdown"
                                     closeMenuOnSelect={true}
                                     styles={customStyles}
                                     components={animatedComponents}
@@ -230,21 +232,20 @@ export default function AddFood() {
                                     
                                     isMulti
                                     options={dietaryCategories}
-                                />
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </div>   
-                    
-                </div>
-               
-                <div className = "main-add-food-component-container-right">
-                    <div className = "upload-image-container">
-                        <div className = 'upload-image-header'>Upload Image <span className='optional-text'>(Optional)</span></div>
+                        </div>   
+                    </div>
+                    <div className = "main-add-food-component-container-right">
+                        <div className = "upload-image-container">
+                            <div className = 'upload-image-header'>Upload Image <span className='optional-text'>(Optional)</span></div>
 
                             <UploadImageButton/>
+                        </div>
                     </div>
-                </div>
-            <div className = "save-item-button-container-final">
+                    </div>
+                <div className = "save-item-button-container-final">
                     <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                     <div className = "modal-container">
                     <Modal isOpen = {modalIsOpen} id = "modal" 
@@ -281,7 +282,13 @@ export default function AddFood() {
                     </div>
                     <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
                 </div>
+                
+               
+                
+                    
+                    
                 </div>
+                
                 <Helmet>
                     <title>Add Item</title>
                 </Helmet>
@@ -289,7 +296,9 @@ export default function AddFood() {
                    
 
                     
-                </div>
+
+               
+           
 
                 
             </>
