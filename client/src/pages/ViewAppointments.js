@@ -251,17 +251,21 @@ export function ViewAppointments() {
                         </div>
     
                     </div>
-
+                    
                     <div className="view-appts-checkboxes">
                         
                         <div className ="view-appts-form-check-label">
-                            <span>Show appointments marked visited</span>
-                            <input type="checkbox"/>
+                            <div className='appts-checkbox-together'>
+                                <span>Show appointments marked visited</span>
+                                <input type="checkbox"/>
+                            </div>
                         </div>
 
                         <div className ="view-appts-form-check-label">
-                            <span>Show appointments marked visited</span>
-                            <input type="checkbox"/>
+                            <div className='appts-checkbox-together'>
+                                <span>Show appointments marked visited</span>
+                                <input type="checkbox"/>
+                            </div>
                         </div>
                                 
                     </div>
