@@ -24,6 +24,9 @@ import pasta from "./../images/pasta.webp";
 import raspberries from "./../images/raspberries.jpeg"
 import milk from "./../images/milk.jpeg";
 import salmon from "./../images/salmon.jpeg";
+import iceCream from "./../images/iceCrea.jpeg";
+import rice from "./../images/rice.jpeg";
+import strawberries from "./../images/strawberries.jpeg";
 
 
 const foodCategories = [
@@ -110,10 +113,12 @@ const customStyles = {
 const food = [ {name: 'Raspberries', image: raspberries, instock: true, tags: ["Vegan", "Pescatarian", "Vegetarian", "Gluten-Free", "Fruit"] }, 
 {name: 'Milk', image: milk, instock: true, tags: ["Vegetarian", "Pescatarian", "Dairy"] }, 
 {name: 'Salmon', image: salmon, instock: false, tags: ["Pescatarian", "Seafood", "Gluten-Free"] }, 
-{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
-{name: 'Apple', image: apples, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
-
+{name: 'Oat Milk', image: oatMilk, instock: true, tags: [ "Vegan","Vegetarian", "PEscatarian", "Gluten-free"] }, 
+{name: 'Oats', image: oats, instock: true, tags: ["Vegan", "Vegetarian", "Pescatarian", "Gluten-Free", "Grains"] }, 
+{name: 'Ice Cream', image: iceCream, instock: true, tags: ["Vegetrian", "Gluten-Free", "Dairy"]}, 
+{name: 'Rice', image: rice, instock: false, tags: ["Vegan", "Vegetarian", "Pescatarian", "Gluten-Free"]}, 
+{name: 'Pasta', image: pasta, instock: true, tags: ["Vegetarian", "Vegan", "Pescatarian"]},
+{name: 'Strawberries', image: strawberries, instock: true, tags: ["Vegan", "Vegetrian", "Gluten-Free", "Fruit"]}  
 ];
 
 
