@@ -9,9 +9,9 @@ import AdminLoginNavbar from './AdminLoginNavbar';
 
 const dates = [
     { value: 0, label: 'Select date...' },
-    { value: '03/30', label: 'Wednesday, March 30th' },
-    { value: '03/31', label: 'Thursday, March 31st' },
-    { value: '04/01', label: 'Friday, April 1st' }
+    { value: '03/30', label: 'Friday, May 6th' },
+    { value: '03/31', label: 'Saturday, May 7th' },
+    { value: '04/01', label: 'Sunday, May 8th' }
 ]
 
 const times = [
