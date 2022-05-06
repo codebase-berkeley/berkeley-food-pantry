@@ -107,21 +107,6 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 ];
 
 
-// const [state, setState] = React.useState();
-
-// async function fetchData() {
-// 	const response = await axios.get('http://my-url-endpoint.com',
-// 		headers: {
-// 			authorization: 'Bearer <my-api-key>',
-// 		},
-// 	});
-// 	setState(response.json());
-// }
-
-// React.useEffect(() => {
-// 	fetchData();
-// }, []);
-
 
 export function StockListingAdmin() {
     const [stockStatus, setStockStatus] = useState();
