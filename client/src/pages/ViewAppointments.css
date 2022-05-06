@@ -41,11 +41,11 @@
 } */
 .view-appts-checkboxes {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-end;
-    /* flex-grow: 1; */
-    /* align-content: flex-end;  */
-    /* justify-content: space-between; */
+    flex-grow: 1;
+    padding-bottom: 1vh;
+
 }
 .appts-checkbox-together {
     display: flex;
