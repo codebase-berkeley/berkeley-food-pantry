@@ -147,12 +147,14 @@ export default function AddFood() {
             setImage(null);
             setStockAvailability("In Stock Today");
             setEdit(false);
+            console.log('null set')
 
         } else {
             setItemName(location.state.name);
             setTags(location.state.tags);
             setImage(location.state.image);
             setEdit(true);
+            console.log('supposedly state set')
     
     
             if (location.state.inStock) {
@@ -167,7 +169,7 @@ export default function AddFood() {
 
     function deleteItem(nameFood) {
         // Simple DELETE request with axios
-        axios.delete('http://localhost:5000/food', { data: { name: nameFood } })
+        axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
             .then(() => console.log("something"));
     }
 

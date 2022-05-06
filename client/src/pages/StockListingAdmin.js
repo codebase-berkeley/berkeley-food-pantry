@@ -352,7 +352,6 @@ export function StockListingAdmin() {
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)
-                            // .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
                                     name={foodItem.name} 

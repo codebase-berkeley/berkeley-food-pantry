@@ -86,7 +86,7 @@ module.exports = (app) => {
     app.post('/food',  async (req, res) => {
 
         const name = req.body.name;
-        console.log(req.body.data);
+        console.log(req.body.image);
         console.log(name);
         if (!name || name.length <= 0) return res.status(400).end();
         const instock = req.body.instock;
@@ -120,7 +120,7 @@ module.exports = (app) => {
         const image = req.body.image_path;
         console.log(req.body.name);
          try {
-        response = await imagesService.upload(imageName, base64Image);
+        response = await s3.upload(imageName, base64Image);
     } catch (err) {
         console.error('Error uploading image: ', err.message);
         return next(new Error('Error uploading image: ', imageName));

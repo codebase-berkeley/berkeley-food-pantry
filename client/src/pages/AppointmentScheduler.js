@@ -111,7 +111,7 @@ export default function AppointmentScheduler() {
         }
         itemPrefs = itemPrefs.substring(2, itemPrefs.length);
 
-            axios.post('http://localhost:5000/appointment', {
+            axios.post('http://localhost:4000/appointment', {
                 last_name: document.getElementById("input-values-2").value,
                 first_name: document.getElementById("input-values-1").value,
                 date: selectedDate.label,

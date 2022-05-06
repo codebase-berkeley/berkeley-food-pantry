@@ -17,6 +17,6 @@
     "sequelize": "^6.18.0"
   },
   "scripts": {
-    "start": "PORT=5000 node app.js"
+    "start": "PORT=4000 node app.js"
   }
 }
