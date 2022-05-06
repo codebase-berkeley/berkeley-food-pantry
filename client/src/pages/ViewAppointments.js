@@ -256,14 +256,14 @@ export function ViewAppointments() {
                         
                         <div className ="view-appts-form-check-label">
                             <div className='appts-checkbox-together'>
-                                <span>Show appointments marked visited</span>
+                                <span>Show Appointments Marked Visited</span>
                                 <input type="checkbox"/>
                             </div>
                         </div>
 
                         <div className ="view-appts-form-check-label">
                             <div className='appts-checkbox-together'>
-                                <span>Show appointments marked visited</span>
+                                <span>Show Appointments Marked Visited</span>
                                 <input type="checkbox"/>
                             </div>
                         </div>
@@ -275,16 +275,16 @@ export function ViewAppointments() {
                 <div className="view-appts-bottomContainer">
 
                     <div className="view-appts-appt-card-display">
-                        <AppointmentCard date="Monday, April 4 2022" time="11:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
-                        <AppointmentCard date="Monday, April 4 2022" time="2:00 PM"firstName="Yojita" lastName ="Sharma" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Gargi" lastName ="Deshpande" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Mawil" lastName ="Hasan" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" />
-                        <AppointmentCard date="Monday, April 4 2022" time="4:00 PM"firstName="Aditya" lastName ="Bhandari" />
+                        <AppointmentCard date="Monday, April 4 2022" time="8:00 AM"firstName="Anthony" lastName ="Lu" visited={false}/>
+                        <AppointmentCard date="Monday, April 4 2022" time="8:30 AM"firstName="Yojita" lastName ="Sharma" />
+                        <AppointmentCard date="Monday, April 4 2022" time="9:00 AM"firstName="Gargi" lastName ="Deshpande" />
+                        <AppointmentCard date="Monday, April 4 2022" time="9:30 AM"firstName="Mawil" lastName ="Hasan" />
+                        <AppointmentCard date="Monday, April 4 2022" time="10:00 AM"firstName="Abby" lastName ="Brooks" />
+                        <AppointmentCard date="Monday, April 4 2022" time="10:30 AM"firstName="Aditya" lastName ="Bhandari" />
                     </div>
 
                     <div className="view-appts-appointments-detail-display">
-                        <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/>
+                        <Details date="Monday, April 4 2022" time="10:00 AM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/>
                     </div> 
                 </div>
             </div>
