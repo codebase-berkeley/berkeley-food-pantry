@@ -18,7 +18,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import axios from "axios";
 import AdminLoginNavbar from "./AdminLoginNavbar.js";
-
+import oatMilk from "./../images/oatmilk.webp";
+import oats from "./../images/oats.jpeg";
+import pasta from "./../images/pasta.webp";
+import raspberries from "./../images/raspberries.jpeg"
+import milk from "./../images/milk.jpeg";
+import salmon from "./../images/salmon.jpeg";
 
 
 const foodCategories = [
@@ -102,9 +107,9 @@ const customStyles = {
     },
 }
 
-const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
-{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
-{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
+const food = [ {name: 'Raspberries', image: raspberries, instock: true, tags: ["Vegan", "Pescatarian", "Vegetarian", "Gluten-Free", "Fruit"] }, 
+{name: 'Milk', image: milk, instock: true, tags: ["Vegetarian", "Pescatarian", "Dairy"] }, 
+{name: 'Salmon', image: salmon, instock: false, tags: ["Pescatarian", "Seafood", "Gluten-Free"] }, 
 {name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
 {name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
 {name: 'Apple', image: apples, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
