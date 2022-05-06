@@ -83,7 +83,10 @@ const customStyles = {
         const transition = 'opacity 300ms';
 
         return {
-            ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px'
+            ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px', '&:hover': {
+                borderRadius: '20px !important',
+                paddingLeft: '5px !important', paddingRight: '5px !important'
+             }
             };
         }
     }
@@ -182,7 +185,7 @@ export default function AddFood() {
         console.log(categoriesValue);
         console.log(categoriesValue.map((category) => category.value));
         
-        return categoriesValue.map((category) => category.value);
+        return categoriesValue.map((category) => category.value).join(",");
 
     }
 

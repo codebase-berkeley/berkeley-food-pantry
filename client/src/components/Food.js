@@ -51,17 +51,11 @@ function Food(props) {
                         </div>
                     </div>
                    
-                    
-                        {/* <button className="food-editButton" onClick={editItem}>
-                            <img src={pen} className="food-penFormat" alt="pen"/>
-                            <div className="food-editItem">
-                            </div>
-                                </button> */}
                 <div className = "food-editIn">
         
-                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "editButton">
+                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "food-editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
-                            <div className="editItem">
+                            <div className="food-editItem">
                                 Edit Item
                                 
                             </div>
