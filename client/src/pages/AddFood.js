@@ -135,22 +135,24 @@ export default function AddFood() {
                }
            });
 
-        if (location.state.inStock === null){
+        if (location.state === null){
             setItemName(null);
             setTags(null);
             setImage(null);
-        }
-
-        setItemName(location.state.name);
-        setTags(location.state.tags);
-        setImage(location.state.image);
-
-
-        if (location.state.inStock) {
             setStockAvailability("In Stock Today");
+        } else {
+            setItemName(location.state.name);
+            setTags(location.state.tags);
+            setImage(location.state.image);
+    
+    
+            if (location.state.inStock) {
+                setStockAvailability("In Stock Today");
+            }
+            else {setStockAvailability("Out of Stock Today");}
         }
-        else {setStockAvailability("Out of Stock Today");}
-        
+
+       
     }, [])
 
 
@@ -206,7 +208,7 @@ export default function AddFood() {
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    defaultValue={location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
+                                    defaultValue={location.state === null? {label: "In Stock Today", value: true} : location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
                                 />
                                
@@ -219,7 +221,7 @@ export default function AddFood() {
                                     closeMenuOnSelect={true}
                                     styles={customStyles}
                                     components={animatedComponents}
-                                    defaultValue={location.state.tags.map((tag) => 
+                                    defaultValue={location.state === null? [] : location.state.tags.map((tag) => 
                                         ({label: tag, value: tag.toLowerCase()})
                                     )}
                                     
@@ -234,12 +236,12 @@ export default function AddFood() {
                
                 <div className = "main-add-food-component-container-right">
                     <div className = "upload-image-container">
-                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+                        <div className = 'upload-image-header'>Upload Image <span className='optional-text'>(Optional)</span></div>
 
                             <UploadImageButton/>
                     </div>
                 </div>
-            {/* <div className = "save-item-button-container-final">
+            <div className = "save-item-button-container-final">
                     <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                     <div className = "modal-container">
                     <Modal isOpen = {modalIsOpen} id = "modal" 
@@ -275,7 +277,7 @@ export default function AddFood() {
                     </Modal>
                     </div>
                     <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
-                </div> */}
+                </div>
                 </div>
                 <Helmet>
                     <title>Add Item</title>
