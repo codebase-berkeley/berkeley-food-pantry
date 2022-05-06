@@ -22,16 +22,15 @@ import AdminLoginNavbar from "./AdminLoginNavbar.js";
 
 
 const foodCategories = [
-    { value: 'chocolate', label: 'Meat' },
-    { value: 'strawberry', label: 'Veggies' },
-    { value: 'beverages', label: 'Beverages' },
+    { value: 'vegan', label: 'Vegan' },
+    { value: 'vegetarian', label: 'Vegetarian' },
     { value: 'pescatarian', label: 'Pescatarian' },
+    { value: 'gluten-free', label: 'Gluten-free' },
     { value: 'fruit', label: 'Fruit' },
+    { value: 'vegetable', label: 'Vegetable' },
+    { value: 'grains', label: 'Grains' },
     { value: 'dairy', label: 'Dairy' },
-    { value: 'seafood', label: 'Seafood' },
-    { value: 'pet food', label: 'Pet food' },
-    { value: 'brown', label: 'Brown'},
-    { value: 'vegetarian', label: 'Vegetarian'}
+    { value: 'seafood', label: 'Seafood' }
 ]
 
 const sortOptions = [
@@ -458,7 +457,7 @@ export function StockListingUser() {
 
                         <div className="stocklisting-filterReset">
                             <div className="stocklisting-filterItems">Filter Items</div>
-                            <button className="stocklisting-resetFilters">Reset Filters</button>
+                            <button className="stocklisting-resetFilters" onClick={clearInputFieldsHelper}>Reset Filters</button>
                         </div>
 
                         <div className="stocklisting-filters">
@@ -502,7 +501,13 @@ export function StockListingUser() {
                             <div className="stocklisting-showFilter">
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" unchecked></input>
+                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked={selectedShow == 1} onChange={e => {
+                                            if (e.target.checked) {
+                                                setSelectedShow(1);
+                                            } else {
+                                                setSelectedShow(0);
+                                            }
+                                        }}></input>
                                         Only show items in stock today.
                                     </label>
                                 </div>

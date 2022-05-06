@@ -20,7 +20,14 @@ const todayStock = [
 
 const dietaryCategories = [
     { value: 'vegan', label: 'Vegan' },
-    { value: 'vegetarian', label: 'Vegetarian' }
+    { value: 'vegetarian', label: 'Vegetarian' },
+    { value: 'pescatarian', label: 'Pescatarian' },
+    { value: 'gluten-free', label: 'Gluten-free' },
+    { value: 'fruit', label: 'Fruit' },
+    { value: 'vegetable', label: 'Vegetable' },
+    { value: 'grains', label: 'Grains' },
+    { value: 'dairy', label: 'Dairy' },
+    { value: 'seafood', label: 'Seafood' }
 ]
 
 const animatedComponents = makeAnimated();
