@@ -81,10 +81,11 @@ const customStyles = {
         }
     }
 
-   
+
+        
+
 
 export default function AddFood() {
-
     const location = useLocation();
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
@@ -140,8 +141,6 @@ export default function AddFood() {
                         );})}
                 </div>
     }
-        
-
 
     useEffect(() => {
         axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
