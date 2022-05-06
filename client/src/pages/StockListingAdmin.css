@@ -320,3 +320,53 @@ input[type='radio']:checked {
   }
 
 
+  @media screen and (orientation: portrait) { 
+    .stocklisting-topContainer h1 {
+        font-size: 28px;
+    }
+
+    .stocklisting-bottomContainer {
+        flex-direction: column;
+        height:fit-content;
+        width:auto;
+        padding: 5px;
+        align-items: center;
+    }
+
+    .stocklisting-filterItemControls {
+        width: 100%;
+
+    }
+
+    .stocklisting-filters, .stocklisting-searchBox, .stocklisting-filter-by, .stocklisting-sort-by {
+        width: fit-content;
+        height: auto;
+        align-items: flex-start;
+        
+    }
+
+    .stocklisting-filterItemDisplay {
+        border-left: none;
+        border-top: 1px solid #B8B8B8;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .stocklisting-filterReset {
+        display: flex;
+        padding-top: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        width: 80vw;
+    }
+
+    .search input {
+        width: 80vw;
+        border-radius: 8px;
+    }
+
+    .stocklisting-resetFilters {
+        padding: 0;
+    }
+  }
