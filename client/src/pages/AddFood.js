@@ -77,27 +77,22 @@ const customStyles = {
 
         return {
             ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px'
-        };
+            };
+        }
     }
-}
 
-const location = useLocation();
+   
+
+export default function AddFood() {
+
+    const location = useLocation();
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
     const [stockAvailability, setStockAvailability] = useState("");
     const [tags, setTags] = useState([]);
     const [image, setImage] = useState("");
 
-    useEffect(() => {
-        setItemName(location.state.name);
-        setTags(location.state.tags);
-        setImage(location.state.image);
 
-        if (location.state.inStock) {
-            setStockAvailability("In Stock Today");
-        }
-        else {setStockAvailability("Out of Stock Today");}
-      });
 
     function save() {
         console.log(itemName, stockAvailability, tags, image, location.state.inStock);
@@ -131,8 +126,6 @@ const location = useLocation();
         
 
 
-export default function AddFood() {
-
     useEffect(() => {
         axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
            .catch((error) => {
@@ -141,6 +134,22 @@ export default function AddFood() {
 
                }
            });
+
+        if (location.state.inStock === null){
+            setItemName(null);
+            setTags(null);
+            setImage(null);
+        }
+
+        setItemName(location.state.name);
+        setTags(location.state.tags);
+        setImage(location.state.image);
+
+
+        if (location.state.inStock) {
+            setStockAvailability("In Stock Today");
+        }
+        else {setStockAvailability("Out of Stock Today");}
         
     }, [])
 
@@ -220,6 +229,9 @@ export default function AddFood() {
                             </div>
                         </div>
                     </div>   
+                    
+                </div>
+               
                 <div className = "main-add-food-component-container-right">
                     <div className = "upload-image-container">
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
@@ -227,8 +239,7 @@ export default function AddFood() {
                             <UploadImageButton/>
                     </div>
                 </div>
-            </div>
-            <div className = "save-item-button-container-final">
+            {/* <div className = "save-item-button-container-final">
                     <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                     <div className = "modal-container">
                     <Modal isOpen = {modalIsOpen} id = "modal" 
@@ -264,18 +275,15 @@ export default function AddFood() {
                     </Modal>
                     </div>
                     <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
+                </div> */}
                 </div>
                 <Helmet>
                     <title>Add Item</title>
                 </Helmet>
 
-                        <UploadImageButton/>
+                   
 
-                        {/* <div>
-                            <img src={location.state.image} className="imgFormat" alt="food image"/>
-                        </div> */}
-
-                    </div>
+                    
                 </div>
 
                 

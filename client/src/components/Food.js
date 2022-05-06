@@ -59,7 +59,7 @@ function Food(props) {
                                 </button> */}
                 <div className = "food-editIn">
         
-                        <Link to="/addFood" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "editButton">
+                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="editItem">
                                 Edit Item
