@@ -107,7 +107,33 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 ];
 
 
+// const [state, setState] = React.useState();
+
+// async function fetchData() {
+// 	const response = await axios.get('http://my-url-endpoint.com',
+// 		headers: {
+// 			authorization: 'Bearer <my-api-key>',
+// 		},
+// 	});
+// 	setState(response.json());
+// }
+
+// React.useEffect(() => {
+// 	fetchData();
+// }, []);
+
+
 export function StockListingAdmin() {
+    const [stockStatus, setStockStatus] = React.useState();
+
+async function fetchStock() {
+    const response = await axios.get('/food'),
+    headers: {
+
+    },
+});
+    setStockStatus(response.json());
+}
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
@@ -120,6 +146,7 @@ export function StockListingAdmin() {
 
                }
            });
+        fetchStock();
         
     }, [])
 
