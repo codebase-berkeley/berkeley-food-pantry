@@ -1,17 +1,15 @@
 import './AddFood.css';
-import Select, { NonceProvider } from 'react-select';
+import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import React, { useState, useEffect } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
-import { caretTrimReplace } from 'prettier';
 import { Helmet } from 'react-helmet';
 import AdminLoginNavbar from './AdminLoginNavbar';
 
 import { useLocation } from "react-router-dom";
 import Tags from '../components/Tags.js'
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 const todayStock = [
     { value: true, label: 'In stock today' },
@@ -51,15 +49,7 @@ const customStyles = {
     indicatorSeparator: () => null,
 
     control: (provided, state) => ({
-        // height: '6vh',
-        // ...provided,
-        // width: '30vw',
-        // borderRadius: '.5vw',
-        // border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
-        // boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
-        // '&:hover': {
-        //     border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC'
-        // },
+
         ...provided,
         width: '30vw',
         borderRadius: '.5vw',
@@ -83,7 +73,10 @@ const customStyles = {
         const transition = 'opacity 300ms';
 
         return {
-            ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px'
+            ...provided, opacity, transition, borderRadius: '20px', paddingLeft: '5px', paddingRight: '5px', '&:hover': {
+                borderRadius: '20px !important',
+                paddingLeft: '5px !important', paddingRight: '5px !important'
+             }
             };
         }
     }
@@ -121,6 +114,23 @@ export default function AddFood() {
             </div>
             )
         }
+
+        function deleteDisplay() {
+            if (edit) {
+                return (
+                    <div>
+                    <h1>Edit Item</h1>
+                    <p>Edit an existing item in the stock directory.</p>
+                    </div>   
+                )
+                }
+            return (
+                <div>
+                    <h1>Add Item</h1>
+                    <p>Add a new item to the stock directory.</p>
+                </div>
+                )
+            }
 
     function displayTags() {
         <div className = "addTagsFormat">
@@ -174,7 +184,6 @@ export default function AddFood() {
 
     function addItem(nameFood) {
         console.log(stockAvailability.value);
-        // console.log(document.getElementById("filter-dropdown"));
         axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockAvailability.value, tags: categoriesList(categoriesValue), image_path: "codebase.com"})
             .then(() => console.log("add item works"));
     }
@@ -182,7 +191,7 @@ export default function AddFood() {
         console.log(categoriesValue);
         console.log(categoriesValue.map((category) => category.value));
         
-        return categoriesValue.map((category) => category.value);
+        return categoriesValue.map((category) => category.value).join(",");
 
     }
 
@@ -256,7 +265,7 @@ export default function AddFood() {
                     </div>
                     </div>
                 <div className = "save-item-button-container-final">
-                    <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
+                    {<input className = "add-food-delete-item-button" style={edit ? {} : {display: "none"}} type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>}
                     <div className = "modal-container">
                     <Modal isOpen = {modalIsOpen} id = "modal" 
                     style={{content: {

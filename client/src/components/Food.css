@@ -67,6 +67,13 @@
     font-size: 12px;
     font-weight: 600;
     color: #588157;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: black;
 }
 
 .food-infoContainer {
