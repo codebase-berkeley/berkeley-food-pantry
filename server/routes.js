@@ -111,16 +111,18 @@ module.exports = (app) => {
     
     });
 
-    app.put('/food', async (req, res) => {
+    app.put('/food', async (req, res, next) => {
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
         const id = req.param.id; 
         const instock = req.body.instock;
         const tags = req.body.tags;
-        const image = req.body.image_path;
-        console.log(req.body.name);
+        const base64Image = req.body.image;
+        const imageName = req.body.image_name;
+    
+        let response;
          try {
-        response = await s3.upload(imageName, base64Image);
+        response = await upload(imageName, base64Image);
     } catch (err) {
         console.error('Error uploading image: ', err.message);
         return next(new Error('Error uploading image: ', imageName));
@@ -130,7 +132,7 @@ module.exports = (app) => {
             name: name, 
             instock: instock,
             tags: tags,
-            image_path: image
+            image_path: response
         }, 
         {
             where: {

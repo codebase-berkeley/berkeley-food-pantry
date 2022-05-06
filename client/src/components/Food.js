@@ -53,7 +53,7 @@ function Food(props) {
                    
                 <div className = "food-editIn">
         
-                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "food-editButton">
+                        <Link to="/add-food" state = {{id: props.id, name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "food-editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="food-editItem">
                                 Edit Item

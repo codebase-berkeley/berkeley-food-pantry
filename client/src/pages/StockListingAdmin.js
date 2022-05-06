@@ -103,11 +103,11 @@ const customStyles = {
 }
 
 const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian", "Brown"] }, 
-{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"] }, 
-{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"] }, 
-{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"] }, 
-{name: 'Apple', image: apples, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"]} 
+{name: 'Banana', image: banana, instock: false, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Yellow"], id: 1 }, 
+{name: 'Coconut', image: coconut, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Brown"], id: 2 }, 
+{name: 'Broccoli', image: broccoli, instock: true, tags: [ "Vegan", "Gluten-free", "Fruit", "Brown"], id: 3 }, 
+{name: 'Canned Beans', image: cannedBeans, instock: false, tags: ["Meat", "Vegan", "Gluten-free", "Brown"], id: 4 }, 
+{name: 'Apple', image: apples, instock: true, tags: ["Vegetarian", "Vegan", "Gluten-free", "Fruit", "Red"], id: 5} 
 
 ];
 
@@ -121,6 +121,7 @@ export function StockListingAdmin() {
         //convert data first
         let convertedFood = food.map(f => {
             return {
+                id: f.id,
                 name: f.name,
                 image: f.image_path,
                 instock: f.instock,
@@ -354,6 +355,7 @@ export function StockListingAdmin() {
                             .filter(stockFilterFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
+                                    id={foodItem.id}
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 
@@ -551,6 +553,7 @@ export function StockListingUser() {
                             // .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
+                                id={foodItem.id}
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 

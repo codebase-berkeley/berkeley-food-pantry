@@ -92,6 +92,7 @@ const customStyles = {
 
 export default function AddFood() {
     const location = useLocation();
+    const [id, setId] = useState(true);
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
     const [stockAvailability, setStockAvailability] = useState( {label: "In Stock Today", value: true});
@@ -142,6 +143,7 @@ export default function AddFood() {
            });
 
         if (location.state === null){
+            setId(null);
             setItemName(null);
             setTags(null);
             setImage(null);
@@ -150,6 +152,7 @@ export default function AddFood() {
             console.log('null set')
 
         } else {
+            setId(location.state.id)
             setItemName(location.state.name);
             setTags(location.state.tags);
             setImage(location.state.image);
