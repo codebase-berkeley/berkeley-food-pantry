@@ -162,7 +162,7 @@ export default function AddFood() {
         console.log(categoriesValue);
         console.log(categoriesValue.map((category) => category.value));
         
-        return categoriesValue.map((category) => category.value);
+        return categoriesValue.map((category) => category.value).join(",");
 
     }
 
@@ -200,6 +200,8 @@ export default function AddFood() {
                                     components={animatedComponents}
                                     defaultValue={location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
+                                    value={stockAvailability}
+                                    onChange={setStockAvailability}
                                 />
                                
                         </div> 
@@ -217,6 +219,8 @@ export default function AddFood() {
                                     
                                     isMulti
                                     options={dietaryCategories}
+                                    value={categoriesValue}
+                                    onChange={setCategoriesValue}
                                 />
                             </div>
                         </div>

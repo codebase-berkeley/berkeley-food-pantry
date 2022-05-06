@@ -109,10 +109,23 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 
 
 export function StockListingAdmin() {
-    const [stockStatus, setStockStatus] = useState();
+    const [currentStock, setCurrentStock] = useState([]);
     async function fetchStock() {
-        const food = axios.get('/food')
+        const food = (await axios.get('http://localhost:4000/food')).data
         console.log(food)
+        //convert data first
+        let convertedFood = food.map(f => {
+            return {
+                name: f.name,
+                image: f.image_path,
+                instock: f.instock,
+                tags: f.tags.split(",").map(t => {
+                    return t.charAt(0).toUpperCase() + t.substring(1)
+                })
+            }
+        })
+
+        setCurrentStock(convertedFood);
     }
 
     const [selectedSort, setSelectedSort] = useState();
@@ -330,7 +343,7 @@ export function StockListingAdmin() {
                     </div>
 
                     <div className="stocklisting-filterItemDisplay">
-                        {food
+                        {currentStock
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)

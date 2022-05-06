@@ -19,7 +19,7 @@ const initFoodModel = (sequelize) => {
             allowNull: false
         },
         tags: {
-            type: DataTypes.ARRAY (DataTypes.STRING),
+            type: DataTypes.STRING,
             allowNull: false
         },
         image_path: {
