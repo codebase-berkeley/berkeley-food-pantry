@@ -140,10 +140,13 @@ export default function AddFood() {
             setTags(null);
             setImage(null);
             setStockAvailability("In Stock Today");
+            setEdit(false);
+
         } else {
             setItemName(location.state.name);
             setTags(location.state.tags);
             setImage(location.state.image);
+            setEdit(true);
     
     
             if (location.state.inStock) {
