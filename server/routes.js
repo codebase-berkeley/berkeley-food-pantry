@@ -19,7 +19,8 @@ module.exports = (app) => {
     });
 
     app.get('/food', async (req, res) => {
-        const food = await Food.findAll();
+        const food = await Food.findAll({order: [['updatedAt', 'DESC']]});
+        
         res.status(200).json(food);
     });
     
