@@ -1,7 +1,7 @@
 import './AddFood.css';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import UploadImageButton from './../components/UploadImageButton.js';
 import axios from 'axios';
 import Modal from 'react-modal';
@@ -181,15 +181,41 @@ export default function AddFood() {
 
     function deleteItem(nameFood) {
         // Simple DELETE request with axios
-        axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
+        axios.delete('http://localhost:5000/food', { data: { name: nameFood } })
             .then(() => console.log("something"));
     }
 
-    function addItem(nameFood) {
-        console.log(stockAvailability.value);
-        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockAvailability.value, tags: categoriesList(categoriesValue), image_path: "codebase.com"})
-            .then(() => console.log("add item works"));
+    async function onSelectFile(event) {
+        const file = event.target.files[0];
+        const convertedFile = await convertToBase64(file);
+        let tempPath = (URL.createObjectURL(event.target.files[0]));
+        console.log(tempPath)
+        setFileName(file.name);
+        setPreviewImage(tempPath)
+        setFoodImg(convertedFile);
     }
+
+    const convertToBase64 = (file) => {
+        return new Promise(resolve => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                resolve(reader.result);
+            }
+        })
+    }
+
+    function addItem(nameFood) {
+        console.log(document.getElementById("addItem-food-name").value);
+        axios.post('http://localhost:4000/food', {
+            name: document.getElementById("addItem-food-name").value, 
+            instock: stockAvailability.value, 
+            tags: categoriesList(categoriesValue), 
+            image_name: fileName,
+            image: foodImg
+        })
+    }
+
     function categoriesList(categoriesValue) {
         console.log(categoriesValue);
         console.log(categoriesValue.map((category) => category.value));
@@ -202,6 +228,9 @@ export default function AddFood() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [categoriesValue, setCategoriesValue] = useState([""]);
+    const [foodImg, setFoodImg] = useState();
+    const [fileName, setFileName] = useState();
+    const [previewImage, setPreviewImage] = useState();
 
    
     return (
@@ -257,18 +286,16 @@ export default function AddFood() {
                                     />
                                 </div>
                             </div>
-                        </div>   
-                    </div>
-                    <div className = "main-add-food-component-container-right">
-                        <div className = "upload-image-container">
-                            <div className = 'upload-image-header'>Upload Image <span className='optional-text'>(Optional)</span></div>
-
-                            <UploadImageButton/>
                         </div>
-                    </div>
-                    </div>
-                <div className = "save-item-button-container-final">
-                    {<input className = "add-food-delete-item-button" style={edit ? {} : {display: "none"}} type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>}
+                    </div>   
+                <div className = "main-add-food-component-container-right">
+
+                        <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
+                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage}/> </div>
+                </div>
+            </div>
+            <div className = "save-item-button-container-final">
+                    <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                     <div className = "modal-container">
                     <Modal isOpen = {modalIsOpen} id = "modal" 
                     style={{content: {
