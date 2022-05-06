@@ -124,20 +124,17 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 
 
 export function StockListingAdmin() {
-    const [stockStatus, setStockStatus] = React.useState();
+    const [stockStatus, setStockStatus] = useState();
+    async function fetchStock() {
+        const food = axios.get('/food')
+        console.log(food)
+    }
 
-async function fetchStock() {
-    const response = await axios.get('/food'),
-    headers: {
-
-    },
-});
-    setStockStatus(response.json());
-}
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
+    
     useEffect(() => {
         axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
            .catch((error) => {
