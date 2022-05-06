@@ -77,6 +77,9 @@ const customStyles = {
 const appt = [ {firstname: 'yojita', lastname: 'sharma', instock: true, tags: ["Vegetarian", "Brown"] }, 
 ];
 
+// get everything in the appts table and it will return as a json
+// 
+
 const card = [ {id: 0, date: 'Monday, April 4 2022', time: '2:00 PM', firstName: 'Abby', lastName: 'Brooks', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
 {id: 1, date: 'Wednesday, April 6 2022', time: '3:00 PM', firstName: 'Anthony', lastName: 'Lu', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
 {id: 2, date: 'Friday, April 5 2022', time: '3:30 PM', firstName: 'Aditya', lastName: 'Bhandari', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
@@ -134,6 +137,7 @@ export function ViewAppointments() {
         for (const each of card) {
             if (each.id == activeId) {
                 // AppointmentCard.setVisited(each);
+                
                 break;
             }
         }
@@ -148,15 +152,6 @@ export function ViewAppointments() {
             }
         }
     }
-
-    // function displayVisited() {
-    //     for (const each in card) {
-    //         if (each.id == activeId) {
-    //             setVisited(each);
-    //             break;
-    //         }
-    //     }
-    // }
 
     return (
         <div className="full-page">
@@ -244,7 +239,7 @@ export function ViewAppointments() {
 
                     <div className="view-appts-appointments-detail-display">
                         {/* <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/> */}
-                        <Details card={activeAppt} date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited}/>
+                        <Details id={activeAppt.id} date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited} changeCardFunc={setCardVisited}/>
                     </div> 
                 </div>
             </div>

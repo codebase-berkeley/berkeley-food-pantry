@@ -2,6 +2,7 @@ import './Details.css';
 import darkCheckMark from './../images/darkCheckMark.svg'
 import visitedMark from './../images/visitedMark.svg'
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Details(props) {
     let dietary_data = ['Vegan', 'Gluten Free', 'Include Dog Food'];
@@ -16,23 +17,32 @@ function Details(props) {
         />
       );
 
-
       const [visited, setVisited] = useState(props.visited);
     
       function setVisitedHelper() {
         setVisited(!visited)
-        props.card.visited = !props.card.visited;
+        // props.card.visited = !props.card.visited;
+        props.changeCardFunc();
+      }
+
+      async function put() { 
+        axios.put('http://localhost:5000/appointment', 
+        {id: 3, 
+        visited: visited
+        }).then(() => console.log("visited works"));
       }
 
       function beenVisited() {
-        console.log(props.card);
+        
+        put();
+
+        // console.log(props.card);
         if (visited == true) {
             // note to self, add onClick functionality to update database if checkmark is clicked
             return (
                 <button className="details-notVisitedButton" onClick={setVisitedHelper}> 
                     <img src={visitedMark} className = 'details-checkMark'></img>
-                    <div className='details-markAs'> Visited! </div> 
-                    
+                    <div className='details-markAs'> Visited </div> 
                 </button>
                 
             )
