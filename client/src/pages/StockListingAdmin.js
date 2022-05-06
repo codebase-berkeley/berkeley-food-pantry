@@ -305,7 +305,11 @@ export function StockListingAdmin() {
 
 
                             <div className="stocklisting-showFilter">
-                                <div className="stocklisting-howText"> Show </div>
+                                <div className="stocklisting-howText"> 
+                                    <p id = "stocklisting-filterControlLabel"> 
+                                        Show 
+                                    </p> 
+                                </div>
                                 <div className="stocklisting-form-check">
                                     <label class="stocklisting-form-check-label" for="exampleRadios1">
                                         <input class="form-check-input" type="radio" checked={selectedShow == 0} onChange={e => {
