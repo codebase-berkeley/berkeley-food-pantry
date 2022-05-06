@@ -473,7 +473,7 @@ export function StockListingUser() {
 
                     <div className="stocklisting-leftSide">
                         <h1>Check out what we have in stock today.</h1>
-                        <p>Last updated: March 25, 7:47am.<br></br>
+                        <p>Last updated: May 6, 10:47am.<br></br>
                         Stock availability varies day by day. If something you’re looking for is out of stock, it might be available on another day.</p>
                     </div>
 
