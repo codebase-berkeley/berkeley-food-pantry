@@ -173,6 +173,7 @@ export default function AppointmentScheduler() {
                         <div className="apptsched-pickup-items">
                             <p id="apptsched-item-checklist-label">Vegetables & Fruit</p>
                             <div className="apptsched-pickup-items-selection">
+                                
                                 <div className="apptsched-form-check">
                                     <label class="apptsched-form-check-label" for="exampleRadios1">
                                         <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-1" value="kale" ></input>
