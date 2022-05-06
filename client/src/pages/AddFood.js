@@ -295,7 +295,7 @@ export default function AddFood() {
                 </div>
             </div>
             <div className = "save-item-button-container-final">
-                    <input className = "add-food-delete-item-button" type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
+                    <input className = "add-food-delete-item-button" style={edit ? {} : {display: "none"}} type="button" onClick={() => setModalIsOpen(true)} value="Delete Item"></input>
                     <div className = "modal-container">
                     <Modal isOpen = {modalIsOpen} id = "modal" 
                     style={{content: {
@@ -321,7 +321,7 @@ export default function AddFood() {
                             transform: "translate(-50%, -50%)"
                     }}}>
                         <h1>Confirm delete item?</h1>
-                        <input className = "add-food-delete-item-final-button" type="button" onClick={() => {
+                        <input className = "add-food-delete-item-final-button"  type="button" onClick={() => {
                             setModalIsOpen(true);
                             deleteItem("anthony");
                         }} value="Delete Item"></input>
