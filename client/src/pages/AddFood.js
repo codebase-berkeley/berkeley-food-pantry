@@ -330,7 +330,7 @@ export default function AddFood() {
                         
                     </Modal>
                     </div>
-                    <Link to="/edit-stock" className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item">Save Item</Link>
+                    <Link to="/edit-stock" className = "add-food-save-item-button" type="button" onClick={() => {addItem("isbee"); this.forceUpdate(); } } value="Save Item">Save Item</Link>
                     
                 </div>
                 </div>
