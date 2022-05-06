@@ -49,8 +49,9 @@ const customStyles = {
     indicatorSeparator: () => null,
 
     control: (provided, state) => ({
-
+        
         ...provided,
+        height: '6vh',
         width: '30vw',
         borderRadius: '.5vw',
         textOverflow: "hidden",

@@ -69,6 +69,7 @@ const customStyles = {
     control: (provided, state) => ({
         ...provided,
         width: '20vw',
+        height: '6vh',
         borderRadius: '.5vw',
         textOverflow: "hidden",
         whiteSpace: "nowrap",
