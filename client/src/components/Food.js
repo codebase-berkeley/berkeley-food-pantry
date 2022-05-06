@@ -16,18 +16,18 @@ function Food(props) {
     function stockOption() {
         if ((props.in_stock) == true) {
             return (
-                <div className = "food-editIn" style={{paddingRight: "2%", width: "35%"}}>
+                <div className = "food-editIn" >
                     <img src={checkmark} className="food-stockImage" alt="checkmark" />
-                    <div className ="food-in-stock-text" style={{width: "100%"}}>
+                    <div className ="food-in-stock-text" >
                         <span >In Stock Today</span>
                     </div>
                 </div>
             );
         }
         return (
-            <div className = "food-editIn" style={{paddingRight: "4%", width: "35%"}}>
+            <div className = "food-editIn" >
                     <img src={xmark} className="food-stockImage" alt="checkmark" />
-                    <div className ="food-out-of-stock-text" style={{width: "100%"}}>
+                    <div className ="food-out-of-stock-text" >
                         <span>Not In Stock Today</span>
                     </div>
                 </div>
