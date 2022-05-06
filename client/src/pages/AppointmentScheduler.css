@@ -285,6 +285,7 @@ p#apptsched-item-checklist-label {
     border: solid #ACB9AC 1px;
     border-radius: .5vw;
     padding-left: .5vw;
+    padding-top: .5vh;
     box-shadow: #ACB9AC;
     overflow-x: hidden;
     overflow-y: auto;

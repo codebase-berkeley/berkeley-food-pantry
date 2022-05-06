@@ -256,14 +256,14 @@ export function ViewAppointments() {
                         
                         <div className ="view-appts-form-check-label">
                             <div className='appts-checkbox-together'>
-                                <span>Show appointments marked visited</span>
+                                <span>Show Appointments Marked Visited</span>
                                 <input type="checkbox"/>
                             </div>
                         </div>
 
                         <div className ="view-appts-form-check-label">
                             <div className='appts-checkbox-together'>
-                                <span>Show appointments marked visited</span>
+                                <span>Show Appointments Marked Visited</span>
                                 <input type="checkbox"/>
                             </div>
                         </div>
