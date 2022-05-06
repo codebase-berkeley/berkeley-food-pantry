@@ -31,7 +31,8 @@ module.exports = (app) => {
         
     });
 
-    app.post('/food', checkAuthenticated, async (req, res) => {
+    app.post('/food',  async (req, res) => {
+
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
         const image = req.body.image_path;

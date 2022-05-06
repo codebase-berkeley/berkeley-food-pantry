@@ -95,7 +95,7 @@ export default function AddFood() {
     const location = useLocation();
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
-    const [stockAvailability, setStockAvailability] = useState("");
+    const [stockAvailability, setStockAvailability] = useState( {label: "In Stock Today", value: true});
     const [tags, setTags] = useState([]);
     const [image, setImage] = useState("");
 
@@ -173,9 +173,9 @@ export default function AddFood() {
     }
 
     function addItem(nameFood) {
-        console.log(document.getElementById("addItem-food-name").value);
+        console.log(stockAvailability.value);
         // console.log(document.getElementById("filter-dropdown"));
-        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockValue.value, tags: categoriesList(categoriesValue), image_path: "codebase.com"})
+        axios.post('http://localhost:4000/food', {name: document.getElementById("addItem-food-name").value, instock: stockAvailability.value, tags: categoriesList(categoriesValue), image_path: "codebase.com"})
             .then(() => console.log("add item works"));
     }
     function categoriesList(categoriesValue) {
@@ -189,7 +189,6 @@ export default function AddFood() {
     
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [stockValue, setStockValue] = useState(true);
     const [categoriesValue, setCategoriesValue] = useState([""]);
 
    
@@ -209,7 +208,7 @@ export default function AddFood() {
                                  <label className = "add-item-name-input">
                                     Item Name 
                                     </label>
-                                    <input className = "add-item-name-textbox" defaultValue={itemName} type="text" name="name" />
+                                    <input id="addItem-food-name" className = "add-item-name-textbox" defaultValue={itemName} type="text" name="name" />
                                 </form>
                             </div>
                             <div className="add-item-stock-dropdown">
@@ -222,6 +221,8 @@ export default function AddFood() {
                                     components={animatedComponents}
                                     defaultValue={location.state === null? {label: "In Stock Today", value: true} : location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
+                                    value={stockAvailability}
+                                    onChange={setStockAvailability}
                                 />
                                
                             </div> 
@@ -239,6 +240,8 @@ export default function AddFood() {
                                     
                                     isMulti
                                     options={dietaryCategories}
+                                    value={categoriesValue}
+                                    onChange={setCategoriesValue}
                                     />
                                 </div>
                             </div>
