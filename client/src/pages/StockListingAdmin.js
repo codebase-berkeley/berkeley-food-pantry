@@ -107,11 +107,32 @@ const food = [ {name: 'Donut', image: donut, instock: true, tags: ["Vegetarian",
 ];
 
 
+
 export function StockListingAdmin() {
+    const [currentStock, setCurrentStock] = useState([]);
+    async function fetchStock() {
+        const food = (await axios.get('http://localhost:4000/food')).data
+        console.log(food)
+        //convert data first
+        let convertedFood = food.map(f => {
+            return {
+                name: f.name,
+                image: f.image_path,
+                instock: f.instock,
+                tags: f.tags.split(",").map(t => {
+                    return t.charAt(0).toUpperCase() + t.substring(1)
+                })
+            }
+        })
+
+        setCurrentStock(convertedFood);
+    }
+
     const [selectedSort, setSelectedSort] = useState();
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
+    
     useEffect(() => {
         axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
            .catch((error) => {
@@ -120,6 +141,7 @@ export function StockListingAdmin() {
 
                }
            });
+        fetchStock();
         
     }, [])
 
@@ -321,7 +343,7 @@ export function StockListingAdmin() {
                     </div>
 
                     <div className="stocklisting-filterItemDisplay">
-                        {food
+                        {currentStock
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)
