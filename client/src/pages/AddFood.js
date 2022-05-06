@@ -121,22 +121,7 @@ export default function AddFood() {
             )
         }
 
-        function deleteDisplay() {
-            if (edit) {
-                return (
-                    <div>
-                    <h1>Edit Item</h1>
-                    <p>Edit an existing item in the stock directory.</p>
-                    </div>   
-                )
-                }
-            return (
-                <div>
-                    <h1>Add Item</h1>
-                    <p>Add a new item to the stock directory.</p>
-                </div>
-                )
-            }
+
 
     function displayTags() {
         <div className = "addTagsFormat">
@@ -208,13 +193,24 @@ export default function AddFood() {
 
     function addItem(nameFood) {
         console.log(document.getElementById("addItem-food-name").value);
-        axios.post('http://localhost:4000/food', {
+        if (edit) {
+            axios.put('http://localhost:4000/food', {
             name: document.getElementById("addItem-food-name").value, 
             instock: stockAvailability.value, 
             tags: categoriesList(categoriesValue), 
             image_name: fileName,
             image: foodImg
         })
+        } else {
+            axios.post('http://localhost:4000/food', {
+                name: document.getElementById("addItem-food-name").value, 
+                instock: stockAvailability.value, 
+                tags: categoriesList(categoriesValue), 
+                image_name: fileName,
+                image: foodImg
+            })
+        }
+        
     }
 
     function categoriesList(categoriesValue) {

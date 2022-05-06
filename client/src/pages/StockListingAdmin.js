@@ -117,8 +117,7 @@ export function StockListingAdmin() {
     const [currentStock, setCurrentStock] = useState([]);
     async function fetchStock() {
         const food = (await axios.get('http://localhost:4000/food')).data
-        console.log(food)
-        console.log("somothing")
+
         //convert data first
         let convertedFood = food.map(f => {
             return {
