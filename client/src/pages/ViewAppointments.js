@@ -8,6 +8,8 @@ import makeAnimated, { ValueContainer } from 'react-select/animated';
 import AppointmentCard from './../components/AppointmentCard';
 import Details from './../components/Details';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
+import { useEffect } from "react";
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -80,13 +82,13 @@ const appt = [ {firstname: 'yojita', lastname: 'sharma', instock: true, tags: ["
 // get everything in the appts table and it will return as a json
 // 
 
-const card = [ {id: 0, date: 'Monday, April 4 2022', time: '2:00 PM', firstName: 'Abby', lastName: 'Brooks', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{id: 1, date: 'Wednesday, April 6 2022', time: '3:00 PM', firstName: 'Anthony', lastName: 'Lu', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{id: 2, date: 'Friday, April 5 2022', time: '3:30 PM', firstName: 'Aditya', lastName: 'Bhandari', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{id: 3, date: 'Friday, April 7 2022', time: '1:00 PM', firstName: 'Gargi', lastName: 'Deshpande', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{id: 4, date: 'Wednesday, April 6 2022', time: '2:00 PM', firstName: 'Mawil', lastName: 'Hasan', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
-{id: 5, date: 'Monday, April 4 2022', time: '1:30 PM', firstName: 'Yojita', lastName: 'Sharma', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'}
-];
+// const card = [ {id: 0, date: 'Monday, April 4 2022', time: '2:00 PM', firstName: 'Abby', lastName: 'Brooks', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+// {id: 1, date: 'Wednesday, April 6 2022', time: '3:00 PM', firstName: 'Anthony', lastName: 'Lu', visited:true, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+// {id: 2, date: 'Friday, April 5 2022', time: '3:30 PM', firstName: 'Aditya', lastName: 'Bhandari', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+// {id: 3, date: 'Friday, April 7 2022', time: '1:00 PM', firstName: 'Gargi', lastName: 'Deshpande', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+// {id: 4, date: 'Wednesday, April 6 2022', time: '2:00 PM', firstName: 'Mawil', lastName: 'Hasan', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'},
+// {id: 5, date: 'Monday, April 4 2022', time: '1:30 PM', firstName: 'Yojita', lastName: 'Sharma', visited:false, email: 'abigail.brooks@berkeley.edu', phoneNumber: '341-766-8021', dietary_data: ["Vegetarian", "Lactose-intolerant"], item_data:["Empanadas", "Olive oil popcorn"], notes:'none, thanks!'}
+// ];
 
 export function ViewAppointments() {
     const [selectedSort, setSelectedSort] = useState();
@@ -95,8 +97,32 @@ export function ViewAppointments() {
     const [searchInput, setSearchInput] = useState("");
     const [selectedDay, setSelectedDay] = useState("all");
     const [selectedTime, setSelectedTime] = useState("all");
-    const [activeAppt, setActiveAppt] = useState(card[0]);
+    const [activeAppt, setActiveAppt] = useState();
     const [activeVisited, setActiveVisited] = useState(false);
+    const [card, setCard] = useState([]);
+    const [dietary, setDietary] = useState([]);
+    const [item, setItem] = useState([]);
+
+    useEffect(() => {
+        const res = async () => {
+            const res1 = await axios.get('http://localhost:5000/appointment');
+            setCard(res1.data);
+            // console.log(card);
+            // 1: Make a temp constant that is card but with dietary_preferences and item_preferences
+            // set to be arrays instead of strings
+            // console.log("RES 1: ", res1.data)
+            // console.log(card); 
+            setActiveAppt(res1.data[0]);
+            setDietary(res1.data[0].dietary_preferences.split(","));
+            setItem(res1.data[0].item_preferences.split(","));
+
+            return res1;
+        }
+        res()
+        .catch(console.error);
+    
+        // console.log(res());
+    }, []);
 
     function clearInputFieldsHelper() {
         setSelectedSort();
@@ -115,8 +141,8 @@ export function ViewAppointments() {
     function apptTimeFilter(card) {
         const splitInt = card.time.split(":");
         const newSplitInt = parseInt(splitInt[0]) * 100 + parseInt(splitInt[1]);
-        console.log(splitInt);
-        console.log(newSplitInt);
+        // console.log(splitInt);
+        // console.log(newSplitInt);
         if (selectedTime == "all" || selectedTime.value.charAt(0) == 'a') {
             return true; }
         else if (selectedTime.value == "2:00-2:30") {
@@ -134,25 +160,36 @@ export function ViewAppointments() {
     }
 
     function setCardVisited(activeId) {
-        for (const each of card) {
-            if (each.id == activeId) {
-                // AppointmentCard.setVisited(each);
-                
-                break;
-            }
-        }
+        
+
+        // setActiveVisited(!activeVisited);
+        // console.log("inside setcardvisited");
+        // for (const each of card) {
+        //     if (each.id == activeId) {
+        //         // each.visited = !each.visited;
+        //         // AppointmentCard.setVisited(each);
+        //         break;
+        //     }
+        // }
     }
 
     function selectCard(activeId) {
         for (const each of card) {
             if (each.id == activeId) {
+                console.log("EACH:", each);
                 setActiveAppt(each);
-                // console.log(activeAppt);
+                const splitDietary = each.dietary_preferences.split(",");
+                const splitItem = each.item_preferences.split(",");
+                setDietary(splitDietary);
+                setItem(splitItem);
                 break;
             }
         }
     }
 
+    if (card.length != 0 && typeof activeAppt != 'undefined') {
+        // console.log(card);
+        console.log("in if", activeAppt);
     return (
         <div className="full-page">
 
@@ -222,13 +259,13 @@ export function ViewAppointments() {
                                     id={filteredAppt.id}
                                     date={filteredAppt.date}
                                     time={filteredAppt.time}
-                                    firstName={filteredAppt.firstName}
-                                    lastName={filteredAppt.lastName}
+                                    first_name={filteredAppt.first_name}
+                                    last_name={filteredAppt.last_name}
                                     visited={filteredAppt.visited}
                                     email={filteredAppt.email}
-                                    phoneNumber={filteredAppt.phoneNumber}
-                                    dietaryData={filteredAppt.dietary_data}
-                                    itemData={filteredAppt.item_data}
+                                    phoneNumber={filteredAppt.phone_number}
+                                    dietaryData={filteredAppt.dietary_preferences}
+                                    itemData={filteredAppt.item_preferences}
                                     notes={filteredAppt.notes}
                                     onclickFunc={selectCard}
                                     />
@@ -239,7 +276,7 @@ export function ViewAppointments() {
 
                     <div className="view-appts-appointments-detail-display">
                         {/* <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/> */}
-                        <Details id={activeAppt.id} date={activeAppt.date} time={activeAppt.time} firstName={activeAppt.firstName} lastName ={activeAppt.lastName} email={activeAppt.email} phoneNumber={activeAppt.phoneNumber} dietary_data={activeAppt.dietary_data} item_data={activeAppt.item_data} notes={activeAppt.notes} visited={activeAppt.visited} changeCardFunc={setCardVisited}/>
+                        <Details id={activeAppt.id} date={activeAppt.date} time={activeAppt.time} first_name={activeAppt.first_name} last_name ={activeAppt.last_name} email={activeAppt.email} phone_number={activeAppt.phone_number} dietary_preferences={dietary} item_preferences={item} notes={activeAppt.notes} visited={activeAppt.visited} changeCardFunc={setCardVisited}/>
                     </div> 
                 </div>
             </div>
@@ -248,4 +285,8 @@ export function ViewAppointments() {
             </Helmet>  
         </div>
     )
+    } else {
+        return (<div>loading</div>)
+        
+    }
 }

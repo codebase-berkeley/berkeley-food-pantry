@@ -71,8 +71,14 @@ module.exports = (app) => {
         const email = req.body.email;
         const phone_number = req.body.phone_number;
         const visited = req.body.visited;
-        const dietary_preferences = req.body.dietary_preferences;
-        const item_preferences = req.body.item_preferences;
+        let dietary_preferences = req.body.dietary_preferences;
+        if (dietary_preferences == null) { 
+            dietary_preferences = "";
+        }
+        let item_preferences = req.body.item_preferences;
+        if (item_preferences == null) { 
+            item_preferences = "";
+        }
         const notes = req.body.notes;
         
         if (!last_name || last_name.length <= 0 ) return res.status(401).end();
