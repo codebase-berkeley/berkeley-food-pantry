@@ -359,7 +359,7 @@ export default function AppointmentScheduler() {
                     <input onClick={clearInputFieldsHelper} className = "apptsched-clear-all-button" type="button" id ="btClear" value="Clear all"></input>
                 </div>
                 <div className = 'apptsched-submit-button'> 
-                    <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "apptsched-submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
+                    <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "apptsched-link" style = {{textDecoration: 'none'}}>Submit</Link>
                 </div>
             </div>
             <Helmet>

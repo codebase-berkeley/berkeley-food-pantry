@@ -30,7 +30,7 @@ export default function AppointmentTY(props) {
                     <p id="thankyou-description-text">Before you visit, remember to take a look at our <a id="thankyou-weblink" href="https://www.berkeleyfoodpantry.org/needfood">FAQ for visiting the pantry.</a></p>
                 
                     <div className = 'thankyou-appt-button-container'>
-                        <Link to="/appointmentScheduler" className = "thankyou-appt-button" style ={{textDecoration: 'none'}}>Schedule New Appointment</Link>
+                        <Link to="/schedule-appointment" className = "thankyou-appt-button" style ={{textDecoration: 'none'}}>Schedule New Appointment</Link>
                     </div>
                 </div>
 
