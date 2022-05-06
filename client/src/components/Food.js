@@ -14,10 +14,12 @@ function Food(props) {
     }
 
     function checkBox() {
+        //TODO this does not update the database, it is only front end
+        //we should probably change this to an onChange function or something that updates the database
         console.log("pls pls pls")
         if (props.in_stock == true) {
             return (
-                <input className = "form-check-input" type="checkbox" checked = "true"/>
+                <input className = "form-check-input" type="checkbox" defaultChecked = "true"/>
             )
         }
         else {
