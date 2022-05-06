@@ -30,15 +30,18 @@ const dietaryCategories = [
 
 const animatedComponents = makeAnimated();
 const customStyles = {
+    
     placeholder: (defaultStyles) => ({
         ...defaultStyles,
-        color: '#C4C4C4',
+        color: 'black',
     }),
-
+    
     option: (provided, state) => ({
         ...provided,
         height: '6vh',
         backgroundColor: state.isFocused ? "#E5E5E5" : null,
+        color: 'black',
+        focus: 'black'
     }),
 
     dropdownIndicator: base => ({

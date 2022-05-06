@@ -108,14 +108,6 @@
     font-family: 'Montserrat';
 }
 
-.apptsched-clear-all-button:hover {
-    background-color: rgb(240, 230, 230);
-  }
-
-.apptsched-submit-button:hover {
-    background-color: #69ac67;
-}
-
 .apptsched-submit-button {
     display: flex;
     align-items: center;
@@ -128,6 +120,20 @@
     color: white;
     font-size: 2.25vh;
     font-family: 'Montserrat';
+    text-decoration: none;
+}
+
+.apptsched-link{
+    color: white;
+}
+
+.apptsched-link:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.apptsched-submit-button:hover{
+    text-decoration: none;
 }
 
 .apptsched-submit {
