@@ -12,6 +12,20 @@ function Food(props) {
     function editItem () {
         console.log("it works");
     }
+
+    function checkBox() {
+        console.log("pls pls pls")
+        if (props.in_stock == true) {
+            return (
+                <input className = "form-check-input" type="checkbox" checked = "true"/>
+            )
+        }
+        else {
+            return (
+                <input className = "form-check-input" type="checkbox"/>
+            )
+        }
+    }
     
     function stockOption() {
         if ((props.in_stock) == true) {
@@ -62,7 +76,7 @@ function Food(props) {
                             </Link>
                         <div className ="food-inStockCheck">
                             In Stock
-                            <input className = "form-check-input" type="checkbox"></input>
+                            {checkBox()}
                         </div>
                         
                     </div>
