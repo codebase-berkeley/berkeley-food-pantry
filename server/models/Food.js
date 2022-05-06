@@ -1,4 +1,4 @@
-const { Sequelize, Model, DataTypes, STRING } = require("sequelize");
+const { Sequelize, Model, DataTypes, STRING, DATE } = require("sequelize");
 
 class Food extends Model {}
 
@@ -24,6 +24,10 @@ const initFoodModel = (sequelize) => {
         },
         image_path: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        updatedAt:  {
+            type: DataTypes.DATE,
             allowNull: false
         }
     }, {
