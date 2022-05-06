@@ -7,6 +7,38 @@
     width: 30%;
 }
 
+.google-sign-in-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17.5vw;
+    height: 6.5vh;
+    border: 1px solid black;
+    border-radius: 40px;
+    font-size: 2vh;
+    font-weight: bold;
+    font-family: 'Inter';
+    text-decoration: none;
+    margin-top: 3vh;
+}
+
+.google-sign-in-logo {
+    height: 2.25vh;
+    width: 2.25vw;
+}
+
+.google-sign-in-link {
+    text-decoration: none;
+    font-size: 16.5px;
+    color: grey;
+    font-weight: 650;
+}
+
+.google-sign-in-link:hover, .google-sign-in-link:focus, .google-sign-in-link:active {
+    text-decoration: none;
+    color: grey;
+    font-weight: 650;
+}
 
 .admin-login-button {
     border-radius: 25%;
@@ -93,5 +125,40 @@
         height: 90%;
         
     }
+
+    .google-sign-in-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55vw;
+        height: 6.5vh;
+        border: 1px solid black;
+        border-radius: 40px;
+        font-size: 2vh;
+        font-weight: bold;
+        font-family: 'Inter';
+        text-decoration: none;
+        margin-top: 3vh;
+    }
+    
+    .google-sign-in-logo {
+        height: 3.5vh;
+        width: 3.5vw;
+        margin-right: 3vw;
+    }
+    
+    .google-sign-in-link {
+        text-decoration: none;
+        font-size: 16.5px;
+        color: grey;
+        font-weight: 650;
+    }
+    
+    .google-sign-in-link:hover, .google-sign-in-link:focus, .google-sign-in-link:active {
+        text-decoration: none;
+        color: grey;
+        font-weight: 650;
+    }
+    
 
 }
