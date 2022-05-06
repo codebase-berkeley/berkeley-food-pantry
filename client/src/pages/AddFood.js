@@ -7,6 +7,7 @@ import axios from 'axios';
 import Modal from 'react-modal';
 import { Helmet } from 'react-helmet';
 import AdminLoginNavbar from './AdminLoginNavbar';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import { useLocation } from "react-router-dom";
 import Tags from '../components/Tags.js'
@@ -302,13 +303,9 @@ export default function AddFood() {
                         
                     </Modal>
                     </div>
-                    <input className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item"></input>
+                    <Link to="/edit-stock" className = "add-food-save-item-button" type="button" onClick={() => addItem("isbee")} value="Save Item">Save Item</Link>
+                    
                 </div>
-                
-               
-                
-                    
-                    
                 </div>
                 
                 <Helmet>

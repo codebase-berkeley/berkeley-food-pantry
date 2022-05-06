@@ -70,6 +70,11 @@
     margin-right: 7vw;
 }
 
+.add-food-save-item-button:hover{
+    text-decoration: none;
+    color: white;
+}
+
 .save-item-button-container-2 {
     display: flex;
     justify-content: center;
