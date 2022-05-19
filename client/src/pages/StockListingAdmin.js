@@ -69,12 +69,14 @@ const customStyles = {
     control: (provided, state) => ({
         ...provided,
         width: '20vw',
-        height: '6vh',
+        height: 'auto',
+        minHeight: '6vh',
         borderRadius: '.5vw',
         textOverflow: "hidden",
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        flexWrap: 'nowrap',
+        whiteSpace: "wrap",
+        overflow: "auto",
+        flex: '1',
+        flexWrap: 'wrap',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
@@ -121,12 +123,14 @@ export function StockListingAdmin() {
         //convert data first
         let convertedFood = food.map(f => {
             return {
+                id: f.id,
                 name: f.name,
                 image: f.image_path,
                 instock: f.instock,
                 tags: f.tags.split(",").map(t => {
                     return t.charAt(0).toUpperCase() + t.substring(1)
-                })
+                }),
+             
             }
         })
 
@@ -199,13 +203,22 @@ export function StockListingAdmin() {
     }
 
     function setOutOfStock() {
-        console.log("clicked")
-        for (const f of food) {
-            f.instock = false;
-        }
 
+        const tempCurrentStock = [...currentStock];
+        for (const listing of tempCurrentStock) {
+            listing.instock = false;
+            axios.put('http://localhost:4000/food', {
+            id: listing.id,
+            name: listing.name, 
+            instock: listing.instock, 
+            tags: listing.tags.join(","), 
+            image: listing.image
+        })
+        }
+        console.log(tempCurrentStock);
         // TODO: we're forcing a rerender because the array is external, fix this later
-        setSelectedSort(selectedShow)
+        setCurrentStock(tempCurrentStock)
+        
     }
 
 
@@ -551,6 +564,7 @@ export function StockListingUser() {
                             // .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
+                                    id={foodItem.id}
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 

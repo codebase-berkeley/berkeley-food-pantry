@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Tags from '../components/Tags.js'
 
+
 const todayStock = [
     { value: true, label: 'In stock today' },
     { value: false, label: 'Out of stock today' }
@@ -55,13 +56,15 @@ const customStyles = {
     control: (provided, state) => ({
         
         ...provided,
-        height: '6vh',
         width: '30vw',
+        height: 'auto',
+        minHeight: '6vh',
         borderRadius: '.5vw',
         textOverflow: "hidden",
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        flexWrap: 'nowrap',
+        whiteSpace: "wrap",
+        overflow: "auto",
+        flex: '1',
+        flexWrap: 'wrap',
         border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         boxShadow: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
         '&:hover': {
@@ -95,14 +98,10 @@ export default function AddFood() {
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
     const [stockAvailability, setStockAvailability] = useState( {label: "In Stock Today", value: true});
-    const [tags, setTags] = useState([]);
+    const [tags, setTags] = useState();
     const [image, setImage] = useState("");
+    const [id, setId] = useState();
 
-
-
-    function save() {
-        console.log(itemName, stockAvailability, tags, image, location.state.inStock);
-    }
 
     function headerDisplay() {
         if (edit) {
@@ -145,7 +144,7 @@ export default function AddFood() {
             setItemName(null);
             setTags(null);
             setImage(null);
-            setStockAvailability("In Stock Today");
+            setStockAvailability({label: "In Stock Today", value: true});
             setEdit(false);
             console.log('null set')
 
@@ -159,8 +158,17 @@ export default function AddFood() {
     
             if (location.state.inStock) {
                 setStockAvailability("In Stock Today");
+                console.log('supposedly in stock')
             }
-            else {setStockAvailability("Out of Stock Today");}
+            else {
+                setStockAvailability("Out of Stock Today");
+                console.log('supposedly in stock')
+            }
+            setFileName(location.state.name);
+            setPreviewImage(location.state.image);
+            setFoodImg(location.state.image);
+            console.log(location.state.image);
+            setId(location.state.id);
         }
 
        
@@ -170,7 +178,10 @@ export default function AddFood() {
     function deleteItem(nameFood) {
         // Simple DELETE request with axios
         axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
-            .then(() => console.log("something"));
+            .then(() => console.log(nameFood + " deleted successfully"));
+
+        // delete from temp array until re-render
+    
     }
 
     async function onSelectFile(event) {
@@ -178,6 +189,8 @@ export default function AddFood() {
         const convertedFile = await convertToBase64(file);
         let tempPath = (URL.createObjectURL(event.target.files[0]));
         console.log(tempPath)
+        console.log(file.name);
+        console.log(convertedFile.name)
         setFileName(file.name);
         setPreviewImage(tempPath)
         setFoodImg(convertedFile);
@@ -193,14 +206,14 @@ export default function AddFood() {
         })
     }
 
-    function addItem(nameFood) {
+    function addItem() {
         console.log(document.getElementById("addItem-food-name").value);
         if (edit) {
             axios.put('http://localhost:4000/food', {
+            id: id,
             name: document.getElementById("addItem-food-name").value, 
             instock: stockAvailability.value, 
             tags: categoriesList(categoriesValue), 
-            image_name: fileName,
             image: foodImg
         })
         } else {
@@ -208,7 +221,6 @@ export default function AddFood() {
                 name: document.getElementById("addItem-food-name").value, 
                 instock: stockAvailability.value, 
                 tags: categoriesList(categoriesValue), 
-                image_name: fileName,
                 image: foodImg
             })
         }
@@ -255,13 +267,12 @@ export default function AddFood() {
                                 <label className = "add-item-name-input">Set Stock Availability</label>
                                 
                                 <Select className="add-item-custom-dropdown"
-                                    placeholder="select..."
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    defaultValue={location.state === null? {label: "In Stock Today", value: true} : location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
+                                    defaultValue={location.state === null ? {label: "In Stock Today", value: true} : location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
                                     options={todayStock}
-                                    value={stockAvailability}
+                                    //value={stockAvailability}
                                     onChange={setStockAvailability}
                                 />
                                
@@ -280,7 +291,7 @@ export default function AddFood() {
                                     
                                     isMulti
                                     options={dietaryCategories}
-                                    value={categoriesValue}
+                                    //value={categoriesValue}
                                     onChange={setCategoriesValue}
                                     />
                                 </div>
@@ -290,7 +301,7 @@ export default function AddFood() {
                 <div className = "main-add-food-component-container-right">
 
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage}/> </div>
+                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage} initialButtonType={location.state.image !== null}/> </div>
                 </div>
             </div>
             <div className = "save-item-button-container-final">
@@ -320,10 +331,11 @@ export default function AddFood() {
                             transform: "translate(-50%, -50%)"
                     }}}>
                         <h1>Confirm delete item?</h1>
-                        <input className = "add-food-delete-item-final-button"  type="button" onClick={() => {
+                        <Link to="/edit-stock" className = "add-food-delete-item-final-button"  type="button" onClick={() => {
                             setModalIsOpen(true);
-                            deleteItem("anthony");
-                        }} value="Delete Item"></input>
+                            deleteItem(location.state.name);
+                            this.forceUpdate();
+                        }} value="Delete Item">Delete Item</Link>
                         <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
                         
                     </Modal>

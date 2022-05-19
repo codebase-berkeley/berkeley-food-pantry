@@ -53,7 +53,7 @@ function Food(props) {
                    
                 <div className = "food-editIn">
         
-                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image}} className = "food-editButton">
+                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image, id:props.id}} className = "food-editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="food-editItem">
                                 Edit Item
@@ -62,7 +62,7 @@ function Food(props) {
                             </Link>
                         <div className ="food-inStockCheck">
                             In Stock
-                            <input className = "form-check-input" type="checkbox"></input>
+                            <input className = "form-check-input" type="checkbox" checked={props.in_stock}></input>
                         </div>
                         
                     </div>

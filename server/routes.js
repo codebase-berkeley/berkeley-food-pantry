@@ -92,15 +92,18 @@ module.exports = (app) => {
         const instock = req.body.instock;
         const tags = req.body.tags;
         const base64Image = req.body.image;
-        const imgName = req.body.image_name;
+        const imgName = req.body.name;
 
         let response;
-        try {
-            response = await upload(imgName, base64Image);
-        } catch (err) {
-            console.error('Error uploading image: ', err.message);
-            return res.status(400).end()
+        if (image) {
+            try {
+                response = await upload(imgName, base64Image);
+            } catch (err) {
+                console.error('Error uploading image: ', err.message);
+                return res.status(400).end()
+            }
         }
+        
         await Food.create({
             name: name,
             instock: instock,
@@ -114,17 +117,22 @@ module.exports = (app) => {
     app.put('/food', async (req, res) => {
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
-        const id = req.param.id; 
+        const id = req.body.id; 
         const instock = req.body.instock;
         const tags = req.body.tags;
         const image = req.body.image_path;
+        const imageName = req.body.name;
         console.log(req.body.name);
-         try {
-        response = await s3.upload(imageName, base64Image);
-    } catch (err) {
-        console.error('Error uploading image: ', err.message);
-        return next(new Error('Error uploading image: ', imageName));
-    }
+        if (image) {
+            try {
+                response = await s3.upload(imageName, base64Image);
+            } catch (err) {
+                console.error('Error uploading image: ', err.message);
+                return res.status(400).end();
+            }
+
+        }
+         
         if (await Food.update({
             
             name: name, 

@@ -20,11 +20,11 @@ const initFoodModel = (sequelize) => {
         },
         tags: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         image_path: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         updatedAt:  {
             type: DataTypes.DATE,

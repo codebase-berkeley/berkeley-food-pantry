@@ -4,7 +4,7 @@ import './UploadImageButton.css'
 import React, { useState } from 'react';
 
 export default function UploadImageButton(props) {
-    const [buttonType, setButtonType] = useState(false);
+    const [buttonType, setButtonType] = useState(props.initialButtonType);
     const hiddenFileInput = React.useRef(null);
 
 
