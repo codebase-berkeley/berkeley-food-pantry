@@ -192,6 +192,7 @@ p#apptsched-item-checklist-label {
 .apptsched-form-check-label {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .apptsched-form-check-input {
     margin-bottom: 2.5%;
@@ -366,10 +367,14 @@ p#apptsched-item-checklist-label {
         height: 10vh;
         border-radius: 10px;
     }
+    /* .apptsched-alignment-fixing {
+        display: flex; 
+        flex-direction: row; 
 
+    } */
     .apptsched-form-check {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         /* margin-bottom: 2%;
         margin-left: -2vw; */
     }
