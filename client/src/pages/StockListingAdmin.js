@@ -127,11 +127,17 @@ const food = [ {name: 'Raspberries', image: raspberries, instock: true, tags: ["
 
 export function StockListingAdmin() {
     const [currentStock, setCurrentStock] = useState([]);
+    const [lastUpdated, setLastUpdated] = useState("");
     async function fetchStock() {
         const food = (await axios.get('http://localhost:4000/food')).data
 
         //convert data first
+        console.log(food);
+        setLastUpdated(food[0].updatedAt);
         let convertedFood = food.map(f => {
+            if (lastUpdated < f.lastUpdated) {
+                setLastUpdated(f.lastUpdated);
+            }
             return {
                 id: f.id,
                 name: f.name,
@@ -186,6 +192,25 @@ export function StockListingAdmin() {
 
     }
 
+    function changeStockCheck(foodId) {
+        const tempCurrentStock = [...currentStock];
+        for (const listing of tempCurrentStock) {
+            if (listing.id === foodId) {
+                listing.instock = !listing.instock;
+                axios.put('http://localhost:4000/food', {
+                id: listing.id,
+                name: listing.name, 
+                instock: listing.instock, 
+                tags: listing.tags.join(","), 
+                image: listing.image
+            })
+        }
+        
+        }
+        setCurrentStock(tempCurrentStock)
+
+    }
+
     function tagMatchFunction(foodObject) {
         
         for (const tag of selectedTags.map(tagObject => tagObject.label)) {
@@ -225,8 +250,6 @@ export function StockListingAdmin() {
             image: listing.image
         })
         }
-        console.log(tempCurrentStock);
-        // TODO: we're forcing a rerender because the array is external, fix this later
         setCurrentStock(tempCurrentStock)
         
     }
@@ -387,6 +410,7 @@ export function StockListingAdmin() {
                                     in_stock={foodItem.instock} 
                                     tags={foodItem.tags} 
                                     admin={true}
+                                    changeStockCheck={changeStockCheck}
                                     
                                     />))}
 
@@ -407,6 +431,38 @@ export function StockListingUser() {
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
+
+    const [currentStock, setCurrentStock] = useState([]);
+    const [lastUpdated, setLastUpdated] = useState("");
+    async function fetchStock() {
+        const food = (await axios.get('http://localhost:4000/food')).data
+
+        //convert data first
+        console.log(food);
+        setLastUpdated(food[0].updatedAt);
+        let convertedFood = food.map(f => {
+            if (lastUpdated < f.lastUpdated) {
+                setLastUpdated(f.lastUpdated);
+            }
+            return {
+                id: f.id,
+                name: f.name,
+                image: f.image_path,
+                instock: f.instock,
+                tags: f.tags.split(",").map(t => {
+                    return t.charAt(0).toUpperCase() + t.substring(1)
+                }),
+             
+            }
+        })
+
+        setCurrentStock(convertedFood);
+    }
+
+    useEffect(() => {
+        fetchStock();
+        
+    }, [])
 
     function clearInputFieldsHelper() {
         setSelectedSort(sortOptions[0]);
@@ -457,17 +513,6 @@ export function StockListingUser() {
         }
     }
 
-    function setOutOfStock() {
-        console.log("clicked")
-        for (const f of food) {
-            f.instock = false;
-        }
-
-        // TODO: we're forcing a rerender because the array is external, fix this later
-        setSelectedSort(selectedShow)
-    }
-
-
     function getSort() {
         if (selectedSort == null) {
             return;
@@ -500,7 +545,11 @@ export function StockListingUser() {
 
                     <div className="stocklisting-leftSide">
                         <h1>Check out what we have in stock today.</h1>
-                        <p>Last updated: May 6, 10:47am.<br></br>
+                        <p><i>Stock last updated at {new Date(lastUpdated).toLocaleString("en-US", {
+                                timeZone: 'America/Los_Angeles',
+                                dateStyle: 'full',
+                                timeStyle: 'full',
+                            })}.</i><br></br>
                         Stock availability varies day by day. If something you’re looking for is out of stock, it might be available on another day.</p>
                     </div>
 
@@ -572,18 +621,18 @@ export function StockListingUser() {
                     </div>
 
                     <div className="stocklisting-filterItemDisplay">
-                        {food
+                        {currentStock
                             .filter(searchFunction)
                             .filter(tagMatchFunction)
                             .filter(stockFilterFunction)
-                            // .filter(tagMatchFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
                                     id={foodItem.id}
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 
-                                    tags={foodItem.tags}                                      
+                                    tags={foodItem.tags}   
+                                                               
                                     />))}
 
                     </div>

@@ -75,7 +75,7 @@ function Food(props) {
                             </Link>
                         <div className ="food-inStockCheck">
                             In Stock
-                            <input className = "form-check-input" type="checkbox" checked={props.in_stock}></input>
+                            <input className = "form-check-input" type="checkbox" checked={props.in_stock} onChange={() => props.changeStockCheck(props.id)}></input>
                         </div>
                         
                     </div>
