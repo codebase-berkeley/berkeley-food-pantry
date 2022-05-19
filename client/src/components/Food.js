@@ -53,7 +53,7 @@ function Food(props) {
                    
                 <div className = "food-editIn">
         
-                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image, id:props.id}} className = "food-editButton">
+                        <Link to="/add-food" state = {{name: props.name, tags: props.tags, inStock: props.in_stock, image: props.image, id: props.id}} className = "food-editButton">
                             <img src={pen} className="penFormat" alt="pen"/>
                             <div className="food-editItem">
                                 Edit Item
@@ -83,10 +83,10 @@ function Food(props) {
                             {props.name}
                         </div>
                         <div className = "food-tagsFormat">
-                            {props.tags.map((tag) => {
-                                return (
+                            {props.tags.map((tag) => {  return ( 
                                 <Tags name={tag} />
-                            );})}
+                            );
+                                })}
                         </div>
 
                     </div>

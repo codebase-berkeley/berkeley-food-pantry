@@ -98,9 +98,9 @@ export default function AddFood() {
     const [edit, setEdit] = useState(true);
     const [itemName, setItemName] = useState("");
     const [stockAvailability, setStockAvailability] = useState( {label: "In Stock Today", value: true});
-    const [tags, setTags] = useState();
+    const [tags, setTags] = useState(location.state == null ? [] : setTagsToOptions(location.state.tags));
     const [image, setImage] = useState("");
-    const [id, setId] = useState();
+    const [foodId, setFoodId] = useState();
 
 
     function headerDisplay() {
@@ -121,15 +121,10 @@ export default function AddFood() {
         }
 
 
-
-    function displayTags() {
-        <div className = "addTagsFormat">
-                        {tags.map((tag) => {
-                            return (
-                            <Tags name={tag} />
-                        );})}
-                </div>
+    function setTagsToOptions(tags) {
+        return tags.map(t => ({value: t.toLowerCase(), label: t}))
     }
+
 
     useEffect(() => {
         axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
@@ -153,8 +148,7 @@ export default function AddFood() {
             setTags(location.state.tags);
             setImage(location.state.image);
             setEdit(true);
-            console.log('supposedly state set')
-    
+
     
             if (location.state.inStock) {
                 setStockAvailability("In Stock Today");
@@ -167,8 +161,8 @@ export default function AddFood() {
             setFileName(location.state.name);
             setPreviewImage(location.state.image);
             setFoodImg(location.state.image);
-            console.log(location.state.image);
-            setId(location.state.id);
+            setFoodId(location.state.id);
+            console.log(tags);
         }
 
        
@@ -179,8 +173,6 @@ export default function AddFood() {
         // Simple DELETE request with axios
         axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
             .then(() => console.log(nameFood + " deleted successfully"));
-
-        // delete from temp array until re-render
     
     }
 
@@ -188,9 +180,7 @@ export default function AddFood() {
         const file = event.target.files[0];
         const convertedFile = await convertToBase64(file);
         let tempPath = (URL.createObjectURL(event.target.files[0]));
-        console.log(tempPath)
-        console.log(file.name);
-        console.log(convertedFile.name)
+ 
         setFileName(file.name);
         setPreviewImage(tempPath)
         setFoodImg(convertedFile);
@@ -207,21 +197,23 @@ export default function AddFood() {
     }
 
     function addItem() {
-        console.log(document.getElementById("addItem-food-name").value);
         if (edit) {
-            axios.put('http://localhost:4000/food', {
-            id: id,
+            axios.put('http://localhost:4000/food', { 
+            id: foodId,
             name: document.getElementById("addItem-food-name").value, 
             instock: stockAvailability.value, 
             tags: categoriesList(categoriesValue), 
             image: foodImg
         })
+
+
         } else {
-            axios.post('http://localhost:4000/food', {
+            axios.post('http://localhost:4000/food', { 
                 name: document.getElementById("addItem-food-name").value, 
                 instock: stockAvailability.value, 
                 tags: categoriesList(categoriesValue), 
                 image: foodImg
+            
             })
         }
         
@@ -270,7 +262,7 @@ export default function AddFood() {
                                     styles={customStyles}
                                     closeMenuOnSelect={true}
                                     components={animatedComponents}
-                                    defaultValue={location.state === null ? {label: "In Stock Today", value: true} : location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock", value: false}}
+                                    defaultValue={location.state === null ? {label: "In Stock Today", value: true} : location.state.inStock? {label: "In Stock Today", value: true} : {label: "Out of Stock Today", value: false}}
                                     options={todayStock}
                                     //value={stockAvailability}
                                     onChange={setStockAvailability}
@@ -301,7 +293,7 @@ export default function AddFood() {
                 <div className = "main-add-food-component-container-right">
 
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage} initialButtonType={location.state.image !== null}/> </div>
+                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage} initialButtonType={location.state !== null}/> </div>
                 </div>
             </div>
             <div className = "save-item-button-container-final">

@@ -367,6 +367,7 @@ export function StockListingAdmin() {
                             .filter(stockFilterFunction)
                             .sort(getSort()).map(foodItem => (
                                 <Food 
+                                    id={foodItem.id}
                                     name={foodItem.name} 
                                     image={foodItem.image} 
                                     in_stock={foodItem.instock} 

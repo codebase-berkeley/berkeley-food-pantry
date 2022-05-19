@@ -84,7 +84,6 @@ module.exports = (app) => {
     });
 
     app.post('/food',  async (req, res) => {
-
         const name = req.body.name;
         console.log(req.body.image);
         console.log(name);
@@ -95,7 +94,7 @@ module.exports = (app) => {
         const imgName = req.body.name;
 
         let response;
-        if (image) {
+        if (base64Image) {
             try {
                 response = await upload(imgName, base64Image);
             } catch (err) {
@@ -115,6 +114,7 @@ module.exports = (app) => {
     });
 
     app.put('/food', async (req, res) => {
+        console.log(req.body);
         const name = req.body.name;
         if (!name || name.length <= 0) return res.status(400).end();
         const id = req.body.id; 
@@ -122,7 +122,6 @@ module.exports = (app) => {
         const tags = req.body.tags;
         const image = req.body.image_path;
         const imageName = req.body.name;
-        console.log(req.body.name);
         if (image) {
             try {
                 response = await s3.upload(imageName, base64Image);

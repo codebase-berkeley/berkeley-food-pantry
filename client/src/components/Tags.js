@@ -3,11 +3,13 @@ import './Tags.css'
 
 
 function Tags(props) {
-    return (
+    if (props.name !== "") {
+        return (
         <div className="foodComponentTag"> 
             {props.name}
         </div>
     );
+        } else return null;
 }
 
 export default Tags;
