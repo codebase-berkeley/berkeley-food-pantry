@@ -138,14 +138,18 @@ export function StockListingAdmin() {
             if (lastUpdated < f.lastUpdated) {
                 setLastUpdated(f.lastUpdated);
             }
+            let tempTags = f.tags.split(",").map(t => {
+                return t.charAt(0).toUpperCase() + t.substring(1)
+            });
+            if (tempTags == "") {
+                tempTags = [];
+            }
             return {
                 id: f.id,
                 name: f.name,
                 image: f.image_path,
                 instock: f.instock,
-                tags: f.tags.split(",").map(t => {
-                    return t.charAt(0).toUpperCase() + t.substring(1)
-                }),
+                tags: tempTags,
              
             }
         })

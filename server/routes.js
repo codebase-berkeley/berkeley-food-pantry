@@ -77,9 +77,9 @@ module.exports = (app) => {
     });
     
     app.delete('/food', async (req, res) => {
-        const name = req.body.name;
-        if (!name || name.length <= 0) return res.status(400).end();
-        if (await Food.destroy({ where: { name }}) <= 0) return res.status(400).end();
+        const id = req.body.id;
+        if (!id) return res.status(400).end();
+        if (await Food.destroy({ where: { id }}) <= 0) return res.status(400).end();
         res.status(200).end();
     });
 
@@ -122,6 +122,7 @@ module.exports = (app) => {
         const tags = req.body.tags;
         const image = req.body.image_path;
         const imageName = req.body.name;
+        
         if (image) {
             try {
                 response = await s3.upload(imageName, base64Image);

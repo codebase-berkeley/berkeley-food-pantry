@@ -102,6 +102,12 @@ export default function AddFood() {
     const [image, setImage] = useState("");
     const [foodId, setFoodId] = useState();
 
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [categoriesValue, setCategoriesValue] = useState(location.state == null ? [] : setTagsToOptions(location.state.tags));
+    const [foodImg, setFoodImg] = useState();
+    const [fileName, setFileName] = useState();
+    const [previewImage, setPreviewImage] = useState();
+
 
     function headerDisplay() {
         if (edit) {
@@ -169,10 +175,10 @@ export default function AddFood() {
     }, [])
 
 
-    function deleteItem(nameFood) {
+    function deleteItem(id) {
         // Simple DELETE request with axios
-        axios.delete('http://localhost:4000/food', { data: { name: nameFood } })
-            .then(() => console.log(nameFood + " deleted successfully"));
+        axios.delete('http://localhost:4000/food', { data: { id: id } })
+            .then(() => console.log(id + " deleted successfully"));
     
     }
 
@@ -226,14 +232,6 @@ export default function AddFood() {
         return categoriesValue.map((category) => category.value).join(",");
 
     }
-
-    
-
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [categoriesValue, setCategoriesValue] = useState([""]);
-    const [foodImg, setFoodImg] = useState();
-    const [fileName, setFileName] = useState();
-    const [previewImage, setPreviewImage] = useState();
 
    
     return (
@@ -325,7 +323,7 @@ export default function AddFood() {
                         <h1>Confirm delete item?</h1>
                         <Link to="/edit-stock" className = "add-food-delete-item-final-button"  type="button" onClick={() => {
                             setModalIsOpen(true);
-                            deleteItem(location.state.name);
+                            deleteItem(location.state.id);
                             this.forceUpdate();
                         }} value="Delete Item">Delete Item</Link>
                         <input className = "add-food-cancel-item-button" type="button" onClick={() => setModalIsOpen(false)} value="Cancel"></input>
