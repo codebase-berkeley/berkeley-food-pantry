@@ -4,6 +4,7 @@ import Tags from './Tags.js'
 import pen from './../images/pen.svg'
 import checkmark from './../images/instockMark.svg'
 import xmark from '../images/notinstock.svg'
+import defaultImg from '../images/default-placeholder.png'
 import { useState } from 'react'; 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -50,7 +51,7 @@ function Food(props) {
     if ((props.admin) == true) {
         return(
             <div className = "food-componentContainer">
-                <img src={props.image} class="food-foodImage" alt={props.name}/>
+                <img src={props.image == '' ? defaultImg : props.image} class="food-foodImage" alt={props.name}/>
                 <div className = "food-infoContainer">
                     <div className = "food-nameTags">
                         <div className = "food-foodName">
@@ -87,7 +88,7 @@ function Food(props) {
        return(
             <div className = "food-componentContainer">
                 <div className = "food-imgdiv">
-                    <img src={props.image} class="food-foodImage" alt={props.name}/>
+                    <img src={props.image == '' ? defaultImg : props.image} class="food-foodImage" alt={props.name}/>
                 </div>
                 
                 <div className = "food-infoContainer">

@@ -40,7 +40,7 @@ export default function UploadImageButton(props) {
                     onChange={props.onSelectFile} 
                     style ={{display: 'none'}}/> 
             
-            <div className='upload-image-button-img-div' style={props.previewPath == null ? {display:"none"} : {display: "flex"}}><img src={props.previewPath}/></div>
+            <div className='upload-image-button-img-div' style={props.previewPath == '' ? {display:"none"} : {display: "flex"}}><img src={props.previewPath}/></div>
                     
             </div>
         )

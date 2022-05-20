@@ -19,11 +19,17 @@
 }
 
 .food-foodImage {
-    height: 197px;
     width: 200px;
+    height: 197px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     object-fit: cover;
+    overflow: hidden;
+}
+
+img.food-foodImage {
+    min-width: 200px;
+
 }
 
 .food-componentContainer {

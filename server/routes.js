@@ -93,8 +93,8 @@ module.exports = (app) => {
         const base64Image = req.body.image;
         const imgName = req.body.name;
 
-        let response;
-        if (base64Image) {
+        let response = '';
+        if (base64Image !== '') {
             try {
                 response = await upload(imgName, base64Image);
             } catch (err) {

@@ -104,9 +104,9 @@ export default function AddFood() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [categoriesValue, setCategoriesValue] = useState(location.state == null ? [] : setTagsToOptions(location.state.tags));
-    const [foodImg, setFoodImg] = useState();
-    const [fileName, setFileName] = useState();
-    const [previewImage, setPreviewImage] = useState();
+    const [foodImg, setFoodImg] = useState('');
+    const [fileName, setFileName] = useState('');
+    const [previewImage, setPreviewImage] = useState('');
 
 
     function headerDisplay() {
@@ -144,9 +144,10 @@ export default function AddFood() {
         if (location.state === null){
             setItemName(null);
             setTags(null);
-            setImage(null);
+            setImage('');
             setStockAvailability({label: "In Stock Today", value: true});
             setEdit(false);
+       
             console.log('null set')
 
         } else {
@@ -291,7 +292,7 @@ export default function AddFood() {
                 <div className = "main-add-food-component-container-right">
 
                         <div className = 'upload-image-header'>Upload Image <span class='optional-text'>(Optional)</span></div>
-                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage} initialButtonType={location.state !== null}/> </div>
+                     <div className = "addFood-upload-bttn"> <UploadImageButton onSelectFile = {onSelectFile} previewPath={previewImage} initialButtonType={location.state !== null && location.state.image !== ''}/> </div>
                 </div>
             </div>
             <div className = "save-item-button-container-final">
@@ -330,7 +331,7 @@ export default function AddFood() {
                         
                     </Modal>
                     </div>
-                    <Link to="/edit-stock" className = "add-food-save-item-button" type="button" onClick={() => {addItem("isbee"); this.forceUpdate(); } } value="Save Item">Save Item</Link>
+                    <Link to="/edit-stock" className = "add-food-save-item-button" type="button" onClick={() => {addItem(); this.forceUpdate(); } } value="Save Item">Save Item</Link>
                     
                 </div>
                 </div>
