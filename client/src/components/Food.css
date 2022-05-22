@@ -170,7 +170,7 @@ a, a:hover {
     border-radius: 0 8px 8px 0;
     width: 2%;
     justify-content: flex-end;
-    background-color: #888888;
+    background-color: #BBBBBB;
 }
 
 @media screen and (orientation: portrait) and (max-width: 600px) { 

@@ -34,7 +34,7 @@ function Food(props) {
 
     if ((props.admin) == true) {
         return(
-            <div className = "food-componentContainer" style={{borderColor: props.in_stock }}>
+            <div className = "food-componentContainer" style={{borderColor: props.in_stock == true ? '#588157' : '#BBBBBB' }}>
                 <img src={props.image == '' ? defaultImg : props.image} class="food-foodImage" alt={props.name}/>
                 <div className = "food-infoContainer">
                     <div className = "food-nameTags">
@@ -70,7 +70,7 @@ function Food(props) {
         );   
     } else {
        return(
-            <div className = "food-componentContainer">
+            <div className = "food-componentContainer" style={{borderColor: props.in_stock == true ? '#588157' : '#BBBBBB' }}>
                 <div className = "food-imgdiv">
                     <img src={props.image == '' ? defaultImg : props.image} class="food-foodImage" alt={props.name}/>
                 </div>
