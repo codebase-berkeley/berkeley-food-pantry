@@ -44,7 +44,7 @@ function Food(props) {
                         <div className = "food-tagsFormat">
                             {props.tags.map((tag) => {
                                 return (
-                                <Tags name={tag} />
+                                <Tags name={tag}/>
                             );})}
                         </div>
                     </div>
