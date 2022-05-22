@@ -11,22 +11,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function Food(props) {
 
-    function checkBox() {
-        //TODO this does not update the database, it is only front end
-        //we should probably change this to an onChange function or something that updates the database
-        console.log("pls pls pls")
-        if (props.in_stock == true) {
-            return (
-                <input className = "form-check-input" type="checkbox" defaultChecked = "true"/>
-            )
-        }
-        else {
-            return (
-                <input className = "form-check-input" type="checkbox"/>
-            )
-        }
-    }
-    
     function stockOption() {
         if ((props.in_stock) == true) {
             return (
@@ -50,7 +34,7 @@ function Food(props) {
 
     if ((props.admin) == true) {
         return(
-            <div className = "food-componentContainer">
+            <div className = "food-componentContainer" style={{borderColor: props.in_stock }}>
                 <img src={props.image == '' ? defaultImg : props.image} class="food-foodImage" alt={props.name}/>
                 <div className = "food-infoContainer">
                     <div className = "food-nameTags">
