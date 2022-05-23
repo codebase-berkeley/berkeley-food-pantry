@@ -335,3 +335,35 @@ input[type="checkbox"]:checked {
     background-color: white;
 } */
 
+@media screen and (orientation: portrait) {
+    .view-appts-top-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .view-appts-show-dropdowns{
+        display: flex;
+        flex-direction: column;
+    }
+    .view-appts-form-check-label{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .view-appts-bottomContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .view-appts-appt-card-display{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        border: 1px solid #C4C4C4;
+        border-radius: 5px;
+        margin-bottom: 5vh;
+    }
+    .view-appts-appointments-detail-display{
+        display: flex;
+        width: 100%;
+        border: 1px solid #C4C4C4;
+        border-radius: 5px;
+    }
+}

@@ -101,5 +101,12 @@
     justify-content: flex-end;
     background-color: #ACB9AC;
 }
+@media screen and (orientation: portrait) {
+    .appointment-card-cardContainer{
+        display: flex;
+        width: 100%;
+    }
+    
+}
 
 
