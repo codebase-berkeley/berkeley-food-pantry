@@ -5,7 +5,7 @@ import './StockListingAdmin.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import isbesPlusSign from './../images/plusSign.svg';
-import Select, { NonceProvider } from 'react-select';
+import Select, { NonceProvider, StylesConfig } from 'react-select';
 import makeAnimated, { ValueContainer } from 'react-select/animated';
 import Food from './../components/Food.js';
 import apples from "./../images/apple.png";
@@ -30,15 +30,16 @@ import strawberries from "./../images/strawberries.jpeg";
 
 
 const foodCategories = [
-    { value: 'vegan', label: 'Vegan' },
-    { value: 'vegetarian', label: 'Vegetarian' },
-    { value: 'pescatarian', label: 'Pescatarian' },
-    { value: 'gluten-free', label: 'Gluten-free' },
-    { value: 'fruit', label: 'Fruit' },
-    { value: 'vegetable', label: 'Vegetable' },
-    { value: 'grains', label: 'Grains' },
-    { value: 'dairy', label: 'Dairy' },
-    { value: 'seafood', label: 'Seafood' }
+    { value: 'vegan', label: 'Vegan', color: '#519E8A' },
+    { value: 'vegetarian', label: 'Vegetarian', color: '#7EB09B' },
+    { value: 'pescatarian', label: 'Pescatarian', color: '#C791AB' },
+    { value: 'gluten-free', label: 'Gluten-free', color: '#EBA191' },
+    { value: 'fruit', label: 'Fruit', color: '#EC8F67' },
+    { value: 'vegetable', label: 'Vegetable', color: '#B1BA69' },
+    { value: 'grains', label: 'Grains', color: '#CEA07E' },
+    { value: 'dairy', label: 'Dairy', color: '#F0BB54' },
+    { value: 'seafood', label: 'Seafood', color: "#44A1AE" },
+    {value: 'meat', label: 'Meat', color: "#EF8275"}
 ]
 
 const sortOptions = [
@@ -60,12 +61,17 @@ const customStyles = {
         color: '#C4C4C4',
     }),
 
-    option: (provided, state) => ({
+    option: (provided, state ) => ({
         ...provided,
         height: '6vh',
-        backgroundColor: state.isFocused ? "#E5E5E5" : null,
+        backgroundColor: state.isFocused ? "#E5E5E5" : state.isSelected ? "#C791AB" : null,
         color: "#000000"
     }),
+
+    multiValueLabel: (styles) => ({
+        ...styles,
+        color: "#333333"
+      }),
 
     dropdownIndicator: base => ({
         ...base,
@@ -97,31 +103,22 @@ const customStyles = {
         },
     }),
 
-    multiValue: (provided, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
+    multiValue: (provided, styles, state) => {
+        // const opacity = state.isDisabled ? 0.5 : 1;
+        //const transition = 'opacity 300ms';
 
         return {
+            ...styles,
             ...provided, 
-            opacity, 
-            transition, 
             borderRadius: '20px', 
             paddingLeft: '5px', 
             paddingRight: '5px',
+            backgroundColor: '#eeeeee',
         };
     },
 }
 
-const food = [ {name: 'Raspberries', image: raspberries, instock: true, tags: ["Vegan", "Pescatarian", "Vegetarian", "Gluten-Free", "Fruit"] }, 
-{name: 'Milk', image: milk, instock: true, tags: ["Vegetarian", "Pescatarian", "Dairy"] }, 
-{name: 'Salmon', image: salmon, instock: false, tags: ["Pescatarian", "Seafood", "Gluten-Free"] }, 
-{name: 'Oat Milk', image: oatMilk, instock: true, tags: [ "Vegan","Vegetarian", "PEscatarian", "Gluten-free"] }, 
-{name: 'Oats', image: oats, instock: true, tags: ["Vegan", "Vegetarian", "Pescatarian", "Gluten-Free", "Grains"] }, 
-{name: 'Ice Cream', image: iceCream, instock: true, tags: ["Vegetrian", "Gluten-Free", "Dairy"]}, 
-{name: 'Rice', image: rice, instock: false, tags: ["Vegan", "Vegetarian", "Pescatarian", "Gluten-Free"]}, 
-{name: 'Pasta', image: pasta, instock: true, tags: ["Vegetarian", "Vegan", "Pescatarian"]},
-{name: 'Strawberries', image: strawberries, instock: true, tags: ["Vegan", "Vegetrian", "Gluten-Free", "Fruit"]}  
-];
+
 
 
 
@@ -329,7 +326,8 @@ export function StockListingAdmin() {
                                         closeMenuOnSelect={false}
                                         components={animatedComponents}
                                         placeholder="Select..."
-                                        isMulti
+                                        isMulti={true}
+                                        multiValue={foodCategories}
                                         options={foodCategories}
                                         value={selectedTags}
                                         onChange={setSelectedTags}
@@ -431,7 +429,7 @@ export function StockListingAdmin() {
 }
 
 export function StockListingUser() {
-    const [selectedSort, setSelectedSort] = useState();
+    const [selectedSort, setSelectedSort] = useState(null);
     const [selectedTags, setSelectedTags] = useState([]);
     const [selectedShow, setSelectedShow] = useState(0);
     const [searchInput, setSearchInput] = useState("");
