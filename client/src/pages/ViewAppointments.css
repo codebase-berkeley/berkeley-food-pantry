@@ -334,6 +334,10 @@ input[type="checkbox"]:checked {
     border: 1.5px solid #B8B8B8;
     background-color: white;
 } */
+/* TODO: change the media query so that it usually just displays the appointment cards, but if a card is clicked on
+it displays the detail view
+maybe  add a exit button to exit out of detail view
+look into conditional rendering*/
 
 @media screen and (orientation: portrait) {
     .view-appts-top-container{
@@ -351,6 +355,7 @@ input[type="checkbox"]:checked {
     .view-appts-bottomContainer{
         display: flex;
         flex-direction: column;
+        border: none;
     }
     .view-appts-appt-card-display{
         display: flex;
