@@ -41,16 +41,58 @@
 }
 
 .main-add-food-component-container-right {
+    /* display: flex;
+    width: 50%;
+    flex-direction: column; */
     display: flex;
+    flex-direction: column;
     height: 100%;
     width: 33vw;
     margin-left: 8vw;
     margin-top: .5vh;
     justify-content: center;
     /* background-color: red; */
+   
 }
 
 .add-food-save-item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 40px;
+    color: white;
+    background-color: #264425;
+    font-size: 2.25vh;
+    font-weight: 800;
+    font-family: 'Montserrat';
+    margin-top: 3vh;
+    margin-right: 7vw;
+}
+
+.add-food-save-item-button:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.save-item-button-container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5.5vh;
+    margin-top: 43%;
+    margin-left: -33%;
+    border-radius: 40px;
+    color: white;
+    background-color: #264425;
+    font-size: 2.25vh;
+    font-weight: 800;
+    font-family: 'Montserrat';
+}
+
+.delete-item-button-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +122,7 @@
     font-weight: bold;
     font-family: 'Montserrat';
     margin-top: 3vh;
-    margin-right: 3vw;    
+    margin-right: 3vw;   
 }
 
 .add-food-delete-item-final-button {
@@ -127,22 +169,24 @@
     width: 100%;
 }
 
-.stock-dropdown { 
-    height: 30%;
-    width: 30vw;
+.add-item-stock-dropdown {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
+    padding-bottom: 2%;
+    padding-top: 3%;
+    width: 30vw;
+
     margin-top: -5%;
 }
 
-.categories-dropdown {
+.add-item-categories-dropdown {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 2vh;
     width: 30vw;
+    
 }
 
 p#filterControlLabel {
@@ -153,7 +197,7 @@ p#filterControlLabel {
 
 .item-name-input {
     display: flex;
-    margin-top: 6.5vh;
+    /* margin-top: 6.5vh; */
     width: 30vw;
     text-align: left; 
     color: #4C4C4C;
@@ -161,27 +205,33 @@ p#filterControlLabel {
     font-weight: bold;
     font-size: 18px;
     padding-bottom: 2vh;
-    width: 30vw;
 }
 
-.item-name-textbox {
+.add-item-button-container {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+}
+
+.add-item-name-textbox {
     width: 30vw;
-    height: 6vh;
+    height: 5vh;
     border-radius: .5vw;
     border: solid #ACB9AC;
 }
 
-input {
+label.add-item-name-input {
     display:flex;
     flex-direction: column;
+    justify-content: left;
     border-radius: 4px 4px 4px 4px;
     font-size: 2vh;
     font-family: "Montserrat";
     margin-top: 2%;
 
-    height: 16px;
-    width: 16px;
     border-color: #588157;
+        font-weight: 600;
+        padding-top: 2vh;
   }
 
   label {
@@ -189,45 +239,18 @@ input {
     flex-direction: column;
     border-radius: 4px 4px 4px 4px;
     font-size: 2vh;
-
     margin-top: 2%;
-
     margin: 2px;
     border-color: #588157;
   }
-.change-image-button {
-    border-color: #588157;
-  }
 
 
 
-.import-image-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 17vw;
-    height: 5.5vh;
-    border-radius: 100px;
-    border: #264425 solid 1px;
-    background-color: white;
-    margin-left: 15%;
-}
 
-.change-image-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 17vw;
-    height: 5.5vh;
-    border-radius: 100px;
-    border: #264425 solid 1px;
-    background-color: #D6DECD;
-    margin-left: 15%;
-}
 
-.import-image-button:hover {
-    background-color: #D6DECD;
-}
+
+
+
 
 .cloud-format {
     height: 2.5vh;
@@ -266,36 +289,34 @@ input {
     border-color: #588157;
 }
 
-.upload-image-text-h1 {
-    font-size: 2vh;
-    color: #264425;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: .70vh;
-}
 
 .upload-image-header {
-    margin-top: 2.5vh;
-    font-weight: 450;
-    height: 20%;
-    font: 'inter';
-    font-size: 2vh;
-    margin-bottom: -2vh;
+    color: #4C4C4C;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 3%;
 }
 
 .optional-text {
-    color:#B8B8B8;
-    margin-top: 2.5%;  
+    color:#B8B8B8; 
     font-weight: 300; 
 }
+
 
 .upload-image-container {
     display: flex;
     flex-direction: column;
     height: 30vh;
     width: 100%;
-    margin-top: 3vh;   
+    margin-top: 3vh;  
+    position: relative; 
+}
+
+.addFood-upload-bttn {
+    display: flex;
+    height: 50%;
+    width: 50%
 }
 
 .delete-item-confirmation {
@@ -305,6 +326,28 @@ input {
     height: 50vh;
     width: 50vw;
 }
+
+.addTagsFormat {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: left;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+}
+
+.imgFormat {
+    height: 100%;
+    width: 42%;
+    display: flex;
+    margin-left: 30%;
+
+}
+
+.app {
+    height: 40px;
+    overflow-x: scroll;
+  }
 
 @media screen and (orientation: portrait) {
     .add-food-component-container {
@@ -328,11 +371,7 @@ input {
         margin-bottom: -3%;
         font-weight: 600;
     }
-    .stock-dropdown {
-        display: flex;
-        align-items: center;
-        text-align: left;
-    }
+
     .categories-dropdown {
         align-items: center;
     }
@@ -340,12 +379,17 @@ input {
         width: 80vw;
         border-radius: 2vw;
         height: 5vh;
+        margin-top: 8%;
     }
 
     .item-name-input {
         width: 80vw;
         font-weight: 600;
         padding-top: 2vh;
+        margin-top: 8%;
+        /* display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis; */
     }
     .right-side-container {
         display: flex;
@@ -361,16 +405,4 @@ input {
         width: 50%;
         height: 50%; 
     }
-    /* .modal {
-        position: absolute; 
-        inset: 40px;
-        border: 1px solid rgb(204, 204, 204);
-        background: rgb(255, 255, 255);
-        overflow: auto;
-        border-radius: 4px;
-        outline: none;
-        padding: 20px;
-
-    } */
-
 }

@@ -5,12 +5,12 @@ import makeAnimated from 'react-select/animated';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import AdminLoginNavbar from './AdminLoginNavbar';
 
 const dates = [
-    { value: 0, label: 'Select date...' },
-    { value: '03/30', label: 'Wednesday, March 30th' },
-    { value: '03/31', label: 'Thursday, March 31st' },
-    { value: '04/01', label: 'Friday, April 1st' }
+    { value: '03/30', label: 'Friday, May 6th' },
+    { value: '03/31', label: 'Saturday, May 7th' },
+    { value: '04/01', label: 'Sunday, May 8th' }
 ]
 
 const times = [
@@ -110,7 +110,7 @@ export default function AppointmentScheduler() {
         }
         itemPrefs = itemPrefs.substring(2, itemPrefs.length);
 
-            axios.post('http://localhost:5000/appointment', {
+            axios.post('http://localhost:4000/appointment', {
                 last_name: document.getElementById("input-values-2").value,
                 first_name: document.getElementById("input-values-1").value,
                 date: selectedDate.label,
@@ -127,6 +127,8 @@ export default function AppointmentScheduler() {
     }  
         
     return (
+        <>
+        <AdminLoginNavbar isAdmin={false}/>
         <div>
             <div className = 'apptsched-intro-text-container'>
                 <h1 className = 'apptsched-intro-text'>Welcome to the Berkeley Food Pantry! 
@@ -170,9 +172,10 @@ export default function AppointmentScheduler() {
                         <div className="apptsched-pickup-items">
                             <p id="apptsched-item-checklist-label">Vegetables & Fruit</p>
                             <div className="apptsched-pickup-items-selection">
+                                
                                 <div className="apptsched-form-check">
                                     <label class="apptsched-form-check-label" for="exampleRadios1">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadios" id="checkbox-1" value="kale" ></input>
+                                        <input class="apptsched-form-check-input" type="checkbox" name="exampleRadios" id="checkbox-1" value="kale" ></input>
                                         Kale
                                     </label>
                                 </div>
@@ -352,17 +355,18 @@ export default function AppointmentScheduler() {
                 </div>   
             </div>
             <div className = 'apptsched-button-container'>
-                <div className = 'apptsched-clear-all-button'> 
+              
                     <input onClick={clearInputFieldsHelper} className = "apptsched-clear-all-button" type="button" id ="btClear" value="Clear all"></input>
-                </div>
+            
                 <div className = 'apptsched-submit-button'> 
-                    <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "apptsched-submit-button" style = {{textDecoration: 'none'}}>Submit</Link>
+                    <Link to="/thank-you" state={{date: selectedDate.label, time: selectedTime.label}} onClick= {submitForm} className = "apptsched-link" style = {{textDecoration: 'none'}}>Submit</Link>
                 </div>
             </div>
             <Helmet>
                 <title>Schedule an Appointment</title> 
             </Helmet>
         </div>
+        </>
     )
 
 } 

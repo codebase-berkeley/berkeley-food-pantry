@@ -8,7 +8,7 @@ function SearchBar(props) {
   return (
     <div className = "search">
         <div className = "searchInputs">
-            <input 
+            <input className = "searchInputIcon"
             value = {props.searchInput}
             onInput = {e => props.setSearchInput(e.target.value)}
             type = "text" 

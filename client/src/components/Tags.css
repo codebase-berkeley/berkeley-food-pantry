@@ -16,3 +16,22 @@
     margin-right: 5px;
     margin-top: 5px;
 }
+
+@media screen and (orientation: portrait) and (max-width: 600px) { 
+    .foodComponentTag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Inter';
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        border-radius: 20px;
+        width: 90px;
+        height: 25px;
+        background-Color:#7EB09B;
+        color: white;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+}

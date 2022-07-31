@@ -35,15 +35,30 @@
     
 }
 
+/* .view-appts-main-container {
+    display: flex; 
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-end;
+} */
 .view-appts-checkboxes {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* align-items: flex-start; */
+
     margin-top: 5vh;
+
     align-items: flex-end;
-    /* justify-content: space-between; */
+    flex-grow: 1;
+    padding-bottom: 1vh;
+
 }
+.appts-checkbox-together {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    
+}
+
 
 .view-appts-top-container h1 {
     text-align: left;
@@ -315,12 +330,15 @@ p#filterControlLabel {
 
 input[type="checkbox"]:checked {
     border: 1.5px solid #B8B8B8;
-    background-color: solid black;
-    box-shadow: "transparent";
-    box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #333;
+    background-color: #264425 !important;
+    accent-color: #264425 !important;
+    /* color: solid #264425 !important; */
+    /* box-shadow: "transparent";
+    box-shadow: inset 0 0 0 2.5px white, inset 0 0 0 8px #333; */
 }
 
-input[type="checkbox"]:hover {
+/* input[type="checkbox"]:hover {
     border: 1.5px solid #B8B8B8;
     background-color: white;
-}
+} */
+

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './../components/SearchBar.css';
 import './ViewAppointments.css';
 import 'rsuite/dist/rsuite.min.css';
@@ -10,6 +10,7 @@ import Details from './../components/Details';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useEffect } from "react";
+
 
 const apptOptions = [
     { value: 'all', label: 'All appointments this week' },
@@ -48,6 +49,7 @@ const customStyles = {
 
     control: (provided, state) => ({
         ...provided,
+        height: '6vh',
         width: '15vw',
         borderRadius: '.5vw',
         textOverflow: "hidden",
@@ -124,6 +126,17 @@ export function ViewAppointments() {
         // console.log(res());
     }, []);
 
+    useEffect(() => {
+        axios.get('http://localhost:4000/check_authenticated', { withCredentials: true})
+           .catch((error) => {
+               if (error.response.status === 403) {
+                   window.location.href = "/login"
+
+               }
+           });
+        
+    }, [])
+
     function clearInputFieldsHelper() {
         setSelectedSort();
         setSelectedTags([]);
@@ -191,6 +204,8 @@ export function ViewAppointments() {
         // console.log(card);
         console.log("in if", activeAppt);
     return (
+        <>
+        <AdminLoginNavbar isAdmin={true}/>
         <div className="full-page">
 
             <div className="stockListingPage">
@@ -230,7 +245,7 @@ export function ViewAppointments() {
                         </div>
     
                     </div>
-
+                    
                     <div className="view-appts-checkboxes">
                         
                         <div className ="view-appts-form-check-label">
@@ -241,6 +256,7 @@ export function ViewAppointments() {
                         <div className ="view-appts-form-check-label">
                             <span>Show past appointments</span>
                             <input type="checkbox"/>
+
                         </div>
                                 
                     </div>
@@ -250,6 +266,7 @@ export function ViewAppointments() {
                 <div className="view-appts-bottomContainer">
 
                     <div className="view-appts-appt-card-display">
+
                           
                         {card
                             .filter(apptDayFilter)
@@ -277,6 +294,7 @@ export function ViewAppointments() {
                     <div className="view-appts-appointments-detail-display">
                         {/* <Details date="Monday, April 4 2022" time="4:00 PM"firstName="Abby" lastName ="Brooks" email="abigail.brooks@berkeley.edu" phoneNumber="341-766-8021" dietary_data={["Vegetarian", "Lactose-intolerant"]} item_data={["Empanadas", "Olive oil popcorn"]} notes="none, thanks!"/> */}
                         <Details id={activeAppt.id} date={activeAppt.date} time={activeAppt.time} first_name={activeAppt.first_name} last_name ={activeAppt.last_name} email={activeAppt.email} phone_number={activeAppt.phone_number} dietary_preferences={dietary} item_preferences={item} notes={activeAppt.notes} visited={activeAppt.visited} changeCardFunc={setCardVisited}/>
+
                     </div> 
                 </div>
             </div>
@@ -284,6 +302,7 @@ export function ViewAppointments() {
                 <title>View Appointments</title>
             </Helmet>  
         </div>
+        </>
     )
     } else {
         return (<div>loading</div>)

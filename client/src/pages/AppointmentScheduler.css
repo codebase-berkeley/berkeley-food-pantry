@@ -100,20 +100,12 @@
     justify-content: center;
     width: 10vw;
     height: 5.5vh;
-    border-radius: 20px;
+    border-radius: 100px;
     border: #588157 solid 1px;
     background-color: white;
     color: #588157;
     font-size: 2.25vh;
     font-family: 'Montserrat';
-}
-
-.apptsched-clear-all-button:hover {
-    background-color: rgb(240, 230, 230);
-  }
-
-.apptsched-submit-button:hover {
-    background-color: #69ac67;
 }
 
 .apptsched-submit-button {
@@ -123,11 +115,25 @@
     justify-content: center;
     width: 10vw;
     height: 5.5vh;
-    border-radius: 20px;
+    border-radius: 100px;
     background-color: #264425;
     color: white;
     font-size: 2.25vh;
     font-family: 'Montserrat';
+    text-decoration: none;
+}
+
+.apptsched-link{
+    color: white;
+}
+
+.apptsched-link:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.apptsched-submit-button:hover{
+    text-decoration: none;
 }
 
 .apptsched-submit {
@@ -186,6 +192,7 @@ p#apptsched-item-checklist-label {
 .apptsched-form-check-label {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .apptsched-form-check-input {
     margin-bottom: 2.5%;
@@ -229,12 +236,6 @@ p#apptsched-item-checklist-label {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 300;
-}
-
-input::placeholder{
-    border-color: #ACB9AC;
-    background-repeat: no-repeat;
-    background-position: 97%;
 }
 
 .apptsched-name-box {
@@ -285,6 +286,7 @@ input::placeholder{
     border: solid #ACB9AC 1px;
     border-radius: .5vw;
     padding-left: .5vw;
+    padding-top: .5vh;
     box-shadow: #ACB9AC;
     overflow-x: hidden;
     overflow-y: auto;
@@ -357,6 +359,7 @@ input::placeholder{
 
     .apptsched-name-box {
         width: 80vw;
+        background-image: none;
     }
 
     .apptsched-contact-box {
@@ -364,10 +367,14 @@ input::placeholder{
         height: 10vh;
         border-radius: 10px;
     }
+    /* .apptsched-alignment-fixing {
+        display: flex; 
+        flex-direction: row; 
 
+    } */
     .apptsched-form-check {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         /* margin-bottom: 2%;
         margin-left: -2vw; */
     }
@@ -383,7 +390,7 @@ input::placeholder{
         justify-content: center;
         width: 10vw;
         height: 5.5vh;
-        border-radius: 20px;
+        border-radius: 100px;
         border: #588157 solid 1px;
         background-color: white;
         color: #588157;
