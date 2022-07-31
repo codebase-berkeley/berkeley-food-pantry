@@ -50,6 +50,10 @@ const initAppointmentModel = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      createdAt: {
+        type: DataTypes.DATEONLY,
+        allowNull: false,
+      },
     },
     {
       tableName: 'appointment',

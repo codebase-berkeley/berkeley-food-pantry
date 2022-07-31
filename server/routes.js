@@ -4,6 +4,7 @@ const { Appointment } = require('./models/Appointment');
 const AWS = require('aws-sdk');
 const { response } = require('express');
 const passport = require('passport');
+const { Sequelize, Op } = require('sequelize');
 
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -168,6 +169,16 @@ module.exports = (app) => {
   });
 
   app.get('/appointment', async (req, res) => {
+    Appointment.destroy({
+      where: {
+        createdAt: {
+          [Op.lte]: Sequelize.literal("NOW() - (INTERVAL '7 DAY')"),
+        },
+      },
+    }).catch((e) => {
+      console.log(e.message);
+    });
+
     const appointment = await Appointment.findAll();
     res.status(200).json(appointment);
   });
@@ -216,7 +227,7 @@ module.exports = (app) => {
     if (
       (await Appointment.update(
         {
-          visited: !visitedValue,
+          visited: visitedValue,
         },
         {
           where: { id: apptID },

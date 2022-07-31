@@ -1,408 +1,400 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-    
+
 .add-food-component-header {
-    display: flex;
-    flex-direction: column;
-    height: 8vh;
-    width: 100vw;
-    font-family: "Montserrat";
-    margin-top: 4vh;
-    margin-left: -3vw;
+  display: flex;
+  flex-direction: column;
+  height: 8vh;
+  width: 100vw;
+  font-family: 'Montserrat';
+  margin-top: 4vh;
+  margin-left: -3vw;
 }
 
 .add-food-component-header h1 {
-    margin-left: 10vw;
-    font-weight: bold;
-    font-family: "Montserrat";
+  margin-left: 10vw;
+  font-weight: bold;
+  font-family: 'Montserrat';
 }
 
 .add-food-component-header p {
-    margin-left: 10vw;
-    font-family: "Montserrat";
+  margin-left: 10vw;
+  font-family: 'Montserrat';
 }
 
-.main-add-food-component-container{
-    display: flex;
-    border: 1px solid rgb(173, 167, 167);
-    border-radius: 10px 10px 10px 10px;
-    margin-top: 5vh;
-    height: 65vh;
-    width: 90vw;
-    margin-left: 5vw;
+.main-add-food-component-container {
+  display: flex;
+  border: 1px solid rgb(173, 167, 167);
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 5vh;
+  height: 65vh;
+  width: 90vw;
+  margin-left: 5vw;
 }
 
 .main-add-food-component-container-left {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 45vw;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 45vw;
+  flex-direction: column;
 }
 
 .main-add-food-component-container-right {
-    /* display: flex;
+  /* display: flex;
     width: 50%;
     flex-direction: column; */
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 33vw;
-    margin-left: 8vw;
-    margin-top: .5vh;
-    justify-content: center;
-    /* background-color: red; */
-   
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 33vw;
+  margin-left: 8vw;
+  margin-top: 0.5vh;
+  justify-content: center;
+  /* background-color: red; */
 }
 
 .add-food-save-item-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 5vh;
-    border-radius: 40px;
-    color: white;
-    background-color: #264425;
-    font-size: 2.25vh;
-    font-weight: 800;
-    font-family: 'Montserrat';
-    margin-top: 3vh;
-    margin-right: 7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 40px;
+  color: white;
+  background-color: #264425;
+  font-size: 2.25vh;
+  font-weight: 800;
+  font-family: 'Montserrat';
+  margin-top: 3vh;
+  margin-right: 7vw;
 }
 
-.add-food-save-item-button:hover{
-    text-decoration: none;
-    color: white;
+.add-food-save-item-button:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .save-item-button-container-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 5.5vh;
-    margin-top: 43%;
-    margin-left: -33%;
-    border-radius: 40px;
-    color: white;
-    background-color: #264425;
-    font-size: 2.25vh;
-    font-weight: 800;
-    font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5.5vh;
+  margin-top: 43%;
+  margin-left: -33%;
+  border-radius: 40px;
+  color: white;
+  background-color: #264425;
+  font-size: 2.25vh;
+  font-weight: 800;
+  font-family: 'Montserrat';
 }
 
 .delete-item-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 5vh;
-    border-radius: 40px;
-    color: white;
-    background-color: #264425;
-    font-size: 2.25vh;
-    font-weight: 800;
-    font-family: 'Montserrat';
-    margin-top: 3vh;
-    margin-right: 7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 40px;
+  color: white;
+  background-color: #264425;
+  font-size: 2.25vh;
+  font-weight: 800;
+  font-family: 'Montserrat';
+  margin-top: 3vh;
+  margin-right: 7vw;
 }
 
 .add-food-delete-item-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 5vh;
-    border-radius: 40px;
-    border: 1px solid #A71E34 !important;
-    color: #A71E34;
-    background-color: white;
-    font-size: 2.25vh;
-    font-weight: bold;
-    font-family: 'Montserrat';
-    margin-top: 3vh;
-    margin-right: 3vw;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 40px;
+  border: 1px solid #a71e34 !important;
+  color: #a71e34;
+  background-color: white;
+  font-size: 2.25vh;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-top: 3vh;
+  margin-right: 3vw;
 }
 
 .add-food-delete-item-final-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 5vh;
-    border-radius: 40px;
-    color: white;
-    background-color: #A71E34;
-    border: 1px solid #A71E34 !important;
-    
-    font-size: 2.25vh;
-    font-weight: bold;
-    font-family: 'Montserrat';
-    margin-top: 3vh;
-    margin-right: 7vw;
-    margin-left: 6.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 40px;
+  color: white;
+  background-color: #a71e34;
+  border: 1px solid #a71e34 !important;
+
+  font-size: 2.25vh;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-top: 3vh;
+  margin-right: 7vw;
+  margin-left: 6.5vw;
 }
+
+.add-food-delete-item-final-button:hover {
+  color: white;
+  background-color: #7b1325;
+  border: 1px solid #7b1325 !important;
+}
+
 .add-food-cancel-item-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15vw;
-    height: 5vh;
-    border-radius: 40px;
-    color: #264425;
-    background-color: white;
-    border: 2px solid #264425 !important;
-    font-size: 2.25vh;
-    font-weight: 800;
-    font-family: 'Montserrat';
-    margin-top: 3vh;
-    margin-right: 7vw;
-    margin-left: 6.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 40px;
+  color: #264425;
+  background-color: white;
+  border: 2px solid #264425 !important;
+  font-size: 2.25vh;
+  font-weight: 800;
+  font-family: 'Montserrat';
+  margin-top: 3vh;
+  margin-right: 7vw;
+  margin-left: 6.5vw;
 }
 
 .add-food-item-selections {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30%;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+  width: 100%;
 }
 
 .add-item-stock-dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 2%;
-    padding-top: 3%;
-    width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 2%;
+  padding-top: 3%;
+  width: 30vw;
 
-    margin-top: -5%;
+  margin-top: -5%;
 }
 
 .add-item-categories-dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 2vh;
-    width: 30vw;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 2vh;
+  width: 30vw;
 }
 
 p#filterControlLabel {
-    color: #4C4C4C;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+  color: #4c4c4c;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
 }
 
 .item-name-input {
-    display: flex;
-    /* margin-top: 6.5vh; */
-    width: 30vw;
-    text-align: left; 
-    color: #4C4C4C;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    padding-bottom: 2vh;
+  display: flex;
+  /* margin-top: 6.5vh; */
+  width: 30vw;
+  text-align: left;
+  color: #4c4c4c;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 2vh;
 }
 
 .add-item-button-container {
-    display: flex;
-    flex-direction: row;
-    background-color: blue;
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
 }
 
 .add-item-name-textbox {
-    width: 30vw;
-    height: 5vh;
-    border-radius: .5vw;
-    border: solid #ACB9AC;
+  width: 30vw;
+  height: 5vh;
+  border-radius: 0.5vw;
+  border: solid #acb9ac;
 }
 
 label.add-item-name-input {
-    display:flex;
-    flex-direction: column;
-    justify-content: left;
-    border-radius: 4px 4px 4px 4px;
-    font-size: 2vh;
-    font-family: "Montserrat";
-    margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 2vh;
+  font-family: 'Montserrat';
+  margin-top: 2%;
 
-    border-color: #588157;
-        font-weight: 600;
-        padding-top: 2vh;
-  }
+  border-color: #588157;
+  font-weight: 600;
+  padding-top: 2vh;
+}
 
-  label {
-    display:flex;
-    flex-direction: column;
-    border-radius: 4px 4px 4px 4px;
-    font-size: 2vh;
-    margin-top: 2%;
-    margin: 2px;
-    border-color: #588157;
-  }
-
-
-
-
-
-
-
-
+label {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 2vh;
+  margin-top: 2%;
+  margin: 2px;
+  border-color: #588157;
+}
 
 .cloud-format {
-    height: 2.5vh;
-    padding-right: 5%;
+  height: 2.5vh;
+  padding-right: 5%;
 }
 
 .import-image {
-    height: 7vh;
+  height: 7vh;
 }
 
 .stock-select-list {
-    font-family: "Montserrat";
-    height: 10%;
-    width: 200%;
-    border-color: #588157;
+  font-family: 'Montserrat';
+  height: 10%;
+  width: 200%;
+  border-color: #588157;
 }
 
 .save-item-button-container-final {
-    display: flex;
-    justify-content: right;
-    height: 5vh;
-    width: 100%;
-    }
+  display: flex;
+  justify-content: right;
+  height: 5vh;
+  width: 100%;
+}
 
 .modal-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dietary-categories-select-list {
-    font-family: "Montserrat";
-    margin-top: 0%;
-    height: 10%;
-    width: 200%;
-    border-color: #588157;
+  font-family: 'Montserrat';
+  margin-top: 0%;
+  height: 10%;
+  width: 200%;
+  border-color: #588157;
 }
 
-
 .upload-image-header {
-    color: #4C4C4C;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    padding-bottom: 3%;
+  color: #4c4c4c;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 3%;
 }
 
 .optional-text {
-    color:#B8B8B8; 
-    font-weight: 300; 
+  color: #b8b8b8;
+  font-weight: 300;
 }
 
-
 .upload-image-container {
-    display: flex;
-    flex-direction: column;
-    height: 30vh;
-    width: 100%;
-    margin-top: 3vh;  
-    position: relative; 
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  width: 100%;
+  margin-top: 3vh;
+  position: relative;
 }
 
 .addFood-upload-bttn {
-    display: flex;
-    height: 50%;
-    width: 50%
+  display: flex;
+  height: 50%;
+  width: 50%;
 }
 
 .delete-item-confirmation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
 }
 
 .addTagsFormat {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-content: left;
-    flex-wrap: wrap;
-    overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: left;
+  flex-wrap: wrap;
+  overflow-x: scroll;
 }
 
 .imgFormat {
-    height: 100%;
-    width: 42%;
-    display: flex;
-    margin-left: 30%;
-
+  height: 100%;
+  width: 42%;
+  display: flex;
+  margin-left: 30%;
 }
 
 .app {
-    height: 40px;
-    overflow-x: scroll;
-  }
+  height: 40px;
+  overflow-x: scroll;
+}
 
 @media screen and (orientation: portrait) {
-    .add-food-component-container {
-        flex-direction: column;
-    }
-    .main-add-food-component-container {
-        display: flex;
-        flex-direction: column;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        height: 60%;
-        width: auto;
-        margin-top: 6%;
-        margin-left: 0%;
-        border-radius: 10px 10px 10px 10px;
-    
-    }
+  .add-food-component-container {
+    flex-direction: column;
+  }
+  .main-add-food-component-container {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: auto;
+    margin-top: 6%;
+    margin-left: 0%;
+    border-radius: 10px 10px 10px 10px;
+  }
 
-    .add-food-component-header h1 {
-        margin-bottom: -3%;
-        font-weight: 600;
-    }
+  .add-food-component-header h1 {
+    margin-bottom: -3%;
+    font-weight: 600;
+  }
 
-    .categories-dropdown {
-        align-items: center;
-    }
-    .item-name-textbox {
-        width: 80vw;
-        border-radius: 2vw;
-        height: 5vh;
-        margin-top: 8%;
-    }
+  .categories-dropdown {
+    align-items: center;
+  }
+  .item-name-textbox {
+    width: 80vw;
+    border-radius: 2vw;
+    height: 5vh;
+    margin-top: 8%;
+  }
 
-    .item-name-input {
-        width: 80vw;
-        font-weight: 600;
-        padding-top: 2vh;
-        margin-top: 8%;
-        /* display: inline-block;
+  .item-name-input {
+    width: 80vw;
+    font-weight: 600;
+    padding-top: 2vh;
+    margin-top: 8%;
+    /* display: inline-block;
         white-space: nowrap;
         text-overflow: ellipsis; */
-    }
-    .right-side-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .import-image-button {
-        width: 100%;
-        height: 100%;
-        margin-left: 20%;
-        
-    }
-    .editItemModal {
-        width: 50%;
-        height: 50%; 
-    }
+  }
+  .right-side-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .import-image-button {
+    width: 100%;
+    height: 100%;
+    margin-left: 20%;
+  }
+  .editItemModal {
+    width: 50%;
+    height: 50%;
+  }
 }

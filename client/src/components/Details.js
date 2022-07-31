@@ -1,15 +1,9 @@
 import './Details.css';
 import darkCheckMark from './../images/darkCheckMark.svg';
 import visitedMark from './../images/visitedMark.svg';
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Details(props) {
-  const [visited, setVisited] = useState(props.visited);
-  // const [dietary, setDietary] = useState([]);
-
-  //   let dietary_data = ['Vegan', 'Gluten Free', 'Include Dog Food'];
-  //   let item_data = ['Salmon', 'Broccoli', 'Milk', 'Canned Beans', 'Steak', 'Apple', 'Oranges'];
   const ColoredLine = ({ color }) => (
     <hr
       style={{
@@ -20,36 +14,30 @@ function Details(props) {
     />
   );
 
-  function setVisitedHelper() {
+  function setVisited() {
     put();
-    setVisited(!visited);
-    // props.card.visited = !props.card.visited;
-    props.changeCardFunc();
+    props.changeCardFunc(props.id);
   }
 
   async function put() {
     axios.put('http://localhost:4000/appointment', {
       id: props.id,
-      visited: visited,
+      visited: !props.visited,
     });
   }
 
   function beenVisited() {
-    // console.log(props.card);
-    if (visited == true) {
+    if (props.visited) {
       // note to self, add onClick functionality to update database if checkmark is clicked
       return (
-        <button className='details-notVisitedButton' onClick={setVisitedHelper}>
+        <button className='details-notVisitedButton' onClick={setVisited}>
           <img src={visitedMark} className='details-checkMark'></img>
           <div className='details-markAs'> Visited </div>
         </button>
       );
     } else {
       return (
-        <button
-          className='details-beenVisitedButton'
-          onClick={setVisitedHelper}
-        >
+        <button className='details-beenVisitedButton' onClick={setVisited}>
           <img src={darkCheckMark} className='details-checkMark'></img>
           <div className='details-marked'> Mark as visited </div>
         </button>

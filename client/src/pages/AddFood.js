@@ -98,7 +98,7 @@ export default function AddFood() {
   const [edit, setEdit] = useState(true);
   const [itemName, setItemName] = useState('');
   const [stockAvailability, setStockAvailability] = useState({
-    label: 'In Stock Today',
+    label: 'In stock today',
     value: true,
   });
   const [tags, setTags] = useState(
@@ -151,7 +151,7 @@ export default function AddFood() {
       setItemName(null);
       setTags(null);
       setPrevImage('');
-      setStockAvailability({ label: 'In Stock Today', value: true });
+      setStockAvailability({ label: 'In stock today', value: true });
       setEdit(false);
 
       console.log('null set');
@@ -162,10 +162,10 @@ export default function AddFood() {
       setEdit(true);
 
       if (location.state.inStock) {
-        setStockAvailability('In Stock Today');
+        setStockAvailability('In stock today');
         console.log('supposedly in stock');
       } else {
-        setStockAvailability('Out of Stock Today');
+        setStockAvailability('Out of stock today');
         console.log('supposedly in stock');
       }
       setFileName(location.state.name);
@@ -266,10 +266,10 @@ export default function AddFood() {
                   components={animatedComponents}
                   defaultValue={
                     location.state === null
-                      ? { label: 'In Stock Today', value: true }
+                      ? { label: 'In stock today', value: true }
                       : location.state.inStock
-                      ? { label: 'In Stock Today', value: true }
-                      : { label: 'Out of Stock Today', value: false }
+                      ? { label: 'In stock today', value: true }
+                      : { label: 'Out of stock today', value: false }
                   }
                   options={todayStock}
                   //value={stockAvailability}
@@ -357,7 +357,7 @@ export default function AddFood() {
                 },
               }}
             >
-              <h1>Confirm delete item?</h1>
+              <h2>Confirm delete item?</h2>
               <Link
                 to='/edit-stock'
                 className='add-food-delete-item-final-button'
