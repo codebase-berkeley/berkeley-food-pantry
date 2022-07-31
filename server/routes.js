@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { Food } = require('./models/Food');
+const { Appointment } = require('./models/Appointment');
 const AWS = require('aws-sdk');
 const { response } = require('express');
 const passport = require('passport');
