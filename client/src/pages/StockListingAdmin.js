@@ -14,15 +14,16 @@ import axios from 'axios';
 import AdminLoginNavbar from './AdminLoginNavbar.js';
 
 const foodCategories = [
-  { value: 'vegan', label: 'Vegan' },
-  { value: 'vegetarian', label: 'Vegetarian' },
-  { value: 'pescatarian', label: 'Pescatarian' },
-  { value: 'gluten-free', label: 'Gluten-free' },
-  { value: 'fruit', label: 'Fruit' },
-  { value: 'vegetable', label: 'Vegetable' },
-  { value: 'grains', label: 'Grains' },
-  { value: 'dairy', label: 'Dairy' },
-  { value: 'seafood', label: 'Seafood' },
+  { value: 'vegan', label: 'Vegan', color: '#519E8A' },
+  { value: 'vegetarian', label: 'Vegetarian', color: '#7EB09B' },
+  { value: 'pescatarian', label: 'Pescatarian', color: '#C791AB' },
+  { value: 'gluten-free', label: 'Gluten-free', color: '#EBA191' },
+  { value: 'fruit', label: 'Fruit', color: '#EC8F67' },
+  { value: 'vegetable', label: 'Vegetable', color: '#B1BA69' },
+  { value: 'grains', label: 'Grains', color: '#CEA07E' },
+  { value: 'dairy', label: 'Dairy', color: '#F0BB54' },
+  { value: 'seafood', label: 'Seafood', color: '#44A1AE' },
+  { value: 'meat', label: 'Meat', color: '#EF8275' },
 ];
 
 const sortOptions = [
@@ -40,8 +41,17 @@ const customStyles = {
   option: (provided, state) => ({
     ...provided,
     height: '6vh',
-    backgroundColor: state.isFocused ? '#E5E5E5' : null,
+    backgroundColor: state.isFocused
+      ? '#E5E5E5'
+      : state.isSelected
+      ? '#C791AB'
+      : null,
     color: '#000000',
+  }),
+
+  multiValueLabel: (styles) => ({
+    ...styles,
+    color: '#333333',
   }),
 
   dropdownIndicator: (base) => ({
@@ -74,17 +84,17 @@ const customStyles = {
     },
   }),
 
-  multiValue: (provided, state) => {
-    const opacity = state.isDisabled ? 0.5 : 1;
-    const transition = 'opacity 300ms';
+  multiValue: (provided, styles, state) => {
+    // const opacity = state.isDisabled ? 0.5 : 1;
+    //const transition = 'opacity 300ms';
 
     return {
+      ...styles,
       ...provided,
-      opacity,
-      transition,
       borderRadius: '20px',
       paddingLeft: '5px',
       paddingRight: '5px',
+      backgroundColor: '#eeeeee',
     };
   },
 };
