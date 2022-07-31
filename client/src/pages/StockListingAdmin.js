@@ -77,6 +77,7 @@ const customStyles = {
     '&:hover': {
       border: state.isFocused ? '1.5px solid #ACB9AC' : '1.5px solid #ACB9AC',
     },
+
     '@media screen and (orientation: portrait)': {
       ...provided['@media screen and (orientation: portrait)'],
       width: '80vw',

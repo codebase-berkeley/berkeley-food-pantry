@@ -76,12 +76,26 @@
 
 .appointment-card-marked {
     display: flex;
-    padding-right: 5%;
+    justify-content: center;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: bold;
+    color: #888888;
+    padding-top: 5%;
+     width: 100%; 
+    gap: 10%; 
 }
 
 .appointment-card-markAs {
     display: flex;
-    width: 60%
+    justify-content: center;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: bold;
+    color: #264425;
+    padding-top: 5%;
+    width: 100%;
+    gap: 10%
 }
 
 
