@@ -96,17 +96,33 @@ export function ViewAppointments() {
     // console.log(res());
   }, []);
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:4000/check_authenticated', {
-        withCredentials: true,
-      })
-      .catch((error) => {
-        if (error.response.status === 403) {
-          window.location.href = '/login';
-        }
-      });
-  }, []);
+  //   async function fetchAppts() {
+  //     const res1 = await axios.get('http://localhost:4000/appointment');
+  //     setCard(res1.data);
+  //     // console.log(card);
+  //     // 1: Make a temp constant that is card but with dietary_preferences and item_preferences
+  //     // set to be arrays instead of strings
+  //     // console.log("RES 1: ", res1.data)
+  //     // console.log(card);
+  //     setActiveAppt(res1.data[0]);
+  //     setDietary(res1.data[0].dietary_preferences.split(','));
+  //     setItem(res1.data[0].item_preferences.split(','));
+
+  //     return res1;
+  //   }
+
+  //   useEffect(() => {
+  //     axios
+  //       .get('http://localhost:4000/check_authenticated', {
+  //         withCredentials: true,
+  //       })
+  //       .catch((error) => {
+  //         if (error.response.status === 403) {
+  //           window.location.href = '/login';
+  //         }
+  //       });
+  //     fetchAppts();
+  //   }, []);
 
   function clearInputFieldsHelper() {
     setSelectedSort();
