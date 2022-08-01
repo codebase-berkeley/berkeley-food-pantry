@@ -97,10 +97,20 @@ module.exports = (app) => {
 
   app.delete('/food', async (req, res) => {
     const id = req.body.id;
+    const image_name = req.body.image_name;
     if (!id) return res.status(400).end();
     if ((await Food.destroy({ where: { id } })) <= 0)
       return res.status(400).end();
     res.status(200).end();
+    if (image_name !== '' && image_name) {
+      s3.deleteObject(
+        { Bucket: process.env.IMAGES_BUCKET, Key: image_name },
+        function (err, data) {
+          if (err) console.log(err, err.stack); // error
+          else console.log(); // deleted
+        }
+      );
+    }
   });
 
   app.post('/food', async (req, res) => {
@@ -109,16 +119,20 @@ module.exports = (app) => {
     const instock = req.body.instock;
     const tags = req.body.tags;
     const base64Image = req.body.image;
-    const imgName = req.body.imgName;
+    let image_name = req.body.image_name;
 
     let response = '';
     if (base64Image !== '') {
       try {
-        response = await upload(imgName, base64Image);
+        response = await upload(image_name, base64Image);
       } catch (err) {
         console.error('Error uploading image: ', err.message);
         return res.status(400).end();
       }
+    }
+
+    if (!image_name) {
+      image_name = '';
     }
 
     await Food.create({
@@ -126,6 +140,7 @@ module.exports = (app) => {
       instock: instock,
       tags: tags,
       image_path: response,
+      image_name: image_name,
     });
     res.status(200).end();
   });
@@ -137,13 +152,27 @@ module.exports = (app) => {
     const id = req.body.id;
     const instock = req.body.instock;
     const tags = req.body.tags;
-    const base64Image = req.body.newImage;
+    const base64Image = req.body.image;
     const prevImage = req.body.prevImage;
-    const imgName = req.body.imgName;
+    const prevImgName = req.body.prevImgName;
+    const imgName = req.body.image_name;
 
-    let response = '';
-    if (base64Image !== '' && base64Image !== prevImage) {
+    console.log(prevImgName, imgName);
+
+    let response = prevImage;
+    let image_name = prevImgName;
+    if (base64Image !== '' && prevImgName !== imgName) {
       try {
+        if (prevImgName !== '' && prevImgName) {
+          s3.deleteObject(
+            { Bucket: process.env.IMAGES_BUCKET, Key: prevImgName },
+            function (err, data) {
+              if (err) console.log(err, err.stack); // error
+              else console.log(); // deleted
+            }
+          );
+          image_name = imgName;
+        }
         response = await upload(imgName, base64Image);
       } catch (err) {
         console.error('Error uploading image: ', err.message);
@@ -157,6 +186,7 @@ module.exports = (app) => {
         instock: instock,
         tags: tags,
         image_path: response,
+        image_name: image_name,
       },
       {
         where: {

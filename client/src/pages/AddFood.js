@@ -168,7 +168,7 @@ export default function AddFood() {
         setStockAvailability('Out of stock today');
         console.log('supposedly in stock');
       }
-      setFileName(location.state.name);
+      setFileName(location.state.image_name);
       setPreviewImage(location.state.image);
       setFoodImg(location.state.image);
       setFoodId(location.state.id);
@@ -176,10 +176,12 @@ export default function AddFood() {
     }
   }, []);
 
-  function deleteItem(id) {
+  function deleteItem(id, image_name) {
     // Simple DELETE request with axios
     axios
-      .delete('http://localhost:4000/food', { data: { id: id } })
+      .delete('http://localhost:4000/food', {
+        data: { id: id, image_name: image_name },
+      })
       .then(() => console.log(id + ' deleted successfully'));
   }
 
@@ -211,9 +213,9 @@ export default function AddFood() {
         instock: stockAvailability.value,
         tags: categoriesList(categoriesValue),
         image: foodImg,
+        prevImgName: location.state.image_name,
         prevImage: prevImage,
-        newImage: foodImg,
-        imgName: fileName,
+        image_name: fileName,
       });
     } else {
       axios.post('http://localhost:4000/food', {
@@ -221,7 +223,7 @@ export default function AddFood() {
         instock: stockAvailability.value,
         tags: categoriesList(categoriesValue),
         image: foodImg,
-        imgName: fileName,
+        image_name: fileName,
       });
     }
   }
@@ -364,7 +366,7 @@ export default function AddFood() {
                 type='button'
                 onClick={() => {
                   setModalIsOpen(true);
-                  deleteItem(location.state.id);
+                  deleteItem(location.state.id, location.state.image_name);
                   this.forceUpdate();
                 }}
                 value='Delete Item'

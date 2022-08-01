@@ -123,6 +123,7 @@ export function StockListingAdmin() {
         id: f.id,
         name: f.name,
         image: f.image_path,
+        image_name: f.image_name,
         instock: f.instock,
         tags: tempTags,
       };
@@ -181,6 +182,7 @@ export function StockListingAdmin() {
           instock: listing.instock,
           tags: listing.tags.join(','),
           image: listing.image,
+          image_name: listing.image_name,
         });
       }
     }
@@ -220,6 +222,7 @@ export function StockListingAdmin() {
         instock: listing.instock,
         tags: listing.tags.join(','),
         image: listing.image,
+        image_name: listing.image_name,
       });
     }
     setCurrentStock(tempCurrentStock);
@@ -406,6 +409,7 @@ export function StockListingAdmin() {
                     id={foodItem.id}
                     name={foodItem.name}
                     image={foodItem.image}
+                    image_name={foodItem.image_name}
                     in_stock={foodItem.instock}
                     tags={foodItem.tags}
                     admin={true}
@@ -446,6 +450,7 @@ export function StockListingUser() {
         id: f.id,
         name: f.name,
         image: f.image_path,
+        image_name: f.image_name,
         instock: f.instock,
         tags: f.tags.split(',').map((t) => {
           return t.charAt(0).toUpperCase() + t.substring(1);
@@ -646,6 +651,7 @@ export function StockListingUser() {
                     id={foodItem.id}
                     name={foodItem.name}
                     image={foodItem.image}
+                    image_name={foodItem.image_name}
                     in_stock={foodItem.instock}
                     tags={foodItem.tags}
                   />

@@ -3,8 +3,8 @@ import './../components/SearchBar.css';
 import './ViewAppointments.css';
 import 'rsuite/dist/rsuite.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Select, { NonceProvider } from 'react-select';
-import makeAnimated, { ValueContainer } from 'react-select/animated';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 import AppointmentCard from './../components/AppointmentCard';
 import Details from './../components/Details';
 import { Helmet } from 'react-helmet';
@@ -18,7 +18,7 @@ const apptOptions = [
   { value: 'friday', label: 'All appointments on Friday' },
 ];
 const timeOptions = [
-  { value: 'all', label: 'All times this week' },
+  { value: 'all', label: 'All times' },
   { value: '2:00-2:30', label: '2:00 PM - 2:30 PM' },
   { value: '2:30-3:00', label: '2:30 PM - 3:00 PM' },
   { value: '3:00-3:30', label: '3:00 PM - 3:30 PM' },
@@ -70,7 +70,7 @@ export function ViewAppointments() {
   });
   const [selectedTime, setSelectedTime] = useState({
     value: 'all',
-    label: 'All times this week',
+    label: 'All times',
   });
   const [activeAppt, setActiveAppt] = useState();
   const [showVisited, setShowVisited] = useState(true);

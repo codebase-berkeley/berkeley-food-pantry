@@ -7,16 +7,11 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import AdminLoginNavbar from './AdminLoginNavbar';
 
-const dates = [
-  { value: '03/30', label: 'Friday, May 6th' },
-  { value: '03/31', label: 'Saturday, May 7th' },
-  { value: '04/01', label: 'Sunday, May 8th' },
-];
-
 const times = [
-  { value: '11:30', label: '11:30 AM' },
-  { value: '12:00', label: '12:00 PM' },
-  { value: '12:30', label: '12:30 PM' },
+  { value: '2:00', label: '2:00 PM' },
+  { value: '2:30', label: '2:30 PM' },
+  { value: '3:00', label: '3:00 PM' },
+  { value: '3:30', label: '3:30 PM' },
 ];
 
 const animatedComponents = makeAnimated();
@@ -74,6 +69,42 @@ export default function AppointmentScheduler() {
   const [dropDownSelection, clearDropDown] = useState(0);
   const [selectedDate, setSelectedDate] = useState([]);
   const [selectedTime, setSelectedTime] = useState([]);
+
+  function getMondayOfCurrentWeek() {
+    const today = new Date();
+    const first = today.getDate() - today.getDay() + 1;
+    // const tuesday = new Date(today.setDate(first + 1));
+    // console.log(tuesday); // 👉️ Tue Jan 18 2022
+
+    const monday = new Date(today.setDate(first));
+
+    return monday;
+  }
+
+  var today = new Date();
+  console.log(today);
+  const first = today.getDate() - today.getDay() + 1;
+
+  const monday = new Date(today.setDate(first));
+  today = new Date();
+  const wednesday = new Date(today.setDate(first + 2));
+  today = new Date();
+  const friday = new Date(today.setDate(first + 4));
+  today = new Date();
+  const monday2 = new Date(today.setDate(first + 7));
+  today = new Date();
+  const wednesday2 = new Date(today.setDate(first + 9));
+  today = new Date();
+  const friday2 = new Date(today.setDate(first + 11));
+
+  const dates = [
+    { value: monday, label: monday.toDateString() },
+    { value: wednesday, label: wednesday.toDateString() },
+    { value: friday, label: friday.toDateString() },
+    { value: monday2, label: monday2.toDateString() },
+    { value: wednesday2, label: wednesday2.toDateString() },
+    { value: friday2, label: friday2.toDateString() },
+  ];
 
   function clearInputFieldsHelper() {
     for (var i = 1; i <= 5; i++) {
