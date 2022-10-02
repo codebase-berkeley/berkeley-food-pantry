@@ -5,8 +5,7 @@ import pen from './../images/pen.svg';
 import checkmark from './../images/instockMark.svg';
 import xmark from '../images/notinstock.svg';
 import defaultImg from '../images/default-placeholder.png';
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 function Food(props) {
   function stockOption() {

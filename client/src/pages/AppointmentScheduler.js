@@ -64,22 +64,11 @@ const customStyles = {
 };
 
 export default function AppointmentScheduler() {
-  const [inputText, clearInputFields] = useState('');
-  const [checkBoxInput, clearCheckBox] = useState(true);
-  const [dropDownSelection, clearDropDown] = useState(0);
+  // const [inputText, clearInputFields] = useState('');
+  // const [checkBoxInput, clearCheckBox] = useState(true);
+  // const [dropDownSelection, clearDropDown] = useState(0);
   const [selectedDate, setSelectedDate] = useState([]);
   const [selectedTime, setSelectedTime] = useState([]);
-
-  function getMondayOfCurrentWeek() {
-    const today = new Date();
-    const first = today.getDate() - today.getDay() + 1;
-    // const tuesday = new Date(today.setDate(first + 1));
-    // console.log(tuesday); // 👉️ Tue Jan 18 2022
-
-    const monday = new Date(today.setDate(first));
-
-    return monday;
-  }
 
   var today = new Date();
   console.log(today);

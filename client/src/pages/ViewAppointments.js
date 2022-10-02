@@ -74,7 +74,7 @@ export function ViewAppointments() {
   });
   const [activeAppt, setActiveAppt] = useState();
   const [showVisited, setShowVisited] = useState(true);
-  const [showPast, setShowPast] = useState(true);
+  // const [showPast, setShowPast] = useState(true);
   const [card, setCard] = useState([]);
   const [dietary, setDietary] = useState([]);
   const [item, setItem] = useState([]);
@@ -149,7 +149,7 @@ export function ViewAppointments() {
     }
   }
 
-  if (card.length != 0 && typeof activeAppt != 'undefined') {
+  if (card.length !== 0 && typeof activeAppt != 'undefined') {
     return (
       <>
         <AdminLoginNavbar isAdmin={true} />
@@ -202,14 +202,14 @@ export function ViewAppointments() {
                     onChange={() => setShowVisited(!showVisited)}
                   />
                 </div>
-                <div className='view-appts-form-check-label'>
+                {/* <div className='view-appts-form-check-label'>
                   <span>Show past appointments</span>
                   <input
                     type='checkbox'
                     checked={showPast}
                     onChange={() => setShowPast(!showPast)}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -310,10 +310,10 @@ export function ViewAppointments() {
                   <span> Show appointments marked visited</span>
                   <input type='checkbox' />
                 </div>
-                <div className='view-appts-form-check-label'>
+                {/* <div className='view-appts-form-check-label'>
                   <span>Show past appointments</span>
                   <input type='checkbox' />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
